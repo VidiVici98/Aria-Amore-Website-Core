@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aria Amore - Contact</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<div style=" position: sticky; z-index: 5; height: 30px;">
+  <button id="menu-toggle" style="color: #ffffff; background-color: black; border: 2px groove #252525; width: 100%;">☰</button>
+  </div>
+  <nav id="mobile-menu">
+    <ul>
+      <li><a href="home.html"><i><b>Aria Amore Home</b></i></a></li>
+      <li><a href="services.html"><i><b>What We Offer</b></i></a></li>
+      <li><a href="artists.html"><i><b>Meet The Artists</b></i></a></li>
+      <li><a href="contact.html"><i><b>Contact Us</b></i></a>
+      </li>
+    </ul>
+  </nav>
+
+<body>
+  <div class="navigation" style="background-color: black; border: 2px groove #252525; text-align: center;">
+    <a href="home.html"><i><b>Aria Amore Home</b></i></a>
+    <a href="services.html"><i><b>What We Offer</b></i></a>
+    <a href="artists.html"><i><b>Meet The Artists</b></i></a>
+    <a href="contact.html" style="text-decoration: underline;  color: #d6c5a7;"><i><b>Contact Us</b></i></a>
+    
+  </div>
+
+
+    <h2 style="text-align: center; font-size: 2rem; background-color: #111111c9;  border: 2px groove #707070; border-radius: 10px; padding: 15px; margin-left: 10%; margin-right: 10%; margin-top: 15%; margin-bottom: 5%; text-shadow: 1px 1px #111111;">Book Your Next Event Now!</h2>
+
+    <section id="contact" class="flip-container">
+      <div class="flipper">
+          <!-- Front Side -->
+          <div class="front contact-card" style="background-color: #d6c5a7c9; padding: 25px; max-width: 800px; border: 2px groove #252525c9; border-radius: 25px;">
+              <div class="form-container">
+                  <form class="contact-form" id="flipForm" style="margin-left: 25px;">
+                      <input type="text" name="name" placeholder="Your Name" required>
+                      <input type="email" name="email" placeholder="Your Email" required>
+                      <input type="text" name="event-date" placeholder="Event Date">
+                      <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                      <button type="submit"><b>Send Inquiry</b></button>
+                  </form>
+              </div>
+              <div class="image-container">
+                  <img src="media/Aria Amore.png" width="300px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
+              </div>
+          </div>
+  
+          <!-- Back Side -->
+          <div class="back contact-card" style="background-color: #d6c5a7; padding: 25px; max-width: 800px; border: 2px groove #252525c9; border-radius: 25px;">
+            <div class="image-container">
+              <img src="media/Aria Amore.png" width="300px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
+          </div>
+          <div style="background-color: #252525c9; padding: 2%; border: 2px groove #252525c9; border-radius: 25px;">  
+            <h2 style="font-size: 2.5rem; font-family: italiano;">Thank You!</h2>
+            <img src="media/fancy-line.png" width="80%">
+              <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
+              <button onclick="flipBack()">Go Back</button>
+          </div>
+          </div>
+      </div>
+  </section>
+  <section id="contact" class="mobile-flip-container">
+    <div class="mobile-flipper">
+        <!-- Front Side -->
+        <div class="front mobile-contact-card" style="background-color: #d6c5a7c9; padding: 15px; border: 2px groove #252525c9; border-radius: 25px;">
+          <div class="image-container">
+            <img src="media/Aria Amore.png" width="200px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
+        </div>
+          <div class="mobile-form-container">
+                <form class="mobile-contact-form" id="flipForm"">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="text" name="event-date" placeholder="Event Date">
+                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
+                    <button type="submit"><b>Send Inquiry</b></button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Back Side -->
+        <div class="back mobile-contact-card" style="background-color: #d6c5a7; padding: 25px; border: 2px groove #252525c9; border-radius: 25px;">
+          <div class="image-container">
+            <img src="media/Aria Amore.png" width="200px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
+        </div>
+        <div style="background-color: #252525c9; padding: 2%; border: 2px groove #252525c9; border-radius: 25px;">  
+          <h2 style="font-size: 2.5rem;">Thank You!</h2>
+          <img src="media/fancy-line.png" width="80%">
+            <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
+            <button onclick="flipBack()">Go Back</button>
+        </div>
+        </div>
+    </div>
+</section>
+
+
+
+    <section>    
+      <h2 style="text-align: center; font-size: 2rem; background-color: #111111c9;  border: 2px groove #707070; border-radius: 10px; padding: 15px; margin-left: 10%; margin-right: 10%; margin-top: 10%; margin-bottom: 10%; text-shadow: 1px 1px #111111;">Frequently Asked Questions</h2>
+    <details>
+      <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Cancellation / Refund Policy</b></summary>
+    <p style="text-align: left; margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
+    </details>
+    <details>
+    <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Requesting Special Songs</b></summary>
+    <p style="text-align: left;margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
+   </details>
+   <details>
+    <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Bundling Services</b></summary>
+    <p style="text-align: left; margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
+   </details>
+   <details>
+    <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Getting A Quote</b></summary>
+    <p style="text-align: left; margin-left: 1%; max-width: 800px;; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
+   </details>
+
+    </section>
+
+    <section>
+    <div class="event-grid">
+      <div class="event" style="max-width: 800px;">
+        <img src="media/phone-icon.png" width="100px">
+        <img src="media/email-icon.png" width="100px">
+        <img src="media/message-icon.png" width="100px">
+        
+        <h3>Contact Us Directly</h3>
+        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+      </div>
+      </section>
+      <script src="script.js"></script>
+
+</body>
+
+
+<footer id="footer">
+  <div>
+  <h2 style="font-size: 1.5; color: #d6c5a7;">About Us</h2>
+  <p>At Aria Amore, we are passionate about bringing the beauty of opera to weddings and special events. Our professional singers create unforgettable moments that will leave you and your guests in awe.</p>
+  <p style="color: #707070;"><i>&copy; 2025 Aria Amore LLC. All Rights Reserved.</i></p>
+
+</div>
+  <div>
+    <h2 style="font-size: 1.5rem; color: #d6c5a7;">Check Out Our Socials</h2>
+    <img src="media/tiktok_social media_icon.png" width="30px">
+    <img src="media/instagram_social media_icon.png" width="30px">
+  </div>
+
+</footer>
+</body>
+</html>
+
