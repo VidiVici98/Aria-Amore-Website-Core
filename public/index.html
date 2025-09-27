@@ -3,32 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" class="">
   <title>Aria Amore</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
 </head>
-
 <body>
-<div>
-  <button id="menu-toggle">☰</button>
+  <!--Header Embed Container-->
+  <div>
+    <button id="menu-toggle">☰</button>
   </div>
-<nav id="mobile-menu">
-  <ul>
-    <li><a href="index.html"><i><b>Aria Amore Home</b></i></a></li>
-    <li> <a href="services.html" ><i><b>What We Offer</b></i></a></li>
-    <li><a href="artists.html"><i><b>Meet The Artists</b></i></a></li>
-    <li><a href="contact.html"><i><b>Contact Us</b></i></a>
-    </li>
-  </ul>
-</nav>
-  <div class="navigation">
-    <a href="index.html" class="active"><i><b>Aria Amore Home</b></i></a>
-    <a href="services.html" ><i><b>What We Offer</b></i></a>
-    <a href="artists.html"><i><b>Meet The Artists</b></i></a>
-    <a href="contact.html"><i><b>Contact Us</b></i></a>
-  </div>
-  
-
-  <div class="hero">
+  <nav id="mobile-menu">
+    <ul>
+      <li><a href="index.html">Aria Amore Home</a></li>
+      <li> <a href="services.html">What We Offer</a></li>
+      <li><a href="artists.html">Meet The Artists</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+  </nav>
+  <nav class="navigation">
+    <a href="index.html" class="active">Aria Amore Home</a>
+    <a href="services.html">What We Offer</a>
+    <a href="artists.html">Meet The Artists</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+<!--Hero-->    
+  <section class="hero">
     <video autoplay muted loop id="hero-video" src=""></video>
     <img src="/assets/media/images/tiktok_social media_icon.png">
     <img src="/assets/media/images/instagram_social media_icon.png">
@@ -38,19 +40,8 @@
       <p>Live Opera, Tailored for Your Unforgettable Moments.</p>
       <a href="contact.html" class="btn">Book Your Precious Moments Today!</a>
     </div>
-  </div>  
-  <div class="hero-mobile">
-    <video autoplay muted loop id="hero-video" src=""></video>
-    <div class="hero-text" style="padding: 10px; margin-top: 50%;">
-      <h1 style="font-size: 2rem;">Unveiling The Opera Of Your Love</h1>
-      <p style="font-size: 1rem;">Live Opera, Tailored for Your Unforgettable Moments.</p>
-      <a href="contact.html" class="btn-mobile">Book Your Precious Moments Today!</a>
-    </div>
-    <img src="/assets/media/images/tiktok_social media_icon.png">
-    <img src="/assets/media/images/instagram_social media_icon.png">
-    <img src="/assets/media/images/share-icon.png">
-  </div>
-     
+  </section>  
+<!--Info Boxes-->
   <section id="events">
     <div class="event-grid">
       <div class="event">
@@ -69,77 +60,80 @@
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
       </div>
     </div>
-    <p class="cta"><i><b>We offer a range of performance packages to suit your needs, from intimate ceremonies to grand celebrations. Whether you want a soloist for your vows or a full ensemble for your reception, we have the perfect package for you.</b></i></p>
+    <p class="cta">We offer a range of performance packages to suit your needs, from intimate ceremonies to grand celebrations. Whether you want a soloist for your vows or a full ensemble for your reception, we have the perfect package for you.</p>
+  </section>
+<!--Featured Artists-->
+  <section id="performers">
+    <h2 style="font-size: 2rem; background-color: #111111c9; border: 2px groove #707070; border-radius: 10px; padding: 15px; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 2px 2px #111111; font-size: 2.5rem;">Featured Performers</h2>
+    <div class="event-grid">
+      <div class="staff">
+        <div style="padding: 20px;">
+          <img class="artist-portrait" src="/assets/media/images/placeholder.webp">
+          <div class="artist-bio">
+            <h3>Performer Name</h3>
+            <img class="social-icons" src="/assets/media/images/tiktok_social media_icon.png">
+            <img class="social-icons" src="/assets/media/images/instagram_social media_icon.png">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+          </div>
+        </div>
+      </div>
+      <div class="staff">
+        <div style="padding: 20px;">
+          <img class="artist-portrait" src="/assets/media/images/xavier-williams-transparent.webp">
+          <div class="artist-bio">
+            <h3>Xavier Williams</h3>
+            <img class="social-icons" src="/assets/media/images/tiktok_social media_icon.png">
+            <img class="social-icons" src="/assets/media/images/instagram_social media_icon.png">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+          </div>
+        </div>
+      </div>
+      <div class="staff">
+        <div style="padding: 20px;">
+          <img class="artist-portrait" src="/assets/media/images/placeholder.webp">
+          <div class="artist-bio">
+            <h3>Performer Name</h3>
+            <img class="social-icons" src="/assets/media/images/tiktok_social media_icon.png">
+            <img class="social-icons" src="/assets/media/images/instagram_social media_icon.png">
+            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!--Client Reviews-->
+  <section id="testimonials" style="background-color: #111111c9; margin: 2%; border: 2px groove #707070; border-radius: 10px;">
+    <img src="/assets/media/images/fancy-line.png" width="80%">
+    <blockquote>
+      <h2 style="font-size: 2.5rem; text-shadow: 2px 2px #111111;">What Our Clients Are Saying</h2>
+      <img class="stars" src="/assets/media/images/star_icon.png">
+      <img class="stars" src="/assets/media/images/star_icon.png">
+      <img class="stars" src="/assets/media/images/star_icon.png">
+      <img class="stars" src="/assets/media/images/star_icon.png">
+      <img class="stars" src="/assets/media/images/star_icon.png">
+      <p style="color: #d6c5a7; font-size: 1.5rem;">"Their performance brought the entire room to tears. Simply breathtaking."</p>
+      <cite  style="font-size: 1.25rem; color: #707070;">- Happy Client</cite>
+    </blockquote>
   </section>
 
-<section id="performers">
-  <h2 style="font-size: 2rem; background-color: #111111c9; border: 2px groove #707070; border-radius: 10px; padding: 15px; max-width: 600px; margin-left: auto; margin-right: auto; text-shadow: 2px 2px #111111; font-size: 2.5rem;">Featured Performers</h2>
-  <div class="event-grid">
-    <div class="staff">
-      <div style="padding: 20px;">
-        <img class="artist-portrait" src="/assets/media/images/placeholder.webp">
-        <div class="artist-bio">
-          <h3>Performer Name</h3>
-          <img class="social-icons" src="/assets/media/images/tiktok_social media_icon.png">
-          <img class="social-icons" src="/assets/media/images/instagram_social media_icon.png">
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
-        </div>
+<!--Scripts-->  
+  <script src="/assets/js/main.js"></script>
+  </body>
+  <footer id="footer">
+    <!--Footer Embed Container-->
+    <div class="footer-columns-wrapper">
+      <div class="about-column">
+        <h2>About Us</h2>
+        <p>At Aria Amore, we are passionate about bringing the beauty of opera to weddings and special events. Our professional singers create unforgettable moments that will leave you and your guests in awe.</p>
+      </div>
+      <div class="socials-column">
+        <h2>Check Out Our Socials</h2>
+        <img class="social-icons" src="/assets/media/images/tiktok_social media_icon.png">
+        <img class="social-icons" src="/assets/media/images/instagram_social media_icon.png">
       </div>
     </div>
-    
-    <div class="staff">
-      <div style="padding: 20px;">
-        <img class="artist-portrait" src="/assets/media/images/xavier-williams-transparent.webp">
-        <div class="artist-bio">
-          <h3>Xavier Williams</h3>
-          <img class="social-icons" src="/assets/media/images/tiktok_social media_icon.png">
-          <img class="social-icons" src="/assets/media/images/instagram_social media_icon.png">
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
-        </div>
-      </div>
+    <div class="sub-footer">
+      <p>&copy; 2025 Aria Amore LLC. All Rights Reserved.</p>
     </div>
-
-    <div class="staff">
-      <div style="padding: 20px;">
-        <img class="artist-portrait" src="/assets/media/images/placeholder.webp">
-        <div class="artist-bio">
-          <h3>Performer Name</h3>
-          <img class="social-icons" src="/assets/media/images/tiktok_social media_icon.png">
-          <img class="social-icons" src="/assets/media/images/instagram_social media_icon.png">
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio, cumque nihil impedit, quo minus id, quod maxime placeat, facere possimus, omnis voluptas assumenda est, omnis dolor repellendus.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="testimonials" style="background-color: #111111c9; margin: 2%; border: 2px groove #707070; border-radius: 10px;">
-  <img src="/assets/media/images/fancy-line.png" width="80%">
-  <blockquote>
-    <h2 style="font-size: 2.5rem; text-shadow: 2px 2px #111111;">What Our Clients Are Saying</h2>
-    <img class="stars" src="/assets/media/images/star_icon.png">
-    <img class="stars" src="/assets/media/images/star_icon.png">
-    <img class="stars" src="/assets/media/images/star_icon.png">
-    <img class="stars" src="/assets/media/images/star_icon.png">
-    <img class="stars" src="/assets/media/images/star_icon.png">
-    <p style="color: #d6c5a7; font-size: 1.5rem;">"Their performance brought the entire room to tears. Simply breathtaking."</p>
-    <cite  style="font-size: 1.25rem; color: #707070;">- Happy Client</cite>
-  </blockquote>
-</section>
-
-<footer id="footer">
-  <div>
-    <h2 style="font-size: 2rem; color: #d6c5a7;">About Us</h2>
-    <p>At Aria Amore, we are passionate about bringing the beauty of opera to weddings and special events. Our professional singers create unforgettable moments that will leave you and your guests in awe.</p>
-    <p style="color: #707070;"><i>&copy; 2025 Aria Amore LLC. All Rights Reserved.</i></p>
-  </div>
-  <div>
-    <h2 style="font-size: 2rem; color: #d6c5a7;">Check Out Our Socials</h2>
-    <img class="social-icons" src="/assets/media/images/tiktok_social media_icon.png">
-    <img class="social-icons" src="/assets/media/images/instagram_social media_icon.png">
-  </div>
-</footer>
-<script src="/assets/js/main.js"></script>
-</body>
+  </footer>  
 </html>
-
