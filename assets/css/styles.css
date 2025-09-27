@@ -1,7 +1,7 @@
 /* General Styles */
 @font-face {
   font-family: italiano;
-  src: url('media/Italianno-Regular.ttf');
+  src: url('/assets/fonts/Italianno-Regular.ttf');
 }
 body {
     font-family:Georgia, 'Times New Roman', Times, serif;
@@ -9,7 +9,7 @@ body {
     padding: 0;
     color: #252525;
     line-height: 1.7;
-    background-image: url(media/sepia.jpeg);
+    background-image: url(/assets/media/images/sepia.jpeg);
     background-size: cover;
   }
   h1, h2 {
