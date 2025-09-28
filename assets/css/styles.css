@@ -195,18 +195,16 @@ footer h2 {
   right: -100%;
   top: -70%;
   scale: .4;
-  animation: heroSlideIn 4s forwards .3s ease;
+  animation: heroSlideIn 2.75s forwards ease;
 }
 @keyframes heroSlideIn {
-  to {
-    right: -20%;
-  }
+  to { right: -20%; }
 }
 .envelope-container {
-  position: absolute; /* place it wherever you want */
-  left: 50px; /* example, adjust as needed */
-  top: 70px;  /* example, adjust as needed */
-  width: 55%;
+  position: absolute;
+  left: 30px;
+  top: 70px;
+  width: 58%;
   height: 65%;
   perspective: 1000px;
 }
@@ -215,52 +213,111 @@ footer h2 {
   width: 100%;
   height: 100%;
   z-index: 2;
+  transform: rotateZ(0deg);
   transform-style: preserve-3d;
-  animation: envelope-out 2.5s ease forwards 2.5s; /* envelope moves down after delay */
+  animation: envelope-out 2.5s cubic-bezier(.55,.05,.35,1) forwards 3s;
 }
 @keyframes envelope-out {
-  0% { transform: translateY(10%)
-                  rotateZ(0deg); }
-  10% {transform: translateY(25%)
-                  rotateZ(1deg);}                  
-  100% { transform: translateY(200%)
-                    rotateZ(10deg); }
+  0%   { transform: translateY(0%) rotateZ(0deg); }
+  10%  { transform: translateY(-5%) rotateZ(-2deg); }   /* slight anticipation */
+  30%  { transform: translateY(25%) rotateZ(3deg); }    /* start moving */
+  70%  { transform: translateY(180%) rotateZ(8deg); }   /* main exit */
+  90%  { transform: translateY(200%) rotateZ(10deg); }  /* slight overshoot */
+  100% { transform: translateY(190%) rotateZ(9deg); }   /* settle out of view */
 }
 .envelope-flap {
   position: absolute;
-  top: 10%;
+  top: 15%;
   width: 100%;
   height: 75%;
   background: var(--sepia-gradient);
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow), 
+              inset 0 1px 2px rgba(255,255,255,0.6),
+              inset 0 -1px 2px rgba(0,0,0,0.1);
   transform-origin: top;
+  filter: brightness(.95);
   z-index: 2;
-  animation: flap-open 1.5s ease forwards 1.5s;
-  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  animation: flap-open 1.5s cubic-bezier(.55,.05,.35,1) forwards 2s;  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+.envelope-flap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1; 
+  mix-blend-mode: multiply;
+  opacity: .8;
+  background-image:
+    repeating-radial-gradient(circle, 
+              rgba(0, 0, 0, 0.95) 0 0.5px,
+              transparent 0.5px 4px),
+    repeating-linear-gradient(35deg,
+              rgba(255, 255, 255, 0.95) 0 1px,
+              transparent 1px 4px),
+              linear-gradient(to bottom, 
+              hsl(26, 61%, 89%, .5), 
+              hsl(26, 42%, 84%, .5));
+  background-size: 3px 3px, 100% 4px;
+  transform: translateZ(0);
+  filter: contrast(1.05) brightness(.98);
 }
 @keyframes flap-open {
-  0% { transform: rotateX(0deg); }
+  0%   { transform: rotateX(0deg); }
+  15%  { transform: rotateX(-15deg); }   
+  80%  { transform: rotateX(-170deg); }  
+  90%  { transform: rotateX(-165deg); }  
   100% { transform: rotateX(-180deg); }
 }
 .envelope-body {
   position: absolute;
-  bottom: -10%;
+  bottom: -15%;
   width: 100%;
   height: 100%;
   background: var(--sepia-gradient);
   align-content: center;
   border-radius: 4px;
-  box-shadow: var(--box-shadow);
+  box-shadow: var(--box-shadow), 
+              inset 0 1px 2px rgba(255,255,255,0.6),
+              inset 0 -1px 2px rgba(0,0,0,0.1);
   z-index: 2;
   line-height: 3rem;
+  filter: brightness(.95);
+  overflow: hidden;
 }
-.envelope-body h1 {
-  font-size: 4rem;
-  text-shadow: var(--text-shadow);
+.envelope-body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1; 
+  mix-blend-mode: multiply;
+  opacity: .8;
+  background-image:
+    repeating-radial-gradient(circle, 
+              rgba(0, 0, 0, 0.95) 0 0.5px,
+              transparent 0.5px 4px),
+    repeating-linear-gradient(50deg,
+              rgba(255, 255, 255, 0.95) 0 1px,
+              transparent 1px 4px);
+  background-size: 3px 3px, 100% 4px;
+  transform: translateZ(0);
+  filter: contrast(1.05) brightness(.98);
 }
-.envelope-body h2 {
-  font-size: 2.75rem;
+.envelope-body > * {
+  position: relative;
+  z-index: 2;
+}    
+.envelope-body h1,
+.hero-letter h1 {
+  font-size: 3.5rem;
   text-shadow: var(--text-shadow);
+  color: #333;
+}
+.envelope-body h2,
+.hero-letter p {
+  font-size: 2.5rem;
+  text-shadow: var(--text-shadow);
+  color: #454545;
 }
 .hero .hero-icons {
   width: 2.5rem;
@@ -274,7 +331,7 @@ footer h2 {
 .hero-letter {
   position: absolute;
   bottom: 85%;
-  width: 95%;
+  width: 90%;
   height: 90%;
   background: var(--sepia-gradient);
   padding: 20px;
@@ -282,6 +339,36 @@ footer h2 {
   box-sizing: border-box;
   z-index: 1;
   transform: translateY(100%);
+  box-shadow: var(--box-shadow), 
+              inset 0 1px 2px rgba(255,255,255,0.6),
+              inset 0 -1px 2px rgba(0,0,0,0.1);
+  animation: letter-pull 2.5s cubic-bezier(.55,.05,.35,1) forwards 2.5s;
+}
+@keyframes letter-pull {
+  0%   { transform: translateY(100%) rotateZ(-2deg); }   /* inside envelope */
+  10%  { transform: translateY(98%) rotateZ(0deg); }    /* slight anticipation */
+  50%  { transform: translateY(85%) rotateZ(1deg); }    /* letter moves slightly as flap opens */
+  70%  { transform: translateY(90%) rotateZ(0deg); }    /* stays behind flap while envelope moves */
+  100% { transform: translateY(98%) rotateZ(0deg); }    /* final resting position exactly where hero-letter is */
+}
+.hero-letter::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0; 
+  mix-blend-mode: multiply;
+  opacity: .6;
+  background-image:
+    repeating-radial-gradient(circle, 
+              rgba(0, 0, 0, 0.95) 0 0.5px,
+              transparent 0.5px 4px),
+    repeating-linear-gradient(65deg,
+              rgba(255, 255, 255, 0.95) 0 1px,
+              transparent 1px 4px);
+  background-size: 3px 3px, 100% 4px;
+  transform: translateZ(0);
+  filter: contrast(1.05) brightness(.98);
 }
 .hero-letter h1 {
   font-size: 4rem;
@@ -297,14 +384,11 @@ footer h2 {
   font-family: "Italianno", cursive;
   font-weight: 400;
   font-style: normal;
-  color: var(--color-active);
   text-shadow: var(--text-shadow);
 }
-.hero img:hover {
+.hero .hero-icons:hover {
     scale: 125%;
-}
-.hero-letter:hover h1 {
-  color: var(--color-secondary);
+    transform: translateY(-4px);
 }
 #events {
   margin-top: 15%;
@@ -352,8 +436,8 @@ footer h2 {
   transform: var(--hover-transform);
 }  
 .staff .artist-portrait {
-  height: 450px;
-  width: 350px;
+  height: 400px;
+  width: 300px;
   border-radius: 50%;
   border: var(--border-thin);
   position: relative;
