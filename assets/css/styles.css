@@ -11,9 +11,9 @@ Global Variables
   --quick-transition: all .3s ease;
   --hover-transform: translateY(-4px);
   --sepia-gradient: linear-gradient(to bottom right,
-                    hsl(41, 32%, 62%, .8),
-                    hsla(38, 36%, 75%, 0.9) 60%,
-                    hsl(33, 41%, 71%, .7));
+                    hsl(41, 32%, 62%, 1),
+                    hsla(38, 36%, 75%, 1) 60%,
+                    hsl(33, 41%, 71%, 1));
   --box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
                 2px 6px 8px rgba(20, 25, 30, 0.25),
                 inset 0 1px 2px rgba(255, 255, 255, 0.25),
@@ -51,10 +51,11 @@ body {
 	line-height: 1.7;
   width: 100vw;
   overflow-x: hidden;
-  background-image: url(/assets/media/images/sepia.jpeg);
+  background-image: url(/assets/media/images/parchment-background.webp);
   font-family:Georgia, 'Times New Roman', Times, serif;
   color: var(--color-primary);
-  background-size: cover;  
+  background-size: cover;
+  backdrop-filter: blur(2px);
 }
 h1, h2 {
   font-family: "Italianno", cursive;
@@ -178,39 +179,111 @@ footer h2 {
 /*Homepage*/
 .hero {
   width: 98%;
+  height: 65vh;
   color: var(--color-secondary);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 15px;
+  border: var(--border-thin);
+  position: relative;
+  overflow: hidden;
 }
-.hero img {
+.hero::before {
+  content: url(/assets/media/images/xavier-williams-transparent.webp);
+  position: absolute;
+  right: -100%;
+  top: -70%;
+  scale: .4;
+  animation: heroSlideIn 4s forwards .3s ease;
+}
+@keyframes heroSlideIn {
+  to {
+    right: -20%;
+  }
+}
+.envelope-container {
+  position: absolute; /* place it wherever you want */
+  left: 50px; /* example, adjust as needed */
+  top: 70px;  /* example, adjust as needed */
+  width: 55%;
+  height: 65%;
+  perspective: 1000px;
+}
+.envelope {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  transform-style: preserve-3d;
+  animation: envelope-out 2.5s ease forwards 2.5s; /* envelope moves down after delay */
+}
+@keyframes envelope-out {
+  0% { transform: translateY(10%)
+                  rotateZ(0deg); }
+  10% {transform: translateY(25%)
+                  rotateZ(1deg);}                  
+  100% { transform: translateY(200%)
+                    rotateZ(10deg); }
+}
+.envelope-flap {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  height: 75%;
+  background: var(--sepia-gradient);
+  box-shadow: var(--box-shadow);
+  transform-origin: top;
+  z-index: 2;
+  animation: flap-open 1.5s ease forwards 1.5s;
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+@keyframes flap-open {
+  0% { transform: rotateX(0deg); }
+  100% { transform: rotateX(-180deg); }
+}
+.envelope-body {
+  position: absolute;
+  bottom: -10%;
+  width: 100%;
+  height: 100%;
+  background: var(--sepia-gradient);
+  align-content: center;
+  border-radius: 4px;
+  box-shadow: var(--box-shadow);
+  z-index: 2;
+  line-height: 3rem;
+}
+.envelope-body h1 {
+  font-size: 4rem;
+  text-shadow: var(--text-shadow);
+}
+.envelope-body h2 {
+  font-size: 2.75rem;
+  text-shadow: var(--text-shadow);
+}
+.hero .hero-icons {
   width: 2.5rem;
   margin-top: 30%;
   padding: 5px;
   position: relative;
   transition: var(--quick-transition);
+  left: -43%;
+  bottom: -10%;
 }
-.hero video {
+.hero-letter {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 98%;
-  height: 98%;
-  object-fit: cover;
-  z-index: -1;
-  margin-top: 25px;
+  bottom: 85%;
+  width: 95%;
+  height: 90%;
+  background: var(--sepia-gradient);
+  padding: 20px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  z-index: 1;
+  transform: translateY(100%);
 }
-.hero-text {
-  background-color: #1111119c;
-  padding: 30px;
-  border-radius: 15px;
-  border: var(--border-thin);
-  box-shadow: var(--box-shadow);
-}
-.hero-text h1 {
+.hero-letter h1 {
   font-size: 4rem;
   font-family: "Italianno", cursive;
   font-weight: 400;
@@ -219,7 +292,7 @@ footer h2 {
   text-shadow: var(--text-shadow);
   transition: var(--quick-transition);
 }
-.hero-text p {
+.hero-letter p {
   font-size: 2.5rem;
   font-family: "Italianno", cursive;
   font-weight: 400;
@@ -230,7 +303,7 @@ footer h2 {
 .hero img:hover {
     scale: 125%;
 }
-.hero-text:hover h1 {
+.hero-letter:hover h1 {
   color: var(--color-secondary);
 }
 #events {
@@ -273,6 +346,7 @@ footer h2 {
   display: flex;
   scroll-snap-align: center;
   transition: var(--quick-transition);
+  justify-content: center;
 }
 .staff:hover {
   transform: var(--hover-transform);
@@ -283,7 +357,8 @@ footer h2 {
   border-radius: 50%;
   border: var(--border-thin);
   position: relative;
-  top: -15px;
+  background-color: hsla(33, 25%, 65%, .85);
+  top: -20px;
 }
 .staff .artist-bio {
   background-color: #111111c9; 
@@ -296,7 +371,7 @@ footer h2 {
   font-family: "Italianno", cursive;
   font-weight: 400;
   font-style: normal;  
-  font-size: 2rem; 
+  font-size: 2.25rem; 
   color: var(--color-active); 
   text-shadow: var(--text-shadow);
 }
