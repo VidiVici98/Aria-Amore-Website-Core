@@ -11,110 +11,102 @@
 </head>
 <body>
   <!--Header Embed Container-->
-  <div id="site-header-container"></div>
-
-
-    <h2 style="text-align: center; font-size: 2rem; background-color: #111111c9;  border: 2px groove #707070; border-radius: 10px; padding: 15px; margin-left: 10%; margin-right: 10%; margin-top: 15%; margin-bottom: 5%; text-shadow: 1px 1px #111111;">Book Your Next Event Now!</h2>
-
-    <section id="contact" class="flip-container">
-      <div class="flipper">
-          <!-- Front Side -->
-          <div class="front contact-card" style="background-color: #d6c5a7c9; padding: 25px; max-width: 800px; border: 2px groove #252525c9; border-radius: 25px;">
-              <div class="form-container">
-                  <form class="contact-form" id="flipForm" style="margin-left: 25px;">
-                      <input type="text" name="name" placeholder="Your Name" required>
-                      <input type="email" name="email" placeholder="Your Email" required>
-                      <input type="text" name="event-date" placeholder="Event Date">
-                      <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                      <button type="submit"><b>Send Inquiry</b></button>
-                  </form>
-              </div>
-              <div class="image-container">
-                  <img src="/assets/media/images/aria-amore-transparent.png" width="300px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
-              </div>
-          </div>
-  
-          <!-- Back Side -->
-          <div class="back contact-card" style="background-color: #d6c5a7; padding: 25px; max-width: 800px; border: 2px groove #252525c9; border-radius: 25px;">
-            <div class="image-container">
-              <img src="/assets/media/images/aria-amore-transparent.png" width="300px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
-          </div>
-          <div style="background-color: #252525c9; padding: 2%; border: 2px groove #252525c9; border-radius: 25px;">  
-            <h2 style="font-size: 2.5rem; font-family: italiano;">Thank You!</h2>
-            <img src="/assets/media/images/victorian-separator.svg" width="80%">
-              <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
-              <button onclick="flipBack()">Go Back</button>
-          </div>
-          </div>
+  <header id="site-header-container"></header>
+  <main>
+  <h2 style="text-align: center; font-size: 2rem; background-color: #111111c9;  border: 2px groove #707070; border-radius: 10px; padding: 15px; margin-left: 10%; margin-right: 10%; margin-top: 15%; margin-bottom: 5%; text-shadow: 1px 1px #111111;">Book Your Next Event Now!</h2>
+  <section id="contact" class="flip-container">
+    <div class="flipper">
+    <!-- Front Side -->
+      <div class="front contact-card" style="background-color: #d6c5a7c9; padding: 25px; max-width: 800px; border: 2px groove #252525c9; border-radius: 25px;">
+        <div class="form-container">
+          <form class="contact-form" id="flipForm" style="margin-left: 25px;">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="event-date" placeholder="Event Date">
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+            <button type="submit"><b>Send Inquiry</b></button>
+          </form>
+        </div>
+        <div class="image-container">
+          <img src="/assets/media/images/aria-amore-transparent.png" width="300px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
+        </div>
       </div>
+    <!-- Back Side -->
+      <div class="back contact-card" style="background-color: #d6c5a7; padding: 25px; max-width: 800px; border: 2px groove #252525c9; border-radius: 25px;">
+        <div class="image-container">
+          <img src="/assets/media/images/aria-amore-transparent.png" width="300px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
+        </div>
+        <div style="background-color: #252525c9; padding: 2%; border: 2px groove #252525c9; border-radius: 25px;">  
+          <h2 style="font-size: 2.5rem; font-family: italiano;">Thank You!</h2>
+          <img src="/assets/media/images/victorian-separator.svg" width="80%">
+          <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
+          <button onclick="flipBack()">Go Back</button>
+        </div>
+      </div>
+    </div>
   </section>
   <section id="contact" class="mobile-flip-container">
     <div class="mobile-flipper">
-        <!-- Front Side -->
-        <div class="front mobile-contact-card" style="background-color: #d6c5a7c9; padding: 15px; border: 2px groove #252525c9; border-radius: 25px;">
-          <div class="image-container">
-            <img src="/assets/media/images/aria-amore-transparent.png" width="200px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
+    <!-- Front Side -->
+      <div class="front mobile-contact-card" style="background-color: #d6c5a7c9; padding: 15px; border: 2px groove #252525c9; border-radius: 25px;">
+        <div class="image-container">
+          <img src="/assets/media/images/aria-amore-transparent.png" width="200px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
         </div>
-          <div id="mobile-form-container">
-                <form class="mobile-contact-form" id="flipForm"">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Your Email" required>
-                    <input type="text" name="event-date" placeholder="Event Date">
-                    <textarea name="message" placeholder="Message" rows="5" required></textarea>
-                    <button type="submit"><b>Send Inquiry</b></button>
-                </form>
-            </div>
+        <div id="mobile-form-container">
+          <form class="mobile-contact-form" id="flipForm"">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <input type="text" name="event-date" placeholder="Event Date">
+            <textarea name="message" placeholder="Message" rows="5" required></textarea>
+            <button type="submit"><b>Send Inquiry</b></button>
+          </form>
         </div>
-
-        <!-- Back Side -->
-        <div class="back mobile-contact-card" style="background-color: #d6c5a7; padding: 25px; border: 2px groove #252525c9; border-radius: 25px;">
-          <div class="image-container">
-            <img src="/assets/media/images/aria-amore-transparent.png" width="200px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
+      </div>
+    <!-- Back Side -->
+      <div class="back mobile-contact-card" style="background-color: #d6c5a7; padding: 25px; border: 2px groove #252525c9; border-radius: 25px;">
+        <div class="image-container">
+          <img src="/assets/media/images/aria-amore-transparent.png" width="200px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
         </div>
         <div style="background-color: #252525c9; padding: 2%; border: 2px groove #252525c9; border-radius: 25px;">  
           <h2 style="font-size: 2.5rem;">Thank You!</h2>
           <img src="/assets/media/images/victorian-separator.svg" width="80%">
-            <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
-            <button onclick="flipBack()">Go Back</button>
+          <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
+          <button onclick="flipBack()">Go Back</button>
         </div>
-        </div>
+      </div>
     </div>
-</section>
-
-
-
-    <section>    
-      <h2 style="text-align: center; font-size: 2rem; background-color: #111111c9;  border: 2px groove #707070; border-radius: 10px; padding: 15px; margin-left: 10%; margin-right: 10%; margin-top: 10%; margin-bottom: 10%; text-shadow: 1px 1px #111111;">Frequently Asked Questions</h2>
+  </section>
+  <section>    
+    <h2 style="text-align: center; font-size: 2rem; background-color: #111111c9;  border: 2px groove #707070; border-radius: 10px; padding: 15px; margin-left: 10%; margin-right: 10%; margin-top: 10%; margin-bottom: 10%; text-shadow: 1px 1px #111111;">Frequently Asked Questions</h2>
     <details>
       <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Cancellation / Refund Policy</b></summary>
-    <p style="text-align: left; margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
+        <p style="text-align: left; margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
     </details>
     <details>
-    <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Requesting Special Songs</b></summary>
-    <p style="text-align: left;margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
+      <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Requesting Special Songs</b></summary>
+        <p style="text-align: left;margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
    </details>
    <details>
-    <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Bundling Services</b></summary>
-    <p style="text-align: left; margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
+      <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Bundling Services</b></summary>
+        <p style="text-align: left; margin-left: 1%; max-width: 800px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
    </details>
    <details>
-    <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Getting A Quote</b></summary>
-    <p style="text-align: left; margin-left: 1%; max-width: 800px;; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
+      <summary style="text-align: left; margin-left: 2%; max-width: 600px; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><b>Getting A Quote</b></summary>
+        <p style="text-align: left; margin-left: 1%; max-width: 800px;; background-color: #d6c5a7; padding: 10px; border: 1px groove #111111c9;"><i>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</i> </p>
    </details>
-
-    </section>
-
-    <section>
+  </section>
+  <section>
     <div class="event-grid">
       <div class="event" style="max-width: 800px;">
         <img src="/assets/media/images/phone-icon.png" width="100px">
         <img src="/assets/media/images/email-icon.png" width="100px">
         <img src="/assets/media/images/message-icon.png" width="100px">
-        
         <h3>Contact Us Directly</h3>
         <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
       </div>
-      </section>
+    </div>
+  </section>
+  </main>
   <!--Footer Embed Container-->
   <footer id="site-footer-container"></footer>
   <!--Scripts-->  

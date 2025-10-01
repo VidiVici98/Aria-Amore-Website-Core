@@ -18,6 +18,14 @@ Global Variables
                 2px 6px 8px rgba(20, 25, 30, 0.25),
                 inset 0 1px 2px rgba(255, 255, 255, 0.25),
                 inset 0 -1px 3px rgba(0,0,0,0.4);
+  --envelope-inset: inset 0 1px 2px rgba(255,255,255,0.6),
+                    inset 0 -1px 2px rgba(0,0,0,0.1);
+  --envelope-background-gradient: repeating-radial-gradient(circle, 
+                                      rgba(0, 0, 0, 0.95) 0 0.5px,
+                                      transparent 0.5px 4px),
+                                  repeating-linear-gradient(50deg,
+                                      rgba(255, 255, 255, 0.95) 0 1px,
+                                      transparent 1px 4px);
 }
 /*=============================================
 Global Style Reset
@@ -93,6 +101,11 @@ table {
 Scoped Site Styles
 =============================================*/
 /*Header*/
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
 #menu-toggle {
   display: none; /* Hidden by default for desktop */
   font-size: 1.5rem;
@@ -232,12 +245,12 @@ footer h2 {
   height: 75%;
   background: var(--sepia-gradient);
   box-shadow: var(--box-shadow), 
-              inset 0 1px 2px rgba(255,255,255,0.6),
-              inset 0 -1px 2px rgba(0,0,0,0.1);
+              var(--envelope-inset);
   transform-origin: top;
   filter: brightness(.95);
   z-index: 2;
-  animation: flap-open 1.5s cubic-bezier(.55,.05,.35,1) forwards 2s;  clip-path: polygon(0 0, 50% 100%, 100% 0);
+  animation: flap-open 1.5s cubic-bezier(.55,.05,.35,1) forwards 2s;  
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
 }
 .envelope-flap::before {
   content: "";
@@ -247,14 +260,8 @@ footer h2 {
   z-index: 1; 
   mix-blend-mode: multiply;
   opacity: .8;
-  background-image:
-    repeating-radial-gradient(circle, 
-              rgba(0, 0, 0, 0.95) 0 0.5px,
-              transparent 0.5px 4px),
-    repeating-linear-gradient(35deg,
-              rgba(255, 255, 255, 0.95) 0 1px,
-              transparent 1px 4px),
-              linear-gradient(to bottom, 
+  background-image: var(--envelope-background-gradient),
+    linear-gradient(to bottom, 
               hsl(26, 61%, 89%, .5), 
               hsl(26, 42%, 84%, .5));
   background-size: 3px 3px, 100% 4px;
@@ -277,8 +284,7 @@ footer h2 {
   align-content: center;
   border-radius: 4px;
   box-shadow: var(--box-shadow), 
-              inset 0 1px 2px rgba(255,255,255,0.6),
-              inset 0 -1px 2px rgba(0,0,0,0.1);
+              var(--envelope-inset);
   z-index: 2;
   line-height: 3rem;
   filter: brightness(.95);
@@ -292,13 +298,7 @@ footer h2 {
   z-index: 1; 
   mix-blend-mode: multiply;
   opacity: .8;
-  background-image:
-    repeating-radial-gradient(circle, 
-              rgba(0, 0, 0, 0.95) 0 0.5px,
-              transparent 0.5px 4px),
-    repeating-linear-gradient(50deg,
-              rgba(255, 255, 255, 0.95) 0 1px,
-              transparent 1px 4px);
+  background-image: var(--envelope-background-gradient);
   background-size: 3px 3px, 100% 4px;
   transform: translateZ(0);
   filter: contrast(1.05) brightness(.98);
@@ -310,23 +310,14 @@ footer h2 {
 .envelope-body h1,
 .hero-letter h1 {
   font-size: 3.5rem;
-  text-shadow: var(--text-shadow);
+  font-weight: bold;
   color: #333;
 }
 .envelope-body h2,
 .hero-letter p {
   font-size: 2.5rem;
-  text-shadow: var(--text-shadow);
   color: #454545;
-}
-.hero .hero-icons {
-  width: 2.5rem;
-  margin-top: 30%;
-  padding: 5px;
-  position: relative;
-  transition: var(--quick-transition);
-  left: -43%;
-  bottom: -10%;
+  font-weight: bold;
 }
 .hero-letter {
   position: absolute;
@@ -334,14 +325,15 @@ footer h2 {
   width: 90%;
   height: 90%;
   background: var(--sepia-gradient);
-  padding: 20px;
+  padding: 3rem;
   border-radius: 4px;
   box-sizing: border-box;
+  filter: brightness(1.25);
   z-index: 1;
+  line-height: 3.5rem;
   transform: translateY(100%);
   box-shadow: var(--box-shadow), 
-              inset 0 1px 2px rgba(255,255,255,0.6),
-              inset 0 -1px 2px rgba(0,0,0,0.1);
+              var(--envelope-inset);
   animation: letter-pull 2.5s cubic-bezier(.55,.05,.35,1) forwards 2.5s;
 }
 @keyframes letter-pull {
@@ -359,13 +351,7 @@ footer h2 {
   z-index: 0; 
   mix-blend-mode: multiply;
   opacity: .6;
-  background-image:
-    repeating-radial-gradient(circle, 
-              rgba(0, 0, 0, 0.95) 0 0.5px,
-              transparent 0.5px 4px),
-    repeating-linear-gradient(65deg,
-              rgba(255, 255, 255, 0.95) 0 1px,
-              transparent 1px 4px);
+  background-image: var(--envelope-background-gradient);
   background-size: 3px 3px, 100% 4px;
   transform: translateZ(0);
   filter: contrast(1.05) brightness(.98);
@@ -373,10 +359,9 @@ footer h2 {
 .hero-letter h1 {
   font-size: 4rem;
   font-family: "Italianno", cursive;
-  font-weight: 400;
+  font-weight: bold;
   font-style: normal;  
   z-index: 1;
-  text-shadow: var(--text-shadow);
   transition: var(--quick-transition);
 }
 .hero-letter p {
@@ -384,15 +369,53 @@ footer h2 {
   font-family: "Italianno", cursive;
   font-weight: 400;
   font-style: normal;
-  text-shadow: var(--text-shadow);
 }
-.hero .hero-icons:hover {
+.hero-letter-footer {
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+.hero-letter-btn-wrapper {
+  position: relative;
+  width: 100%;
+}
+.hero-icons-wrapper {
+  position: relative;
+  width: 100%;
+}
+.hero-letter-btn {
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  color: #000;
+  font-size: 1.5rem;
+  transition: all .2s ease-in-out;
+  position: relative;
+  right: 0%;
+  bottom: 20%;
+}
+.hero-letter-btn:hover {
+  color: #454545;
+  font-weight: 600;
+}
+.hero-icons {
+  width: 30px;
+  padding: 5px;
+  position: relative;
+  left: -25%;
+  bottom: 0%;
+  transition: var(--quick-transition);
+}
+.hero-icons:hover {
     scale: 125%;
     transform: translateY(-4px);
 }
 #events {
   margin-top: 15%;
 }
+
 .event-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -464,6 +487,17 @@ footer h2 {
   color: var(--color-secondary);
 }
 /*Services Page*/
+#packages h2 {
+  font-size: 2rem; 
+  background-color: #111111c9;  
+  border: 2px groove #707070; 
+  border-radius: 10px; 
+  padding: 15px; 
+  margin-left: 10%; 
+  margin-right: 10%; 
+  text-shadow: 2px 2px #111111; 
+  font-size: 2.5rem;
+}
 .pricing-table {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -502,6 +536,8 @@ footer h2 {
   font-size: 1.5rem;
   font-weight: bold;
   margin: 25px 0;
+  color: #d6c5a7; 
+  text-shadow: 1px 1px #111111c9;
 }
 .features {
   list-style: none;
@@ -514,6 +550,36 @@ footer h2 {
 }
 .features li:last-child {
   border-bottom: none;
+}
+.quote {
+  background-color: #d6c5a7; 
+  width: 450px; 
+  padding: 5px; 
+  border-radius: 15px; 
+  border: 1px groove #252525c9;
+}
+.quote-items {
+  background-color: #111111c9; 
+  margin: 2%; 
+  padding: 5px; 
+  border-radius: 15px;
+}
+.quote h2 {
+  color: #ffffff; 
+  font-size: 2rem;
+}
+.quote h3 {
+  color: #ffffff; 
+  font-family: italiano; 
+  text-align: left; 
+  margin: 5%;
+}
+.quote .total {
+  color: #d6c5a7; 
+  font-family: italiano; 
+  text-align: left; 
+  margin-left: 10%; 
+  font-size: 2rem;
 }
 /*Artists Page*/
 .staff-card {
@@ -612,6 +678,7 @@ footer h2 {
 .mobile-flip-container {
   display: none;
 }
+#performers 
 /*Reusable & Unsorted Site Styles*/
 .btn {
   display: inline-block;
@@ -636,6 +703,12 @@ footer h2 {
 }
 .column {
   flex-direction: row;
+  display: flex; 
+  padding: 5%; 
+  margin-top: 100px;
+}
+.column h3 {
+  font-size: 2rem;
 }
 .social-icons {
   width: 2rem;
