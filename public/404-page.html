@@ -1,4 +1,4 @@
-              <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,42 +10,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <style>
-    /* Minimal, focused CSS for the provided HTML
-       Only keeps variables and rules that the markup actually uses:
-       body, .hero, .envelope-container, .hero-letter and its children,
-       responsive small-screen tweak, reduced-motion preference, and animations.
-    */
-
-    :root{
-      /* kept only the variables referenced below */
+    :root {
       --color-primary: #111;
-      --color-subdued: #bbb;
       --color-secondary: #fff;
       --color-active: #d6c5a7;
       --sepia-gradient: linear-gradient(to bottom right,
-                                 hsl(41, 32%, 62%, 1),
-                                 hsla(38, 36%, 75%, 1) 60%,
-                                 hsl(33, 41%, 71%, 1));
-      --box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
-                    2px 6px 8px rgba(20, 25, 30, 0.25);
+        hsl(41, 32%, 62%, 1),
+        hsla(38, 36%, 75%, 1) 60%,
+        hsl(33, 41%, 71%, 1));
+      --box-shadow: 0 1px 6px rgba(0,0,0,0.4),
+                    2px 6px 8px rgba(20,25,30,0.25);
       --envelope-inset: inset 0 1px 2px rgba(255,255,255,0.6),
                         inset 0 -1px 2px rgba(0,0,0,0.1);
-      --border-thin: 1px groove #333;
-      --quick-transition: all .3s ease;
-      --hover-transform: translateY(-4px);
       --text-shadow: 1px 2px 3px #111;
+      --hover-transform: translateY(-3px);
       --radius: 14px;
       --max-width: 980px;
     }
 
-    /* Reset box sizing */
     *, *::before, *::after { box-sizing: border-box; }
-
-    html, body { height: 100%; }
 
     body {
       margin: 0;
-      min-height: 100vh;
       font-family: Georgia, 'Times New Roman', Times, serif;
       color: var(--color-primary);
       background-image: url('/assets/media/images/parchment-background.webp');
@@ -54,82 +40,58 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 18px;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
     }
 
-    /* page container used earlier in templates (kept for potential global CSS overlaps) */
-    .page-wrap {
-      width: 100%;
-      max-width: var(--max-width);
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 48px;
-      align-items: center;
-    }
-
-    /* .hero is present in your HTML */
     .hero {
-      /* keep it simple so the envelope/letter centers */
       display: flex;
       align-items: center;
       justify-content: center;
       width: 100%;
     }
 
-    /* envelope container (holds the letter in your markup) */
     .envelope-container {
-      width: 420px;
-      height: 320px;
-      perspective: 1000px;
+      width: 100%;
+      max-width: 400px;
+      padding: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
     }
 
-    /* hero-letter — the visible content inside the envelope-container in your HTML */
     .hero-letter {
-      position: relative;
-      width: calc(88%); /* flexible width inside the container */
-      max-width: 360px;
-      min-height: 220px;
-      padding: 2.25rem 1.75rem;
-      border-radius: 6px;
+      width: 100%;
       background: var(--sepia-gradient);
       box-shadow: var(--box-shadow), var(--envelope-inset);
-      color: var(--color-primary);
+      border-radius: 6px;
+      padding: 2rem 1.5rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      /* start visually "inside" — CSS animation pulls it into view */
-      transform: translateY(100%);
-      animation: letter-pull 2.5s cubic-bezier(.55,.05,.35,1) forwards 2.5s;
     }
 
     .hero-letter h1 {
       font-family: "Italianno", cursive;
-      font-size: 2.6rem;
+      font-size: 2.4rem;
       color: var(--color-active);
-      margin: 0 0 6px 0;
+      margin: 0 0 10px 0;
       text-shadow: var(--text-shadow);
     }
 
     .hero-letter p {
-      margin: 0 0 14px 0;
+      margin: 0 0 16px 0;
       font-family: "Italianno", cursive;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       color: #222;
       font-style: italic;
-      text-align: center;
     }
 
-    /* footer area inside the letter (buttons/links) */
     .hero-letter-footer {
-      margin-top: 12px;
+      margin-top: 8px;
       display: flex;
-      gap: 12px;
-      align-items: center;
       justify-content: center;
     }
 
@@ -138,79 +100,45 @@
       border: none;
       color: var(--color-primary);
       font-family: "Italianno", cursive;
-      font-size: 1.05rem;
+      font-size: 1.1rem;
       text-decoration: underline;
       cursor: pointer;
-      transition: var(--quick-transition);
+      transition: all 0.3s ease;
     }
+
     .hero-letter-btn:hover {
       color: var(--color-active);
       transform: var(--hover-transform);
     }
 
-    /* small responsive adjustments used by your page */
-    @media (max-width: 900px){
-      .page-wrap { grid-template-columns: 1fr; }
-      .envelope-container { order: -1; width: 100%; display:flex; justify-content:center; }
-      .hero-letter { left: 8%; width: 84%; max-width: none; }
-    }
-
-    /* Respect reduced motion preference */
-    @media (prefers-reduced-motion: reduce) {
+    @media (max-width: 600px) {
       .hero-letter {
-        animation: none !important;
-        transition: none !important;
-        transform: none !important;
+        padding: 1.5rem 1rem;
       }
-    }
-
-    /* Keyframe used by the hero-letter animation (kept because your inline CSS referenced it) */
-    @keyframes letter-pull {
-      0%   { transform: translateY(100%) rotateZ(-2deg); }   /* inside envelope */
-      10%  { transform: translateY(98%) rotateZ(0deg); }    /* slight anticipation */
-      50%  { transform: translateY(85%) rotateZ(1deg); }    /* letter moves slightly */
-      70%  { transform: translateY(90%) rotateZ(0deg); }    /* stays briefly */
-      100% { transform: translateY(98%) rotateZ(0deg); }    /* final resting position */
+      .hero-letter h1 {
+        font-size: 2rem;
+      }
+      .hero-letter p {
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <!--Header Embed Container-->
   <header id="site-header-container"></header>
   <main>
-  <!--Hero-->    
-  <section class="hero">
-    <div class="envelope-container">
-      <div class="hero-letter">
-        <h1>Looks like we missed a beat</h1>
-        <p>This page must have followed a sweeter melody — we’ll bring you back to the ensemble.</p>
-        <div class="hero-letter-footer">
-          <div class="hero-letter-btn-wrapper">
-            <a class="hero-letter-btn" href="index.html" class="btn">Return to home</a>
-          </div>          
+    <section class="hero">
+      <div class="envelope-container">
+        <div class="hero-letter">
+          <h1>Looks like we missed a beat</h1>
+          <p>This page must have followed a sweeter melody — we’ll bring you back to the ensemble.</p>
+          <div class="hero-letter-footer">
+            <a class="hero-letter-btn" href="index.html">Return to home</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
   </main>
-  <!--Footer Embed Container-->
   <footer id="site-footer-container"></footer>
-  <!--Scripts-->  
-  <script src="/assets/js/main.js" defer></script>
-<script>
-    // Play sequence on page load (only when animations are allowed)
-    (function(){
-      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (prefersReduced) return; // don't do JS sequencing if user prefers reduced motion
-      // The CSS already contains animation declarations with delays for the flap and letter.
-      // We include a small optional envelope-out effect (subtle float) after the letter finishes.
-      const envelope = document.getElementById('envelope');
-      // After the letter animation completes (~2.5s delay + 2.5s duration = ~5s), nudge envelope (envelope-out)
-      const totalDelayMs = 2500 + 2500 + 300; // matches CSS delays + tiny buffer
-      setTimeout(() => {
-        if (envelope) envelope.style.animation = 'envelope-out 1.6s cubic-bezier(.55,.05,.35,1) forwards';
-      }, totalDelayMs);
-    })();
-  </script>
-  </body>
+</body>
 </html>
