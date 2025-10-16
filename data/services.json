@@ -79,7 +79,7 @@
                        }
                     ]
         },
-        { "type": "package",
+        { "type": "add-ons",
           "content": [
                        {
                            "type": "heading-2",
