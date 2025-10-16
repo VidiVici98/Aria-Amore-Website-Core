@@ -51,7 +51,7 @@
         },
         {
             "type": "paragraph",
-            "content": ""
+            "content": "A breathtaking performance for an unforgettable wedding"
         },
         {
             "type": "starting-price",
@@ -59,11 +59,12 @@
         },
         {
             "type": "list",
-            "items": [""",
-                      """,
-                      """,
-                      """,
-                      """
+            "items": ["A trio or quartet of professional opera singers",
+                      "Performance of up to one hour (ceremony, cocktail hour, or dinner entertainment)",
+                      "Custom song selection, including special requests (if within vocal range)",
+                      "Virtual or in-person consultation to plan the performance",
+                      "Professional accompaniment (pianist or instrumental track) included",
+                      "Up to 75 miles of travel included"
                      ]
         },
         {
@@ -71,40 +72,11 @@
             "content": "Add-Ons"
         },
         {
-            "type": "paragraph",
-            "content": ""
-        },
-        {
-            "type": "paragraph",
-            "content": ""
-        },
-        {
-            "type": "paragraph",
-            "content": ""
-        },
-        {
-            "type": "heading-2",
-            "content": ""
-        },
-        {
-            "type": "paragraph",
-            "content": ""
-        },
-        {
-            "type": "paragraph",
-            "content": ""
-        },
-        {
-            "type": "paragraph",
-            "content": ""
-        },
-        {
-            "type": "heading-2",
-            "content": ""
-        },
-        {
-            "type": "paragraph",
-            "content": ""
-        }                                                
+            "type": "list",
+            "items": ["Additional singer: $400 per performer",
+                      "Extended performance time: $250 per additional 30 minutes",
+                      "Special song request (outside our repertoire): $100 per piece",
+                      "Professional pianist: $500"]
+        }                                          
     ]
 }
