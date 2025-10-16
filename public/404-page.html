@@ -1,65 +1,63 @@
-<!DOCTYPE html>
+              <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Make Your Next Event Unforgettable With Live Opera Performed Just For You.">
-  <title>Aria Amore</title>
+  <meta name="description" content="Looks like we missed a beat — this page couldn't be found. Return to Aria Amore.">
+  <title>Aria Amore | Page Not Found</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <style>
-    /* -------------------------
-       Root variables (site-like)
-       Reusing values consistent with your main CSS
-    --------------------------*/
+    /* Minimal, focused CSS for the provided HTML
+       Only keeps variables and rules that the markup actually uses:
+       body, .hero, .envelope-container, .hero-letter and its children,
+       responsive small-screen tweak, reduced-motion preference, and animations.
+    */
+
     :root{
-      --border-thin: 1px groove #333;
+      /* kept only the variables referenced below */
       --color-primary: #111;
       --color-subdued: #bbb;
       --color-secondary: #fff;
       --color-active: #d6c5a7;
-      --text-shadow: 1px 2px 3px #111;
-      --quick-transition: all .3s ease;
-      --hover-transform: translateY(-4px);
       --sepia-gradient: linear-gradient(to bottom right,
-                        hsl(41, 32%, 62%, 1),
-                        hsla(38, 36%, 75%, 1) 60%,
-                        hsl(33, 41%, 71%, 1));
+                                 hsl(41, 32%, 62%, 1),
+                                 hsla(38, 36%, 75%, 1) 60%,
+                                 hsl(33, 41%, 71%, 1));
       --box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
-                    2px 6px 8px rgba(20, 25, 30, 0.25),
-                    inset 0 1px 2px rgba(255, 255, 255, 0.25),
-                    inset 0 -1px 3px rgba(0,0,0,0.4);
+                    2px 6px 8px rgba(20, 25, 30, 0.25);
       --envelope-inset: inset 0 1px 2px rgba(255,255,255,0.6),
                         inset 0 -1px 2px rgba(0,0,0,0.1);
-      --envelope-background-gradient: repeating-radial-gradient(circle, 
-                                          rgba(0, 0, 0, 0.95) 0 0.5px,
-                                          transparent 0.5px 4px),
-                                      repeating-linear-gradient(50deg,
-                                          rgba(255, 255, 255, 0.95) 0 1px,
-                                          transparent 1px 4px);
-      --max-width: 980px;
+      --border-thin: 1px groove #333;
+      --quick-transition: all .3s ease;
+      --hover-transform: translateY(-4px);
+      --text-shadow: 1px 2px 3px #111;
       --radius: 14px;
+      --max-width: 980px;
     }
 
-    /* Basic page reset & layout */
-    *{box-sizing:border-box}
-    html,body{height:100%}
+    /* Reset box sizing */
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html, body { height: 100%; }
+
     body {
-      margin:0;
-      min-height:100vh;
+      margin: 0;
+      min-height: 100vh;
       font-family: Georgia, 'Times New Roman', Times, serif;
-      color:var(--color-primary);
+      color: var(--color-primary);
       background-image: url('/assets/media/images/parchment-background.webp');
       background-size: cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 48px 18px;
     }
 
+    /* page container used earlier in templates (kept for potential global CSS overlaps) */
     .page-wrap {
       width: 100%;
       max-width: var(--max-width);
@@ -69,181 +67,44 @@
       align-items: center;
     }
 
-    @media (max-width: 900px){
-      .page-wrap { grid-template-columns: 1fr; gap: 28px; padding: 24px; }
+    /* .hero is present in your HTML */
+    .hero {
+      /* keep it simple so the envelope/letter centers */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
     }
 
-    /* Content card */
-    .card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.98));
-      border-radius: var(--radius);
-      padding: 36px;
-      box-shadow: var(--box-shadow);
-      color: var(--color-primary);
-    }
-
-    .eyebrow { font-style: italic; color: var(--color-subdued); font-weight:600; margin-bottom:8px; }
-
-    .headline {
-      font-family: "Italianno", cursive;
-      font-size: 2.1rem;
-      margin: 0 0 8px 0;
-      color: var(--color-active);
-      text-shadow: var(--text-shadow);
-    }
-
-    .lead {
-      color: #333;
-      font-size: 1.05rem;
-      margin-bottom: 16px;
-      font-style: italic;
-    }
-
-    .actions { display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-
-    .btn {
-      display:inline-block;
-      padding:10px 18px;
-      border-radius:10px;
-      background: var(--color-primary);
-      color: var(--color-secondary);
-      text-decoration:none;
-      font-family: "Italianno", cursive;
-      font-size:1rem;
-      border: var(--border-thin);
-      box-shadow: var(--box-shadow);
-    }
-    .btn:hover { color: var(--color-active); transform: var(--hover-transform); }
-
-    /* ------------------------------------------------------------------
-       Envelope / Hero: All the pieces present (flap, flap::before, body, body::before, hero-letter)
-       Animations intentionally use the same keyframe names as your main CSS
-       ------------------------------------------------------------------*/
-
-    .envelope-wrap {
+    /* envelope container (holds the letter in your markup) */
+    .envelope-container {
       width: 420px;
       height: 320px;
       perspective: 1000px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
-    .envelope {
-      position: relative;
-      width: 88%;
-      max-width: 360px;
-      height: 68%;
-      min-height: 220px;
-      transform-style: preserve-3d;
-      /* we won't animate transform on the container itself here
-         -- the keyframe `envelope-out` will be available if you want to trigger extra movement */
-      border-radius: 6px;
-      overflow: visible;
-    }
-
-    /* envelope flap (top triangle-like) */
-    .envelope-flap {
-      position: absolute;
-      top: 8%;
-      left: 0;
-      width: 100%;
-      height: 70%;
-      background: var(--sepia-gradient);
-      box-shadow: var(--box-shadow), var(--envelope-inset);
-      transform-origin: top;
-      z-index: 6;
-      clip-path: polygon(0 0, 50% 100%, 100% 0);
-      /* animation plays on load (delayed) */
-      animation: flap-open 1.5s cubic-bezier(.55,.05,.35,1) forwards 1.8s;
-      filter: brightness(.98);
-    }
-
-    /* decorative overlay for flap (texture/tint) */
-    .envelope-flap::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      mix-blend-mode: multiply;
-      opacity: .85;
-      background-image: var(--envelope-background-gradient),
-                        linear-gradient(to bottom, hsl(26, 61%, 89%, .5), hsl(26, 42%, 84%, .5));
-      background-size: 3px 3px, 100% 4px;
-      transform: translateZ(0);
-    }
-
-    /* envelope body beneath flap */
-    .envelope-body {
-      position: absolute;
-      bottom: -12%;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: var(--sepia-gradient);
-      border-radius: 4px;
-      box-shadow: var(--box-shadow), var(--envelope-inset);
-      z-index: 4;
-      overflow: hidden;
-      filter: brightness(.97);
-      /* no animation here for basic view — hero-letter animates above it */
-    }
-
-    /* texture overlay for body */
-    .envelope-body::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      pointer-events: none;
-      mix-blend-mode: multiply;
-      opacity: .8;
-      background-image: var(--envelope-background-gradient);
-      background-size: 3px 3px, 100% 4px;
-      transform: translateZ(0);
-    }
-
-    /* inside text on envelope-body when visible */
-    .envelope-body > * {
-      position: relative;
-      z-index: 2;
-      padding: 18px 22px;
-      text-align: center;
-    }
-
-    .envelope-body h2 {
-      font-family: "Italianno", cursive;
-      font-size: 1.6rem;
-      margin: 8px 0;
-      color: #333;
-      text-shadow: var(--text-shadow);
-    }
-
-    .envelope-body p {
-      margin: 6px 0;
-      color: #333;
-      font-style: italic;
-    }
-
-    /* the letter that pulls out (hero-letter) */
+    /* hero-letter — the visible content inside the envelope-container in your HTML */
     .hero-letter {
-      position: absolute;
-      bottom: 85%;
-      left: 6%;
-      width: 88%;
-      height: 92%;
-      background: var(--sepia-gradient);
+      position: relative;
+      width: calc(88%); /* flexible width inside the container */
+      max-width: 360px;
+      min-height: 220px;
       padding: 2.25rem 1.75rem;
       border-radius: 6px;
+      background: var(--sepia-gradient);
       box-shadow: var(--box-shadow), var(--envelope-inset);
-      transform: translateY(100%); /* start hidden inside envelope */
-      z-index: 8;
+      color: var(--color-primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      /* start visually "inside" — CSS animation pulls it into view */
+      transform: translateY(100%);
       animation: letter-pull 2.5s cubic-bezier(.55,.05,.35,1) forwards 2.5s;
-      display:flex;
-      flex-direction:column;
-      align-items:center;
-      justify-content:center;
     }
 
     .hero-letter h1 {
@@ -253,21 +114,23 @@
       margin: 0 0 6px 0;
       text-shadow: var(--text-shadow);
     }
+
     .hero-letter p {
       margin: 0 0 14px 0;
       font-family: "Italianno", cursive;
       font-size: 1.05rem;
       color: #222;
       font-style: italic;
-      text-align:center;
+      text-align: center;
     }
 
+    /* footer area inside the letter (buttons/links) */
     .hero-letter-footer {
       margin-top: 12px;
-      display:flex;
-      gap:12px;
-      align-items:center;
-      justify-content:center;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      justify-content: center;
     }
 
     .hero-letter-btn {
@@ -280,55 +143,36 @@
       cursor: pointer;
       transition: var(--quick-transition);
     }
-    .hero-letter-btn:hover { color: var(--color-active); transform: var(--hover-transform); }
-
-    /* ------------------------
-       Keyframes (same names as your original CSS)
-       flap-open, letter-pull, envelope-out
-       ------------------------*/
-    @keyframes flap-open {
-      0%   { transform: rotateX(0deg); }
-      15%  { transform: rotateX(-15deg); }   
-      80%  { transform: rotateX(-170deg); }  
-      90%  { transform: rotateX(-165deg); }  
-      100% { transform: rotateX(-180deg); }
+    .hero-letter-btn:hover {
+      color: var(--color-active);
+      transform: var(--hover-transform);
     }
 
-    @keyframes letter-pull {
-      0%   { transform: translateY(100%) rotateZ(-2deg); }   /* inside envelope */
-      10%  { transform: translateY(98%) rotateZ(0deg); }    /* slight anticipation */
-      50%  { transform: translateY(85%) rotateZ(1deg); }    /* letter moves slightly as flap opens */
-      70%  { transform: translateY(90%) rotateZ(0deg); }    /* stays behind flap while envelope moves */
-      100% { transform: translateY(98%) rotateZ(0deg); }    /* final resting position */
-    }
-
-    @keyframes envelope-out {
-      0%   { transform: translateY(0%) rotateZ(0deg); }
-      10%  { transform: translateY(-5%) rotateZ(-2deg); }
-      30%  { transform: translateY(25%) rotateZ(3deg); }
-      70%  { transform: translateY(180%) rotateZ(8deg); }
-      90%  { transform: translateY(200%) rotateZ(10deg); }
-      100% { transform: translateY(190%) rotateZ(9deg); }
-    }
-
-    /* small responsive adjustments */
-    @media (max-width:900px){
+    /* small responsive adjustments used by your page */
+    @media (max-width: 900px){
       .page-wrap { grid-template-columns: 1fr; }
-      .envelope-wrap { order: -1; width: 100%; display:flex; justify-content:center; }
-      .card { order: 2; }
-      .hero-letter { left: 8%; width:84% }
+      .envelope-container { order: -1; width: 100%; display:flex; justify-content:center; }
+      .hero-letter { left: 8%; width: 84%; max-width: none; }
     }
 
-    /* Respect reduced motion */
+    /* Respect reduced motion preference */
     @media (prefers-reduced-motion: reduce) {
-      .envelope-flap, .hero-letter, .sparkles {
+      .hero-letter {
         animation: none !important;
         transition: none !important;
+        transform: none !important;
       }
     }
 
+    /* Keyframe used by the hero-letter animation (kept because your inline CSS referenced it) */
+    @keyframes letter-pull {
+      0%   { transform: translateY(100%) rotateZ(-2deg); }   /* inside envelope */
+      10%  { transform: translateY(98%) rotateZ(0deg); }    /* slight anticipation */
+      50%  { transform: translateY(85%) rotateZ(1deg); }    /* letter moves slightly */
+      70%  { transform: translateY(90%) rotateZ(0deg); }    /* stays briefly */
+      100% { transform: translateY(98%) rotateZ(0deg); }    /* final resting position */
+    }
   </style>
-
 </head>
 <body>
   <!--Header Embed Container-->
@@ -337,25 +181,12 @@
   <!--Hero-->    
   <section class="hero">
     <div class="envelope-container">
-      <div class="envelope">
-        <div class="envelope-flap"></div>
-        <div class="envelope-body">
-          <h1>Aria Amore</h1>
-          <img src="/assets/media/images/victorian-separator.svg" width="60%" height="25px" style="padding-top: 1rem; filter: opacity(.6);">
-          <h2>Cordially Invite You To The Experience Of A Lifetime</h2>
-        </div>
-      </div>
       <div class="hero-letter">
-        <h1>More Than Just Entertainment</h1>
-        <p>Make Your Next Event Unforgettable With Live Opera Performed Just For You.</p>
+        <h1>Looks like we missed a beat</h1>
+        <p>This page must have followed a sweeter melody — we’ll bring you back to the ensemble.</p>
         <div class="hero-letter-footer">
-          <div class="hero-icons-wrapper">
-            <img class="hero-icons" src="/assets/media/images/tiktok-icon.svg">
-            <img class="hero-icons" src="/assets/media/images/instagram-icon.svg">
-            <img class="hero-icons" src="/assets/media/images/share-icon.svg">
-          </div>
           <div class="hero-letter-btn-wrapper">
-            <a class="hero-letter-btn" href="contact.html" class="btn">Reserve Your Date Today!</a>
+            <a class="hero-letter-btn" href="index.html" class="btn">Return to home</a>
           </div>          
         </div>
       </div>
@@ -371,17 +202,15 @@
     (function(){
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReduced) return; // don't do JS sequencing if user prefers reduced motion
-
       // The CSS already contains animation declarations with delays for the flap and letter.
       // We include a small optional envelope-out effect (subtle float) after the letter finishes.
       const envelope = document.getElementById('envelope');
       // After the letter animation completes (~2.5s delay + 2.5s duration = ~5s), nudge envelope (envelope-out)
       const totalDelayMs = 2500 + 2500 + 300; // matches CSS delays + tiny buffer
       setTimeout(() => {
-        envelope.style.animation = 'envelope-out 1.6s cubic-bezier(.55,.05,.35,1) forwards';
+        if (envelope) envelope.style.animation = 'envelope-out 1.6s cubic-bezier(.55,.05,.35,1) forwards';
       }, totalDelayMs);
     })();
   </script>
-
   </body>
 </html>
