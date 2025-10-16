@@ -1,0 +1,88 @@
+{
+  "sections": [
+    {
+      "type": "heading-2",
+      "content": "Deposit and Payment Terms"
+    },
+    {
+      "type": "list",
+      "items": [
+        "A non-refundable deposit of 50% of the total booking fee is required to secure the date and performers.",
+        "The remaining balance must be paid in full 14 days prior to the event date.",
+        "Bookings made within 14 days of the event must be paid in full at the time of booking."
+      ]
+    },
+    {
+      "type": "heading-2",
+      "content": "Refund Policy"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Cancellations made more than 30 days before the event will be eligible for a refund of any payments made beyond the non-refundable deposit.",
+        "Cancellations made within 30 days of the event will not be eligible for a refund."
+      ]
+    },
+    {
+      "type": "heading-2",
+      "content": "Rescheduling Policy"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Rescheduling requests must be made at least 21 days in advance and are subject to performer availability.",
+        "If rescheduling is not possible, the booking will be treated as a cancellation, and the refund policy will apply."
+      ]
+    },
+    {
+      "type": "heading-2",
+      "content": "Force Majeure"
+    },
+    {
+      "type": "paragraph",
+      "content": "If the event is canceled or postponed due to unforeseen circumstances (e.g., natural disasters, pandemic restrictions), we will work with the client to reschedule the performance. Refunds will not be issued, but payments may be applied to a future booking within 6 months."
+    },
+    {
+      "type": "heading-2",
+      "content": "Travel Considerations"
+    },
+    {
+      "type": "list",
+      "items": [
+        "For events outside a 50-mile radius, additional travel and accommodation fees may apply, and these must be paid along with the final balance."
+      ]
+    },
+    {
+      "type": "heading-2",
+      "content": "Performance Conditions"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Adequate performance space, lighting, and sound equipment (if required) must be provided by the client or the venue.",
+        "A detailed program and any special requests must be finalized no later than 14 days before the event."
+      ]
+    },
+    {
+      "type": "heading-2",
+      "content": "Late Payments"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Payments not received by the due date may result in a cancellation of the booking, with no refund of the deposit."
+      ]
+    },
+    {
+      "type": "heading-2",
+      "content": "Changes to Booking"
+    },
+    {
+      "type": "list",
+      "items": [
+        "Any changes to the booking (e.g., repertoire adjustments, time changes) must be requested at least 14 days in advance.",
+        "Significant changes may incur additional fees."
+      ]
+    }
+  ]
+}
