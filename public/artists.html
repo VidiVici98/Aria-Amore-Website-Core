@@ -1,233 +1,696 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Meet the ensemble behind Aria Amore — the artists who bring romance to life through music." />
-  <title>Aria Amore | Our Artists</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --color-primary: #111;
-      --color-secondary: #fff;
-      --color-active: #d6c5a7;
-      --color-muted: #555;
-      --sepia-gradient: linear-gradient(to bottom right,
-        hsl(41, 32%, 62%, 1),
-        hsla(38, 36%, 75%, 1) 60%,
-        hsl(33, 41%, 71%, 1));
-      --text-shadow: 1px 2px 3px rgba(0,0,0,0.6);
-      --box-shadow: 0 2px 8px rgba(0,0,0,0.3),
-                    inset 0 1px 2px rgba(255,255,255,0.25);
-      --radius: 10px;
-      --hover-transform: translateY(-4px);
-      --transition: all .35s ease;
-      --max-width: 1200px;
-    }
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Aria Amore — Our Artists</title>
+<meta name="description" content="Meet the Aria Amore ensemble. Click to play audio previews and read artist bios." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 
-    *, *::before, *::after { box-sizing: border-box; }
+<style>
+/* ---------------------------
+   Design tokens / root vars
+   --------------------------- */
+:root{
+  --max-width: 1200px;
+  --page-pad: 28px;
+  --bg: #fbf7f1;
+  --paper: url('/assets/media/images/parchment-background.webp');
+  --accent: #d6c5a7;         /* gold/rose */
+  --muted: #6b6b6b;
+  --text: #111;
+  --card-radius: 12px;
+  --card-pad: 22px;
+  --card-shadow: 0 6px 22px rgba(18,18,18,0.14), inset 0 1px 2px rgba(255,255,255,0.2);
+  --transition: all .32s ease;
+  --wave-color: rgba(214,197,167,0.95);
+  --wave-dim: rgba(214,197,167,0.45);
+  --font-script: 'Italianno', cursive;
+}
 
-    body {
-      margin: 0;
-      font-family: Georgia, 'Times New Roman', Times, serif;
-      color: var(--color-primary);
-      background-image: url('/assets/media/images/parchment-background.webp');
-      background-size: cover;
-      background-position: center;
-      padding: 48px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+/* Baseline */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-image: var(--paper);
+  background-size: cover;
+  background-position: center;
+  color:var(--text);
+  padding: var(--page-pad);
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+}
 
-    header, footer {
-      width: 100%;
-      max-width: var(--max-width);
-      text-align: center;
-      margin-bottom: 36px;
-    }
+/* Page container */
+.container{
+  width:100%;
+  max-width: var(--max-width);
+  margin: 0 auto 48px;
+}
 
-    h1.page-title {
-      font-family: "Italianno", cursive;
-      font-size: 3rem;
-      color: var(--color-active);
-      text-shadow: var(--text-shadow);
-      margin-bottom: 8px;
-    }
+/* Header */
+.site-header{
+  text-align:center;
+  margin-bottom: 28px;
+}
+.site-title{
+  font-family: var(--font-script);
+  font-size: clamp(2.1rem, 3.5vw, 3.2rem);
+  color:var(--accent);
+  margin:0;
+  letter-spacing: .01em;
+  text-shadow: 1px 2px 3px rgba(0,0,0,0.12);
+}
+.site-sub{
+  margin-top:8px;
+  color:var(--muted);
+  font-style: italic;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+}
 
-    p.page-intro {
-      font-style: italic;
-      color: var(--color-muted);
-      font-size: 1.1rem;
-      margin-bottom: 42px;
-      text-align: center;
-    }
+/* Grid of artists */
+.artists-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
+  gap: 26px;
+}
 
-    .artists-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-      gap: 32px;
-      width: 100%;
-      max-width: var(--max-width);
-    }
+/* Artist card */
+.artist{
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(250,244,236,0.96));
+  border-radius: var(--card-radius);
+  padding: var(--card-pad);
+  box-shadow: var(--card-shadow);
+  display:flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: var(--transition);
+  position: relative;
+  overflow: visible;
+}
 
-    .artist-card {
-      background: var(--sepia-gradient);
-      border-radius: var(--radius);
-      box-shadow: var(--box-shadow);
-      padding: 24px 20px 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      transition: var(--transition);
-    }
+.artist:focus-within,
+.artist:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 14px 36px rgba(18,18,18,0.16);
+}
 
-    .artist-card:hover {
-      transform: var(--hover-transform);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-    }
+/* Portrait column */
+.artist-portrait{
+  flex: 0 0 140px;
+  width: 140px;
+  height: 140px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  background: #f0ebe4;
+}
+.artist-portrait img{
+  width:100%; height:100%; object-fit:cover; display:block;
+}
 
-    .artist-photo {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      object-fit: cover;
-      box-shadow: var(--box-shadow);
-      margin-bottom: 18px;
-    }
+/* Info column */
+.artist-body{
+  flex: 1 1 auto;
+  min-width: 0;
+  display:flex;
+  flex-direction:column;
+  gap: 8px;
+}
+.artist-head{
+  display:flex;
+  align-items: baseline;
+  gap: 12px;
+  justify-content: space-between;
+}
+.artist-meta{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  min-width: 0;
+}
+.artist-name{
+  font-family: var(--font-script);
+  font-size: 1.45rem;
+  color: var(--accent);
+  margin:0;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.08);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.artist-role{
+  margin:0;
+  font-style: italic;
+  color: var(--muted);
+  font-size: .95rem;
+}
 
-    .artist-name {
-      font-family: "Italianno", cursive;
-      font-size: 2rem;
-      color: var(--color-active);
-      text-shadow: var(--text-shadow);
-      margin-bottom: 4px;
-    }
+/* Bio: collapsed by default with read-more */
+.artist-bio {
+  font-size: .98rem;
+  color: #222;
+  line-height: 1.5;
+  max-height: 3.4rem; /* ~2 lines collapsed */
+  overflow: hidden;
+  transition: max-height .36s ease, padding .28s ease;
+  padding-bottom: 0;
+}
+.artist-bio.open { max-height: 999px; padding-bottom: 8px }
 
-    .artist-role {
-      font-style: italic;
-      color: #333;
-      font-size: 1rem;
-      margin-bottom: 12px;
-    }
+/* read-more control */
+.read-more {
+  background: transparent;
+  border: none;
+  color: var(--accent);
+  font-family: var(--font-script);
+  font-size: .98rem;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+  align-self: flex-start;
+  transition: color .2s ease;
+}
+.read-more:hover{ color: #bfa77f }
 
-    .artist-bio {
-      font-size: 0.95rem;
-      line-height: 1.5;
-      color: var(--color-primary);
-      margin-bottom: 18px;
-      padding: 0 10px;
-    }
+/* Audio area */
+.audio-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  margin-top:6px;
+  align-items:flex-start;
+}
 
-    .audio-preview {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-    }
+/* Each audio item: title + controls */
+.audio-item{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  width:100%;
+}
+.track-info{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width: 0;
+}
+.track-title{
+  font-family: var(--font-script);
+  font-size: 1rem;
+  margin:0;
+  color: #1b1b1b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.track-sub{
+  font-size: .85rem;
+  color: var(--muted);
+  margin:0;
+}
 
-    .audio-preview button {
-      font-family: "Italianno", cursive;
-      font-size: 1.1rem;
-      color: var(--color-primary);
-      background: transparent;
-      border: 1px solid var(--color-active);
-      border-radius: 20px;
-      padding: 6px 16px;
-      cursor: pointer;
-      transition: var(--transition);
-    }
+/* Play button: soft glowing when hovered or active */
+.play-btn{
+  display:inline-grid;
+  place-items:center;
+  width:46px;
+  height:46px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.06);
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(240,235,224,0.95));
+  cursor: pointer;
+  transition: box-shadow .22s ease, transform .18s ease, background .18s ease;
+  flex:0 0 46px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.06);
+}
+.play-btn:focus { outline: 3px solid rgba(214,197,167,0.18) }
 
-    .audio-preview button:hover {
-      background: var(--color-active);
-      color: var(--color-secondary);
-      transform: var(--hover-transform);
-    }
+/* glowing state */
+.play-btn.glow{
+  box-shadow: 0 8px 28px rgba(214,197,167,0.18), 0 2px 6px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  background: linear-gradient(180deg, rgba(246,241,232,1), rgba(233,221,195,1));
+}
 
-    audio {
-      width: 100%;
-      max-width: 240px;
-      outline: none;
-      border-radius: 6px;
-      box-shadow: var(--box-shadow);
-    }
+/* play icon (simple triangle) */
+.play-icon{
+  width: 0; height: 0;
+  border-left: 11px solid #222;
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  margin-left: 2px;
+}
+.play-btn.glow .play-icon{ border-left-color: #fff }
 
-    footer {
-      margin-top: 64px;
-      font-style: italic;
-      color: var(--color-muted);
-      font-size: 0.9rem;
-    }
+/* pause icon (two vertical bars) */
+.pause-icon{
+  width:12px; height:14px; display:none;
+  position:relative;
+}
+.pause-icon span{
+  display:inline-block;
+  width:3px;
+  height:100%;
+  background:#222;
+  margin:0 2px;
+}
+.play-btn.playing .play-icon{ display:none }
+.play-btn.playing .pause-icon{ display:inline-block }
 
-    @media (max-width: 600px) {
-      h1.page-title { font-size: 2.4rem; }
-      p.page-intro { font-size: 1rem; margin-bottom: 24px; }
-      .artist-card { padding: 20px 16px; }
-      .artist-name { font-size: 1.8rem; }
-    }
-  </style>
+/* Minimal waveform bars (gold pulse) */
+.waveform{
+  display:inline-grid;
+  grid-auto-flow: column;
+  gap:4px;
+  align-items:end;
+  height:28px;
+  width:78px;
+  margin-left:6px;
+  opacity: .9;
+}
+.wavebar{
+  width:6px;
+  background: var(--wave-dim);
+  border-radius: 3px;
+  height:10px;
+  transform-origin: bottom center;
+  transition: transform .18s ease, background .18s ease;
+}
+
+/* Hover: small pulse */
+.play-btn:hover + .waveform .wavebar,
+.play-btn:focus + .waveform .wavebar{
+  transform: scaleY(1.6);
+  background: var(--wave-color);
+}
+
+/* When track is playing — animate via .playing on parent .audio-item */
+.audio-item.playing .wavebar{
+  animation: wave 900ms linear infinite;
+  background: var(--wave-color);
+}
+.wavebar:nth-child(2){ animation-delay: 100ms }
+.wavebar:nth-child(3){ animation-delay: 220ms }
+.wavebar:nth-child(4){ animation-delay: 340ms }
+.wavebar:nth-child(5){ animation-delay: 460ms }
+
+@keyframes wave{
+  0%{ transform: scaleY(.3) }
+  20%{ transform: scaleY(1.0) }
+  40%{ transform: scaleY(.4) }
+  60%{ transform: scaleY(1.2) }
+  80%{ transform: scaleY(.55) }
+  100%{ transform: scaleY(.3) }
+}
+
+/* native audio element styling reduced */
+audio{ display:none } /* we hide the default player — controls are our buttons */
+
+/* small screens: vertical stacked and portrait centered */
+@media (max-width: 720px){
+  .artist{ flex-direction: column; align-items:center; text-align:center; gap:12px }
+  .artist-portrait{ width: 180px; height:180px; }
+  .artist-body{ align-items:center }
+  .audio-list{ align-items:center }
+  .audio-item{ justify-content:center }
+  .track-info{ align-items:center }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .wavebar{ animation: none !important; transition: none !important; transform: none !important }
+  .artist{ transition: none }
+  .play-btn, .play-btn.glow { transition: none }
+}
+</style>
 </head>
 <body>
-  <header>
-    <h1 class="page-title">Our Artists</h1>
-    <p class="page-intro">The Aria Amore ensemble — where passion, precision, and performance come together in perfect harmony.</p>
-  </header>
+  <div class="container" role="main">
+    <header class="site-header">
+      <h1 class="site-title">Our Artists</h1>
+      <p class="site-sub">Meet the Aria Amore ensemble — each artist crafted to make your ceremony unforgettable.</p>
+    </header>
 
-  <main class="artists-grid">
-    <article class="artist-card">
-      <img src="/assets/media/images/artist1.webp" alt="Sophia Verdi" class="artist-photo">
-      <h2 class="artist-name">Sophia Verdi</h2>
-      <div class="artist-role">Lead Vocalist</div>
-      <p class="artist-bio">
-        Sophia’s soaring soprano defines the Aria Amore sound. With over a decade of professional stage experience, her voice captures the emotion of every lyric, from the tender to the triumphant.
-      </p>
-      <div class="audio-preview">
-        <button onclick="document.getElementById('sophiaClip').play()">Play Preview</button>
-        <audio id="sophiaClip" controls preload="none">
-          <source src="/assets/media/audio/sophia-verdi-preview.mp3" type="audio/mpeg">
-          Your browser does not support audio playback.
-        </audio>
-      </div>
-    </article>
+    <section class="artists-grid" aria-label="Artists">
 
-    <article class="artist-card">
-      <img src="/assets/media/images/artist2.webp" alt="Luca Moretti" class="artist-photo">
-      <h2 class="artist-name">Luca Moretti</h2>
-      <div class="artist-role">Pianist & Composer</div>
-      <p class="artist-bio">
-        A composer of elegance and depth, Luca weaves melodies that make each performance unforgettable. His arrangements are the heartbeat of every ceremony and reception.
-      </p>
-      <div class="audio-preview">
-        <button onclick="document.getElementById('lucaClip').play()">Play Preview</button>
-        <audio id="lucaClip" controls preload="none">
-          <source src="/assets/media/audio/luca-moretti-preview.mp3" type="audio/mpeg">
-          Your browser does not support audio playback.
-        </audio>
-      </div>
-    </article>
+      <!-- ARTIST CARD (repeatable) -->
+      <article class="artist" id="artist-sophia">
+        <div class="artist-portrait" aria-hidden="true">
+          <img src="/assets/media/images/artist1.webp" alt="Sophia Verdi portrait">
+        </div>
 
-    <article class="artist-card">
-      <img src="/assets/media/images/artist3.webp" alt="Isabella Rossi" class="artist-photo">
-      <h2 class="artist-name">Isabella Rossi</h2>
-      <div class="artist-role">Cellist</div>
-      <p class="artist-bio">
-        Isabella’s cello brings warmth and resonance to the ensemble’s performances. Her artistry bridges classical precision with emotional storytelling.
-      </p>
-      <div class="audio-preview">
-        <button onclick="document.getElementById('isabellaClip').play()">Play Preview</button>
-        <audio id="isabellaClip" controls preload="none">
-          <source src="/assets/media/audio/isabella-rossi-preview.mp3" type="audio/mpeg">
-          Your browser does not support audio playback.
-        </audio>
-      </div>
-    </article>
-  </main>
+        <div class="artist-body">
+          <div class="artist-head">
+            <div class="artist-meta">
+              <h2 class="artist-name">Sophia Verdi</h2>
+              <div class="artist-role">Lead Vocalist</div>
+            </div>
+            <!-- optional quick links column (booking / contact) -->
+            <div style="display:flex;gap:8px;align-items:center;">
+              <a href="/booking?s=Sophia%20Verdi" class="book-link" style="font-family:var(--font-script);text-decoration:none;color:var(--accent);">Book</a>
+            </div>
+          </div>
 
-  <footer>
-    <p>© 2025 Aria Amore Ensemble. All Rights Reserved.</p>
-  </footer>
+          <p class="artist-bio" id="bio-sophia">
+            Sophia’s soaring soprano has been central to Aria Amore’s signature sound. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotion of weddings.
+          </p>
+
+          <button class="read-more" aria-expanded="false" aria-controls="bio-sophia" data-target="bio-sophia">Read more</button>
+
+          <!-- Audio previews: three tracks -->
+          <div class="audio-list" aria-label="Audio previews for Sophia">
+            <!-- TRACK 1 -->
+            <div class="audio-item" data-track="sophia-1">
+              <button class="play-btn" aria-label="Play Ave Maria preview" data-audio="sophia-1-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+
+              <div class="waveform" aria-hidden="true">
+                <div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div>
+              </div>
+
+              <div class="track-info">
+                <p class="track-title">Ave Maria (excerpt)</p>
+                <p class="track-sub">Soprano — 45s</p>
+              </div>
+
+              <audio id="sophia-1-src" preload="none">
+                <source src="/assets/media/audio/sophia-ave-maria.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <!-- TRACK 2 -->
+            <div class="audio-item" data-track="sophia-2">
+              <button class="play-btn" aria-label="Play Canon in D preview" data-audio="sophia-2-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+
+              <div class="waveform" aria-hidden="true">
+                <div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div>
+              </div>
+
+              <div class="track-info">
+                <p class="track-title">Canon in D (arr.)</p>
+                <p class="track-sub">Soprano solo — 38s</p>
+              </div>
+
+              <audio id="sophia-2-src" preload="none">
+                <source src="/assets/media/audio/sophia-canon.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+
+            <!-- TRACK 3 -->
+            <div class="audio-item" data-track="sophia-3">
+              <button class="play-btn" aria-label="Play Modern Medley preview" data-audio="sophia-3-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+
+              <div class="waveform" aria-hidden="true">
+                <div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div>
+              </div>
+
+              <div class="track-info">
+                <p class="track-title">Modern Medley (excerpt)</p>
+                <p class="track-sub">Bridal entrance — 34s</p>
+              </div>
+
+              <audio id="sophia-3-src" preload="none">
+                <source src="/assets/media/audio/sophia-modern-medley.mp3" type="audio/mpeg">
+              </audio>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARTIST 2 -->
+      <article class="artist" id="artist-luca">
+        <div class="artist-portrait" aria-hidden="true">
+          <img src="/assets/media/images/artist2.webp" alt="Luca Moretti portrait">
+        </div>
+
+        <div class="artist-body">
+          <div class="artist-head">
+            <div class="artist-meta">
+              <h2 class="artist-name">Luca Moretti</h2>
+              <div class="artist-role">Pianist & Composer</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <a href="/booking?s=Luca%20Moretti" class="book-link" style="font-family:var(--font-script);text-decoration:none;color:var(--accent);">Book</a>
+            </div>
+          </div>
+
+          <p class="artist-bio" id="bio-luca">
+            Luca’s arrangements blend classical refinement and contemporary warmth. He specializes in bespoke ceremony arrangements tailored to each couple’s story.
+          </p>
+
+          <button class="read-more" aria-expanded="false" aria-controls="bio-luca" data-target="bio-luca">Read more</button>
+
+          <div class="audio-list" aria-label="Audio previews for Luca">
+            <div class="audio-item" data-track="luca-1">
+              <button class="play-btn" aria-label="Play Prelude preview" data-audio="luca-1-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+              <div class="waveform" aria-hidden="true"><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div></div>
+
+              <div class="track-info">
+                <p class="track-title">Custom Prelude</p>
+                <p class="track-sub">Piano — 40s</p>
+              </div>
+
+              <audio id="luca-1-src" preload="none"><source src="/assets/media/audio/luca-prelude.mp3" type="audio/mpeg"></audio>
+            </div>
+
+            <div class="audio-item" data-track="luca-2">
+              <button class="play-btn" aria-label="Play Interlude preview" data-audio="luca-2-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+              <div class="waveform" aria-hidden="true"><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div></div>
+
+              <div class="track-info">
+                <p class="track-title">Interlude (arr.)</p>
+                <p class="track-sub">Piano — 36s</p>
+              </div>
+
+              <audio id="luca-2-src" preload="none"><source src="/assets/media/audio/luca-interlude.mp3" type="audio/mpeg"></audio>
+            </div>
+
+            <div class="audio-item" data-track="luca-3">
+              <button class="play-btn" aria-label="Play Ceremony Medley preview" data-audio="luca-3-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+              <div class="waveform" aria-hidden="true"><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div></div>
+
+              <div class="track-info">
+                <p class="track-title">Ceremony Medley</p>
+                <p class="track-sub">Piano — 48s</p>
+              </div>
+
+              <audio id="luca-3-src" preload="none"><source src="/assets/media/audio/luca-medley.mp3" type="audio/mpeg"></audio>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <!-- ARTIST 3 -->
+      <article class="artist" id="artist-isabella">
+        <div class="artist-portrait" aria-hidden="true">
+          <img src="/assets/media/images/artist3.webp" alt="Isabella Rossi portrait">
+        </div>
+
+        <div class="artist-body">
+          <div class="artist-head">
+            <div class="artist-meta">
+              <h2 class="artist-name">Isabella Rossi</h2>
+              <div class="artist-role">Cellist</div>
+            </div>
+            <div style="display:flex;gap:8px;align-items:center;">
+              <a href="/booking?s=Isabella%20Rossi" class="book-link" style="font-family:var(--font-script);text-decoration:none;color:var(--accent);">Book</a>
+            </div>
+          </div>
+
+          <p class="artist-bio" id="bio-isabella">
+            Isabella’s cello provides a warm foundation to every piece; her phrasing adds cinematic depth ideal for ceremony and reception alike.
+          </p>
+
+          <button class="read-more" aria-expanded="false" aria-controls="bio-isabella" data-target="bio-isabella">Read more</button>
+
+          <div class="audio-list" aria-label="Audio previews for Isabella">
+            <div class="audio-item" data-track="isabella-1">
+              <button class="play-btn" aria-label="Play Cello Theme preview" data-audio="isabella-1-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+              <div class="waveform" aria-hidden="true"><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div></div>
+
+              <div class="track-info">
+                <p class="track-title">Cello Theme (excerpt)</p>
+                <p class="track-sub">Cello — 42s</p>
+              </div>
+
+              <audio id="isabella-1-src" preload="none"><source src="/assets/media/audio/isabella-cello1.mp3" type="audio/mpeg"></audio>
+            </div>
+
+            <div class="audio-item" data-track="isabella-2">
+              <button class="play-btn" aria-label="Play Lullaby preview" data-audio="isabella-2-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+              <div class="waveform" aria-hidden="true"><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div></div>
+
+              <div class="track-info">
+                <p class="track-title">Lullaby (arr.)</p>
+                <p class="track-sub">Cello — 37s</p>
+              </div>
+
+              <audio id="isabella-2-src" preload="none"><source src="/assets/media/audio/isabella-lullaby.mp3" type="audio/mpeg"></audio>
+            </div>
+
+            <div class="audio-item" data-track="isabella-3">
+              <button class="play-btn" aria-label="Play Finale excerpt preview" data-audio="isabella-3-src">
+                <span class="play-icon" aria-hidden="true"></span>
+                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
+              </button>
+              <div class="waveform" aria-hidden="true"><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div><div class="wavebar"></div></div>
+
+              <div class="track-info">
+                <p class="track-title">Finale (excerpt)</p>
+                <p class="track-sub">Cello — 50s</p>
+              </div>
+
+              <audio id="isabella-3-src" preload="none"><source src="/assets/media/audio/isabella-finale.mp3" type="audio/mpeg"></audio>
+            </div>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer style="margin-top:40px;text-align:center;color:var(--muted);font-style:italic">
+      © 2025 Aria Amore • Enchanting ceremonies, one note at a time.
+    </footer>
+  </div>
+
+<script>
+/* Lightweight interaction layer:
+   - Play / pause single audio at a time
+   - Toggle waveform "playing" state on container
+   - Read more expand/collapse
+   - Keep things accessible (aria-pressed/expanded)
+*/
+
+(() => {
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Utility: find all play buttons
+  const playButtons = Array.from(document.querySelectorAll('.play-btn'));
+  let currentAudio = null;
+  let currentAudioItem = null;
+
+  function stopCurrent() {
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      if (currentAudioItem) currentAudioItem.classList.remove('playing');
+      // update button state
+      const prevBtn = currentAudioItem && currentAudioItem.querySelector('.play-btn');
+      if (prevBtn) prevBtn.classList.remove('playing');
+    }
+    currentAudio = null;
+    currentAudioItem = null;
+  }
+
+  playButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const audioId = btn.getAttribute('data-audio');
+      if (!audioId) return;
+      const audio = document.getElementById(audioId);
+      if (!audio) return;
+
+      // If same audio toggle pause
+      if (currentAudio === audio) {
+        audio.pause();
+        currentAudioItem.classList.remove('playing');
+        btn.classList.remove('playing');
+        currentAudio = null;
+        currentAudioItem = null;
+        return;
+      }
+
+      // stop any other playing audio
+      if (currentAudio && currentAudio !== audio) stopCurrent();
+
+      // play the selected
+      audio.play().then(() => {
+        currentAudio = audio;
+        currentAudioItem = btn.closest('.audio-item');
+        // add playing classes
+        if (currentAudioItem) currentAudioItem.classList.add('playing');
+        btn.classList.add('playing');
+
+        // when ended, clear state
+        audio.onended = () => {
+          if (currentAudioItem) currentAudioItem.classList.remove('playing');
+          btn.classList.remove('playing');
+          currentAudio = null;
+          currentAudioItem = null;
+        };
+      }).catch(err => {
+        // Play was prevented or failed
+        console.warn('Playback failed', err);
+      });
+    });
+
+    // keyboard activation (space / enter)
+    btn.addEventListener('keydown', (ev) => {
+      if (ev.key === 'Enter' || ev.key === ' ') {
+        ev.preventDefault();
+        btn.click();
+      }
+    });
+  });
+
+  // Pause audio on navigation or page hide
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) stopCurrent();
+  });
+
+  // Read more toggles
+  const readMoreButtons = Array.from(document.querySelectorAll('.read-more'));
+  readMoreButtons.forEach(r => {
+    r.addEventListener('click', () => {
+      const target = r.getAttribute('data-target');
+      const el = document.getElementById(target);
+      if (!el) return;
+      const isOpen = el.classList.toggle('open');
+      r.setAttribute('aria-expanded', String(isOpen));
+      r.textContent = isOpen ? 'Read less' : 'Read more';
+    });
+  });
+
+  // Accessibility: ensure audio stops if user focuses elsewhere and presses stop key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      stopCurrent();
+    }
+  });
+
+  // Respect reduced motion: stop animations if user requested
+  if (prefersReduced) {
+    document.documentElement.style.setProperty('--wave-color', 'rgba(214,197,167,0.35)');
+  }
+})();
+</script>
 </body>
 </html>
