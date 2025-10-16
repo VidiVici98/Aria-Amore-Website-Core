@@ -1,151 +1,139 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Meet the talented artists behind Aria Amore.">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Meet the ensemble behind Aria Amore. Our artists bring the stage to life.">
 <title>Aria Amore | Our Artists</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
 <style>
-:root {
-  --color-primary: #111;
-  --color-secondary: #fff;
-  --color-accent: #d6c5a7;
-  --bg-gradient: linear-gradient(to bottom right, hsl(41, 32%, 62%), hsl(38, 36%, 75%));
-  --box-shadow: 0 2px 8px rgba(0,0,0,0.25), 0 6px 12px rgba(0,0,0,0.15);
-  --radius: 12px;
-  --text-shadow: 1px 2px 3px #111;
-}
-
-*, *::before, *::after { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color: var(--color-primary);
-  background: url('/assets/media/images/parchment-background.webp') center/cover no-repeat;
-  padding: 2rem;
-}
-
-header {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-header h1 {
-  font-family: "Italianno", cursive;
-  font-size: 3rem;
-  color: var(--color-accent);
-  text-shadow: var(--text-shadow);
-  margin: 0;
-}
-
-header p {
-  font-size: 1.15rem;
-  font-style: italic;
-  margin-top: 0.5rem;
-  color: #333;
-}
-
-.artist-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.artist-card {
-  background: var(--bg-gradient);
-  border-radius: var(--radius);
-  padding: 1.5rem;
-  box-shadow: var(--box-shadow);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.artist-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.35), 0 8px 16px rgba(0,0,0,0.2);
-}
-
-.artist-photo {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1rem;
-  border: 2px solid var(--color-accent);
-}
-
-.artist-name {
-  font-family: "Italianno", cursive;
-  font-size: 1.8rem;
-  color: var(--color-accent);
-  margin: 0.5rem 0;
-  text-shadow: var(--text-shadow);
-}
-
-.artist-role {
-  font-style: italic;
-  color: #333;
-  margin-bottom: 1rem;
-}
-
-.artist-bio {
-  font-size: 0.95rem;
-  line-height: 1.5;
-  color: #222;
-}
-
-@media (max-width: 600px) {
-  header h1 {
-    font-size: 2.4rem;
+  :root {
+    --color-primary: #111;
+    --color-secondary: #fff;
+    --color-active: #d6c5a7;
+    --sepia-gradient: linear-gradient(to bottom right,
+      hsl(41, 32%, 62%, 1),
+      hsla(38, 36%, 75%, 1) 60%,
+      hsl(33, 41%, 71%, 1));
+    --box-shadow: 0 1px 6px rgba(0,0,0,0.4),
+                  2px 6px 8px rgba(20,25,30,0.25);
+    --envelope-inset: inset 0 1px 2px rgba(255,255,255,0.6),
+                      inset 0 -1px 2px rgba(0,0,0,0.1);
+    --text-shadow: 1px 2px 3px #111;
+    --hover-transform: translateY(-3px);
+    --radius: 12px;
+    --max-width: 1200px;
+    --gap: 24px;
   }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: var(--color-primary);
+    background-image: url('/assets/media/images/parchment-background.webp');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    padding: 36px 18px;
+    min-height: 100vh;
+  }
+
+  .page-wrap {
+    width: 100%;
+    max-width: var(--max-width);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--gap);
+  }
+
   .artist-card {
-    padding: 1rem;
+    background: var(--sepia-gradient);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--box-shadow), var(--envelope-inset);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
   }
+
+  .artist-card:hover {
+    transform: var(--hover-transform);
+  }
+
   .artist-photo {
-    width: 100px;
-    height: 100px;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    box-shadow: var(--box-shadow);
   }
+
   .artist-name {
-    font-size: 1.5rem;
+    font-family: "Italianno", cursive;
+    font-size: 1.8rem;
+    color: var(--color-active);
+    margin: 8px 0 4px 0;
+    text-shadow: var(--text-shadow);
   }
-}
+
+  .artist-role {
+    font-style: italic;
+    color: #333;
+    font-size: 1rem;
+    margin-bottom: 12px;
+  }
+
+  .artist-bio {
+    font-size: 0.95rem;
+    color: #222;
+    line-height: 1.4;
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 24px 12px; }
+    .artist-card { padding: 18px; }
+    .artist-name { font-size: 1.5rem; }
+    .artist-bio { font-size: 0.9rem; }
+  }
 </style>
 </head>
 <body>
-<header>
-  <h1>Our Artists</h1>
-  <p>The talented ensemble behind Aria Amore</p>
-</header>
+  <main>
+    <section class="page-wrap">
+      <!-- Artist 1 -->
+      <div class="artist-card">
+        <img src="/assets/media/images/artist1.jpg" alt="Artist Name" class="artist-photo">
+        <h2 class="artist-name">Sophia Verdi</h2>
+        <div class="artist-role">Lead Vocalist</div>
+        <p class="artist-bio">Sophia brings emotion and nuance to every performance, enchanting audiences with her powerful soprano.</p>
+      </div>
 
-<section class="artist-grid">
-  <div class="artist-card">
-    <img class="artist-photo" src="/assets/media/images/artists/artist1.jpg" alt="Artist Name">
-    <h2 class="artist-name">Alice Harmonia</h2>
-    <p class="artist-role">Lead Vocalist</p>
-    <p class="artist-bio">Alice brings her melodic expertise to the ensemble, weaving emotions into every note she sings.</p>
-  </div>
-  <div class="artist-card">
-    <img class="artist-photo" src="/assets/media/images/artists/artist2.jpg" alt="Artist Name">
-    <h2 class="artist-name">Benjamin Arpeggio</h2>
-    <p class="artist-role">Cellist</p>
-    <p class="artist-bio">Benjamin's deep tones and expressive playing form the backbone of the orchestra's harmonies.</p>
-  </div>
-  <div class="artist-card">
-    <img class="artist-photo" src="/assets/media/images/artists/artist3.jpg" alt="Artist Name">
-    <h2 class="artist-name">Clara Crescendo</h2>
-    <p class="artist-role">Pianist</p>
-    <p class="artist-bio">Clara's piano mastery provides both elegance and energy to the ensemble's performances.</p>
-  </div>
-  <!-- Add more artist cards as needed -->
-</section>
+      <!-- Artist 2 -->
+      <div class="artist-card">
+        <img src="/assets/media/images/artist2.jpg" alt="Artist Name" class="artist-photo">
+        <h2 class="artist-name">Luca Moretti</h2>
+        <div class="artist-role">Pianist & Composer</div>
+        <p class="artist-bio">Luca crafts intricate arrangements that harmonize perfectly with the ensemble’s dynamic sound.</p>
+      </div>
+
+      <!-- Artist 3 -->
+      <div class="artist-card">
+        <img src="/assets/media/images/artist3.jpg" alt="Artist Name" class="artist-photo">
+        <h2 class="artist-name">Isabella Rossi</h2>
+        <div class="artist-role">Cellist</div>
+        <p class="artist-bio">Isabella’s rich cello tones weave depth and warmth through every piece the ensemble performs.</p>
+      </div>
+
+      <!-- Add more artist cards as needed -->
+    </section>
+  </main>
 </body>
 </html>
