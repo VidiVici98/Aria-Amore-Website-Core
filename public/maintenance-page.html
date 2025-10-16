@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aria Amore is currently tuning the stage. We'll be back soon." />
+  <title>Aria Amore | Maintenance Mode</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --color-primary: #111;
+      --color-secondary: #fff;
+      --color-active: #d6c5a7;
+      --sepia-gradient: linear-gradient(to bottom right,
+        hsl(41, 32%, 62%, 1),
+        hsla(38, 36%, 75%, 1) 60%,
+        hsl(33, 41%, 71%, 1));
+      --box-shadow: 0 1px 6px rgba(0,0,0,0.4),
+                    2px 6px 8px rgba(20,25,30,0.25);
+      --envelope-inset: inset 0 1px 2px rgba(255,255,255,0.6),
+                        inset 0 -1px 2px rgba(0,0,0,0.1);
+      --text-shadow: 1px 2px 3px #111;
+      --hover-transform: translateY(-3px);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      color: var(--color-primary);
+      background-image: url('/assets/media/images/parchment-background.webp');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 24px;
+      text-align: center;
+    }
+
+    .hero {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .envelope-container {
+      width: 100%;
+      max-width: 420px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-letter {
+      width: 100%;
+      background: var(--sepia-gradient);
+      box-shadow: var(--box-shadow), var(--envelope-inset);
+      border-radius: 6px;
+      padding: 2rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-letter h1 {
+      font-family: "Italianno", cursive;
+      font-size: 2.6rem;
+      color: var(--color-active);
+      margin: 0 0 10px 0;
+      text-shadow: var(--text-shadow);
+    }
+
+    .hero-letter p {
+      margin: 0 0 1rem 0;
+      font-family: "Italianno", cursive;
+      font-size: 1.15rem;
+      color: #222;
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    .hero-letter-footer {
+      margin-top: 0.5rem;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-letter-btn {
+      background: transparent;
+      border: none;
+      color: var(--color-primary);
+      font-family: "Italianno", cursive;
+      font-size: 1.1rem;
+      text-decoration: underline;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .hero-letter-btn:hover {
+      color: var(--color-active);
+      transform: var(--hover-transform);
+    }
+
+    @media (max-width: 600px) {
+      .hero-letter {
+        padding: 1.5rem 1rem;
+      }
+      .hero-letter h1 {
+        font-size: 2.2rem;
+      }
+      .hero-letter p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="envelope-container">
+        <div class="hero-letter">
+          <h1>The stage is being tuned</h1>
+          <p>Our ensemble is preparing a more harmonious experience.<br />
+             Please check back soon as Aria Amore takes a brief intermission.</p>
+          <div class="hero-letter-footer">
+            <a class="hero-letter-btn" href="/">Return to home</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
