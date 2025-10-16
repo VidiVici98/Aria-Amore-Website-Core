@@ -1,369 +1,176 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>404 — Page Not Found | Happily Ever After</title>
-<meta name="description" content="Looks like this page missed the aisle. We'll help you find your way back to the celebration." />
-<style>
-  /* ============= THEME VARIABLES (customize here) ============= */
-  :root{
-    --bg: #fffaf6;
-    --card: #ffffff;
-    --accent: #b76e79;      /* rose */
-    --accent-2: #7aa3a8;    /* sage */
-    --muted: #6b6b6b;
-    --gold: #d3ad6b;
-    --shadow: 0 8px 30px rgba(20,20,40,0.08);
-    --max-width: 980px;
-    --radius: 18px;
-    --mobile-gap: 28px;
-  }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 – Looks Like We Missed a Beat | Aria Amore</title>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet" />
 
-  /* Reset-ish */
-  *{box-sizing: border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-    background: linear-gradient(180deg, var(--bg), #fff);
-    color: #111;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.35;
-    padding: 40px 18px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-  }
-
-  .wrap{
-    width:100%;
-    max-width:var(--max-width);
-    margin:auto;
-    display:grid;
-    grid-template-columns: 1fr 420px;
-    gap:48px;
-    align-items:center;
-  }
-
-  /* Card */
-  .card{
-    background:linear-gradient(180deg, rgba(255,255,255,0.9), var(--card));
-    border-radius: var(--radius);
-    padding:44px;
-    box-shadow: var(--shadow);
-    display:flex;
-    flex-direction:column;
-    gap:20px;
-  }
-
-  .eyebrow{
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    color:var(--muted);
-    font-weight:600;
-    letter-spacing:0.02em;
-    font-size:0.95rem;
-  }
-
-  .title{
-    font-size:2rem;
-    margin:0;
-    color:#0f1720;
-    letter-spacing:-0.01em;
-  }
-
-  .lead{
-    color:var(--muted);
-    margin:0;
-    font-size:1rem;
-  }
-
-  .cta-row{
-    display:flex;
-    gap:12px;
-    margin-top:8px;
-    flex-wrap:wrap;
-  }
-
-  .btn{
-    appearance:none;
-    border:0;
-    padding:12px 18px;
-    border-radius:12px;
-    font-weight:600;
-    cursor:pointer;
-    font-size:0.95rem;
-  }
-
-  .btn-primary{
-    background:linear-gradient(90deg,var(--accent), #e28aa0);
-    color:white;
-    box-shadow: 0 6px 18px rgba(183,110,121,0.16);
-  }
-
-  .btn-ghost{
-    background:transparent;
-    border:1px solid rgba(15,20,32,0.06);
-    color:var(--muted);
-  }
-
-  .search{
-    display:flex;
-    gap:8px;
-    align-items:center;
-    margin-top:12px;
-  }
-
-  .search input[type="search"]{
-    flex:1;
-    padding:12px 14px;
-    border-radius:12px;
-    border:1px solid rgba(15,20,32,0.06);
-    font-size:0.95rem;
-  }
-
-  .meta{
-    margin-top:10px;
-    color:var(--muted);
-    font-size:0.9rem;
-  }
-
-  /* Right column art */
-  .art{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    height:100%;
-  }
-
-  .illustration{
-    width:100%;
-    max-width:420px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));
-    border-radius:16px;
-    padding:26px;
-    box-shadow: var(--shadow);
-    display:flex;
-    gap:14px;
-    align-items:flex-start;
-    justify-content:center;
-    position:relative;
-    overflow:visible;
-  }
-
-  .rings{
-    width:170px;
-    height:170px;
-    flex-shrink:0;
-  }
-
-  .flowers{
-    width:160px;
-    height:170px;
-    flex-shrink:0;
-  }
-
-  .confetti{
-    position:absolute;
-    inset:auto -10px -10px auto;
-    width:120px;
-    height:120px;
-    pointer-events:none;
-  }
-
-  .footer-note{font-size:0.84rem;color:var(--muted);}
-
-  /* small screens */
-  @media (max-width:900px){
-    .wrap{grid-template-columns:1fr; gap: var(--mobile-gap)}
-    .illustration{max-width:100%}
-    body{padding:26px}
-  }
-
-  /* Confetti animation */
-  @media (prefers-reduced-motion: no-preference){
-    .confetti .dot{
-      animation: float 3.6s linear infinite;
-      transform-origin: center;
+  <style>
+    /* ------------------------------
+       Root Variables & Global Styles
+    ------------------------------ */
+    :root {
+      --color-primary: #222;
+      --color-secondary: #faf7f2;
+      --color-active: #b8916a;
+      --border-thin: 1px solid rgba(0, 0, 0, 0.15);
+      --border-thick: 2px solid rgba(0, 0, 0, 0.2);
+      --text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+      --box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      --sepia-gradient: linear-gradient(to bottom, rgba(255,255,255,0.85), rgba(243,235,222,0.9));
+      --quick-transition: all 0.3s ease;
+      --hover-transform: scale(1.05);
     }
-    .confetti .dot:nth-child(2){ animation-delay: .2s; animation-duration: 3.9s }
-    .confetti .dot:nth-child(3){ animation-delay: .4s; animation-duration: 3.6s }
-    .confetti .dot:nth-child(4){ animation-delay: .7s; animation-duration: 4.1s }
-    .confetti .dot:nth-child(5){ animation-delay: 1s; animation-duration: 3.8s }
-  }
 
-  @keyframes float {
-    0% { transform: translateY(0) rotate(0deg) scale(1); opacity:1 }
-    50% { transform: translateY(-14px) rotate(30deg) scale(.98); opacity:.95 }
-    100% { transform: translateY(0) rotate(60deg) scale(1); opacity:1 }
-  }
+    body {
+      margin: 0;
+      font-family: "Georgia", serif;
+      background: var(--color-secondary);
+      color: var(--color-primary);
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
 
-  /* Small touches */
-  .logo{
-    display:inline-flex;
-    gap:8px;
-    align-items:center;
-    font-weight:700;
-    color:var(--accent);
-    font-size:0.95rem;
-  }
+    /* ------------------------------
+       Envelope Animation
+    ------------------------------ */
+    .envelope {
+      position: relative;
+      width: 320px;
+      height: 200px;
+      background: var(--sepia-gradient);
+      box-shadow: var(--box-shadow);
+      border: var(--border-thin);
+      border-radius: 4px;
+      overflow: hidden;
+      animation: fadeIn 2s ease forwards;
+      cursor: pointer;
+      transform-style: preserve-3d;
+    }
 
-  a.link{
-    color:var(--accent-2);
-    text-decoration:underline;
-    text-decoration-thickness:2px;
-  }
+    .flap {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: var(--sepia-gradient);
+      border-bottom: var(--border-thick);
+      transform-origin: top;
+      transform: rotateX(0deg);
+      transition: transform 1s ease;
+      z-index: 3;
+    }
 
-  /* Accessibility focus states */
-  :focus{outline: none}
-  a:focus, button:focus, input:focus{
-    box-shadow: 0 0 0 4px rgba(122,163,168,0.18);
-    border-radius:10px;
-  }
+    .envelope.open .flap {
+      transform: rotateX(-180deg);
+    }
 
-  /* little ring sparkle */
-  .sparkle{
-    animation: sparkle 2.6s linear infinite;
-    transform-origin:center;
-  }
-  @keyframes sparkle {
-    0%{opacity:1; transform: scale(1)}
-    50%{opacity:.25; transform: scale(.98)}
-    100%{opacity:1; transform: scale(1)}
-  }
+    .letter {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--color-secondary);
+      text-align: center;
+      padding: 2rem;
+      transform: translateY(100%);
+      transition: transform 1s ease;
+      z-index: 2;
+    }
 
-</style>
+    .envelope.open .letter {
+      transform: translateY(0);
+    }
+
+    .letter h1 {
+      font-family: "Italianno", cursive;
+      font-size: 3rem;
+      color: var(--color-active);
+      margin-bottom: 1rem;
+      text-shadow: var(--text-shadow);
+    }
+
+    .letter p {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--color-primary);
+      margin-bottom: 1.5rem;
+    }
+
+    .home-link {
+      display: inline-block;
+      background: var(--color-primary);
+      color: var(--color-secondary);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: var(--quick-transition);
+      font-family: "Italianno", cursive;
+      font-size: 1.5rem;
+    }
+
+    .home-link:hover {
+      background: var(--color-active);
+      transform: var(--hover-transform);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ------------------------------
+       Page Layout
+    ------------------------------ */
+    .notfound-container {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .message {
+      margin-top: 2rem;
+      font-size: 1.2rem;
+      color: var(--color-primary);
+    }
+
+    footer {
+      margin-top: 2rem;
+      font-family: "Italianno", cursive;
+      font-size: 1.3rem;
+      color: var(--color-active);
+    }
+  </style>
 </head>
 <body>
-  <main class="wrap" role="main" aria-labelledby="page-title">
-    <section class="card" aria-labelledby="page-title" aria-describedby="desc">
-      <div class="logo" aria-hidden="true">
-        <!-- simple bouquet icon as part of brand -->
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2c1.8 0 3.2 1.5 3.2 3.3 0 .9-.4 1.7-1.1 2.2.3.5.6 1 .6 1.6 0 1.1-.9 2-2 2h-.4c-.3 0-.6.2-.8.4l-.8.9c-.1.1-.3.2-.5.2-.2 0-.4-.1-.6-.2l-.8-.9c-.2-.2-.5-.4-.8-.4h-.4c-1.1 0-2-.9-2-2 0-.6.3-1.1.6-1.6-.7-.5-1.1-1.3-1.1-2.2C8.8 3.5 10.2 2 12 2z" fill="var(--accent)"/>
-        </svg>
-        Happily Ever After
+  <div class="notfound-container">
+    <div class="envelope" id="envelope">
+      <div class="flap"></div>
+      <div class="letter">
+        <h1>Looks Like We Missed a Beat</h1>
+        <p>It seems this page has wandered off, perhaps chasing a sweeter melody.</p>
+        <a href="/" class="home-link">Return to Aria Amore</a>
       </div>
+    </div>
 
-      <div>
-        <p class="eyebrow">Wedding + Website</p>
-        <h1 id="page-title" class="title">Oh no — this page missed the aisle.</h1>
-        <p id="desc" class="lead">We looked everywhere (even behind the hors d'oeuvres) and still couldn't find the page you were after. Let's get you back to the celebration.</p>
-      </div>
+    <p class="message">Click the envelope to reveal your message.</p>
+    <footer>— Aria Amore, where every note is love.</footer>
+  </div>
 
-      <div class="cta-row" role="group" aria-label="Actions">
-        <a class="btn btn-primary" href="/" id="homeBtn">Return to homepage</a>
-        <a class="btn btn-ghost" href="/rsvp">RSVP &amp; Event Info</a>
-      </div>
-
-      <form class="search" role="search" onsubmit="event.preventDefault(); doSearch();">
-        <label for="q" class="sr-only" style="position:absolute;left:-9999px;">Search site</label>
-        <input id="q" type="search" placeholder="Search the site (guest list, schedule, registry…)" aria-label="Search site"/>
-        <button class="btn btn-ghost" type="submit">Search</button>
-      </form>
-
-      <p class="meta">Tip: try the main menu or the <a href="/site-map" class="link">site map</a> if you’re looking for something specific.</p>
-
-      <p class="footer-note" aria-hidden="false">If you're still stuck, <a class="link" href="mailto:hello@example.com">email us</a> or call the wedding planner.</p>
-    </section>
-
-    <aside class="art" aria-hidden="true">
-      <div class="illustration" role="img" aria-label="Wedding rings and bouquet illustration">
-        <!-- Rings SVG -->
-        <svg class="rings" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <defs>
-            <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
-              <stop offset="0" stop-color="var(--gold)" stop-opacity="1"/>
-              <stop offset="1" stop-color="#f6e0b2" stop-opacity="1"/>
-            </linearGradient>
-          </defs>
-          <g transform="translate(10,10)">
-            <!-- Big ring -->
-            <ellipse cx="95" cy="95" rx="55" ry="55" fill="none" stroke="url(#g1)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-            <!-- Small ring overlapping -->
-            <ellipse cx="60" cy="70" rx="45" ry="45" fill="none" stroke="#e5c27a" stroke-width="10" />
-            <!-- Diamond -->
-            <g transform="translate(95,45) scale(.8)">
-              <polygon points="0,-22 14,-6 9,18 -9,18 -14,-6" fill="#fff" stroke="#e9f5f6" stroke-width="1.5"/>
-              <path d="M0,-22 L14,-6 L0,0 L-14,-6 Z" fill="#f8fbfd" opacity="0.8"/>
-            </g>
-            <!-- sparkle -->
-            <g class="sparkle" transform="translate(122,50)">
-              <circle cx="0" cy="0" r="3" fill="#fff"/>
-              <path d="M-4 0 L4 0 M0 -4 L0 4" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
-            </g>
-          </g>
-        </svg>
-
-        <!-- Flowers SVG -->
-        <svg class="flowers" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g transform="translate(16,10)">
-            <g transform="translate(60,60)">
-              <circle r="24" fill="var(--accent)" />
-              <circle r="12" fill="#fff5f7" transform="translate(6,0)"/>
-              <path d="M0 -24 C8 -14 22 -8 14 0 C6 10 -6 10 -14 0 C-22 -8 -8 -14 0 -24 Z" fill="#ffdfe6" opacity="0.9"/>
-            </g>
-            <g transform="translate(120,80) rotate(-18)">
-              <circle r="18" fill="var(--accent-2)" />
-              <path d="M0 -18 C6 -10 14 -5 10 4 C4 14 -4 14 -10 4 C-14 -5 -6 -10 0 -18 Z" fill="#eaf7f6" />
-            </g>
-            <g transform="translate(80,128) rotate(14)">
-              <ellipse rx="10" ry="24" fill="#a0d8cf"/>
-            </g>
-            <g transform="translate(100,40) rotate(-6)">
-              <path d="M0 0 L6 -20 L-6 -20 Z" fill="#f6e6ea"/>
-            </g>
-          </g>
-        </svg>
-
-        <!-- Confetti -->
-        <svg class="confetti" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <g transform="translate(10,10)">
-            <rect class="dot" x="2" y="2" width="6" height="6" fill="#e28aa0" rx="1" />
-            <rect class="dot" x="30" y="6" width="5" height="5" fill="#f6d7a8" rx="1" />
-            <rect class="dot" x="60" y="16" width="7" height="7" fill="#7aa3a8" rx="1" />
-            <rect class="dot" x="18" y="36" width="6" height="6" fill="#b76e79" rx="1" />
-            <rect class="dot" x="46" y="40" width="5" height="5" fill="#d3ad6b" rx="1" />
-          </g>
-        </svg>
-
-      </div>
-    </aside>
-  </main>
-
-<script>
-  // Minimal JS: search placeholder and small analytics-friendly action
-  function doSearch(){
-    const q = document.getElementById('q').value.trim();
-    if(!q){
-      // gentle microinteraction
-      const input = document.getElementById('q');
-      input.style.borderColor = 'var(--accent)';
-      input.focus();
-      return;
-    }
-    // Replace this with your site's real search endpoint
-    // Example for a site using /search?q=
-    location.href = '/search?q=' + encodeURIComponent(q);
-  }
-
-  // Optional: keyboard shortcut "/" focuses search
-  window.addEventListener('keydown', (e) => {
-    if (e.key === '/' && !/input|textarea/i.test(document.activeElement.tagName)) {
-      e.preventDefault();
-      document.getElementById('q').focus();
-    }
-  });
-
-  // Small progressive enhancement: set home link if missing
-  (function setHomeLink(){
-    const home = document.getElementById('homeBtn');
-    if(!home || !home.getAttribute('href')) return;
-    // nothing to do: placeholder in HTML already points to "/"
-  })();
-</script>
+  <script>
+    // ------------------------------
+    // Envelope Open Animation Logic
+    // ------------------------------
+    const envelope = document.getElementById('envelope');
+    envelope.addEventListener('click', () => {
+      envelope.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
