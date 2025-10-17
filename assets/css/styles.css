@@ -857,7 +857,6 @@ Responsive Mobile Styles
 Additional Mobile & Tablet Responsiveness
 (Enhancement only — preserves all desktop styles)
 =============================================*/
-
 /* Tablet / small laptop tweaks */
 @media screen and (max-width: 1024px) {
   .hero-letter h1 { font-size: 3rem; }
@@ -867,7 +866,6 @@ Additional Mobile & Tablet Responsiveness
   .plan { max-width: 200px; padding: 20px; }
   footer h2 { font-size: 1.75rem; }
 }
-
 /* Mobile general adjustments */
 @media screen and (max-width: 700px) {
   body {
@@ -875,33 +873,28 @@ Additional Mobile & Tablet Responsiveness
     line-height: 1.5;
     padding: 0;
   }
-
   header {
     position: fixed;
     width: 100%;
     top: 0;
   }
-
   /* Show mobile menu toggle */
   #menu-toggle {
     display: block;
     padding: 10px;
     z-index: 1000;
   }
-
   #mobile-menu {
     display: none;
     flex-direction: column;
     text-align: center;
     padding: 10px 0;
   }
-
   #mobile-menu a {
     display: block;
     padding: 10px;
     font-size: 1.5rem;
   }
-
   /* Keep hero but resize instead of hide */
   .hero {
     display: flex;
@@ -911,11 +904,9 @@ Additional Mobile & Tablet Responsiveness
     text-align: center;
     overflow: hidden;
   }
-
   .hero::before {
     content: none; /* hides oversized desktop image */
   }
-
   .envelope-container {
   position: relative;
   width: 90%;
@@ -927,7 +918,6 @@ Additional Mobile & Tablet Responsiveness
   top: 0;
   transform: none;
 }
-
   .hero-letter {
     position: relative;
     width: 95%;
@@ -936,85 +926,69 @@ Additional Mobile & Tablet Responsiveness
     transform: none;
     animation: none;
   }
-
   .hero-letter h1 { font-size: 2.5rem; }
   .hero-letter p { font-size: 1.5rem; }
-
   /* Event section */
   #events {
     margin-top: 5%;
   }
-
   .event-grid {
     grid-template-columns: 1fr;
     gap: 15px;
   }
-
   .event img {
     width: 80%;
     height: auto;
   }
-
   /* Staff cards */
   .staff {
     flex: 1 1 100%;
     flex-direction: column;
     align-items: center;
   }
-
   .staff .artist-portrait {
     height: 250px;
     width: 250px;
   }
-
   .artist-bio h3 { font-size: 1.75rem; }
   .artist-bio p { font-size: 1rem; }
-
   /* Pricing plans */
   .pricing-table {
     grid-template-columns: 1fr;
     max-width: 95%;
   }
-
   .plan {
     margin: 10px auto;
     max-width: 300px;
   }
-
   /* Contact form */
   .contact-form {
     width: 90%;
     margin: auto;
   }
-
   .contact-form button {
     margin: 10px auto;
     width: 80%;
   }
-
   /* Quote area */
   .quote {
     width: 90%;
     max-width: 300px;
     margin: 20px auto;
   }
-
   /* Footer */
   footer {
     font-size: 0.9rem;
     text-align: center;
   }
-
   .footer-columns-wrapper {
     grid-template-columns: 1fr;
     padding: 10px;
   }
-
   .about-column, .socials-column {
     width: 90%;
   }
 }
-
 /* Smallest phones */
 @media screen and (max-width: 480px) {
   .hero-letter h1 { font-size: 2rem; }
@@ -1029,7 +1003,6 @@ Additional Mobile & Tablet Responsiveness
 /*=========================================
 Extracted Inline CSS & Responsive Versions
 =========================================*/
-
 /* === Featured Performers Title === */
 .featured-title {
   font-size: 2.5rem;
@@ -1044,7 +1017,6 @@ Extracted Inline CSS & Responsive Versions
   text-shadow: 2px 2px #111111;
   text-align: center;
 }
-
 /* === Victorian Separator (Used in Hero & Testimonials) === */
 .victorian-separator {
   display: block;
@@ -1054,12 +1026,10 @@ Extracted Inline CSS & Responsive Versions
   margin: 1rem auto;
   filter: opacity(.6);
 }
-
 /* === Staff Section (formerly inline padding) === */
 .staff-inner {
   padding: 20px;
 }
-
 /* === Testimonials Section === */
 #testimonials {
   background-color: #111111c9;
@@ -1069,24 +1039,20 @@ Extracted Inline CSS & Responsive Versions
   text-align: center;
   padding: 1.5rem;
 }
-
 #testimonials h2 {
   font-size: 2.5rem;
   text-shadow: 2px 2px #111111;
 }
-
 .testimonial-text {
   color: #d6c5a7;
   font-size: 1.5rem;
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
 }
-
 .testimonial-author {
   font-size: 1.25rem;
   color: #707070;
 }
-
 /* === Stars Row in Testimonials === */
 .stars-wrapper {
   display: flex;
@@ -1094,7 +1060,6 @@ Extracted Inline CSS & Responsive Versions
   gap: 4px;
   margin: 10px 0;
 }
-
 /* === Social Icon Row for Performers === */
 .artist-socials {
   display: flex;
@@ -1102,7 +1067,6 @@ Extracted Inline CSS & Responsive Versions
   gap: 8px;
   margin: 0.5rem 0;
 }
-
 /* === Envelope Container Fix (Mobile-Friendly Shape) === */
 .envelope-container {
   position: relative;
@@ -1115,7 +1079,6 @@ Extracted Inline CSS & Responsive Versions
   top: 0;
   transform: none;
 }
-
 /* === Responsive Scaling === */
 @media screen and (max-width: 1024px) {
   .featured-title {
@@ -1123,141 +1086,418 @@ Extracted Inline CSS & Responsive Versions
     padding: 12px;
     max-width: 90%;
   }
-
   #testimonials h2 {
     font-size: 2rem;
   }
 }
-
 @media screen and (max-width: 700px) {
   .featured-title {
     font-size: 1.75rem;
     padding: 10px;
     margin-bottom: 0.75rem;
   }
-
   .victorian-separator {
     width: 80%;
   }
-
   #testimonials {
     margin: 5%;
     padding: 1rem;
   }
-
   #testimonials h2 {
     font-size: 2rem;
   }
-
   .testimonial-text {
     font-size: 1.25rem;
   }
-
   .testimonial-author {
     font-size: 1rem;
   }
-
   .staff-inner {
     padding: 15px;
   }
-
   .envelope-container {
     aspect-ratio: 3 / 1.8;
     max-height: clamp(160px, 25vw, 280px);
   }
 }
-
 @media screen and (max-width: 480px) {
   .featured-title {
     font-size: 1.5rem;
     padding: 8px;
   }
-
   .testimonial-text {
     font-size: 1.1rem;
   }
-
   .testimonial-author {
     font-size: 0.9rem;
   }
-
   .victorian-separator {
     width: 90%;
   }
 }
-.booking-container {
-  max-width: 600px;
-  margin: 5rem auto;
-  background: #ffffffcc;
-  padding: 2.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+/*=============================================
+Booking + Calendar Section – High Polish
+=============================================*/
+.booking-calendar-section {
+  background: linear-gradient(145deg, #fef8f0, #f4e6d8);
+  border-radius: 18px;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: 1rem auto;
+  box-shadow: 
+    0 5px 20px rgba(0,0,0,0.2),
+    inset 0 1px 6px rgba(255,255,255,0.5),
+    inset 0 -2px 5px rgba(0,0,0,0.1);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: var(--color-primary);
+  position: relative;
 }
-
-h1 {
+/* Section Title */
+.booking-calendar-section h2 {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-size: 3rem;
+  color: var(--color-active);
   text-align: center;
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  color: #8c6b4f;
+  margin-bottom: 0.75rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.25);
 }
-
-.intro {
+/* Section Intro */
+.booking-calendar-section .section-intro {
   text-align: center;
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  color: #666;
+  color: var(--color-subdued);
+  font-size: 1.25rem;
+  margin-bottom: 3rem;
+  line-height: 1.6;
 }
-
-.form-row {
+/* Calendar + Form Wrapper */
+.booking-calendar-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  position: relative;
+}
+/* Calendar Panel */
+.calendar-area {
+  flex: 1 1 400px;
+  background: #fffaf0;
+  border-radius: 14px;
+  padding: .75rem;
+  box-shadow: 
+    inset 0 2px 6px rgba(255,255,255,0.4),
+    inset 0 -2px 6px rgba(0,0,0,0.05),
+    0 4px 16px rgba(0,0,0,0.15);
+  transition: var(--quick-transition);
+}
+.calendar-area iframe {
+  width: 100%;
+  height: 520px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+/* Calendar Hover Glow */
+.calendar-area:hover {
+  box-shadow: 
+    inset 0 2px 6px rgba(255,255,255,0.4),
+    inset 0 -2px 6px rgba(0,0,0,0.05),
+    0 6px 25px rgba(214,197,167,0.35);
+  transform: translateY(-2px);
+}
+/* Form Panel */
+.form-area {
+  flex: 1 1 400px;
+  background: #fef8f2;
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 
+    inset 0 2px 6px rgba(255,255,255,0.5),
+    inset 0 -2px 6px rgba(0,0,0,0.1),
+    0 4px 18px rgba(0,0,0,0.15);
+  transition: var(--quick-transition);
+}
+/* Form Styling */
+.booking-form {
   display: flex;
   flex-direction: column;
-  margin-bottom: 1.2rem;
+  gap: 1.25rem;
 }
-
-label {
+.booking-form .form-row {
+  display: flex;
+  flex-direction: column;
+}
+.booking-form .form-row label {
   font-weight: 600;
+  color: var(--color-primary);
   margin-bottom: 0.4rem;
-  color: #5c4a3f;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.15);
 }
-
-input, textarea {
+.booking-form .form-row input,
+.booking-form .form-row textarea {
   font-family: inherit;
   font-size: 1rem;
-  padding: 0.6rem 0.8rem;
-  border: 1px solid #d8cfc8;
-  border-radius: 6px;
-  transition: border-color 0.2s, box-shadow 0.2s;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba(170, 140, 110, 0.6);
+  border-radius: 8px;
+  background: #fff7ed;
+  box-shadow: inset 0 1px 4px rgba(255,255,255,0.5),
+              inset 0 -1px 4px rgba(0,0,0,0.05);
+  transition: var(--quick-transition);
 }
-
-input:focus, textarea:focus {
+/* Focus effect */
+.booking-form .form-row input:focus,
+.booking-form .form-row textarea:focus {
   outline: none;
-  border-color: #b49a7d;
-  box-shadow: 0 0 0 3px #e4d7c8;
+  border-color: var(--color-active);
+  box-shadow: 0 0 8px rgba(214,197,167,0.35), inset 0 1px 4px rgba(255,255,255,0.6);
 }
-
-.submit-btn {
-  background: #b49a7d;
-  color: #fff;
+/* Submit Button */
+.booking-form .submit-btn {
+  background: var(--color-active);
+  color: var(--color-secondary);
   font-weight: 600;
+  font-size: 1.35rem;
   border: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 6px;
+  border-radius: 10px;
+  padding: 0.9rem 1.5rem;
   cursor: pointer;
-  transition: background 0.2s, transform 0.1s;
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.15),
+    inset 0 1px 3px rgba(255,255,255,0.35);
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+  transition: var(--quick-transition);
 }
-
-.submit-btn:hover {
-  background: #a08367;
+.booking-form .submit-btn:hover {
+  background: #bfa77f;
+  color: var(--color-primary);
+  box-shadow: 
+    0 6px 20px rgba(214,197,167,0.4),
+    inset 0 1px 4px rgba(255,255,255,0.5);
+  transform: translateY(-2px);
 }
-
-.submit-btn:active {
-  transform: scale(0.98);
-}
-
+/* Response message */
 .response-message {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   text-align: center;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   font-weight: 500;
-  color: #5c4a3f;
+  color: var(--color-primary);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+/* Responsive stacking */
+@media(max-width: 900px) {
+  .booking-calendar-wrapper {
+    flex-direction: column;
+  }
+  .calendar-area,
+  .form-area {
+    width: 100%;
+  }
+}
+/* RSVP Invitation Section */
+.rsvp-section {
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(to bottom, rgba(245,235,215,0.6), rgba(230,210,180,0.8));
+}
+.rsvp-card {
+  background: url('/assets/media/images/parchment-background.webp');
+  background-size: cover;
+  padding: 40px;
+  max-width: 800px;
+  border-radius: 25px;
+  box-shadow: inset 0 2px 15px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.3);
+  border: 2px solid #d6c5a7;
+  backdrop-filter: blur(1px);
+  position: relative;
+  animation: fadeInCard 1.5s ease forwards;
+}
+@keyframes fadeInCard {
+  0% { opacity: 0; transform: translateY(50px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+.rsvp-header h2 {
+  font-family: "Italianno", cursive;
+  font-size: 3rem;
+  text-align: center;
+  color: #4b2e1b;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
+}
+.rsvp-intro {
+  font-family: Georgia, serif;
+  font-size: 1.25rem;
+  color: #3b2a1a;
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.7;
+}
+.victorian-separator {
+  display: block;
+  margin: 0 auto 20px auto;
+  width: 50%;
+  opacity: 0.6;
+}
+.rsvp-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin-bottom: 30px;
+}
+.rsvp-form .form-row {
+  display: flex;
+  flex-direction: column;
+}
+.rsvp-form label {
+  font-family: "Italianno", cursive;
+  font-size: 1.25rem;
+  margin-bottom: 5px;
+  color: #4b2e1b;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
+}
+.rsvp-form input,
+.rsvp-form textarea {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px inset #d6c5a7;
+  background-color: rgba(255,255,255,0.9);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+.rsvp-form input:focus,
+.rsvp-form textarea:focus {
+  outline: none;
+  box-shadow: inset 0 2px 8px rgba(0,0,0,0.25);
+}
+.checkboxes {
+  grid-column: span 2;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.checkbox-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #d6c5a7;
+  padding: 10px 20px;
+  border-radius: 15px;
+  border: 1px groove #3b2a1a;
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.checkbox-btn:hover {
+  background: #c1a885;
+  transform: translateY(-3px);
+}
+.checkbox-btn input {
+  display: none;
+}
+.checkbox-btn input:checked + span::before {
+  content: "✔ ";
+  color: #4b2e1b;
+}
+.rsvp-submit {
+  grid-column: span 2;
+  padding: 15px 30px;
+  font-family: "Italianno", cursive;
+  font-size: 1.5rem;
+  background: radial-gradient(circle at 50% 50%, #b35e3b, #7a3b24);
+  border: 2px inset #4b2e1b;
+  border-radius: 50px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+}
+.rsvp-submit:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.4);
+  background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
+}
+.rsvp-calendar {
+  text-align: center;
+}
+.rsvp-calendar h3 {
+  font-family: "Italianno", cursive;
+  font-size: 2rem;
+  color: #4b2e1b;
+  margin-bottom: 15px;
+}
+.rsvp-calendar iframe {
+  width: 100%;
+  height: 400px;
+  border: 1px inset #d6c5a7;
+  border-radius: 20px;
+  box-shadow: inset 0 3px 10px rgba(0,0,0,0.15);
+}
+@media screen and (max-width: 900px) {
+  .rsvp-form {
+    grid-template-columns: 1fr;
+  }
+  .rsvp-submit {
+    width: 100%;
+  }
+  .rsvp-calendar iframe {
+    height: 300px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .rsvp-card {
+    padding: 20px;
+  }
+  .rsvp-header h2 {
+    font-size: 2.25rem;
+  }
+  .rsvp-intro {
+    font-size: 1rem;
+  }
+  .rsvp-calendar iframe {
+    height: 250px;
+  }
+}
+.content-wrapper {
+  position: relative; /* Needed for absolute positioning of corners */
+}
+/* Base corner style */
+.corner {
+  position: absolute;
+  width: 80px;   /* adjust as needed */
+  height: auto;
+  opacity: .5;
+  padding: .5rem;
+  pointer-events: none; /* so they don’t interfere with clicks */
+}
+/* Top-right (original orientation) */
+.corner-top-right {
+  top: 0;
+  right: 0;
+}
+/* Top-left (rotate horizontally) */
+.corner-top-left {
+  top: 0;
+  left: 0;
+  transform: scaleX(-1);
+}
+/* Bottom-right (rotate vertically) */
+.corner-bottom-right {
+  bottom: 0;
+  right: 0;
+  transform: scaleY(-1);
+}
+/* Bottom-left (rotate both axes) */
+.corner-bottom-left {
+  bottom: 0;
+  left: 0;
+  transform: scaleX(-1) scaleY(-1);
+}
+@media screen and (max-width: 700px) {
+    .corner { width: 70px; }
 }
