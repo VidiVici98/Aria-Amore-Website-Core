@@ -97,9 +97,9 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/*=============================================
+/*=================================
 Scoped Site Styles
-=============================================*/
+=================================*/
 /*Header*/
 header {
   position: sticky;
@@ -1184,4 +1184,80 @@ Extracted Inline CSS & Responsive Versions
   .victorian-separator {
     width: 90%;
   }
+}
+.booking-container {
+  max-width: 600px;
+  margin: 5rem auto;
+  background: #ffffffcc;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: #8c6b4f;
+}
+
+.intro {
+  text-align: center;
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  color: #666;
+}
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #5c4a3f;
+}
+
+input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d8cfc8;
+  border-radius: 6px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #b49a7d;
+  box-shadow: 0 0 0 3px #e4d7c8;
+}
+
+.submit-btn {
+  background: #b49a7d;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.submit-btn:hover {
+  background: #a08367;
+}
+
+.submit-btn:active {
+  transform: scale(0.98);
+}
+
+.response-message {
+  margin-top: 1.5rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #5c4a3f;
 }
