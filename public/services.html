@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Services | Aria Amore</title>
+  <title>Aria Amore - Services</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
@@ -102,51 +102,68 @@
       </div>
     </div>
   </section>
-
-  <section class="booking-container">
-    <h1>Request a Wedding Performance</h1>
-    <p class="intro">
-      We’d be honored to be part of your special day. Please share your event details below —
-      we’ll get in touch within 2 business days to confirm availability.
+  <br><br>  <br><br>  <br><br>
+<section class="rsvp-section">
+  <div class="content-wrapper">
+  <!-- Your content goes here -->
+  <div class="rsvp-card">
+    <div class="rsvp-header">
+      <h2>You're Invited</h2>
+      <img src="../assets/media/images/victorian-separator.svg" class="victorian-separator">
+    </div>
+    <p class="rsvp-intro">
+      Join us for a magical evening of operatic splendor. Please fill out your details below so we can reserve your place at this unforgettable celebration.
     </p>
-
-    <form id="bookingForm" class="booking-form">
+    <form class="rsvp-form">
       <div class="form-row">
-        <label for="name">Your Name</label>
-        <input type="text" name="name" id="name" required />
+        <label for="guestName">Your Name</label>
+        <input type="text" id="guestName" placeholder="John Doe" required>
       </div>
-
       <div class="form-row">
-        <label for="email">Your Email</label>
-        <input type="email" name="email" id="email" required />
+        <label for="guestEmail">Email Address</label>
+        <input type="email" id="guestEmail" placeholder="john@example.com" required>
       </div>
-
+      <div class="form-row">
+        <label for="guestCount">Number of Guests</label>
+        <input type="number" id="guestCount" min="1" placeholder="2" required>
+      </div>
       <div class="form-row">
         <label for="eventDate">Event Date</label>
-        <input type="date" name="eventDate" id="eventDate" required />
+        <input type="date" id="eventDate" required>
       </div>
-
       <div class="form-row">
-        <label for="eventTime">Event Time</label>
-        <input type="time" name="eventTime" id="eventTime" />
+        <label for="notes">Special Requests</label>
+        <textarea id="notes" rows="3" placeholder="Dietary restrictions, song requests..."></textarea>
       </div>
-
-      <div class="form-row">
-        <label for="venue">Venue Location</label>
-        <input type="text" name="venue" id="venue" placeholder="e.g., St. Mary’s Chapel" />
+      <div class="form-row checkboxes"><span
+        <label class="checkbox-btn">
+          <input type="checkbox">
+          <span>Attend Ceremony</span>
+        </label>
+        <label class="checkbox-btn">
+          <input type="checkbox">
+          <span>Attend Reception</span>
+        </label>
       </div>
-
-      <div class="form-row">
-        <label for="notes">Additional Details</label>
-        <textarea name="notes" id="notes" rows="4" placeholder="Requests, ceremony details, etc."></textarea>
-      </div>
-
-      <button type="submit" class="submit-btn">Send Booking Request</button>
+      <button type="submit" class="rsvp-submit">Confirm Attendance</button>
     </form>
-
-    <div id="responseMessage" class="response-message"></div>
-  </section>
-  </main>
+    <div class="rsvp-calendar">
+      <h3>Availability</h3>
+      <iframe
+        src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
+  </div>
+  <!-- Corner brackets -->
+  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
+  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
+  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
+  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
+</div>
+</section> 
+</main>
   <!--Footer Embed Container-->
   <footer id="site-footer-container"></footer>
   <!--Scripts-->  
