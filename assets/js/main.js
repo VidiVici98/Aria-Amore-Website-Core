@@ -395,5 +395,44 @@ function flipBack() {
       total: (selectedPackage ? selectedPackage.price : 0) + Array.from(selectedAddons.values()).reduce((s, a) => s + a.price, 0)
     };
   };
+  
 
 })();
+// Enforce minimum 2-week notice in date picker
+const dateInput = document.getElementById("eventDate");
+const minDate = new Date();
+minDate.setDate(minDate.getDate() + 14);
+dateInput.min = minDate.toISOString().split("T")[0];
+
+const form = document.getElementById("bookingForm");
+const responseDiv = document.getElementById("responseMessage");
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+  responseDiv.textContent = "Sending your request...";
+  responseDiv.style.color = "#5c4a3f";
+
+  const data = Object.fromEntries(new FormData(form).entries());
+
+  try {
+    const res = await fetch("/book-event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const result = await res.json();
+
+    if (res.ok) {
+      responseDiv.textContent = "✨ Thank you! Your booking request has been sent.";
+      responseDiv.style.color = "#4d7c5c";
+      form.reset();
+    } else {
+      responseDiv.textContent = result.message || "Something went wrong.";
+      responseDiv.style.color = "#a33";
+    }
+  } catch (err) {
+    responseDiv.textContent = "Error sending request. Please try again later.";
+    responseDiv.style.color = "#a33";
+  }
+});
