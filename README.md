@@ -4,3 +4,4 @@
 - Artist Bios
 - Redesign Artists Page
 - Contact Form Logic
+- Header/Footer Positioning Glitches
