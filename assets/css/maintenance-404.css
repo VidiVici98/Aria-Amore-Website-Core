@@ -85,6 +85,40 @@
   .hero-letter-btn:hover {
     transform: var(--hover-transform);
   }
+  .content-wrapper {
+    position: relative;
+  }
+  /* Base corner style */
+  .corner {
+    position: absolute;
+    width: 45px;   /* adjust as needed */
+    height: auto;
+    opacity: .65;
+    pointer-events: none; /* so they don’t interfere with clicks */
+  }
+  /* Top-right (original orientation) */
+  .corner-top-right {
+    top: 7px;
+    right: 7px;
+  }
+  /* Top-left (rotate horizontally) */
+  .corner-top-left {
+    top: 7px;
+    left: 7px;
+    transform: scaleX(-1);
+  }
+  /* Bottom-right (rotate vertically) */
+  .corner-bottom-right {
+    bottom: 7px;
+    right: 7px;
+    transform: scaleY(-1);
+  }
+  /* Bottom-left (rotate both axes) */
+  .corner-bottom-left {
+    bottom: 7px;
+    left: 7px;
+    transform: scaleX(-1) scaleY(-1);
+  }
   @media (max-width: 600px) {
     .hero-letter {
       padding: 1.5rem 1rem;
