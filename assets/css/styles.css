@@ -202,17 +202,6 @@ footer h2 {
   position: relative;
   overflow: hidden;
 }
-.hero::before {
-  content: url(/assets/media/images/xavier-williams-transparent.webp);
-  position: absolute;
-  right: -100%;
-  top: -70%;
-  scale: .4;
-  animation: heroSlideIn 2.75s forwards ease;
-}
-@keyframes heroSlideIn {
-  to { right: -20%; }
-}
 .envelope-container {
   position: absolute;
   left: 30px;

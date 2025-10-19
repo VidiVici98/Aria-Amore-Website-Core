@@ -111,7 +111,8 @@ table {
   gap: 22px;
   grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
   align-items:start;
-  margin-top: 18px;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 /* ---------- Artist Card ---------- */
@@ -134,32 +135,33 @@ table {
 /* Base corner style */
 .corner {
   position: absolute;
-  width: 60px;   /* adjust as needed */
+  width: 80px;   /* adjust as needed */
   height: auto;
-  opacity: .75;
+  opacity: .5;
+  border-radius: 20px;
   pointer-events: none; /* so they don’t interfere with clicks */
 }
 /* Top-right (original orientation) */
 .corner-top-right {
-  top: -30px;
-  right: -30px;
+  top: -15px;
+  right: -15px;
 }
 /* Top-left (rotate horizontally) */
 .corner-top-left {
-  top: -30px;
-  left: -30px;
+  top: -15px;
+  left: -15px;
   transform: scaleX(-1);
 }
 /* Bottom-right (rotate vertically) */
 .corner-bottom-right {
-  bottom: -30px;
-  right: -30px;
+  bottom: -15px;
+  right: -15px;
   transform: scaleY(-1);
 }
 /* Bottom-left (rotate both axes) */
 .corner-bottom-left {
-  bottom: -30px;
-  left: -30px;
+  bottom: -15px;
+  left: -15px;
   transform: scaleX(-1) scaleY(-1);
 }
 /* Portrait block */

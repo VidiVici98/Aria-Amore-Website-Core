@@ -91,32 +91,33 @@
   /* Base corner style */
   .corner {
     position: absolute;
-    width: 45px;   /* adjust as needed */
+    width: 60px;   /* adjust as needed */
     height: auto;
-    opacity: .65;
+    opacity: .5;
+    border-radius: 15px;
     pointer-events: none; /* so they don’t interfere with clicks */
   }
   /* Top-right (original orientation) */
   .corner-top-right {
-    top: 7px;
-    right: 7px;
+    top: 17px;
+    right: 17px;
   }
   /* Top-left (rotate horizontally) */
   .corner-top-left {
-    top: 7px;
-    left: 7px;
+    top: 17px;
+    left: 17px;
     transform: scaleX(-1);
   }
   /* Bottom-right (rotate vertically) */
   .corner-bottom-right {
-    bottom: 7px;
-    right: 7px;
+    bottom: 17px;
+    right: 17px;
     transform: scaleY(-1);
   }
   /* Bottom-left (rotate both axes) */
   .corner-bottom-left {
-    bottom: 7px;
-    left: 7px;
+    bottom: 17px;
+    left: 17px;
     transform: scaleX(-1) scaleY(-1);
   }
   @media (max-width: 600px) {
