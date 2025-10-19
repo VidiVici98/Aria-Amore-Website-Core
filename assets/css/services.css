@@ -122,6 +122,31 @@
     gap: 20px 40px;
     margin-bottom: 30px;
   }
+  .fancy-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: #4b2e1b;
+    grid-column: 1 / -1; /* <-- makes it span both grid columns */
+    font-family: "Italianno", cursive;
+    font-size: 1.75rem;
+    color: #4b2e1b;
+    text-align: center;
+    margin-top: 1.25rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  }
+  
+  .flourish-divider {
+    width: 100px;
+    height: auto;
+    opacity: 0.5;
+  }
+  
+  .flourish-divider.right {
+    transform: scaleX(-1);
+  }
+  
   .rsvp-form .form-row {
     display: flex;
     flex-direction: column;
@@ -148,6 +173,13 @@
   .rsvp-form textarea:focus {
     outline: none;
     box-shadow: inset 0 2px 8px rgba(0,0,0,0.25);
+  }
+  .form-packages {
+    grid-column: 1 / -1; /* spans both main grid columns */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* three equal columns */
+    gap: 15px;
+    margin-top: 10px;
   }
   .checkboxes {
     grid-column: span 2;
@@ -226,6 +258,11 @@
       height: 300px;
     }
   }
+  @media (max-width: 700px) {
+    .form-packages {
+      grid-template-columns: 1fr;
+    }
+  }  
   @media screen and (max-width: 480px) {
     .rsvp-card {
       padding: 20px;

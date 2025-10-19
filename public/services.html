@@ -81,6 +81,11 @@
       Join us for a magical evening of operatic splendor. Please fill out your details below so we can reserve your place at this unforgettable celebration.
     </p>
     <form class="rsvp-form">
+      <h3 class="fancy-heading">
+        <img src="../assets/media/images/divider.svg" class="flourish-divider">
+        Organizer Info:
+        <img src="../assets/media/images/divider.svg" class="flourish-divider right">
+      </h3>
       <div class="form-row">
         <label for="guestName">Your Name</label>
         <input type="text" id="guestName" placeholder="John Doe" required>
@@ -88,42 +93,73 @@
       <div class="form-row">
         <label for="guestEmail">Email Address</label>
         <input type="email" id="guestEmail" placeholder="john@example.com" required>
+      </div>      
+      <div class="form-row">
+        <label for="guestEmail">Phone Number</label>
+        <input type="tel" id="guestPhone" placeholder="(555)123-4567" required>
+      </div>
+      <h3 class="fancy-heading">
+        <img src="../assets/media/images/divider.svg" class="flourish-divider">
+        Event Details:
+        <img src="../assets/media/images/divider.svg" class="flourish-divider right">
+      </h3>
+
+      <div class="form-packages">
+        <label class="checkbox-btn">
+          <input type="radio" name="package" value="serenade">
+          <span><b><i>Serenade Package</i></b></span>
+        </label>      
+        <label class="checkbox-btn">
+          <input type="radio" name="package" value="aria">
+          <span><b><i>Aria Package</i></b></span>
+        </label>    
+        <label class="checkbox-btn">
+          <input type="radio" name="package" value="grand-opera">
+          <span><b><i>Grand Opera Package</i></b></span>
+        </label>
+      </div>
+      <div class="rsvp-calendar">
+        <iframe
+          src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
       </div>
       <div class="form-row">
-        <label for="guestCount">Number of Guests</label>
-        <input type="number" id="guestCount" min="1" placeholder="2" required>
+          <label for="eventDate">Event Date</label>
+          <input type="date" id="eventDate" required>
+          <label for="guestCount">Number of Guests</label>
+          <input type="number" id="guestCount" min="1" placeholder="2" required>
+          <label for="notes">Special Requests</label>
+          <textarea id="notes" rows="3" placeholder="Dietary restrictions, song requests..."></textarea>
       </div>
-      <div class="form-row">
-        <label for="eventDate">Event Date</label>
-        <input type="date" id="eventDate" required>
+      <h3 class="fancy-heading">
+        <img src="../assets/media/images/divider.svg" class="flourish-divider">
+        Addons:
+        <img src="../assets/media/images/divider.svg" class="flourish-divider right">
+      </h3>
+      <div class="form-packages">
+        <label class="checkbox-btn">
+          <input type="checkbox">
+          <span><b><i>Additional Performer</i></b></span>
+        </label>      
+        <label class="checkbox-btn">
+          <input type="checkbox">
+          <span><b><i>Photography Services</i></b></span>
+        </label>    
+        <label class="checkbox-btn">
+          <input type="checkbox">
+          <span><b><i>Pianist Included</i></b></span>
+        </label>        <label class="checkbox-btn">
+          <input type="checkbox">
+          <span><b><i>Chellist Included</i></b></span>
+        </label>        <label class="checkbox-btn">
+          <input type="checkbox">
+          <span><b><i>Planning Services</i></b></span>
+        </label>
       </div>
-      <div class="form-row">
-        <label for="notes">Special Requests</label>
-        <textarea id="notes" rows="3" placeholder="Dietary restrictions, song requests..."></textarea>
-      </div>
-      <div>
-          <label class="checkbox-btn">
-            <input type="checkbox">
-            <span><b><i>Serenade Package</i></b></span>
-          </label>      
-          <label class="checkbox-btn">
-            <input type="checkbox">
-            <span><b><i>Aria Package</i></b></span>
-          </label>    
-          <label class="checkbox-btn">
-            <input type="checkbox">
-            <span><b><i>Grand Opera Package</i></b></span>
-          </label>
-        </div>
       <button type="submit" class="rsvp-submit">Confirm Reservation</button>
     </form>
-    <div class="rsvp-calendar">
-      <iframe
-        src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York"
-        frameborder="0"
-        scrolling="no">
-      </iframe>
-    </div>
   </div>
   <!-- Corner brackets -->
   <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">

@@ -15,34 +15,76 @@
   --wave-dim: rgba(207,174,122,0.38);
   --font-script: 'Italianno', cursive;
 }
-
-/* ---------- Base ---------- */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  color:var(--text);
-  background-image: var(--bg-paper);
-  background-size:cover;
-  background-position:center;
-  padding: clamp(12px, 3vw, var(--pad));
-  display:flex;
-  justify-content:center;
-  align-items:flex-start;
+/*=============================================
+Global Style Reset
+=============================================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
-
-/* vignette to increase contrast when background image missing */
-.page-wrap{
-  width:100%;
-  max-width:var(--max-width);
-  margin: 0 auto 48px;
-  background: linear-gradient(180deg, rgba(255,255,250,0.85), rgba(255,250,240,0.95));
-  border-radius: 16px;
-  padding: clamp(18px, 2.5vw, 32px);
-  box-shadow: 0 20px 60px rgba(10,10,10,0.12);
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
 }
-
+body {
+	line-height: 1.7;
+  width: 100vw;
+  overflow-x: hidden;
+  background-image: url(/assets/media/images/parchment-background.webp);
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  color: var(--color-primary);
+  background-size: cover;
+  backdrop-filter: blur(2px);
+}
+h1, h2 {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--color-subdued);
+}
+a {
+  font-family: "Italianno", cursive;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+  color: var(--color-subdued);
+}
+a:hover {
+  color: var(--color-active);
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+  transition: var(--quick-transition);
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
 /* ---------- Header ---------- */
 .header{
   text-align:center;
