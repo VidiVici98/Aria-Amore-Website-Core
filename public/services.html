@@ -14,43 +14,75 @@
   <!--Header Embed Container-->
   <header id="site-header-container"></header>
   <main>
-  <section id="packages"> 
-    <h2> Bring Your Occassions To Life!</h2>
-    <div class="pricing-table">
-      <div class="plan">
-        <h2>Serenade Package</h2>
-        <ul class="features">
-        <br>
-          <li>One professional opera singer</li>
-          <li>Performance of two carefully selected songs (e.g., processional, recessional, first dance)</li>
-        </ul>
-        <div class="price">$500/event</div>
-          <a href="#" class="btn">Choose Package</a>
+    <section id="packages">
+      <h2>Bring Your Occasions To Life!</h2>
+      <div class="carousel-container">
+        <button class="prev">❮</button>
+        <div class="carousel">
+          <div class="plan">
+            <div class="content-wrapper">
+            <h3>
+              <img src="../assets/media/images/divider.svg" class="flourish-divider">
+              Serenade Package
+              <img src="../assets/media/images/divider.svg" class="flourish-divider right">
+            </h3>
+            <ul class="features">
+              <li>One professional opera singer</li>
+              <li>Two carefully selected songs</li>
+            </ul>
+            <div class="price">$500/event</div>
+            <a href="#" class="btn">Choose Package</a>
+             <!-- Corner brackets -->
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
+            </div>
+          </div>
+          <div class="plan">
+            <div class="content-wrapper">
+            <h3>
+              <img src="../assets/media/images/divider.svg" class="flourish-divider">
+              Aria Package
+              <img src="../assets/media/images/divider.svg" class="flourish-divider right">
+            </h3>
+            <ul class="features">
+              <li>Two professional opera singers</li>
+              <li>Performance up to 30 minutes</li>
+              <li>Standard Photography Package*</li>
+            </ul>
+            <div class="price">$1,500/event</div>
+            <a href="#" class="btn">Choose Package</a>
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
+            </div>
+          </div>
+          <div class="plan">
+            <div class="content-wrapper">
+            <h3>
+              <img src="../assets/media/images/divider.svg" class="flourish-divider">
+              Exclusive
+              <img src="../assets/media/images/divider.svg" class="flourish-divider right">
+            </h3>
+            <ul class="features">
+              <li>12 Songs</li>
+              <li>Perfect For Longer Events</li>
+              <li>Premium Photography Included**</li>
+            </ul>
+            <div class="price">$499/event</div>
+            <a href="#" class="btn">Choose Package</a>
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
+            </div>
+          </div>
+        </div>
+        <button class="next">❯</button>
       </div>
-      <div class="plan">
-        <h2>Aria Package</h2>
-          <ul class="features">
-          <br>
-            <li> Two professional opera singers performing a duet and solo pieces</li>
-            <li>Performance of up to 30 minutes (ideal for prelude, ceremony, or cocktail hour)</li>
-            <li>Standard Photography Package*</li>
-          </ul>
-        <div class="price">$1,500/event</div>
-          <a href="#" class="btn">Choose Package</a>
-      </div>
-      <div class="plan">
-        <h2>Exclusive</h2>
-        <ul class="features">
-          <br>
-          <li>12 Songs</li>
-          <li>Perfect For: Longer Events</li>
-          <li>Premium Photography Included**</li>
-        </ul>
-        <div class="price">$499/event</div>
-          <a href="#" class="btn">Choose Package</a>
-      </div>
-    </div>
-  </section>
+    </section>
   <section id="events">
     <div class="event-grid">
       <div class="event">
@@ -104,7 +136,6 @@
         Event Details:
         <img src="../assets/media/images/divider.svg" class="flourish-divider right">
       </h3>
-
       <div class="form-packages">
         <label class="checkbox-btn">
           <input type="radio" name="package" value="serenade">
@@ -151,10 +182,12 @@
         <label class="checkbox-btn">
           <input type="checkbox">
           <span><b><i>Pianist Included</i></b></span>
-        </label>        <label class="checkbox-btn">
+        </label>        
+        <label class="checkbox-btn">
           <input type="checkbox">
           <span><b><i>Chellist Included</i></b></span>
-        </label>        <label class="checkbox-btn">
+        </label>        
+        <label class="checkbox-btn">
           <input type="checkbox">
           <span><b><i>Planning Services</i></b></span>
         </label>
@@ -173,6 +206,69 @@
   <!--Footer Embed Container-->
   <footer id="site-footer-container"></footer>
   <!--Scripts-->  
+  <script>
+    const carousel = document.querySelector('.carousel');
+    const cards = Array.from(document.querySelectorAll('.plan'));
+    const total = cards.length;
+    let activeIndex = 0;
+    function updateCarousel() {
+      cards.forEach((card, i) => {
+        const offset = (i - activeIndex + total) % total;
+        let angle, xOffset, zOffset, scale;
+        if (offset === 0) {
+          // Center card
+          angle = 0;
+          xOffset = 0;
+          zOffset = 250;
+          scale = 1;
+          card.style.opacity = "1";
+          card.style.zIndex = "3";
+        } 
+        else if (offset === 1) {
+          // Right card
+          angle = 15;
+          xOffset = 650;  /* pushed further right */
+          zOffset = 100;
+          scale = 0.85;
+          card.style.opacity = "0.6";
+          card.style.zIndex = "2";
+        } 
+        else if (offset === total - 1) {
+          // Left card
+          angle = -15;
+          xOffset = -650; /* pushed further left */
+          zOffset = 100;
+          scale = 0.85;
+          card.style.opacity = "0.6";
+          card.style.zIndex = "2";
+        } 
+        else {
+          // Hidden cards (in background)
+          angle = 0;
+          xOffset = 0;
+          zOffset = 0;
+          scale = 0.7;
+          card.style.opacity = "0";
+          card.style.zIndex = "1";
+        }
+        card.style.transform = `
+          translateX(${xOffset}px)
+          translateZ(${zOffset}px)
+          scale(${scale})
+          rotateY(${angle}deg)
+        `;
+      });
+    }
+    document.querySelector('.next').addEventListener('click', () => {
+      activeIndex = (activeIndex + 1) % total;
+      updateCarousel();
+    });
+    document.querySelector('.prev').addEventListener('click', () => {
+      activeIndex = (activeIndex - 1 + total) % total;
+      updateCarousel();
+    });
+    updateCarousel();
+    </script>
   <script src="/assets/js/main.js" defer></script>
   </body>
 </html>
