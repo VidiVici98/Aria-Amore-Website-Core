@@ -11,20 +11,14 @@
                            "content": "Serenade Package"
                        },
                        {
-                           "type": "paragraph",
-                           "content": "Ideal for intimate ceremonies or special moments"
-                       },
-                       {
                            "type": "starting-price",
                            "content": "$500"
                        },
                        {
                            "type": "list",
                            "items": ["One professional opera singer",
-                                      "Performance of two carefully selected songs (e.g., processional, recessional, first dance)",
-                                     "Consultation to select songs that complement your wedding theme",
-                                     "Up to 30 miles of travel included (additional fees for longer distances)"
-                                    ]
+                                     "Performance of two carefully selected songs",
+                                     "Consultation to select songs that complement your wedding theme"                                    ]
                        }
                     ]
         },
@@ -35,20 +29,14 @@
                            "content": "Aria Package"
                        },
                        {
-                           "type": "paragraph",
-                           "content": "Perfect for a more immersive experience"
-                       },
-                       {
                            "type": "starting-price",
                            "content": "$1,500"
                        },
                        {
                            "type": "list",
-                           "items": ["Two professional opera singers performing a duet and solo pieces",
-                                     "Performance of up to 30 minutes (ideal for prelude, ceremony, or cocktail hour)",
-                                     "Customizable song selection from our repertoire",
-                                     "Virtual consultation to personalize your music choices",
-                                     "Up to 50 miles of travel included"
+                           "items": ["Two professional opera singers",
+                                     "Performance of up to 30 minutes",
+                                     "Customizable song selection from our repertoire"
                                     ]
                        }
                     ]
@@ -60,21 +48,15 @@
                            "content": "Grand Opera Package"
                        },
                        {
-                           "type": "paragraph",
-                           "content": "A breathtaking performance for an unforgettable wedding"
-                       },
-                       {
                            "type": "starting-price",
                            "content": "$3,000"
                        },
                        {
                            "type": "list",
                            "items": ["A trio or quartet of professional opera singers",
-                                     "Performance of up to one hour (ceremony, cocktail hour, or dinner entertainment)",
-                                     "Custom song selection, including special requests (if within vocal range)",
-                                     "Virtual or in-person consultation to plan the performance",
-                                     "Professional accompaniment (pianist or instrumental track) included",
-                                     "Up to 75 miles of travel included"
+                                     "Performance of up to one hour",
+                                     "Custom song selection, including special requests",
+                                     "Professional accompaniment included"
                                     ]
                        }
                     ]
