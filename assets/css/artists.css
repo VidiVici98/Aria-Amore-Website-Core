@@ -9,9 +9,10 @@
   --text: #111;
   --card-bg: linear-gradient(180deg,#fffaf1,#f7efe4);
   --card-radius:14px;
-  --card-shadow: 0 10px 30px rgba(12,12,12,0.12), inset 0 1px 2px rgba(255,255,255,0.6);
+  --card-shadow: 0 10px 30px rgba(12,12,12,0.12), 
+           inset 0 1px 2px rgba(255,255,255,0.6);
   --transition: all .32s cubic-bezier(.2,.9,.2,1);
-  --wave-color: #a2583ec9;
+  --wave-color: #a2593e88;
   --wave-dim: rgba(207,174,122,0.38);
   --font-script: 'Italianno', cursive;
 }
@@ -251,7 +252,9 @@ table {
 }
 /* read more control */
 .read-more{
-  background:transparent; border: none; color:var(--accent-deep);
+  background:transparent; 
+  border: none; 
+  color:var(--accent-deep);
   font-family:var(--font-script); 
   cursor:pointer; 
   padding:0; 
@@ -262,6 +265,10 @@ table {
 .read-more:focus{ 
   outline: 3px solid rgba(191,167,127,0.12); 
   border-radius:6px; 
+}
+.read-more:hover{
+  filter: brightness(1.2);
+  transform: translateY(-2px);
 }
 /* booking CTA */
 .cta-row{ 

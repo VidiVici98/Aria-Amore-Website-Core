@@ -26,7 +26,8 @@ body {
   border: 2px groove var(--color-border);
   border-radius: 10px;
   padding: 15px;
-  margin: 75px 40px;
+  margin: 10px 40px;
+  margin-bottom: 75px;
   text-shadow: 2px 2px #000;
   position: relative;
 }
@@ -242,7 +243,7 @@ button.next { right: 22%; }
   }
   .rsvp-form label {
     font-family: "Italianno", cursive;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     margin-bottom: 5px;
     color: #4b2e1b;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
@@ -259,7 +260,7 @@ button.next { right: 22%; }
     transition: all 0.3s ease;
   }
   .rsvp-form textarea {
-    height: 175px
+    height: 160px
   }
   .rsvp-form input:focus,
   .rsvp-form textarea:focus {

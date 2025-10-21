@@ -474,33 +474,11 @@ footer h2 {
   text-align: left; 
   color: var(--color-secondary);
 }
-/*Services Page*/
-
-/*Artists Page*/
-.staff-card {
-  margin: 20px;
-  flex: auto;
-  padding: 5px;
-  border: var(--border-thin);
-  border-radius: 25px;
-  background-color: #d6c5a7c9;
-  display: flex;
-  scale: 85%;
-  transition: var(--quick-transition);
-}
-.staff-card:hover {
-  scale: 90%;
-}   
-.staff-card-inner img:hover {
-  scale: 110%;
-}  
-
 /*Reusable & Unsorted Site Styles*/
 .btn {
   display: inline-block;
   position: relative;
   padding: 10px 20px;
-  background-color: #111111c9;
   border: var(--border-thin);
   border-radius: 5px;
   font-family: "Italianno", cursive;
