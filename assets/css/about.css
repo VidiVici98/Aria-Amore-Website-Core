@@ -1,5 +1,5 @@
 /* ============ FAQ Section Styles ============ */
-.faq-section {
+  .faq-section {
     position: relative;
     background: transparent;
     padding: 4rem 1.5rem;
@@ -10,7 +10,7 @@
   }
   .faq-heading {
     text-align: center;
-    font-size: 2.2rem;
+    font-size: 2.5rem;
     letter-spacing: 0.04em;
     color: #2d2d2d;
     margin-bottom: 1rem;
@@ -68,7 +68,7 @@
     max-height: 500px;
     opacity: 1;
     transform: translateY(0);
-    animation: slideInLeft 1.2s forwards;
+    animation: slideInLeft 1.5s forwards;
   } 
   /* ============ Flourishs ============ */
   .faq-fancy-heading {
@@ -88,12 +88,133 @@
   @keyframes slideInLeft {
     0% {
       opacity: 0;
-      transform: translateX(-30px);
+      transform: translateX(-100px);
     }
     100% {
       opacity: 1;
       transform: translateX(0);
     }
+  }
+  content-wrapper {
+    position: relative; /* Needed for absolute positioning of corners */
+  }
+  /* Base corner style */
+  .corner {
+    position: absolute;
+    width: 140px;   /* adjust as needed */
+    height: auto;
+    opacity: .5;
+    padding: .5rem;
+    border-radius: 35px;
+    pointer-events: none; /* so they don’t interfere with clicks */
+  }
+  /* Top-right (original orientation) */
+  .corner-top-right {
+    top: -5px;
+    right: -5px;
+  }  
+  /* Top-left (rotate horizontally) */
+  .corner-top-left {
+    top: -5px;
+    left: -5px;
+    transform: scaleX(-1);
+  }
+  /* Bottom-right (rotate vertically) */
+  .corner-bottom-right {
+    bottom: -5px;
+    right: -5px;
+    transform: scaleY(-1);
+  }
+  /* Bottom-left (rotate both axes) */
+  .corner-bottom-left {
+    bottom: -5px;
+    left: -5px;
+    transform: scaleX(-1) scaleY(-1);
+  }
+  /*Contact Form*/
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+  }
+  .contact-form input, .contact-form textarea {
+    margin-bottom: 10px;
+    padding: 15px;
+    font-size: 1.25rem;
+    border: var(--border-thin);
+    border-radius: 10px;
+    background: var(--sepia-gradient);
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    color: var(--color-secondary);
+  }
+  .contact-form button {
+    padding: 10px;
+    margin-left: 30%;
+    background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
+    color: var(--color-secondary);
+    border: var(--border-thin);
+    border-radius: 6px;
+    font-size: 1.75rem;
+    font-family: "Italianno", cursive;
+    font-weight: 400;
+    font-style: normal;    
+    text-shadow: var(--text-shadow);
+    cursor: pointer;
+    transition: var(--quick-transition);
+  }
+  .contact-form button:hover {
+    filter: brightness(1.1);
+    border: 2px groove var(--color-active);
+    color: var(--color-active);
+    text-shadow: var(--text-shadow);
+  }
+  .form-container {
+    flex: 1;
+  }
+  .contact-card {
+    display: flex;
+    margin-bottom: 5%;
+    margin-left: 5%;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #d6c5a7c9; 
+    padding: 25px; 
+    max-width: 800px; 
+    border: 2px groove #252525c9; 
+    border-radius: 25px;
+  }
+  .flip-container {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    position: relative;
+  }
+  .flipper {
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .front, .back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+  }
+  .back {
+    transform: rotateY(180deg);
+  }
+  .flip-container.flipped .flipper {
+    transform: rotateY(180deg);
+  }
+  .mobile-flip-container {
+    display: none;
   }
   /* ============ Responsiveness ============ */
   @media (max-width: 600px) {
