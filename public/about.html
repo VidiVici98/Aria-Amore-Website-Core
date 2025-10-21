@@ -14,19 +14,19 @@
 <body>
   <!--Header Embed Container-->
   <header id="site-header-container"></header>
-  <main>
+  <main class="about-page">
     <section class="faq-section">
       <div class="faq-fancy-heading">
         <h2 class="faq-heading">
-          <img src="../assets/media/images/divider.svg" class="faq-flourish-side-ornament">
+          <img src="../assets/media/images/divider.svg" class="flourish-side-ornament">
           Frequently Asked Questions
-          <img src="../assets/media/images/divider.svg" class="faq-flourish-side-ornament right">
+          <img src="../assets/media/images/divider.svg" class="flourish-side-ornament-right">
         </h2>
       </div>    
       <div class="faq-container">
         <details class="faq-item">
           <summary>
-            <span class="faq-question">Is there a travel fee for performances outside your local area?</span>
+            <span>Is there a travel fee for performances outside your local area?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -37,7 +37,7 @@
     
         <details class="faq-item">
           <summary>
-            <span class="faq-question">How do I secure my booking?</span>
+            <span>How do I secure my booking?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -49,7 +49,7 @@
     
         <details class="faq-item">
           <summary>
-            <span class="faq-question">What is your refund and cancellation policy?</span>
+            <span>What is your refund and cancellation policy?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -61,7 +61,7 @@
     
         <details class="faq-item">
           <summary>
-            <span class="faq-question">Can I reschedule my event?</span>
+            <span>Can I reschedule my event?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -72,7 +72,7 @@
     
         <details class="faq-item">
           <summary>
-            <span class="faq-question">What happens if the event is affected by weather or unforeseen events?</span>
+            <span>What happens if the event is affected by weather or unforeseen events?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -83,7 +83,7 @@
     
         <details class="faq-item">
           <summary>
-            <span class="faq-question">What are the requirements for the performance setup?</span>
+            <span>What are the requirements for the performance setup?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -94,7 +94,7 @@
     
         <details class="faq-item">
           <summary>
-            <span class="faq-question">What if my payment is late?</span>
+            <span>What if my payment is late?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -105,7 +105,7 @@
     
         <details class="faq-item">
           <summary>
-            <span class="faq-question">Can I make changes to my booking after it’s confirmed?</span>
+            <span>Can I make changes to my booking after it’s confirmed?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -116,7 +116,7 @@
     
         <details class="faq-item">
           <summary>
-            <span class="faq-question">How can I book Aria Amore for my wedding or event?</span>
+            <span>How can I book Aria Amore for my wedding or event?</span>
             <span class="faq-icon" aria-hidden="true">➕</span>
           </summary>
           <p>
@@ -128,9 +128,9 @@
     </section>
     <div class="faq-fancy-heading">
       <h2 class="faq-heading">
-        <img src="../assets/media/images/divider.svg" class="faq-flourish-side-ornament">
+        <img src="../assets/media/images/divider.svg" class="flourish-side-ornament">
         Reach Out Anytime
-        <img src="../assets/media/images/divider.svg" class="faq-flourish-side-ornament right">
+        <img src="../assets/media/images/divider.svg" class="flourish-side-ornament-right">
       </h2>
     </div>  
     <section id="contact" class="flip-container">
@@ -156,37 +156,6 @@
         </div>
         <div style="background-color: #252525c9; padding: 2%; border: 2px groove #252525c9; border-radius: 25px;">  
           <h2 style="font-size: 2.5rem; font-family: italiano;">Thank You!</h2>
-          <img src="/assets/media/images/victorian-separator.svg" width="80%">
-          <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
-          <button onclick="flipBack()">Go Back</button>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="contact" class="mobile-flip-container">
-    <div class="mobile-flipper">
-    <!-- Front Side -->
-      <div class="front mobile-contact-card" style="background-color: #d6c5a7c9; padding: 15px; border: 2px groove #252525c9; border-radius: 25px;">
-        <div class="image-container">
-          <img src="/assets/media/images/aria-amore-transparent.png" width="200px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
-        </div>
-        <div id="mobile-form-container">
-          <form class="mobile-contact-form" id="flipForm"">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="text" name="event-date" placeholder="Event Date">
-            <textarea name="message" placeholder="Message" rows="5" required></textarea>
-            <button type="submit"><b>Send Inquiry</b></button>
-          </form>
-        </div>
-      </div>
-    <!-- Back Side -->
-      <div class="back mobile-contact-card" style="background-color: #d6c5a7; padding: 25px; border: 2px groove #252525c9; border-radius: 25px;">
-        <div class="image-container">
-          <img src="/assets/media/images/aria-amore-transparent.png" width="200px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
-        </div>
-        <div style="background-color: #252525c9; padding: 2%; border: 2px groove #252525c9; border-radius: 25px;">  
-          <h2 style="font-size: 2.5rem;">Thank You!</h2>
           <img src="/assets/media/images/victorian-separator.svg" width="80%">
           <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
           <button onclick="flipBack()">Go Back</button>

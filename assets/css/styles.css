@@ -202,14 +202,8 @@ footer h2 {
   position: relative;
   overflow: hidden;
 }
-.envelope-container {
-  position: absolute;
-  left: 30px;
-  top: 70px;
-  width: 58%;
-  height: 65%;
-  perspective: 1000px;
-}
+
+
 .envelope {
   position: absolute;
   width: 100%;
@@ -495,15 +489,6 @@ footer h2 {
   color: var(--color-active);
   transform: var(--hover-transform);
 }
-.column {
-  flex-direction: row;
-  display: flex; 
-  padding: 5%; 
-  margin-top: 100px;
-}
-.column h3 {
-  font-size: 2rem;
-}
 .social-icons {
   width: 2rem;
   border-radius: 0;
@@ -561,66 +546,12 @@ Responsive Mobile Styles
   .navigation {
     display: none;
   }
-  .hero {
-    display: none;
-  }
   .contact-card {
     display: none;
-  }
-  .mobile-contact-card{
-    margin-bottom: 10%;
-    margin-left: 2%;
-    align-items: center;
-    border-radius: 10px;
-  }
-  .mobile-contact-form input, 
-  .mobile-contact-form textarea {
-    margin-bottom: 10px;
-    padding: 15px;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: var(--color-secondary);
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: #252525;
-  }
-  .mobile-contact-form button {
-    padding: 10px;
-    margin-left: 30%;
-    background-color: #333;
-    color: var(--color-secondary);
-    border: var(--border-thin);
-    font-size: 1.75rem;
-    font-family: "Italianno", cursive;
-    font-weight: 400;
-    font-style: normal;  
-    text-shadow: var(--text-shadow);
-    transition: var(--quick-transition);
   }
   #menu-toggle {
     display: block;
     position: fixed;
-  }
-  .column {
-    flex-direction: column;
-  }
-  .quote {
-    max-width: 225px;
-  }
-  .mobile-flip-container {
-    perspective: 1000px;
-    width: 80%;
-    height: 650px;
-    position: relative;
-    display: block;
-  }
-  .mobile-flipper {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-    width: 100%;
-    height: 100%;
   }
   .front, .back {
     width: 100%;
@@ -636,15 +567,6 @@ Responsive Mobile Styles
   }
   .mobile-flip-container.flipped .flipper {
     transform: rotateY(180deg);
-  }
-  .mobile-contact-form {
-    display: block;
-  }
-  .mobile-contact-form button:hover {
-    background-color: #252525c9;
-    border: 2px groove var(--color-active);
-    color: var(--color-active);
-    text-shadow: var(--text-shadow);
   }
 }
 /*=============================================
@@ -705,8 +627,8 @@ Additional Mobile & Tablet Responsiveness
   position: relative;
   width: 90%;
   height: auto;
-  aspect-ratio: 3 / 1.5; /* keeps a wide letter-like shape */
-  max-height: 350px; /* prevents it from being too tall */
+  aspect-ratio: 3 / 1.8; /* keeps a wide letter-like shape */
+  max-height: clamp(160px, 25vw, 280px);
   margin: 0 auto;
   left: 0;
   top: 0;
@@ -746,11 +668,6 @@ Additional Mobile & Tablet Responsiveness
   }
   .artist-bio h3 { font-size: 1.75rem; }
   .artist-bio p { font-size: 1rem; }
-  /* Pricing plans */
-  .pricing-table {
-    grid-template-columns: 1fr;
-    max-width: 95%;
-  }
   .plan {
     margin: 10px auto;
     max-width: 300px;
@@ -763,12 +680,6 @@ Additional Mobile & Tablet Responsiveness
   .contact-form button {
     margin: 10px auto;
     width: 80%;
-  }
-  /* Quote area */
-  .quote {
-    width: 90%;
-    max-width: 300px;
-    margin: 20px auto;
   }
   /* Footer */
   footer {
@@ -861,12 +772,11 @@ Extracted Inline CSS & Responsive Versions
   gap: 8px;
   margin: 0.5rem 0;
 }
-/* === Envelope Container Fix (Mobile-Friendly Shape) === */
 .envelope-container {
   position: relative;
   width: 90%;
   height: auto;
-  aspect-ratio: 3 / 1.5;
+  aspect-ratio: 3 / 1.8;
   max-height: clamp(180px, 25vw, 350px);
   margin: 0 auto;
   left: 0;
@@ -908,10 +818,6 @@ Extracted Inline CSS & Responsive Versions
   }
   .staff-inner {
     padding: 15px;
-  }
-  .envelope-container {
-    aspect-ratio: 3 / 1.8;
-    max-height: clamp(160px, 25vw, 280px);
   }
 }
 @media screen and (max-width: 480px) {

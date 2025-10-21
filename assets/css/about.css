@@ -77,13 +77,16 @@
     justify-content: center;
     gap: 0.75rem;
   }
-  .faq-flourish-side-ornament {
+  .about-page .flourish-side-ornament {
     width: 150px;
     height: auto;
     opacity: 0.5;
   }
-  .faq-flourish-side-ornament.right {
+  .about-page .flourish-side-ornament-right {
     transform: scaleX(-1);
+    width: 150px;
+    height: auto;
+    opacity: 0.5;
   }
   @keyframes slideInLeft {
     0% {
@@ -99,7 +102,7 @@
     position: relative; /* Needed for absolute positioning of corners */
   }
   /* Base corner style */
-  .corner {
+  .about-page .corner {
     position: absolute;
     width: 140px;   /* adjust as needed */
     height: auto;
@@ -109,24 +112,24 @@
     pointer-events: none; /* so they don’t interfere with clicks */
   }
   /* Top-right (original orientation) */
-  .corner-top-right {
+  .about-page .corner-top-right {
     top: -5px;
     right: -5px;
   }  
   /* Top-left (rotate horizontally) */
-  .corner-top-left {
+  .about-page .corner-top-left {
     top: -5px;
     left: -5px;
     transform: scaleX(-1);
   }
   /* Bottom-right (rotate vertically) */
-  .corner-bottom-right {
+  .about-page .corner-bottom-right {
     bottom: -5px;
     right: -5px;
     transform: scaleY(-1);
   }
   /* Bottom-left (rotate both axes) */
-  .corner-bottom-left {
+  .about-page .corner-bottom-left {
     bottom: -5px;
     left: -5px;
     transform: scaleX(-1) scaleY(-1);
@@ -213,13 +216,10 @@
   .flip-container.flipped .flipper {
     transform: rotateY(180deg);
   }
-  .mobile-flip-container {
-    display: none;
-  }
   /* ============ Responsiveness ============ */
   @media (max-width: 600px) {
     .faq-heading {
-      font-size: 1.8rem;
+      font-size: 1.75rem;
     }
     .faq-item summary {
       font-size: 1.1rem;

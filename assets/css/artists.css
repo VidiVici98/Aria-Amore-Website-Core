@@ -86,25 +86,6 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-/* ---------- Header ---------- */
-.header{
-  text-align:center;
-  margin-bottom: 18px;
-}
-.title{
-  font-family: var(--font-script);
-  font-size: clamp(2rem, 4.2vw, 3rem);
-  color: var(--accent-deep);
-  margin:0;
-  letter-spacing:.01em;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.08);
-}
-.subtitle{
-  margin-top:8px;
-  color:var(--muted);
-  font-style:italic;
-  font-size:clamp(.95rem,1.2vw,1.05rem);
-}
 /* ---------- Grid ---------- */
 .artists-grid{
   display:grid;
@@ -208,34 +189,6 @@ table {
   overflow:hidden; 
   text-overflow:ellipsis;
 }
-.artist-role{ 
-  margin:0; 
-  font-style:italic; 
-  color:var(--muted); 
-  font-size:.95rem; 
-}
-/* quick stats & quote */
-.meta-row{ 
-  display:flex; 
-  gap:12px; 
-  align-items:center; 
-  flex-wrap:wrap; 
-  color:var(--muted); 
-  font-size:.92rem; 
-  margin-top:6px;
-}
-.badge{ 
-  background: rgba(200,170,120,0.12); 
-  color:var(--accent-deep); 
-  padding:6px 10px; 
-  border-radius:999px; 
-  font-family:var(--font-script); 
-  font-size:.9rem; 
-  border:1px solid rgba(200,170,120,0.14); }
-.stats{ 
-  color: var(--muted); 
-  font-size:.9rem; 
-}
 /* bio (collapsible) */
 .artist-bio{
   font-size: .98rem;
@@ -245,10 +198,6 @@ table {
   overflow:hidden;
   transition: max-height .36s ease, padding .28s ease;
   padding-bottom:0;
-}
-.artist-bio.open{ 
-  max-height: 999px; 
-  padding-bottom:6px; 
 }
 /* read more control */
 .read-more{

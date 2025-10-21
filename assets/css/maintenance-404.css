@@ -27,13 +27,13 @@
     padding: 24px;
     text-align: center;
   }
-  .hero {
+.maintenance-page .hero {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
   }
-  .envelope-container {
+.maintenance-page .envelope-container {
     width: 100%;
     max-width: 420px;
     padding: 16px;
@@ -41,7 +41,7 @@
     align-items: center;
     justify-content: center;
   }
-  .hero-letter {
+.maintenance-page .hero-letter {
     width: 100%;
     background: var(--sepia-gradient);
     box-shadow: var(--box-shadow), var(--envelope-inset);
@@ -52,14 +52,14 @@
     align-items: center;
     justify-content: center;
   }
-  .hero-letter h1 {
+.maintenance-page .hero-letter h1 {
     font-family: "Italianno", cursive;
     font-size: 2.6rem;
     color: #b8916a;
     margin: 0 0 10px 0;
     text-shadow: var(--text-shadow);
   }
-  .hero-letter p {
+.maintenance-page .hero-letter p {
     margin: 0 0 1rem 0;
     font-family: "Italianno", cursive;
     font-size: 1.15rem;
@@ -67,12 +67,12 @@
     font-style: italic;
     line-height: 1.4;
   }
-  .hero-letter-footer {
+.maintenance-page .hero-letter-footer {
     margin-top: 0.5rem;
     display: flex;
     justify-content: center;
   }
-  .hero-letter-btn {
+.maintenance-page .hero-letter-btn {
     background: transparent;
     border: none;
     color: var(--color-primary);
@@ -82,14 +82,14 @@
     cursor: pointer;
     transition: all 0.3s ease;
   }
-  .hero-letter-btn:hover {
+.maintenance-page .hero-letter-btn:hover {
     transform: var(--hover-transform);
   }
-  .content-wrapper {
+.maintenance-page .content-wrapper {
     position: relative;
   }
   /* Base corner style */
-  .corner {
+.maintenance-page .corner {
     position: absolute;
     width: 60px;   /* adjust as needed */
     height: auto;
@@ -98,24 +98,24 @@
     pointer-events: none; /* so they don’t interfere with clicks */
   }
   /* Top-right (original orientation) */
-  .corner-top-right {
+.maintenance-page .corner-top-right {
     top: 17px;
     right: 17px;
   }
   /* Top-left (rotate horizontally) */
-  .corner-top-left {
+.maintenance-page .corner-top-left {
     top: 17px;
     left: 17px;
     transform: scaleX(-1);
   }
   /* Bottom-right (rotate vertically) */
-  .corner-bottom-right {
+.maintenance-page .corner-bottom-right {
     bottom: 17px;
     right: 17px;
     transform: scaleY(-1);
   }
   /* Bottom-left (rotate both axes) */
-  .corner-bottom-left {
+.maintenance-page .corner-bottom-left {
     bottom: 17px;
     left: 17px;
     transform: scaleX(-1) scaleY(-1);
