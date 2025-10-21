@@ -3,7 +3,7 @@
   --max-width:1200px;
   --pad:24px;
   --bg-paper: url('/assets/media/images/parchment-background.webp');
-  --accent: #cfae7a;        /* warm gold */
+  --accent: #cfae7a;
   --accent-deep: #a2583e;
   --muted: #6b6b6b;
   --text: #111;
@@ -87,7 +87,7 @@ table {
 	border-spacing: 0;
 }
 /* ---------- Grid ---------- */
-.artists-grid{
+.artists-page .artists-grid{
   display:grid;
   gap: 22px;
   grid-template-columns: repeat(auto-fit, minmax(320px,1fr));
@@ -96,7 +96,7 @@ table {
   margin-bottom: 2rem;
 }
 /* ---------- Artist Card ---------- */
-.artist{
+.artists-page .artist{
   display:flex;
   gap: 18px;
   align-items:flex-start;
@@ -108,46 +108,41 @@ table {
   position:relative;
   overflow:visible;
 }
-.artist:hover{ transform: translateY(-6px); 
+.artists-page .artist:hover{ transform: translateY(-6px); 
   box-shadow: 0 26px 60px rgba(10,10,10,0.14) 
 }
-.content-wrapper {
+.artists-page .content-wrapper {
   position: relative;
 }
-/* Base corner style */
-.corner {
+.artists-page .corner {
   position: absolute;
-  width: 80px;   /* adjust as needed */
+  width: 80px;  
   height: auto;
   opacity: .5;
   border-radius: 20px;
-  pointer-events: none; /* so they don’t interfere with clicks */
+  pointer-events: none;
 }
-/* Top-right (original orientation) */
-.corner-top-right {
+.artists-page .corner-top-right {
   top: -15px;
   right: -15px;
 }
-/* Top-left (rotate horizontally) */
-.corner-top-left {
+.artists-page .corner-top-left {
   top: -15px;
   left: -15px;
   transform: scaleX(-1);
 }
-/* Bottom-right (rotate vertically) */
-.corner-bottom-right {
+.artists-page .corner-bottom-right {
   bottom: -15px;
   right: -15px;
   transform: scaleY(-1);
 }
-/* Bottom-left (rotate both axes) */
-.corner-bottom-left {
+.artists-page .corner-bottom-left {
   bottom: -15px;
   left: -15px;
   transform: scaleX(-1) scaleY(-1);
 }
 /* Portrait block */
-.artist-portrait{
+.artists-page .artist-portrait{
   width: 140px;
   height: 140px;
   border-radius: 10px;
@@ -157,30 +152,30 @@ table {
   cursor:pointer;
   box-shadow: 0 8px 24px rgba(0,0,0,0.10);
 }
-.artist-portrait img{ 
+.artists-page .artist-portrait img{ 
   width:100%; 
   height:100%; 
   object-fit:cover; 
   display:block; 
 }
 /* Info column */
-.artist-body{ 
+.artists-page .artist-body{ 
   flex:1; 
   min-width:0; 
   display:flex; 
   flex-direction:column;
   gap:8px; 
 }
-.headline-row{ 
+.artists-page .headline-row{ 
   display:flex; 
   justify-content:space-between; 
   align-items:flex-start; 
   gap:12px; 
 }
-.name-block{ 
+.artists-page .name-block{ 
   min-width:0; 
 }
-.artist-name{
+.artists-page .artist-name{
   margin:0;
   font-family:var(--font-script);
   font-size:1.4rem;
@@ -190,17 +185,17 @@ table {
   text-overflow:ellipsis;
 }
 /* bio (collapsible) */
-.artist-bio{
+.artists-page .artist-bio{
   font-size: .98rem;
   color: var(--text);
   line-height:1.5;
-  max-height: 3.4rem; /* ~2 lines collapsed */
+  max-height: 6.8rem; /* ~2 lines collapsed */
   overflow:hidden;
   transition: max-height .36s ease, padding .28s ease;
   padding-bottom:0;
 }
 /* read more control */
-.read-more{
+.artists-page .read-more{
   background:transparent; 
   border: none; 
   color:var(--accent-deep);
@@ -211,23 +206,23 @@ table {
   font-size: 1.5rem; 
   text-shadow: 1px 1px 2px #333;
 }
-.read-more:focus{ 
+.artists-page .read-more:focus{ 
   outline: 3px solid rgba(191,167,127,0.12); 
   border-radius:6px; 
 }
-.read-more:hover{
+.artists-page .read-more:hover{
   filter: brightness(1.2);
   transform: translateY(-2px);
 }
 /* booking CTA */
-.cta-row{ 
+.artists-page .cta-row{ 
   display:flex; 
   gap:8px; 
   margin-top:8px; 
   align-items:center; 
   flex-wrap:wrap;
 }
-.book-btn{
+.artists-page .book-btn{
   background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
   color:#fff; 
   padding:8px 12px; 
@@ -239,36 +234,39 @@ table {
   right: -60%;
   position: relative;
 }
-.book-btn:hover{ 
+.artists-page .book-btn:hover{ 
   transform: translateY(-2px); 
   filter:brightness(1.1) 
 }
 /* ---------- Audio list ---------- */
-.audio-list{ 
+.artists-page .audio-list{ 
   display:flex; 
   flex-direction:column; 
   gap:10px; 
   margin-top:6px; 
 }
-/* one item */
-.audio-item{ display:flex; gap:12px; align-items:center; width:100%; min-width:0; }
-.play-btn{
-  display:grid; place-items:center;
-  width:48px; height:48px; border-radius:999px;
+.artists-page .audio-item{ 
+  display:flex; 
+  gap:12px; 
+  align-items:center; 
+  width:100%; 
+  min-width:0; }
+.artists-page .play-btn{
+  display:grid; 
+  place-items:center;
+  width:48px; 
+  height:48px; 
+  border-radius:999px;
   background: linear-gradient(180deg,#fffdfa,#f5eee0);
   border:1px solid rgba(0,0,0,0.06);
-  cursor:pointer; transition: box-shadow .18s ease, transform .18s ease, background .18s ease;
+  cursor:pointer; 
+  transition: box-shadow .18s ease, transform .18s ease, background .18s ease;
   box-shadow: 0 6px 12px rgba(0,0,0,0.06);
 }
-.play-btn:focus{ outline: 3px solid rgba(207,174,122,0.14) }
-/* glowing style when active */
-.play-btn.glow{ 
-  box-shadow: 0 12px 34px rgba(207,174,122,0.18); 
-  transform: translateY(-2px); 
-  background: linear-gradient(180deg,#f8f1e6,#f0e3cc) 
+.artists-page .play-btn:focus{ 
+  outline: 3px solid rgba(207,174,122,0.14) 
 }
-/* play/pause icons */
-.play-icon{ 
+.artists-page .play-icon{ 
   width:0;
   height:0;
   border-left:12px solid #231f20;
@@ -276,33 +274,33 @@ table {
   border-bottom:7px solid transparent;
   margin-left:2px;
 }
-.pause-icon{ 
+.artists-page .pause-icon{ 
   display:none; 
   width:12px; 
   height:14px;
 }
-.pause-icon span{ 
+.artists-page .pause-icon span{ 
   display:inline-block; 
   width:3px; 
   height:100%; 
   background:#231f20; 
   margin:0 2px;
 }
-.play-btn.playing .play-icon{ 
+.artists-page .play-btn.playing .play-icon{ 
   display:none 
 }
-.play-btn.playing .pause-icon{ 
+.artists-page .play-btn.playing .pause-icon{ 
   display:inline-block 
 }
 /* track info */
-.track-info{ 
+.artists-page .track-info{ 
   min-width:0; 
   display:flex; 
   flex-direction:column; 
   gap:2px; 
   overflow:hidden 
 }
-.track-title{ 
+.artists-page .track-title{ 
   font-family:var(--font-script); 
   font-size:1rem; 
   margin:0; 
@@ -310,56 +308,62 @@ table {
   overflow:hidden; 
   text-overflow:ellipsis; 
 }
-.track-sub{ 
+.artists-page .track-sub{ 
   margin:0; 
   color:var(--muted); 
   font-size:.86rem; 
 }
 /* waveform: 5 bars */
-.waveform{ 
+.artists-page .waveform{ 
   display:inline-grid; 
   grid-auto-flow:column; 
-  gap:5px; align-items:end; 
+  gap:1px; 
+  align-items:end; 
   height:28px; 
   width:92px; 
   margin-left:6px; 
 }
-.wavebar{ 
+.artists-page .wavebar{ 
   width:6px; 
   background:var(--wave-dim); 
   border-radius:4px; 
-  height:8px; 
+  height:2px; 
   transform-origin:bottom; 
   transition: background .18s ease;
 }
 /* hover pulse (light) */
-.play-btn:hover + .waveform .wavebar,
-.play-btn:focus + .waveform .wavebar{ 
+.artists-page .play-btn:hover + .waveform .wavebar,
+.artists-page .play-btn:focus + .waveform .wavebar{ 
   transform: scaleY(1.6); 
   background:var(--wave-color); 
 }
 /* playing animation: looped scaling, staggered delays */
-.audio-item.playing .wavebar{ 
+.artists-page .audio-item.playing .wavebar{ 
   animation: wave 880ms linear infinite; 
   background:var(--wave-color); 
 }
-.audio-item.playing .wavebar:nth-child(1){ animation-delay: 0ms }
-.audio-item.playing .wavebar:nth-child(2){ animation-delay: 110ms }
-.audio-item.playing .wavebar:nth-child(3){ animation-delay: 230ms }
-.audio-item.playing .wavebar:nth-child(4){ animation-delay: 350ms }
-.audio-item.playing .wavebar:nth-child(5){ animation-delay: 470ms }
+.artists-page .audio-item.playing .wavebar:nth-child(1){ animation-delay: 0ms }
+.artists-page .audio-item.playing .wavebar:nth-child(2){ animation-delay: 110ms }
+.artists-page .audio-item.playing .wavebar:nth-child(3){ animation-delay: 230ms }
+.artists-page .audio-item.playing .wavebar:nth-child(4){ animation-delay: 350ms }
+.artists-page .audio-item.playing .wavebar:nth-child(5){ animation-delay: 470ms }
+.artists-page .audio-item.playing .wavebar:nth-child(6){ animation-delay: 0ms }
+.artists-page .audio-item.playing .wavebar:nth-child(7){ animation-delay: 110ms }
+.artists-page .audio-item.playing .wavebar:nth-child(8){ animation-delay: 230ms }
+.artists-page .audio-item.playing .wavebar:nth-child(9){ animation-delay: 350ms }
+.artists-page .audio-item.playing .wavebar:nth-child(10){ animation-delay: 470ms }
 @keyframes wave{
-  0%{ transform: scaleY(.35) }
-  20%{ transform: scaleY(1.0) }
-  40%{ transform: scaleY(.45) }
-  60%{ transform: scaleY(1.2) }
-  80%{ transform: scaleY(.55) }
-  100%{ transform: scaleY(.35) }
+  0%{ transform: scaleY(1.75) }
+  20%{ transform: scaleY(5.0) }
+  40%{ transform: scaleY(2.25) }
+  60%{ transform: scaleY(6) }
+  80%{ transform: scaleY(2.75) }
+  100%{ transform: scaleY(1.75) }
 }
 /* hide native controls (we rely on custom play button) */
-audio{ display:none }
+.artists-page audio{ display:none }
 /* ---------- Lightbox (hidden by default) ---------- */
-.lightbox{
+.artists-page .lightbox{
   position:fixed; 
   inset:0; 
   display:none; 
@@ -367,13 +371,15 @@ audio{ display:none }
   justify-content:center; 
   z-index:9999;
 }
-.lightbox.open{ display:flex }
-.lightbox-backdrop{ 
+.artists-page .lightbox.open{ 
+  display:flex 
+}
+.artists-page .lightbox-backdrop{ 
   position:absolute; 
   inset:0; 
   background:rgba(12,12,12,0.6); 
   backdrop-filter: blur(2px); }
-.lightbox-panel{
+.artists-page .lightbox-panel{
   position:relative; 
   z-index:2;
   max-width:92%; 
@@ -384,12 +390,12 @@ audio{ display:none }
   padding:12px;
   box-shadow: 0 18px 60px rgba(0,0,0,0.5);
 }
-.lightbox-img{ 
+.artists-page .lightbox-img{ 
   max-width:84vw; 
   max-height:76vh; 
   display:block; 
 }
-.lightbox-close{ 
+.artists-page .lightbox-close{ 
   position:absolute; 
   right:10px; 
   top:6px; 
@@ -406,24 +412,26 @@ audio{ display:none }
 
 /* responsive adjustments */
 @media (max-width:720px){
-  .artist{ 
+  .artists-page .artist{ 
     flex-direction:column; 
     align-items:center; 
     text-align:center; 
   }
-  .artist-portrait{ 
+  .artists-page .artist-portrait{ 
     width: 180px; 
     height:180px; 
     flex:0 0 180px; 
   }
-  .audio-item{ 
+  .artists-page .audio-item{ 
     justify-content:center 
   }
-  .waveform{ display:none } /* simplify on small screens */
+  .artists-page .waveform{ display:none } /* simplify on small screens */
 }
 /* reduced motion */
 @media (prefers-reduced-motion: reduce){
-  .artist, .play-btn, .audio-item.playing .wavebar{ 
+  .artists-page .artist, 
+  .artists-page .play-btn, 
+  .artists-page .audio-item.playing .wavebar{ 
     transition: none !important; 
     animation: none !important 
   }

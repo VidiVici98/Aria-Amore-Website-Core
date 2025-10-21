@@ -30,10 +30,6 @@ document.getElementById("flipForm").addEventListener("submit", function (event) 
 function flipBack() {
   document.querySelector(".flip-container").classList.remove("flipped");
 }
-// main.js - Aria Amore - interactive quote + mini booking funnel
-// Assumes the HTML you provided is present. This file is intentionally
-// defensive about parsing prices (handles "$500", "$1.500", "$1,500", etc.)
-
 (() => {
   'use strict';
 

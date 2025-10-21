@@ -1,5 +1,5 @@
 /* ============ FAQ Section Styles ============ */
-  .faq-section {
+  .about-page .faq-section {
     position: relative;
     background: transparent;
     padding: 4rem 1.5rem;
@@ -8,26 +8,26 @@
     font-family: "Cormorant Garamond", serif;
     color: #222;
   }
-  .faq-heading {
+  .about-page .faq-heading {
     text-align: center;
     font-size: 2.5rem;
     letter-spacing: 0.04em;
     color: #2d2d2d;
     margin-bottom: 1rem;
   }
-  .faq-container {
+  .about-page .faq-container {
     margin-top: 2rem;
   }
   /* ============ Details Styling ============ */
-  .faq-item {
+  .about-page .faq-item {
     border-bottom: 1px groove rgba(0, 0, 0, 0.25);
     padding: 1rem 0;
     transition: background-color 0.3s ease;
   }
-  .faq-item:not(:last-child) {
+  .about-page .faq-item:not(:last-child) {
     margin-bottom: 0.5rem;
   }
-  .faq-item summary {
+  .about-page .faq-item summary {
     cursor: pointer;
     display: flex;
     justify-content: space-between;
@@ -38,22 +38,22 @@
     color: #333;
     transition: color 0.3s ease;
   }
-  .faq-item summary::-webkit-details-marker {
+  .about-page .faq-item summary::-webkit-details-marker {
     display: none;
   }
-  .faq-item summary:hover {
+  .about-page .faq-item summary:hover {
     color: #000;
   }
-  .faq-icon {
+  .about-page .faq-icon {
     font-size: 1.3rem;
     transition: transform 0.3s ease, color 0.3s ease;
   }
   /* When open */
-  .faq-item[open] summary .faq-icon {
+  .about-page .faq-item[open] summary .faq-icon {
     transform: rotate(45deg);
   }
   /* Smooth open animation */
-  .faq-item p {
+  .about-page .faq-item p {
     margin: 0.8rem 0 0;
     font-size: 1.05rem;
     line-height: 1.6;
@@ -64,14 +64,14 @@
     transform: translateY(-5px);
     transition: all 0.45s cubic-bezier(0.5, 0, 0.3, 1);
   }
-  .faq-item[open] p {
+  .about-page .faq-item[open] p {
     max-height: 500px;
     opacity: 1;
     transform: translateY(0);
     animation: slideInLeft 1.5s forwards;
   } 
   /* ============ Flourishs ============ */
-  .faq-fancy-heading {
+  .about-page .faq-fancy-heading {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -135,12 +135,12 @@
     transform: scaleX(-1) scaleY(-1);
   }
   /*Contact Form*/
-  .contact-form {
+  .about-page .contact-form {
     display: flex;
     flex-direction: column;
     max-width: 500px;
   }
-  .contact-form input, .contact-form textarea {
+  .about-page .contact-form input, .contact-form textarea {
     margin-bottom: 10px;
     padding: 15px;
     font-size: 1.25rem;
@@ -151,7 +151,7 @@
     font-style: italic;
     color: var(--color-secondary);
   }
-  .contact-form button {
+  .about-page .contact-form button {
     padding: 10px;
     margin-left: 30%;
     background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
@@ -166,16 +166,16 @@
     cursor: pointer;
     transition: var(--quick-transition);
   }
-  .contact-form button:hover {
+  .about-page .contact-form button:hover {
     filter: brightness(1.1);
     border: 2px groove var(--color-active);
     color: var(--color-active);
     text-shadow: var(--text-shadow);
   }
-  .form-container {
+  .about-page .form-container {
     flex: 1;
   }
-  .contact-card {
+  .about-page .contact-card {
     display: flex;
     margin-bottom: 5%;
     margin-left: 5%;
@@ -187,21 +187,22 @@
     border: 2px groove #252525c9; 
     border-radius: 25px;
   }
-  .flip-container {
+  .about-page .flip-container {
     perspective: 1000px;
     width: 100%;
     max-width: 800px;
     height: 400px;
     position: relative;
   }
-  .flipper {
+  .about-page .flipper {
     transition: transform 0.6s;
     transform-style: preserve-3d;
     position: relative;
     width: 100%;
     height: 100%;
   }
-  .front, .back {
+  .about-page .front, 
+  .about-page .back {
     width: 100%;
     height: 100%;
     backface-visibility: hidden;
@@ -210,21 +211,21 @@
     left: 0;
     text-align: center;
   }
-  .back {
+  .about-page .back {
     transform: rotateY(180deg);
   }
-  .flip-container.flipped .flipper {
+  .about-page .flip-container.flipped .flipper {
     transform: rotateY(180deg);
   }
   /* ============ Responsiveness ============ */
   @media (max-width: 600px) {
-    .faq-heading {
+    .about-page .faq-heading {
       font-size: 1.75rem;
     }
-    .faq-item summary {
+    .about-page .faq-item summary {
       font-size: 1.1rem;
     }
-    .faq-icon {
+    .about-page .faq-icon {
       font-size: 1.1rem;
     }
   }
