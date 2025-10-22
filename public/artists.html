@@ -16,252 +16,45 @@
    <!--Header Embed Container-->
    <header id="site-header-container"></header>
   <main class="artists-page">
-    <section class="artists-grid" aria-label="Artists">
-      <!-- ------------artist-xavier ---------------- -->
-      <article class="artist" id="artist-xavier">
-          <div class="content-wrapper">
-        <div class="artist-portrait" tabindex="0" role="button" aria-label="View Xavier Williams photo">
-          <img src="../assets/media/images/xavier-williams.webp" alt="Xavier Williams portrait">
+<section class="artists-grid" aria-label="Artists">
+  <!-- Template for each artist -->
+  <template id="artist-template">
+    <article class="artist">
+      <div class="content-wrapper">
+        <div class="artist-portrait" tabindex="0" role="button">
+          <img src="" alt="">
         </div>
         <div class="artist-body">
           <div class="headline-row">
             <div class="name-block">
-              <h2 class="artist-name">Xavier Williams</h2>
+              <h2 class="artist-name"></h2>
             </div>
           </div>
-          <p class="artist-bio" id="bio-xavier">
-            Xavier’s soaring soprano has been central to Aria Amore’s signature sound. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotions of wedding ceremonies.
-          </p>
-          <button class="read-more" aria-expanded="false" aria-controls="bio-xavier" data-target="bio-xavier">Read more</button>
-          <div class="audio-list" aria-label="Audio previews for Sophia">
-            <!-- track 1 -->
-            <div class="audio-item" data-track="xavier-night">
-              <button class="play-btn" aria-pressed="false" aria-label="Play Xavvier's preview of Night" data-audio="xavier-night-src">
-                <span class="play-icon" aria-hidden="true"></span>
-                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
-              </button>
-              <div class="waveform" aria-hidden="true">
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>                
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-              </div>
-              <div class="track-info">
-                <p class="track-title">Night (excerpt)</p>
-                <p class="track-sub">Soprano • 2m 2s</p>
-              </div>
-              <audio id="xavier-night-src" preload="none"><source src="/assets/media/audio/xavier-night-price.mp3" type="audio/mpeg"></audio>
-            </div>
-            <!-- track 2 -->
-            <div class="audio-item" data-track="xavier-ave-verum">
-              <button class="play-btn" aria-pressed="false" aria-label="Play Xavier's preview of Ave Verum" data-audio="xavier-ave-verum-src">
-                <span class="play-icon" aria-hidden="true"></span>
-                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
-              </button>
-              <div class="waveform" aria-hidden="true">
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>                
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-              </div>
-              <div class="track-info">
-                <p class="track-title">Ave Verum (excerpt)</p>
-                <p class="track-sub">Soprano • 1m 16s</p>
-              </div>
-              <audio id="xavier-ave-verum-src" preload="none"><source src="/assets/media/audio/xavier-ave-verum.mp4" type="audio/mpeg"></audio>
-            </div>
-          </div>
+          <p class="artist-bio"></p>
+          <button class="read-more" aria-expanded="false">Read more</button>
+          <div class="audio-list" aria-label="Audio previews"></div>
           <div class="cta-row">
-            <a class="book-btn" href="/booking?s=Xavier%20Williams" aria-label="Request Xavier Williams">Request Artist</a>
+            <a class="book-btn" href="#">Request Artist</a>
           </div>
         </div>
-  <!-- Corner brackets -->
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
-        </div>
-      </article>
-      <!-- ------------artist-2 ---------------- -->
-      <article class="artist" id="artist-xavier">
-          <div class="content-wrapper">
-        <div class="artist-portrait" tabindex="0" role="button" aria-label="View Xavier Williams photo">
-          <img src="../assets/media/images/perormer.webp" alt="Xavier Williams portrait">
-        </div>
-        <div class="artist-body">
-          <div class="headline-row">
-            <div class="name-block">
-              <h2 class="artist-name">Xavier Williams</h2>
-            </div>
-          </div>
-          <p class="artist-bio" id="bio-xavier">
-            Xavier’s soaring soprano has been central to Aria Amore’s signature sound. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotions of wedding ceremonies.
-          </p>
-          <button class="read-more" aria-expanded="false" aria-controls="bio-xavier" data-target="bio-xavier">Read more</button>
-          <div class="audio-list" aria-label="Audio previews for Sophia">
-            <!-- track 1 -->
-            <div class="audio-item" data-track="sophia-1">
-              <button class="play-btn" aria-pressed="false" aria-label="Play Ave Maria preview" data-audio="sophia-1-src">
-                <span class="play-icon" aria-hidden="true"></span>
-                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
-              </button>
-              <div class="waveform" aria-hidden="true">
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>                
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-              </div>
-              <div class="track-info">
-                <p class="track-title">Ave Maria (excerpt)</p>
-                <p class="track-sub">Soprano • 45s</p>
-              </div>
-              <audio id="sophia-1-src" preload="none"><source src="/assets/media/audio/sophia-ave-maria.mp3" type="audio/mpeg"></audio>
-            </div>
-            <!-- track 2 -->
-            <div class="audio-item" data-track="sophia-1">
-              <button class="play-btn" aria-pressed="false" aria-label="Play Ave Maria preview" data-audio="sophia-1-src">
-                <span class="play-icon" aria-hidden="true"></span>
-                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
-              </button>
-              <div class="waveform" aria-hidden="true">
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>                
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-              </div>
-              <div class="track-info">
-                <p class="track-title">Ave Maria (excerpt)</p>
-                <p class="track-sub">Soprano • 45s</p>
-              </div>
-              <audio id="sophia-1-src" preload="none"><source src="/assets/media/audio/sophia-ave-maria.mp3" type="audio/mpeg"></audio>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="book-btn" href="/booking?s=Xavier%20Williams" aria-label="Request Xavier Williams">Request Artist</a>
-          </div>
-        </div>
-  <!-- Corner brackets -->
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
-        </div>
-      </article>
-      <!-- ------------artist-3 ---------------- -->
-      <article class="artist" id="artist-xavier">
-          <div class="content-wrapper">
-        <div class="artist-portrait" tabindex="0" role="button" aria-label="View Xavier Williams photo">
-          <img src="../assets/media/images/placeholder.webp" alt="Xavier Williams portrait">
-        </div>
-        <div class="artist-body">
-          <div class="headline-row">
-            <div class="name-block">
-              <h2 class="artist-name">Xavier Williams</h2>
-            </div>
-          </div>
-          <p class="artist-bio" id="bio-xavier">
-            Xavier’s soaring soprano has been central to Aria Amore’s signature sound. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotions of wedding ceremonies.
-          </p>
-          <button class="read-more" aria-expanded="false" aria-controls="bio-xavier" data-target="bio-xavier">Read more</button>
-          <div class="audio-list" aria-label="Audio previews for Sophia">
-            <!-- track 1 -->
-            <div class="audio-item" data-track="sophia-1">
-              <button class="play-btn" aria-pressed="false" aria-label="Play Ave Maria preview" data-audio="sophia-1-src">
-                <span class="play-icon" aria-hidden="true"></span>
-                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
-              </button>
-              <div class="waveform" aria-hidden="true">
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>                
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-              </div>
-              <div class="track-info">
-                <p class="track-title">Ave Maria (excerpt)</p>
-                <p class="track-sub">Soprano • 45s</p>
-              </div>
-              <audio id="sophia-1-src" preload="none"><source src="/assets/media/audio/sophia-ave-maria.mp3" type="audio/mpeg"></audio>
-            </div>
-            <!-- track 3 -->
-            <div class="audio-item" data-track="sophia-1">
-              <button class="play-btn" aria-pressed="false" aria-label="Play Ave Maria preview" data-audio="sophia-1-src">
-                <span class="play-icon" aria-hidden="true"></span>
-                <span class="pause-icon" aria-hidden="true"><span></span><span></span></span>
-              </button>
-              <div class="waveform" aria-hidden="true">
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>                
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-                <div class="wavebar"></div>
-              </div>
-              <div class="track-info">
-                <p class="track-title">Ave Maria (excerpt)</p>
-                <p class="track-sub">Soprano • 45s</p>
-              </div>
-              <audio id="sophia-1-src" preload="none"><source src="/assets/media/audio/sophia-ave-maria.mp3" type="audio/mpeg"></audio>
-            </div>
-          </div>
-          <div class="cta-row">
-            <a class="book-btn" href="/booking?s=Xavier%20Williams" aria-label="Request Xavier Williams">Request Artist</a>
-          </div>
-        </div>
-  <!-- Corner brackets -->
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
-        </div>
-      </article>
-
-
-    </section>
+        <!-- Corner decorations -->
+        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
+        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
+        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
+        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
+      </div>
+    </article>
+  </template>
+</section>
 
   <!--Footer Embed Container-->
   <footer id="site-footer-container"></footer>
-
 <!-- Lightbox overlay (single instance) -->
 <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Lightbox">
   <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
   <div class="lightbox-panel" role="document">
     <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
     <img src="#" alt="" class="lightbox-img" id="lightbox-img" />
-    <!-- optional video support could be toggled into this panel -->
   </div>
 </div>
 </main>
