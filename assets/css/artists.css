@@ -254,8 +254,8 @@ table {
 .artists-page .play-btn{
   display:grid; 
   place-items:center;
-  width:48px; 
-  height:48px; 
+  width:36px; 
+  height:36px; 
   border-radius:999px;
   background: linear-gradient(180deg,#fffdfa,#f5eee0);
   border:1px solid rgba(0,0,0,0.06);
@@ -276,7 +276,7 @@ table {
 }
 .artists-page .pause-icon{ 
   display:none; 
-  width:12px; 
+  width:14px; 
   height:14px;
 }
 .artists-page .pause-icon span{ 
