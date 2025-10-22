@@ -1,0 +1,36 @@
+{
+  "faqs": [
+    {
+      "question": "What types of events does Aria Amore perform at?",
+      "answer": "We perform at weddings, corporate events, private parties, and any special occasion where live classical music enhances the experience."
+    },
+    {
+      "question": "How far in advance should I book?",
+      "answer": "We recommend booking at least 3–6 months in advance to ensure availability, especially during peak wedding season."
+    },
+    {
+      "question": "Can I request specific songs?",
+      "answer": "Absolutely! We offer song customization for all our packages and will work with you to select the perfect repertoire for your event."
+    },
+    {
+      "question": "Do you provide accompaniment for the singers?",
+      "answer": "Yes, professional accompaniment is included in certain packages, and can be arranged for others upon request."
+    },
+    {
+      "question": "What is your cancellation policy?",
+      "answer": "Cancellations must be made at least 30 days prior to the event for a full refund. Late cancellations may be subject to a fee."
+    },
+    {
+      "question": "Are your performances indoor or outdoor?",
+      "answer": "We perform both indoors and outdoors. For outdoor events, we may require amplification depending on venue size."
+    },
+    {
+      "question": "How long are the performances?",
+      "answer": "Performance lengths vary by package, ranging from 10 minutes for a single singer to up to an hour for larger ensembles."
+    },
+    {
+      "question": "Do you travel outside of your local area?",
+      "answer": "Yes, we can travel for events, but travel fees may apply depending on distance and logistics."
+    }
+  ]
+}

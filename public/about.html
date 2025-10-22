@@ -15,117 +15,29 @@
   <!--Header Embed Container-->
   <header id="site-header-container"></header>
   <main class="about-page">
-    <section class="faq-section">
-      <div class="faq-fancy-heading">
-        <h2 class="faq-heading">
-          <img src="../assets/media/images/divider.svg" class="flourish-side-ornament">
-          Frequently Asked Questions
-          <img src="../assets/media/images/divider.svg" class="flourish-side-ornament-right">
-        </h2>
-      </div>    
-      <div class="faq-container">
-        <details class="faq-item">
-          <summary>
-            <span>Is there a travel fee for performances outside your local area?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            The first 30 miles of travel are included at no cost. Beyond that, a travel fee of $1 per mile applies. 
-            For performances over 100 miles away, overnight accommodations must be provided by the client.
-          </p>
-        </details>
-    
-        <details class="faq-item">
-          <summary>
-            <span>How do I secure my booking?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            A non-refundable deposit of 50% of the total fee is required to reserve your event date and performers. 
-            The remaining balance is due no later than 14 days before the event. 
-            Bookings made within 14 days of the event must be paid in full at the time of booking.
-          </p>
-        </details>
-    
-        <details class="faq-item">
-          <summary>
-            <span>What is your refund and cancellation policy?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            Cancellations made more than 30 days before the event are eligible for a refund of payments made beyond the non-refundable deposit. 
-            Cancellations within 30 days are not eligible for a refund. 
-            In cases of unforeseen circumstances, partial refunds or rescheduling options may be considered at the company’s discretion.
-          </p>
-        </details>
-    
-        <details class="faq-item">
-          <summary>
-            <span>Can I reschedule my event?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            Yes, rescheduling requests are allowed with at least 21 days’ notice and depend on performer availability. 
-            If a new date cannot be arranged, the booking will be treated as a cancellation under our refund policy.
-          </p>
-        </details>
-    
-        <details class="faq-item">
-          <summary>
-            <span>What happens if the event is affected by weather or unforeseen events?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            If an event must be postponed or canceled due to unavoidable circumstances such as natural disasters or government restrictions, 
-            payments may be applied toward a future booking within six months. Refunds are not issued in these cases, but rescheduling is supported.
-          </p>
-        </details>
-    
-        <details class="faq-item">
-          <summary>
-            <span>What are the requirements for the performance setup?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            Clients must provide a safe and appropriate performance space with suitable acoustics, lighting, and sound equipment if needed. 
-            A detailed program and any special requests should be finalized no later than 14 days before the event.
-          </p>
-        </details>
-    
-        <details class="faq-item">
-          <summary>
-            <span>What if my payment is late?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            Payments not received by the due date may result in cancellation of the booking with no refund of the deposit. 
-            To avoid disruption, please ensure all balances are paid by the deadlines stated in your agreement.
-          </p>
-        </details>
-    
-        <details class="faq-item">
-          <summary>
-            <span>Can I make changes to my booking after it’s confirmed?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            Yes, changes such as time adjustments or repertoire updates may be requested up to 14 days before the event. 
-            Major changes may incur additional fees depending on scheduling and preparation needs.
-          </p>
-        </details>
-    
-        <details class="faq-item">
-          <summary>
-            <span>How can I book Aria Amore for my wedding or event?</span>
-            <span class="faq-icon" aria-hidden="true">➕</span>
-          </summary>
-          <p>
-            Contact us today to begin planning your dream performance! 
-            We’ll guide you through selecting repertoire, confirming details, and securing your date with a deposit.
-          </p>
-        </details>
-      </div>
-    </section>
+<section class="faq-section">
+  <div class="faq-fancy-heading">
+    <h2 class="faq-heading">
+      <img src="../assets/media/images/divider.svg" class="flourish-side-ornament">
+      Frequently Asked Questions
+      <img src="../assets/media/images/divider.svg" class="flourish-side-ornament-right">
+    </h2>
+  </div>    
+
+  <div class="faq-container">
+    <!-- Template for cloning -->
+    <template id="faq-template">
+      <details class="faq-item">
+        <summary>
+          <span class="question-text"></span>
+          <span class="faq-icon" aria-hidden="true">➕</span>
+        </summary>
+        <p class="answer-text"></p>
+      </details>
+    </template>
+  </div>
+</section>
+
     <div class="faq-fancy-heading">
       <h2 class="faq-heading">
         <img src="../assets/media/images/divider.svg" class="flourish-side-ornament">
@@ -168,5 +80,6 @@
   <footer id="site-footer-container"></footer>
   <!--Scripts-->  
   <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/about.js" defer></script>
   </body>
 </html>
