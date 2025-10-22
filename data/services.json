@@ -1,80 +1,36 @@
 {
-    "sections": [
-        {
-            "type": "heading-2",
-            "content": "Base Packages"
-        },
-        { "type": "package",
-          "content": [        
-                       {
-                           "type": "heading-3",
-                           "content": "Serenade Package"
-                       },
-                       {
-                           "type": "starting-price",
-                           "content": "$500"
-                       },
-                       {
-                           "type": "list",
-                           "items": ["One professional opera singer",
-                                     "Performance of two carefully selected songs",
-                                     "Consultation to select songs that complement your wedding theme"                                    ]
-                       }
-                    ]
-        },
-        { "type": "package",
-          "content": [
-                       {
-                           "type": "heading-3",
-                           "content": "Aria Package"
-                       },
-                       {
-                           "type": "starting-price",
-                           "content": "$1,500"
-                       },
-                       {
-                           "type": "list",
-                           "items": ["Two professional opera singers",
-                                     "Performance of up to 30 minutes",
-                                     "Customizable song selection from our repertoire"
-                                    ]
-                       }
-                    ]
-        },
-        { "type": "package",
-          "content": [
-                       {
-                           "type": "heading-3",
-                           "content": "Grand Opera Package"
-                       },
-                       {
-                           "type": "starting-price",
-                           "content": "$3,000"
-                       },
-                       {
-                           "type": "list",
-                           "items": ["A trio or quartet of professional opera singers",
-                                     "Performance of up to one hour",
-                                     "Custom song selection, including special requests",
-                                     "Professional accompaniment included"
-                                    ]
-                       }
-                    ]
-        },
-        { "type": "add-ons",
-          "content": [
-                       {
-                           "type": "heading-2",
-                           "content": "Add-Ons"
-                       },
-                       {
-                           "type": "list",
-                           "items": ["Additional singer: $400 per performer",
-                                     "Extended performance time: $250 per additional 30 minutes",
-                                     "Special song request (outside our repertoire): $100 per piece",
-                                     "Professional pianist: $500"]
-                       }
-                    ]
-        }                                          
-    ]
+  "heading": "Bring Your Occasions To Life!",
+  "plans": [
+    {
+      "name": "Serenade Package",
+      "features": [
+        "One professional opera singer",
+        "Performance of two carefully selected songs",
+        "Virtual consultation to select songs that complement your event theme"
+      ],
+      "price": "$500/event",
+      "buttonText": "Choose Package"
+    },
+    {
+      "name": "Aria Package",
+      "features": [
+        "Two professional opera singers",
+        "Performance up to 30 minutes",
+        "Customizable song selection from our repertoire"
+      ],
+      "price": "$1,500/event",
+      "buttonText": "Choose Package"
+    },
+    {
+      "name": "Grand Opera Package",
+      "features": [
+        "A trio or quartet of professional opera singers",
+        "Performance of up to one hour",
+        "Custom song selection, including special requests",
+        "Professional accompaniment included"
+      ],
+      "price": "$3,000/event",
+      "buttonText": "Choose Package"
+    }
+  ]
 }

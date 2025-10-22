@@ -192,11 +192,13 @@ body {
     color: #4b2e1b;
     grid-column: 1 / -1; /* <-- makes it span both grid columns */
     font-family: "Italianno", cursive;
-    font-size: 1.75rem;
     color: #4b2e1b;
     text-align: center;
     margin-top: 1.25rem;
     text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+  }
+  .services-page .plan-title {
+    font-size: 2.25rem;
   }
   .services-page .flourish-divider {
     width: 20%;
@@ -278,6 +280,10 @@ body {
   .services-page .rsvp-form .checkbox-btn input {
     display: none;
   }
+    .services-page .rsvp-form .checkbox-btn span {
+      font-weight: bold;
+      font-style: italic;
+    }
   .services-page .rsvp-form .checkbox-btn input:checked + span::before {
     content: "✔ ";
     color: #4b2e1b;

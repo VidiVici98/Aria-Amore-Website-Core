@@ -180,6 +180,7 @@ table {
   font-family:var(--font-script);
   font-size:1.4rem;
   color:var(--accent-deep);
+  text-shadow: 1px  1px 1px #000;
   white-space:nowrap; 
   overflow:hidden; 
   text-overflow:ellipsis;
@@ -204,15 +205,15 @@ table {
   padding:0; 
   text-decoration:underline; 
   font-size: 1.5rem; 
-  text-shadow: 1px 1px 2px #333;
+  text-shadow: 1px 1px 1px #000;
 }
 .artists-page .read-more:focus{ 
-  outline: 3px solid rgba(191,167,127,0.12); 
   border-radius:6px; 
 }
 .artists-page .read-more:hover{
-  filter: brightness(1.2);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  text-shadow: 2px 2px 2px #000,
+               1px 1px 1px #000;
 }
 /* booking CTA */
 .artists-page .cta-row{ 
@@ -225,6 +226,7 @@ table {
 .artists-page .book-btn{
   background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
   color:#fff; 
+  text-shadow: 1px  2px 3px #000;
   padding:8px 12px; 
   border-radius:8px; 
   font-family:var(--font-script); 
