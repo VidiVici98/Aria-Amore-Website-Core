@@ -2,38 +2,30 @@
   // Load artist data
   const res = await fetch('/data/artists.json');
   const artists = await res.json();
-
   const grid = document.querySelector('.artists-grid');
   const template = document.getElementById('artist-template');
-
   artists.forEach(artist => {
     const clone = template.content.cloneNode(true);
     const article = clone.querySelector('.artist');
     article.id = `artist-${artist.id}`;
-
+    article.dataset.artist = artist.id;
     const img = clone.querySelector('.artist-portrait img');
     img.src = artist.portrait;
     img.alt = `${artist.name} portrait`;
-    clone.querySelector('.artist-portrait').setAttribute('aria-label', `View ${artist.name} photo`);
-
+    clone.querySelector('.artist-portrait').setAttribute('aria-label', `View ${artist.name} details`);
     const nameEl = clone.querySelector('.artist-name');
     nameEl.textContent = artist.name;
-
     const bioEl = clone.querySelector('.artist-bio');
     bioEl.id = `bio-${artist.id}`;
     bioEl.textContent = artist.bio;
-
     const readBtn = clone.querySelector('.read-more');
     readBtn.setAttribute('data-target', `bio-${artist.id}`);
-
     const audioList = clone.querySelector('.audio-list');
     audioList.setAttribute('aria-label', `Audio previews for ${artist.name}`);
-
     artist.tracks.forEach(track => {
       const item = document.createElement('div');
       item.className = 'audio-item';
       item.dataset.track = track.id;
-
       item.innerHTML = `
         <button class="play-btn" aria-pressed="false" aria-label="Play ${artist.name}'s preview of ${track.title}" data-audio="${track.id}-src">
           <span class="play-icon" aria-hidden="true"></span>
@@ -52,26 +44,21 @@
       `;
       audioList.appendChild(item);
     });
-
     const bookBtn = clone.querySelector('.book-btn');
     bookBtn.href = `/booking?s=${encodeURIComponent(artist.name)}`;
     bookBtn.setAttribute('aria-label', `Request ${artist.name}`);
-
     grid.appendChild(clone);
   });
-
   // Once DOM is populated, initialize interactions
   initArtistInteractions();
-
   /*=====================================
-      Interactions (original logic)
+      Interactions (updated logic)
   =====================================*/
   function initArtistInteractions() {
     const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const playButtons = Array.from(document.querySelectorAll('.play-btn'));
     let activeAudio = null;
     let activeItem = null;
-
     function stopActive() {
       if (!activeAudio) return;
       activeAudio.pause();
@@ -82,13 +69,11 @@
       activeAudio = null;
       activeItem = null;
     }
-
     function onPlayButtonClick(btn) {
       const audioId = btn.getAttribute('data-audio');
       if (!audioId) return;
       const audio = document.getElementById(audioId);
       if (!audio) return;
-
       if (activeAudio === audio) {
         audio.pause();
         if (activeItem) activeItem.classList.remove('playing');
@@ -97,7 +82,6 @@
         activeItem = null;
         return;
       }
-
       if (activeAudio && activeAudio !== audio) stopActive();
       audio.play().then(() => {
         activeAudio = audio;
@@ -112,17 +96,16 @@
         };
       }).catch(err => console.warn('Playback failed', err));
     }
-
     playButtons.forEach(btn => {
       btn.addEventListener('click', () => onPlayButtonClick(btn));
       btn.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPlayButtonClick(btn); }
       });
     });
-
     document.addEventListener('visibilitychange', () => { if (document.hidden) stopActive(); });
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') { stopActive(); closeLightbox(); } });
-
+    /*=====================================
+        Read more toggles
+    =====================================*/
     const readButtons = Array.from(document.querySelectorAll('.read-more'));
     readButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -133,42 +116,55 @@
         btn.textContent = open ? 'Read less' : 'Read more';
       });
     });
-
-    const lightbox = document.getElementById('lightbox');
-    const lightboxBackdrop = document.getElementById('lightbox-backdrop');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
-
-    function openLightbox(src, alt = '') {
-      if (!src) return;
+    /*=====================================
+        Artist Modal (replaces Lightbox)
+    =====================================*/
+    const modal = document.getElementById('artist-modal');
+    const modalBackdrop = document.getElementById('modal-backdrop');
+    const modalClose = document.getElementById('modal-close');
+    const modalPortrait = document.getElementById('modal-portrait');
+    const modalName = document.getElementById('modal-name');
+    const modalBio = document.getElementById('modal-bio');
+    const modalAudioList = document.getElementById('modal-audio-list');
+    const modalInstagram = document.getElementById('modal-instagram');
+    const modalFacebook = document.getElementById('modal-tiktok');
+    const modalBook = document.getElementById('modal-book');
+    function openModal(artist) {
       stopActive();
-      lightboxImg.src = src;
-      lightboxImg.alt = alt;
-      lightbox.classList.add('open');
-      lightbox.setAttribute('aria-hidden', 'false');
-      lightboxClose.focus();
+      modalPortrait.src = artist.portrait;
+      modalName.textContent = artist.name;
+      modalBio.textContent = artist.modalBio || artist.bio;
+      modalAudioList.innerHTML = '';
+      artist.tracks.forEach(track => {
+        const audioEl = document.createElement('audio');
+        audioEl.controls = true;
+        audioEl.innerHTML = `<source src="${track.src}" type="audio/mpeg">`;
+        modalAudioList.appendChild(audioEl);
+      });
+      modalInstagram.href = artist.social?.instagram || '#';
+      modalFacebook.href = artist.social?.tiktok || '#';
+      modalBook.onclick = () => window.location.href = `/booking?s=${encodeURIComponent(artist.name)}`;
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
     }
-
-    function closeLightbox() {
-      lightbox.classList.remove('open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImg.src = '#';
-      lightboxImg.alt = '';
+    function closeModal() {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
     }
-
     document.querySelectorAll('.artist-portrait').forEach(p => {
       p.addEventListener('click', () => {
-        const img = p.querySelector('img');
-        openLightbox(img ? img.src : '', img ? img.alt : '');
+        const id = p.closest('.artist').dataset.artist;
+        const artist = artists.find(a => a.id === id);
+        if (artist) openModal(artist);
       });
       p.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }
       });
     });
-
-    lightboxBackdrop.addEventListener('click', closeLightbox);
-    lightboxClose.addEventListener('click', closeLightbox);
+    modalBackdrop.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModal);
+    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
   }
 })();

@@ -50,7 +50,6 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -105,7 +104,6 @@ html, body {
   margin: 0;
   padding: 0;
 }
-
 header,
 .navigation {
   top: 0;
@@ -141,12 +139,9 @@ header {
 .navigation a:hover {
   color: var(--color-active);
 }
-/* --- Mobile Navigation --- */
 #mobile-nav-toggle {
   display: none; /* hidden by default for desktop */
 }
-
-/* Footer */
 footer {
   background: #252525;
   border-top: var(--border-thin);
@@ -197,8 +192,6 @@ footer h2 {
   position: relative;
   overflow: hidden;
 }
-
-
 .envelope {
   position: absolute;
   width: 100%;
@@ -463,7 +456,6 @@ footer h2 {
   text-align: left; 
   color: var(--color-secondary);
 }
-/*Reusable & Unsorted Site Styles*/
 .btn {
   display: inline-block;
   position: relative;
@@ -559,9 +551,7 @@ Responsive Mobile Styles
 }
 /*=============================================
 Additional Mobile & Tablet Responsiveness
-(Enhancement only — preserves all desktop styles)
 =============================================*/
-/* Tablet / small laptop tweaks */
 @media screen and (max-width: 1024px) {
   .hero-letter h1 { font-size: 3rem; }
   .hero-letter p { font-size: 2rem; }
@@ -570,9 +560,7 @@ Additional Mobile & Tablet Responsiveness
   .plan { max-width: 200px; padding: 20px; }
   footer h2 { font-size: 1.75rem; }
 }
-/* Mobile adjustments */
 @media screen and (max-width: 700px) {
-  /* Toggle Button (hamburger) */
   #mobile-nav-toggle {
     display: block;
     position: fixed;
@@ -588,8 +576,6 @@ Additional Mobile & Tablet Responsiveness
     z-index: 1000;
     cursor: pointer;
   }
-
-  /* Mobile Nav Container */
   #mobile-nav {
     display: none;
     flex-direction: column;
@@ -604,8 +590,6 @@ Additional Mobile & Tablet Responsiveness
     padding-top: 60px; /* leaves space for the toggle button */
     box-shadow: var(--box-shadow);
   }
-
-  /* Menu Links */
   #mobile-nav a {
     padding: 15px;
     font-size: 1.6rem;
@@ -615,18 +599,15 @@ Additional Mobile & Tablet Responsiveness
     text-decoration: none;
     transition: color 0.3s ease, background 0.3s ease;
   }
-
   #mobile-nav a:hover,
   #mobile-nav a.active {
     color: var(--color-active);
     background-color: rgba(0, 0, 0, 0.1);
   }
-
   @keyframes slideDown {
     from { transform: translateY(-100%); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
-
   body {
     font-size: 90%;
     line-height: 1.5;
@@ -640,7 +621,6 @@ Additional Mobile & Tablet Responsiveness
     margin: 0;
     padding: 0;
   }
-  /* Keep hero but resize instead of hide */
   .hero {
     display: flex;
     flex-direction: column;
@@ -673,7 +653,6 @@ Additional Mobile & Tablet Responsiveness
   }
   .hero-letter h1 { font-size: 2.5rem; }
   .hero-letter p { font-size: 1.5rem; }
-  /* Event section */
   #events {
     margin-top: 5%;
   }
@@ -685,7 +664,6 @@ Additional Mobile & Tablet Responsiveness
     width: 80%;
     height: auto;
   }
-  /* Staff cards */
   .staff {
     flex: 1 1 100%;
     flex-direction: column;
@@ -701,7 +679,6 @@ Additional Mobile & Tablet Responsiveness
     margin: 10px auto;
     max-width: 300px;
   }
-  /* Contact form */
   .contact-form {
     width: 90%;
     margin: auto;
@@ -710,7 +687,6 @@ Additional Mobile & Tablet Responsiveness
     margin: 10px auto;
     width: 80%;
   }
-  /* Footer */
   footer {
     font-size: 0.9rem;
     text-align: center;
@@ -723,7 +699,6 @@ Additional Mobile & Tablet Responsiveness
     width: 90%;
   }
 }
-/* Smallest phones */
 @media screen and (max-width: 480px) {
   .hero-letter h1 { font-size: 2rem; }
   .hero-letter p { font-size: 1.25rem; }
@@ -737,7 +712,6 @@ Additional Mobile & Tablet Responsiveness
 /*=========================================
 Extracted Inline CSS & Responsive Versions
 =========================================*/
-/* === Featured Performers Title === */
 .featured-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -751,7 +725,6 @@ Extracted Inline CSS & Responsive Versions
   text-shadow: 2px 2px #111111;
   text-align: center;
 }
-/* === Victorian Separator (Used in Hero & Testimonials) === */
 .victorian-separator {
   display: block;
   width: 60%;
@@ -760,11 +733,9 @@ Extracted Inline CSS & Responsive Versions
   margin: 1rem auto;
   filter: opacity(.6);
 }
-/* === Staff Section (formerly inline padding) === */
 .staff-inner {
   padding: 20px;
 }
-/* === Testimonials Section === */
 #testimonials {
   background-color: #111111c9;
   margin: 2%;
@@ -866,53 +837,45 @@ Extracted Inline CSS & Responsive Versions
 }
 /* Header container */
 .aa-site-header {
-  position: fixed;         /* always attach to viewport top */
-  top: 0;
+  position: fixed;
   left: 0;
   right: 0;
   z-index: 1200;
   background: var(--color-primary);
   color: var(--color-secondary);
   border-bottom: var(--border-thin);
-  /* Support iPhone notch - flush to edge */
   padding-top: env(safe-area-inset-top, 0);
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   box-shadow: 0 1px 4px rgba(0,0,0,0.3);
 }
-
-/* Inner content to control layout */
 .aa-header-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 16px;
+  padding: 0 16px;
   box-sizing: border-box;
 }
-
-/* Logo */
 .aa-logo {
   font-family: "Italianno", cursive;
-  font-size: 1.6rem;
+  font-size: 2.25rem;
   color: var(--color-secondary);
   text-decoration: none;
 }
-
-/* Desktop nav: shown on wide screens */
 .aa-desktop-nav {
   display: flex;
   gap: 24px;
   align-items: center;
 }
-
-/* Desktop links */
 .aa-nav-link {
   color: var(--color-secondary);
   text-decoration: none;
   font-style: italic;
-  font-weight: 600;
+  font-size: 1.75rem;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px #666;
   padding: 8px 6px;
   transition: color .25s ease, transform .25s ease;
 }
@@ -921,8 +884,6 @@ Extracted Inline CSS & Responsive Versions
   color: var(--color-active);
   transform: translateY(-2px);
 }
-
-/* Mobile toggle button (hidden on desktop) */
 .aa-mobile-toggle {
   display: none; /* visible only in mobile breakpoint */
   background: transparent;
@@ -933,8 +894,6 @@ Extracted Inline CSS & Responsive Versions
   cursor: pointer;
   border-radius: 4px;
 }
-
-/* Mobile menu (hidden by default) */
 .aa-mobile-menu {
   display: none;
   position: fixed;
@@ -942,65 +901,50 @@ Extracted Inline CSS & Responsive Versions
   left: 0;
   right: 0;
   z-index: 1100;
-  background: var(--color-primary);
+  background-color: #111111;
   border-bottom: var(--border-thin);
   box-shadow: var(--box-shadow);
   transform-origin: top;
 }
-
-/* Inner container for mobile links */
 .aa-mobile-menu-inner {
   display: flex;
   flex-direction: column;
   padding: 12px 8px 24px 8px;
   gap: 6px;
 }
-
-/* Mobile links styling */
 .aa-mobile-link {
   display: block;
   padding: 14px 16px;
-  font-size: 1.25rem;
-  color: var(--color-secondary);
+  font-size: 1.75rem;
+  color: #fff;
   text-decoration: none;
-  font-style: italic;
-  font-weight: 700;
-  border-radius: 6px;
+  font-weight: 500;
+  border-radius: 8px;
+  text-align: center;
 }
 .aa-mobile-link:hover,
 .aa-mobile-link:focus {
   color: var(--color-active);
   background: rgba(255,255,255,0.03);
 }
-
-/* When menu is open we reveal it with a small slide */
 .aa-mobile-menu.aa-open {
   display: block;
-  animation: aa-slideDown .28s cubic-bezier(.2,.9,.2,1) both;
+  animation: aa-slideDown 1.2s cubic-bezier(.2,.9,.2,1) both;
 }
 @keyframes aa-slideDown {
   from { transform: translateY(-6%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
-
 /* =============================
    Responsive breakpoints
    ============================= */
-
-/* Mobile: hide desktop nav, show toggle & mobile menu on small widths */
 @media (max-width: 700px) {
   .aa-desktop-nav { display: none; }
   .aa-mobile-toggle { display: inline-block; }
   /* keep header padding tighter on small screens */
   .aa-header-inner { padding: 8px 12px; }
 }
-
-/* Desktop fallback: ensure mobile pieces are invisible */
 @media (min-width: 701px) {
   .aa-mobile-menu { display: none !important; } /* keep it fully out of flow */
   .aa-mobile-toggle { display: none !important; }
-}
-.aa-header-spacer {
-  height: calc(48px + env(safe-area-inset-top, 0)); /* adjust 48px if your header height differs */
-  width: 100%;
 }

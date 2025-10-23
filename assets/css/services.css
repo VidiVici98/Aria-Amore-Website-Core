@@ -192,6 +192,7 @@ body {
     color: #4b2e1b;
     grid-column: 1 / -1; /* <-- makes it span both grid columns */
     font-family: "Italianno", cursive;
+    font-size: 1.75rem;
     color: #4b2e1b;
     text-align: center;
     margin-top: 1.25rem;
@@ -281,8 +282,11 @@ body {
     display: none;
   }
     .services-page .rsvp-form .checkbox-btn span {
-      font-weight: bold;
+      font-weight: 500;
       font-style: italic;
+      text-shadow: 1px 1px 1px #333;
+      font-family: 'Times New Roman', Times, serif;
+      font-size: 1rem;
     }
   .services-page .rsvp-form .checkbox-btn input:checked + span::before {
     content: "✔ ";

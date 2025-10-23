@@ -3,8 +3,9 @@
     "id": "xavier",
     "name": "Xavier Williams",
     "voice": "Soprano",
-    "bio": "Xavier’s soaring soprano has been central to Aria Amore’s signature sound. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotions of wedding ceremonies.",
-    "portrait": "../assets/media/images/xavier-williams.webp",
+    "bio": "Xavier’s soaring soprano has been central to Aria Amore’s signature sound. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotions of weddings.",
+    "modalBio": "Xavier Williams is a celebrated soprano known for her luminous tone and emotional depth. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotions of wedding ceremonies and recitals.",
+    "portrait": "/assets/media/images/xavier-williams.webp",
     "tracks": [
       {
         "id": "xavier-night",
@@ -18,14 +19,19 @@
         "sub": "Soprano • 1m 16s",
         "src": "/assets/media/audio/xavier-ave-verum.mp4"
       }
-    ]
+    ],
+    "social": {
+      "instagram": "#",
+      "tiktok": "#"
+     }
   },
   {
     "id": "liana",
     "name": "Liana Nixon",
     "voice": "Alto",
     "bio": "Liana’s warm alto tone brings emotional depth to both sacred and contemporary repertoire, captivating audiences with effortless grace and poise.",
-    "portrait": "../assets/media/images/performer.webp",
+    "modalBio": "Liana Nixon is an accomplished alto whose warm tone and versatility captivate audiences worldwide. Her performances bridge genres, blending traditional hymns with soulful modern interpretations.",
+    "portrait": "/assets/media/images/performer.webp",
     "tracks": [
       {
         "id": "liana-ave-maria",
@@ -39,7 +45,11 @@
         "sub": "Alto • 45s",
         "src": "/assets/media/audio/liana-night.mp3"
       }
-    ]
+    ],
+    "social": {
+      "instagram": "#",
+      "tiktok": "#"
+    }
   },
   {
     "id": "collin",
@@ -60,6 +70,10 @@
         "sub": "Baritone • 45s",
         "src": "/assets/media/audio/collin-ave-verum.mp3"
       }
-    ]
+    ],
+    "social": {
+      "instagram": "#",
+      "tiktok": "#"
+    }
   }
 ]

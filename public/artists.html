@@ -57,6 +57,36 @@
     <img src="#" alt="" class="lightbox-img" id="lightbox-img" />
   </div>
 </div>
+<!-- Artist Modal -->
+<div id="artist-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" id="modal-backdrop"></div>
+  <div class="modal-content">
+    <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
+    <div class="modal-body">
+      <div class="modal-image">
+        <img id="modal-portrait" src="" alt="Performer portrait">
+      </div>
+      <div class="modal-details">
+        <h2 id="modal-name"></h2>
+        <p id="modal-bio"></p>
+        <div class="modal-audio">
+          <h3>Audio Samples</h3>
+          <div id="modal-audio-list"></div>
+        </div>
+        <div class="modal-social">
+          <h3>Connect</h3>
+          <div class="social-icons">
+            <a href="#" id="modal-instagram" aria-label="Instagram" class="icon"><img src="/assets/media/images/instagram-icon.svg"></a>
+            <a href="#" id="modal-tiktok" aria-label="TikTok" class="icon"><img src="/assets/media/images/tiktok-icon.svg"></a>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button id="modal-book" class="book-btn">Request Artist</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </main>
 <script src="../assets/js/main.js" defer></script>
 <script src="../assets/js/artists.js" defer></script>
