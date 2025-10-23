@@ -16,11 +16,40 @@ document.addEventListener("DOMContentLoaded", () => {
   loadComponent("site-header-container", "/public/components/header.html"); // <-- adjust path
   loadComponent("site-footer-container", "/public/components/footer.html"); // <-- adjust path
 });
-// === HAMBURGER MENU TOGGLE ===
-document.getElementById("menu-toggle").addEventListener("click", function () {
-  let menu = document.getElementById("mobile-menu");
-  menu.style.display = (menu.style.display === "block") ? "none" : "block";
-});
+
+(function() {
+  // Grab elements after a short delay to ensure DOM is ready
+  const waitForDOM = setInterval(() => {
+    const toggleButton = document.getElementById('aaMobileToggle');
+    const mobileMenu = document.getElementById('aaMobileMenu');
+    const body = document.body;
+
+    if (!toggleButton || !mobileMenu) return;
+
+    clearInterval(waitForDOM);
+
+    // Toggle function
+    const toggleMenu = () => {
+      const isOpen = mobileMenu.classList.toggle('aa-open');
+      toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      toggleButton.textContent = isOpen ? '✕' : '☰';
+      body.style.overflow = isOpen ? 'hidden' : '';
+    };
+
+    toggleButton.addEventListener('click', toggleMenu);
+
+    // Close menu if a link is clicked
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target.classList.contains('aa-mobile-link')) {
+        mobileMenu.classList.remove('aa-open');
+        toggleButton.setAttribute('aria-expanded', 'false');
+        toggleButton.textContent = '☰';
+        body.style.overflow = '';
+      }
+    });
+  }, 50); // check every 50ms until elements exist
+})();
+
 
 // === FLIPPING FORM ===
 document.getElementById("flipForm").addEventListener("submit", function (event) {
@@ -91,6 +120,7 @@ function flipBack() {
     document.body.appendChild(overlay);
     return overlay;
   }
+
 
   /* -------------------------
      DOM references & state

@@ -1,17 +1,33 @@
-<div>
-  <button id="menu-toggle">☰</button>
-</div>
-<nav id="mobile-menu">
-  <ul>
-    <li><a href="index.html">Aria Amore Home</a></li>
-    <li> <a href="services.html">What We Offer</a></li>
-    <li><a href="artists.html">Meet The Artists</a></li>
-    <li><a href="about.html">About Us</a></li>
-  </ul>
-</nav>
-<nav class="navigation">
-  <a href="index.html">Aria Amore Home</a>
-  <a href="services.html">What We Offer</a>
-  <a href="artists.html">Meet The Artists</a>
-  <a href="about.html">About Us</a>
-</nav>
+<!-- AA: Clean site header (replace old header/nav) -->
+<header class="aa-site-header" role="banner">
+  <div class="aa-header-inner">
+    <a class="aa-logo" href="index.html" aria-label="Aria Amore Home">Aria Amore</a>
+
+    <!-- Desktop navigation -->
+    <nav class="aa-desktop-nav" role="navigation" aria-label="Primary">
+      <a href="index.html" class="aa-nav-link">Home</a>
+      <a href="services.html" class="aa-nav-link">What We Offer</a>
+      <a href="artists.html" class="aa-nav-link">Meet The Artists</a>
+      <a href="about.html" class="aa-nav-link">About Us</a>
+    </nav>
+
+    <!-- Mobile toggle -->
+    <button
+      class="aa-mobile-toggle"
+      id="aaMobileToggle"
+      aria-controls="aaMobileMenu"
+      aria-expanded="false"
+      aria-label="Open menu"
+    >☰</button>
+  </div>
+
+  <!-- Mobile menu (keeps separate markup from desktop) -->
+  <nav id="aaMobileMenu" class="aa-mobile-menu" role="navigation" aria-label="Mobile Primary">
+    <div class="aa-mobile-menu-inner">
+      <a href="index.html" class="aa-mobile-link">Home</a>
+      <a href="services.html" class="aa-mobile-link">What We Offer</a>
+      <a href="artists.html" class="aa-mobile-link">Meet The Artists</a>
+      <a href="about.html" class="aa-mobile-link">About Us</a>
+    </div>
+  </nav>
+</header>
