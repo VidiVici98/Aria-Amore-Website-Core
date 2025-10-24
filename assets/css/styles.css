@@ -143,7 +143,7 @@ header {
   display: none; /* hidden by default for desktop */
 }
 footer {
-  background: #252525;
+  background: radial-gradient(circle at 50% 50%, #444444, #222222);
   border-top: var(--border-thin);
   color: var(--color-secondary);
   width: 100vw;
@@ -841,7 +841,7 @@ Extracted Inline CSS & Responsive Versions
   left: 0;
   right: 0;
   z-index: 1200;
-  background: var(--color-primary);
+  background: radial-gradient(circle at 50% 50%, #444444, #222222);
   color: var(--color-secondary);
   border-bottom: var(--border-thin);
   padding-top: env(safe-area-inset-top, 0);
@@ -863,6 +863,11 @@ Extracted Inline CSS & Responsive Versions
   font-size: 2.25rem;
   color: var(--color-secondary);
   text-decoration: none;
+  text-shadow: 2px 3px 1px #000;
+  transition: color .25s ease, transform .25s ease;
+}
+.aa-logo:hover {
+  transform: translateY(-3px);
 }
 .aa-desktop-nav {
   display: flex;
@@ -875,7 +880,7 @@ Extracted Inline CSS & Responsive Versions
   font-style: italic;
   font-size: 1.75rem;
   font-weight: 500;
-  text-shadow: 1px 1px 1px #666;
+  text-shadow: 2px 2px 1px #000;
   padding: 8px 6px;
   transition: color .25s ease, transform .25s ease;
 }
@@ -901,7 +906,7 @@ Extracted Inline CSS & Responsive Versions
   left: 0;
   right: 0;
   z-index: 1100;
-  background-color: #111111;
+  background: radial-gradient(circle at 50% 50%, #444444, #222222);
   border-bottom: var(--border-thin);
   box-shadow: var(--box-shadow);
   transform-origin: top;
@@ -915,11 +920,12 @@ Extracted Inline CSS & Responsive Versions
 .aa-mobile-link {
   display: block;
   padding: 14px 16px;
-  font-size: 1.75rem;
+  font-size: 1.85rem;
   color: #fff;
   text-decoration: none;
+  text-shadow: 2px 2px 1px #000;
   font-weight: 500;
-  border-radius: 8px;
+  border-radius: 24px;
   text-align: center;
 }
 .aa-mobile-link:hover,
@@ -934,6 +940,16 @@ Extracted Inline CSS & Responsive Versions
 @keyframes aa-slideDown {
   from { transform: translateY(-6%); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+.mobile-menu-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem; /* optional: space between icons */
+  padding: 1rem 0
+}
+.mobile-menu-social-icons {
+  width: 36px;
+  height: auto;
 }
 /* =============================
    Responsive breakpoints
