@@ -1,29 +1,31 @@
 (async () => {
-  // Load artist data
   const res = await fetch('/data/artists.json');
   const artists = await res.json();
   const grid = document.querySelector('.artists-grid');
   const template = document.getElementById('artist-template');
+
   artists.forEach(artist => {
     const clone = template.content.cloneNode(true);
     const article = clone.querySelector('.artist');
     article.id = `artist-${artist.id}`;
     article.dataset.artist = artist.id;
+
     // Portrait
     const img = clone.querySelector('.artist-portrait img');
     img.src = artist.portrait;
     img.alt = `${artist.name} portrait`;
     clone.querySelector('.artist-portrait').setAttribute('aria-label', `View ${artist.name} details`);
+
     // Basic info
-    const nameEl = clone.querySelector('.artist-name');
-    nameEl.textContent = artist.name;
+    clone.querySelector('.artist-name').textContent = artist.name;
     const bioEl = clone.querySelector('.artist-bio');
     bioEl.id = `bio-${artist.id}`;
     bioEl.textContent = artist.bio;
+
     // Read more
-    const readBtn = clone.querySelector('.read-more');
-    readBtn.setAttribute('data-target', `bio-${artist.id}`);
-    // Audio tracks (main page)
+    clone.querySelector('.read-more').setAttribute('data-target', `bio-${artist.id}`);
+
+    // Audio tracks
     const audioList = clone.querySelector('.audio-list');
     audioList.setAttribute('aria-label', `Audio previews for ${artist.name}`);
     artist.tracks.forEach(track => {
@@ -48,22 +50,24 @@
       `;
       audioList.appendChild(item);
     });
-    // Booking
+
+    // Booking button — link to services page with artist name
     const bookBtn = clone.querySelector('.book-btn');
-    bookBtn.href = `/booking?s=${encodeURIComponent(artist.name)}`;
-    bookBtn.setAttribute('aria-label', `Request ${artist.name}`);
+    const defaultPackage = 'Serenade'; // Change per artist if needed
+    bookBtn.href = `/public/services.html?artist=${encodeURIComponent(artist.name)}&package=${encodeURIComponent(defaultPackage)}`;
+    bookBtn.setAttribute('aria-label', `Request ${artist.name} for ${defaultPackage}`);
+
     grid.appendChild(clone);
   });
-  // Once DOM is populated, initialize interactions
+
+  // Interaction logic (audio and modal)
   initArtistInteractions();
-  /*=====================================
-      Interactions (updated logic)
-  =====================================*/
+
   function initArtistInteractions() {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const playButtons = Array.from(document.querySelectorAll('.play-btn'));
     let activeAudio = null;
     let activeItem = null;
+
     function stopActive() {
       if (!activeAudio) return;
       activeAudio.pause();
@@ -74,6 +78,7 @@
       activeAudio = null;
       activeItem = null;
     }
+
     function onPlayButtonClick(btn) {
       const audioId = btn.getAttribute('data-audio');
       if (!audioId) return;
@@ -101,17 +106,17 @@
         };
       }).catch(err => console.warn('Playback failed', err));
     }
-    // Hook up existing page play buttons
+
     playButtons.forEach(btn => {
       btn.addEventListener('click', () => onPlayButtonClick(btn));
-      btn.addEventListener('keydown', (e) => {
+      btn.addEventListener('keydown', e => {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPlayButtonClick(btn); }
       });
     });
+
     document.addEventListener('visibilitychange', () => { if (document.hidden) stopActive(); });
-    /*=====================================
-        Read more opens modal (no toggle)
-    =====================================*/
+
+    // Read more / modal
     const readButtons = Array.from(document.querySelectorAll('.read-more'));
     readButtons.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -119,13 +124,10 @@
         const artist = artists.find(a => a.id === id);
         if (!artist) return;
         openModal(artist);
-        // keep aria-expanded true but do not implement "read less"
         btn.setAttribute('aria-expanded', 'true');
       });
     });
-    /*=====================================
-        Artist Modal (replaces Lightbox) - minimal changes
-    =====================================*/
+
     const modal = document.getElementById('artist-modal');
     const modalBackdrop = document.getElementById('modal-backdrop');
     const modalClose = document.getElementById('modal-close');
@@ -134,15 +136,16 @@
     const modalBio = document.getElementById('modal-bio');
     const modalAudioList = document.getElementById('modal-audio-list');
     const modalInstagram = document.getElementById('modal-instagram');
-    const modalFacebook = document.getElementById('modal-tiktok'); // matches your HTML id
+    const modalFacebook = document.getElementById('modal-tiktok');
     const modalBook = document.getElementById('modal-book');
+
     function openModal(artist) {
       stopActive();
       modalPortrait.src = artist.portrait;
       modalPortrait.alt = `${artist.name} portrait`;
       modalName.textContent = artist.name;
       modalBio.textContent = artist.modalBio || artist.bio;
-      // Build audio items reusing the same structure/classes as the main page
+
       modalAudioList.innerHTML = '';
       artist.tracks.forEach(track => {
         const item = document.createElement('div');
@@ -166,56 +169,52 @@
         `;
         modalAudioList.appendChild(item);
       });
+
       modalInstagram.href = artist.social?.instagram || '#';
       modalFacebook.href = artist.social?.tiktok || '#';
-      modalBook.onclick = () => window.location.href = `/booking?s=${encodeURIComponent(artist.name)}`;
+      modalBook.onclick = () => window.location.href = `/services.html?artist=${encodeURIComponent(artist.name)}&package=Serenade`;
+
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
-      // Hook up play buttons inside modal to reuse the same play logic
+
       const modalPlayButtons = modalAudioList.querySelectorAll('.play-btn');
       modalPlayButtons.forEach(btn => {
         btn.addEventListener('click', () => onPlayButtonClick(btn));
-        btn.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPlayButtonClick(btn); }
-        });
+        btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPlayButtonClick(btn); } });
       });
-      // Move focus to close for accessibility
+
       modalClose.focus();
     }
+
     function closeModal() {
       modal.classList.remove('open');
       modal.setAttribute('aria-hidden', 'true');
       document.body.style.overflow = '';
-      // stop modal audio if any
       stopActive();
     }
-    // Portrait click opens modal
+
     document.querySelectorAll('.artist-portrait').forEach(p => {
       p.addEventListener('click', () => {
         const id = p.closest('.artist').dataset.artist;
         const artist = artists.find(a => a.id === id);
         if (artist) openModal(artist);
       });
-      p.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); }
-      });
+      p.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); } });
     });
-    // Artist name heading opens modal
+
     document.querySelectorAll('.artist-name').forEach(n => {
-      // ensure heading is keyboard-focusable; if it's not an interactive element already, set tabindex=0
       if (!n.hasAttribute('tabindex')) n.setAttribute('tabindex', '0');
       n.addEventListener('click', () => {
         const id = n.closest('.artist').dataset.artist;
         const artist = artists.find(a => a.id === id);
         if (artist) openModal(artist);
       });
-      n.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); n.click(); }
-      });
+      n.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); n.click(); } });
     });
+
     modalBackdrop.addEventListener('click', closeModal);
     modalClose.addEventListener('click', closeModal);
-    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+    window.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   }
 })();

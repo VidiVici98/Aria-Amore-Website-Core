@@ -9,6 +9,96 @@ Your site is designed to load most of its content from **JSON files**, which mak
 
 ## 📁 Where to Find the Editable Files
 
+Below is an overview of how the website’s files and folders are organized within the main repository.
+This structure helps keep everything modular, easy to maintain, and clearly separated by purpose.
+
+```
+├── assets/
+│   ├── css/
+│   │   └── [All site CSS files]
+│   ├── js/
+│   │   └── [All JavaScript files]
+│   └── media/
+│       ├── audio/
+│       │   └── [All audio files]
+│       └── images/
+│           └── [All images and video files]
+│
+├── data/
+│   └── [All page content JSON files]
+│
+├── public/
+│   ├── components/
+│   │   ├── header.html
+│   │   └── footer.html
+│   ├── index.html [Homepage]
+│   ├── about.html
+│   ├── services.html
+│   └── [Other HTML pages]
+│
+├── .env.example
+├── LICENSE.txt
+└── README.md
+```
+
+`/assets/`
+
+Holds all design and functional assets for the website, divided into three subfolders:
+
+- `css/` – Contains all stylesheet files (.css).
+These define how your website looks and adapts across devices.
+
+- `js/` – Contains all JavaScript files (.js).
+These add interactivity and dynamic features to your pages.
+
+- `media/` – Stores all visual and audio media used on the site.
+
+  - `audio/` – Sound or music files used on the site.
+
+  - `images/` – All image and video content.
+
+<hr>
+
+`/data/`
+
+Contains all JSON files that hold editable content for your pages.
+These are the files you’ll modify when you want to update text, titles, bios, or other page content — without directly editing HTML.
+
+<hr>
+
+`/public/`
+
+This is where all your HTML files live — the actual pages of your site.
+
+ - `components/` – Contains header.html and footer.html, which are dynamically loaded into each page.
+If you need to update the header or footer (e.g., navigation links, copyright text), make those edits here — not on every page individually.
+
+ - Other HTML files – These represent each page on your site (e.g., index.html, about.html, etc.).
+Each one automatically loads the shared header and footer components.
+
+<hr>
+
+`.env.example`
+
+A sample environment configuration file.
+This is typically used to store project-specific settings or variables securely (for example, API keys or deployment paths).
+Developers can duplicate this as .env and fill in their own values.
+
+<hr>
+
+`LICENSE.txt`
+
+Contains licensing information and legal terms regarding the use, distribution, and modification of this project.
+
+<hr>
+
+`README.md`
+
+The document you’re currently reading.
+It explains how the project is structured, how to edit content, and how to maintain the site moving forward.
+
+<hr>
+
 All editable site content lives inside the `/data/` folder:
 
 | File | Purpose |
