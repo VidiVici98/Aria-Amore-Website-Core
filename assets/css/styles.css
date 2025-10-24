@@ -414,17 +414,6 @@ footer h2 {
   font-weight: bold;
   font-style: italic;
 }
-.staff {
-  flex: 0 0 30%;
-  padding: 10px;
-  border: var(--border-thin);
-  border-radius: 10px;
-  background: var(--sepia-gradient);
-  display: flex;
-  scroll-snap-align: center;
-  transition: var(--quick-transition);
-  justify-content: center;
-}
 .staff:hover {
   transform: var(--hover-transform);
 }  
@@ -437,24 +426,13 @@ footer h2 {
   background-color: hsla(33, 25%, 65%, .85);
   top: -20px;
 }
-.staff .artist-bio {
-  background-color: #111111c9; 
-  padding: 5%; 
-  margin-top: -50px; 
-  border-radius: 5px; 
-  border: var(--border-thin);
-}
-.artist-bio h3 {
+#performers h3 {
   font-family: "Italianno", cursive;
   font-weight: 400;
   font-style: normal;  
   font-size: 2.25rem; 
   color: var(--color-active); 
   text-shadow: var(--text-shadow);
-}
-.artist-bio p {
-  text-align: left; 
-  color: var(--color-secondary);
 }
 .btn {
   display: inline-block;
@@ -526,6 +504,41 @@ blockquote:hover {
 .checkbox-btn input:checked + span::before {
   content: "✔ ";
 }
+.home-page .content-wrapper {
+    position: relative; /* Needed for absolute positioning of corners */
+  }
+ .home-page .corner {
+    position: absolute;
+    width: 140px;   /* adjust as needed */
+    height: auto;
+    opacity: .5;
+    padding: .5rem;
+    border-radius: 35px;
+    pointer-events: none; /* so they don’t interfere with clicks */
+  }
+  /* Top-right (original orientation) */
+  .home-page .corner-top-right {
+    top: -5px;
+    right: -5px; 
+  }  
+  /* Top-left (rotate horizontally) */
+  .home-page .corner-top-left {
+    top: -5px;
+    left: -5px;
+    transform: scaleX(-1);
+  }
+  /* Bottom-right (rotate vertically) */
+  .home-page .corner-bottom-right {
+    bottom: -5px;
+    right: -5px;
+    transform: scaleY(-1);
+  }
+  /* Bottom-left (rotate both axes) */
+  .home-page .corner-bottom-left {
+    bottom: -5px;
+    left: -5px;
+    transform: scaleX(-1) scaleY(-1);
+  }
 /*=============================================
 Responsive Mobile Styles
 =============================================*/
@@ -673,8 +686,6 @@ Additional Mobile & Tablet Responsiveness
     height: 250px;
     width: 250px;
   }
-  .artist-bio h3 { font-size: 1.75rem; }
-  .artist-bio p { font-size: 1rem; }
   .plan {
     margin: 10px auto;
     max-width: 300px;
@@ -733,9 +744,6 @@ Extracted Inline CSS & Responsive Versions
   margin: 1rem auto;
   filter: opacity(.6);
 }
-.staff-inner {
-  padding: 20px;
-}
 #testimonials {
   background-color: #111111c9;
   margin: 2%;
@@ -753,10 +761,13 @@ Extracted Inline CSS & Responsive Versions
   font-size: 1.5rem;
   margin-top: 0.75rem;
   margin-bottom: 0.5rem;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #000;
 }
 .testimonial-author {
   font-size: 1.25rem;
   color: #707070;
+  text-shadow: 1px 1px 1px #000;
 }
 /* === Stars Row in Testimonials === */
 .stars-wrapper {
@@ -764,13 +775,27 @@ Extracted Inline CSS & Responsive Versions
   justify-content: center;
   gap: 4px;
   margin: 10px 0;
+  margin-bottom: 1rem;
 }
-/* === Social Icon Row for Performers === */
-.artist-socials {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  margin: 0.5rem 0;
+/* Testimonials Carousel */
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.testimonial-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+.testimonial-slide.active {
+  opacity: 1;
+  position: relative;
 }
 .envelope-container {
   position: relative;
@@ -963,4 +988,94 @@ Extracted Inline CSS & Responsive Versions
 @media (min-width: 701px) {
   .aa-mobile-menu { display: none !important; } /* keep it fully out of flow */
   .aa-mobile-toggle { display: none !important; }
+}
+#performers .carousel-container {
+  position: relative;
+  perspective: 2000px;
+  overflow: visible;
+  max-width: 100%;
+  margin: 40px auto;
+  height: 500px;
+}
+#performers .carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s ease;
+}
+#performers .staff {
+  position: absolute;
+  top: 0;
+  width: 70vw;
+  max-width: 500px;
+  background: #111111c9;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: inset 0 2px 15px rgba(0,0,0,0.2), 0 10px 20px rgba(0,0,0,0.3);
+  border: 2px solid #d6c5a7;
+  transition: all 0.8s ease;
+  backface-visibility: hidden;
+}
+#performers .staff-inner { 
+  position: relative; 
+}
+#performers .btn {
+  display: inline-block;
+  background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
+  color: #252525;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 1px groove #333;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  
+}
+#performers .btn:hover {
+  transform: translateY(-3px)
+   scale(1.05);
+  filter: brightness(1.1);
+  color: #000;
+}
+
+#performers .prev, 
+#performers .next {
+  background: transparent;
+  color: #a2583e;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 60px;
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+#performers .prev:hover, 
+#performers .next:hover { 
+  color: #d68b6c; 
+}
+#performers .prev:active { 
+  transform: translateX(-30%) scale(0.95); 
+}
+#performers .next:active { 
+  transform: translateX(30%) scale(0.95); 
+}
+#performers .prev { 
+  left: 10%; 
+}
+#performers .next { 
+  right: 10%; 
+}
+@media (max-width: 768px) {
+  #performers .staff { width: 85vw; }
+  #performers .prev { left: 5%; }
+  #performers .next { right: 5%; }
 }

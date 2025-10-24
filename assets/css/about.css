@@ -36,21 +36,19 @@
     font-size: 1.25rem;
     font-weight: 600;
     color: #333;
-    transition: color 0.3s ease;
+    text-shadow: 1px 1px 1px #000;
+    transition: all 0.3s ease;
   }
   .about-page .faq-item summary::-webkit-details-marker {
     display: none;
   }
   .about-page .faq-item summary:hover {
     color: #000;
+    transform: translateY(-3px);
   }
   .about-page .faq-icon {
     font-size: 1.3rem;
-    transition: transform 0.3s ease, color 0.3s ease;
-  }
-  /* When open */
-  .about-page .faq-item[open] summary .faq-icon {
-    transform: rotate(45deg);
+    transition:all 0.3s ease;
   }
   /* Smooth open animation */
   .about-page .faq-item p {

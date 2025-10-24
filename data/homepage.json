@@ -1,0 +1,80 @@
+{
+  "hero": {
+    "title": "Aria Amore",
+    "subtitle": "Cordially Invite You To The Experience Of A Lifetime",
+    "letter": {
+      "heading": "More Than Just Entertainment",
+      "text": "Make Your Next Event Unforgettable With Live Opera.",
+      "ctaText": "Reserve Your Date Today!",
+      "ctaHref": "contact.html",
+      "icons": [
+        { "src": "/assets/media/images/tiktok-icon.svg", "alt": "TikTok" },
+        { "src": "/assets/media/images/instagram-icon.svg", "alt": "Instagram" },
+        { "src": "/assets/media/images/share-icon.svg", "alt": "Share" }
+      ]
+    },
+    "separator": "/assets/media/images/victorian-separator.svg"
+  },
+  "events": [
+    {
+      "icon": "/assets/media/images/wedding-rings-icon.png",
+      "title": "Weddings",
+      "description": "A once in a lifetime event deserves more than just..."
+    },
+    {
+      "icon": "/assets/media/images/holiday-icon.png",
+      "title": "Holiday Events",
+      "description": "Sick of yet another yuletide season with boring carolers?"
+    },
+    {
+      "icon": "/assets/media/images/events-icon.png",
+      "title": "Private Gatherings",
+      "description": "Maybe you're simply planning a small family reunion, graduation, or birthday but want to make it truly special."
+    }
+  ],
+  "eventsCta": "We offer a range of performance packages to suit your needs, from intimate ceremonies to grand celebrations. Whether you want a soloist for your vows or a full ensemble for your reception, we have the perfect package for you.",
+  "performers": [
+    {
+      "index": 0,
+      "name": "Performer Name",
+      "portrait": "/assets/media/images/performer.webp",
+      "link": "/public/artists.html"
+    },
+    {
+      "index": 1,
+      "name": "Xavier Williams",
+      "portrait": "/assets/media/images/xavier-williams-transparent.webp",
+      "link": "/public/artists.html"
+    },
+    {
+      "index": 2,
+      "name": "Performer Name",
+      "portrait": "/assets/media/images/placeholder.webp",
+      "link": "/public/artists.html"
+    }
+  ],
+  "performerCornerImages": [
+    "/assets/media/images/floral-top-right.svg",
+    "/assets/media/images/floral-top-right.svg",
+    "/assets/media/images/floral-top-right.svg",
+    "/assets/media/images/floral-top-right.svg"
+  ],
+  "testimonials": [
+    {
+      "stars": 5,
+      "text": "Simply breathtaking.",
+      "author": "Happy Client"
+    },
+    {
+      "stars": 5,
+      "text": "They shook the room with their voices.",
+      "author": "Very Happy Client"
+    },
+    {
+      "stars": 5,
+      "text": "Their performance brought the entire room to tears.",
+      "author": "Happiest Client"
+    }
+  ],
+  "testimonialSeparator": "/assets/media/images/victorian-separator.svg"
+}
