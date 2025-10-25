@@ -26,24 +26,24 @@
      }
   },
   {
-    "id": "liana",
-    "name": "Liana Nixon",
+    "id": "latoya",
+    "name": "Latoya",
     "voice": "Alto",
-    "bio": "Liana’s warm alto tone brings emotional depth to both sacred and contemporary repertoire, captivating audiences with effortless grace and poise.",
-    "modalBio": "Liana Nixon is an accomplished alto whose warm tone and versatility captivate audiences worldwide. Her performances bridge genres, blending traditional hymns with soulful modern interpretations.",
-    "portrait": "/assets/media/images/performer.webp",
+    "bio": "Latoya's warm alto tone brings emotional depth to both sacred and contemporary repertoire, captivating audiences with effortless grace and poise.",
+    "modalBio": "Latoya is an accomplished alto whose warm tone and versatility captivate audiences worldwide. Her performances bridge genres, blending traditional hymns with soulful modern interpretations.",
+    "portrait": "/assets/media/images/latoya.webp",
     "tracks": [
       {
-        "id": "liana-ave-maria",
+        "id": "latoya-ave-maria",
         "title": "Ave Maria (excerpt)",
         "sub": "Alto • 45s",
-        "src": "/assets/media/audio/liana-ave-maria.mp3"
+        "src": "/assets/media/audio/latoya-ave-maria.mp3"
       },
       {
-        "id": "liana-night",
+        "id": "latoya-night",
         "title": "Night (excerpt)",
         "sub": "Alto • 45s",
-        "src": "/assets/media/audio/liana-night.mp3"
+        "src": "/assets/media/audio/latoya-night.mp3"
       }
     ],
     "social": {

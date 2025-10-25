@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Make Your Next Event Unforgettable With Live Opera">
   <title>Aria Amore</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
@@ -12,72 +13,121 @@
 </head>
 <body>
   <!-- Header Embed Container -->
-  <header id="site-header-container"></header>
-  <main class="home-page">
+  <header id="site-header-container" role="banner" aria-label="Site header"></header>
+  <main class="home-page" id="main-content" role="main">
     <!-- Hero Section -->
-    <section class="hero">
-      <div class="envelope-container">
-        <div class="envelope">
-          <div class="envelope-flap"></div>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="envelope-container" role="presentation">
+        <div class="envelope" aria-hidden="true">
+          <div class="envelope-flap" aria-hidden="true"></div>
           <div class="envelope-body">
-            <h1 id="hero-title"></h1>
-            <img id="hero-separator" class="victorian-separator" src="" alt="Separator">
-            <h2 id="hero-subtitle"></h2>
+            <h1 id="hero-title">Aria Amore</h1>
+            <img
+              id="hero-separator"
+              class="victorian-separator"
+              src=""
+              alt=""
+              role="presentation">
+            <h2 id="hero-subtitle">Live Opera Experiences for Your Events</h2>
           </div>
         </div>
-        <div class="hero-letter">
-          <h1 id="hero-letter-heading"></h1>
-          <p id="hero-letter-text"></p>
+        <div class="hero-letter" role="region" aria-labelledby="hero-letter-heading">
+          <h1 id="hero-letter-heading">You’re Invited</h1>
+          <p id="hero-letter-text">
+            Experience the beauty and passion of live opera, brought directly to your celebration.
+          </p>
           <div class="hero-letter-footer">
-            <div class="hero-icons-wrapper" id="hero-icons-wrapper"></div>
+            <div
+              class="hero-icons-wrapper"
+              id="hero-icons-wrapper"
+              aria-label="Social media and contact icons"></div>
             <div class="hero-letter-btn-wrapper">
-              <a id="hero-letter-cta" class="hero-letter-btn" href="">Reserve Your Date Today!</a>
+              <a
+                id="hero-letter-cta"
+                class="hero-letter-btn"
+                href="#rsvp"
+                role="button"
+                aria-label="Reserve your date today">
+                Reserve Your Date Today!
+              </a>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="hero-mobile">
-      <div class="hero-logo">
-        <h1 class="brand">Aria Amore</h1>
-        <div class="music-notes">
+    <!-- Mobile Hero -->
+    <section class="hero-mobile" aria-labelledby="mobile-hero-title">
+      <div class="hero-logo" role="img" aria-label="Aria Amore logo with musical notes">
+        <h1 id="mobile-hero-title" class="brand">Aria Amore</h1>
+        <div class="music-notes" aria-hidden="true">
           <span class="note layer1">♪</span>
           <span class="note layer2">♩</span>
           <span class="note layer2">♫</span>
           <span class="note layer1">♬</span>
           <span class="note layer1">♭</span>
-          <span class="note layer2">♮</span>        
-          <span class="note layer2">♩</span>
+          <span class="note layer2">♮</span>
+          <span class="note layer2">𝄤</span>
           <span class="note layer1">♫</span>
-          <span class="note layer2">♬</span>
+          <span class="note layer2">𝄞</span>
           <span class="note layer1">♭</span>
         </div>
       </div>
     </section>
     <!-- Event Info Boxes -->
-    <section id="events">
-      <div class="event-grid" id="event-grid"></div>
-      <p class="cta" id="events-cta"></p>
+    <section id="events" aria-labelledby="events-heading">
+      <h2 id="events-heading">Our Opera Event Packages</h2>
+      <div
+        class="event-grid"
+        id="event-grid"
+        role="list"
+        aria-label="Opera event options"></div>
+      <p class="cta" id="events-cta">Choose the perfect experience for your occasion.</p>
     </section>
     <!-- Featured Performers -->
-    <section id="performers">
-      <h2 class="featured-title">Featured Performers</h2>
-      <div class="carousel-container">
-        <button class="prev">❮</button>
-        <div class="carousel" id="performer-carousel"></div>
-        <button class="next">❯</button>
+    <section id="performers" aria-labelledby="performers-heading">
+      <h2 id="performers-heading" class="featured-title">Featured Performers</h2>
+      <div class="carousel-container" role="region" aria-label="Performer carousel">
+        <button
+          class="prev"
+          aria-label="Previous performer"
+          type="button"
+        >❮</button>
+        <div
+          class="carousel"
+          id="performer-carousel"
+          role="list"
+          aria-live="polite"
+          aria-atomic="true"></div>
+        <button
+          class="next"
+          aria-label="Next performer"
+          type="button">❯</button>
       </div>
     </section>
     <!-- Client Reviews -->
-    <section id="testimonials">
-      <img class="victorian-separator" id="testimonial-separator" src="/assets/media/images/victorian-separator.svg" alt="Separator">
-      <h2>What Our Clients Are Saying</h2>
-      <div class="testimonial-carousel" id="testimonial-carousel"></div>
-      <img class="victorian-separator" src="/assets/media/images/victorian-separator.svg" alt="Separator">
+    <section id="testimonials" aria-labelledby="testimonials-heading">
+      <img
+        class="victorian-separator"
+        id="testimonial-separator"
+        src="/assets/media/images/victorian-separator.svg"
+        alt=""
+        role="presentation">
+      <h2 id="testimonials-heading">What Our Clients Are Saying</h2>
+      <div
+        class="testimonial-carousel"
+        id="testimonial-carousel"
+        role="region"
+        aria-label="Client testimonials carousel"
+        aria-live="polite"></div>
+      <img
+        class="victorian-separator"
+        src="/assets/media/images/victorian-separator.svg"
+        alt=""
+        role="presentation">
     </section>
   </main>
   <!-- Footer Embed Container -->
-  <footer id="site-footer-container"></footer>
+  <footer id="site-footer-container" role="contentinfo" aria-label="Site footer"></footer>
   <!-- Scripts -->
   <script src="../assets/js/main.js" defer></script>
   <script src="../assets/js/home.js" defer></script>

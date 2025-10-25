@@ -12,170 +12,184 @@
   <link rel="stylesheet" href="../assets/css/services.css">
 </head>
 <body>
-  <!--Header Embed Container-->
-  <header id="site-header-container"></header>
-  <main class="services-page">
-    <section id="packages">
-  <h2 id="packages-heading"></h2>
-  <div class="carousel-container">
-    <button class="prev">❮</button>
-    <div class="carousel">
-      <div class="plan" data-plan-index="0">
-        <div class="content-wrapper">
-          <div class="fancy-heading">
-            <img src="../assets/media/images/divider.svg" class="flourish-divider">
-            <h3 class="plan-title"></h3>
-            <img src="../assets/media/images/divider.svg" class="flourish-divider-right">          </div>
-          <ul class="features"></ul>
-          <div class="price"></div>
-          <button class="btn"></button>
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
-        </div>
-      </div>
-      <div class="plan" data-plan-index="1">
-        <div class="content-wrapper">
-          <div class="fancy-heading">
-            <img src="../assets/media/images/divider.svg" class="flourish-divider">
-            <h3 class="plan-title"></h3>
-            <img src="../assets/media/images/divider.svg" class="flourish-divider-right">          </div>
-          <ul class="features"></ul>
-          <div class="price"></div>
-          <button class="btn"></button>
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-         <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
-        </div>
-      </div>
-      <div class="plan" data-plan-index="2">
-        <div class="content-wrapper">
-          <div class="fancy-heading">
-            <img src="../assets/media/images/divider.svg" class="flourish-divider">
-            <h3 class="plan-title"></h3>
-            <img src="../assets/media/images/divider.svg" class="flourish-divider-right">
+  <!-- Header -->
+  <header id="site-header-container" role="banner" aria-label="Main site header"></header>
+  <main class="services-page" id="main-content" role="main">
+    <!-- =====================
+         PACKAGES SECTION
+    ====================== -->
+    <section id="packages" aria-labelledby="packages-heading">
+      <h2 id="packages-heading">Our Packages</h2>
+      <div class="carousel-container" role="region" aria-label="Performance packages carousel">
+        <button class="prev" aria-label="Previous package">❮</button>
+        <div class="carousel" role="list">
+          <!-- Plan 1 -->
+          <div class="plan" role="group" aria-roledescription="carousel slide" aria-label="Package 1: Serenade Package" data-plan-index="0">
+            <div class="content-wrapper">
+              <div class="fancy-heading">
+                <img src="../assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+                <h3 class="plan-title">Serenade Package</h3>
+                <img src="../assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+              </div>
+              <ul class="features" role="list">
+                <!-- Populated dynamically -->
+              </ul>
+              <div class="price" aria-label="Package price"></div>
+              <button class="btn" aria-label="Choose Serenade Package">Choose Package</button>
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" aria-hidden="true">
+            </div>
           </div>
-          <ul class="features"></ul>
-          <div class="price"></div>
-          <button class="btn"></button>
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-          <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
+          <!-- Plan 2 -->
+          <div class="plan" role="group" aria-roledescription="carousel slide" aria-label="Package 2: Aria Package" data-plan-index="1">
+            <div class="content-wrapper">
+              <div class="fancy-heading">
+                <img src="../assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+                <h3 class="plan-title">Aria Package</h3>
+                <img src="../assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+              </div>
+              <ul class="features" role="list"></ul>
+              <div class="price" aria-label="Package price"></div>
+              <button class="btn" aria-label="Choose Aria Package">Choose Package</button>
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" aria-hidden="true">
+            </div>
+          </div>
+          <!-- Plan 3 -->
+          <div class="plan" role="group" aria-roledescription="carousel slide" aria-label="Package 3: Grand Opera Package" data-plan-index="2">
+            <div class="content-wrapper">
+              <div class="fancy-heading">
+                <img src="../assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+                <h3 class="plan-title">Grand Opera Package</h3>
+                <img src="../assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+              </div>
+              <ul class="features" role="list"></ul>
+              <div class="price" aria-label="Package price"></div>
+              <button class="btn" aria-label="Choose Grand Opera Package">Choose Package</button>
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" aria-hidden="true">
+              <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" aria-hidden="true">
+            </div>
+          </div>
         </div>
+        <button class="next" aria-label="Next package">❯</button>
       </div>
-    </div>
-    <button class="next">❯</button>
-  </div>
-</section>
-<section class="rsvp-section">
-  <div class="content-wrapper">
-  <!-- Your content goes here -->
-  <div class="rsvp-card">
-    <div class="rsvp-header">
-      <h2>Save The Date</h2>
-      <img src="../assets/media/images/divider.svg" class="flourish-divider-bottom">
-      <img src="../assets/media/images/divider.svg" class="flourish-divider-bottom-right">
-    </div>
-    <p class="rsvp-intro">
-      Join us for a magical evening of operatic splendor. Please fill out your details below so we can reserve your place at this unforgettable celebration.
-    </p>
-    <form class="rsvp-form">
-      <h3 class="fancy-heading">
-        <img src="../assets/media/images/divider.svg" class="flourish-divider">
-        Organizer Info:
-        <img src="../assets/media/images/divider.svg" class="flourish-divider-right">
-      </h3>
-      <div class="form-row">
-        <label for="guestName">Your Name</label>
-        <input type="text" id="guestName" placeholder="John Doe" required>
+    </section>
+    <!-- =====================
+         RSVP SECTION
+    ====================== -->
+    <section class="rsvp-section" aria-labelledby="rsvp-heading">
+      <div class="content-wrapper">
+        <div class="rsvp-card" role="form" aria-labelledby="rsvp-heading">
+          <div class="rsvp-header">
+            <h2 id="rsvp-heading">Save The Date</h2>
+            <img src="../assets/media/images/divider.svg" class="flourish-divider-bottom" alt="" aria-hidden="true">
+            <img src="../assets/media/images/divider.svg" class="flourish-divider-bottom-right" alt="" aria-hidden="true">
+          </div>
+          <p class="rsvp-intro">
+            Join us for a magical evening of operatic splendor. Please fill out your details below so we can reserve your place at this unforgettable celebration.
+          </p>
+          <form class="rsvp-form" aria-describedby="rsvp-intro">
+            <h3 class="fancy-heading">
+              <img src="../assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+              Organizer Info:
+              <img src="../assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+            </h3>
+            <div class="form-row">
+              <label for="guestName">Your Name</label>
+              <input type="text" id="guestName" name="guestName" placeholder="John Doe" required aria-required="true">
+            </div>
+            <div class="form-row">
+              <label for="guestEmail">Email Address</label>
+              <input type="email" id="guestEmail" name="guestEmail" placeholder="john@example.com" required aria-required="true">
+            </div>
+            <div class="form-row">
+              <label for="guestPhone">Phone Number</label>
+              <input type="tel" id="guestPhone" name="guestPhone" placeholder="(555)123-4567" required aria-required="true">
+            </div>
+            <h3 class="fancy-heading">
+              <img src="../assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+              Event Details:
+              <img src="../assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+            </h3>
+            <fieldset class="form-packages" role="radiogroup" aria-label="Package selection">
+              <legend class="sr-only">Choose a package</legend>
+              <label class="checkbox-btn">
+                <input type="radio" name="package" value="serenade" id="pkg-serenade">
+                <span>Serenade Package</span>
+              </label>      
+              <label class="checkbox-btn">
+                <input type="radio" name="package" value="aria" id="pkg-aria">
+                <span>Aria Package</span>
+              </label>    
+              <label class="checkbox-btn">
+                <input type="radio" name="package" value="grand-opera" id="pkg-grand-opera">
+                <span>Grand Opera Package</span>
+              </label>
+            </fieldset>
+            <div class="rsvp-calendar" role="region" aria-label="Calendar of available dates">
+              <iframe
+                src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York"
+                title="Google Calendar showing holidays and available dates"
+                frameborder="0"
+                scrolling="no">
+              </iframe>
+            </div>
+            <div class="form-row">
+              <label for="eventDate">Event Date</label>
+              <input type="date" id="eventDate" name="eventDate" required aria-required="true">
+              <label for="guestCount">Number of Guests</label>
+              <input type="number" id="guestCount" name="guestCount" min="1" placeholder="2" required aria-required="true">
+              <label for="notes">Special Requests</label>
+              <textarea id="notes" name="notes" rows="3" placeholder="Dietary restrictions, song requests..."></textarea>
+            </div>
+            <h3 class="fancy-heading">
+              <img src="../assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+              Addons:
+              <img src="../assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+            </h3>
+            <fieldset class="form-packages" role="group" aria-label="Add-on options">
+              <legend class="sr-only">Select any additional services</legend>
+              <label class="checkbox-btn">
+                <input type="checkbox" name="addon" value="additional-performer">
+                <span>Additional Performer</span>
+              </label>      
+              <label class="checkbox-btn">
+                <input type="checkbox" name="addon" value="photography">
+                <span>Photography Services</span>
+              </label>    
+              <label class="checkbox-btn">
+                <input type="checkbox" name="addon" value="pianist">
+                <span>Pianist Included</span>
+              </label>        
+              <label class="checkbox-btn">
+                <input type="checkbox" name="addon" value="cellist">
+                <span>Cellist Included</span>
+              </label>        
+              <label class="checkbox-btn">
+                <input type="checkbox" name="addon" value="planning">
+                <span>Planning Services</span>
+              </label>
+            </fieldset>
+            <button type="submit" class="rsvp-submit" aria-label="Confirm reservation">Confirm Reservation</button>
+          </form>
+        </div>
+        <!-- Decorative corners -->
+        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="" aria-hidden="true">
+        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" aria-hidden="true">
+        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" aria-hidden="true">
+        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" aria-hidden="true">
       </div>
-      <div class="form-row">
-        <label for="guestEmail">Email Address</label>
-        <input type="email" id="guestEmail" placeholder="john@example.com" required>
-      </div>      
-      <div class="form-row">
-        <label for="guestEmail">Phone Number</label>
-        <input type="tel" id="guestPhone" placeholder="(555)123-4567" required>
-      </div>
-      <h3 class="fancy-heading">
-        <img src="../assets/media/images/divider.svg" class="flourish-divider">
-        Event Details:
-        <img src="../assets/media/images/divider.svg" class="flourish-divider-right">
-      </h3>
-      <div class="form-packages">
-        <label class="checkbox-btn">
-          <input type="radio" name="package" value="serenade">
-          <span>Serenade Package</span>
-        </label>      
-        <label class="checkbox-btn">
-          <input type="radio" name="package" value="aria">
-          <span>Aria Package</span>
-        </label>    
-        <label class="checkbox-btn">
-          <input type="radio" name="package" value="grand-opera">
-          <span>Grand Opera Package</span>
-        </label>
-      </div>
-      <div class="rsvp-calendar">
-        <iframe
-          src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York"
-          frameborder="0"
-          scrolling="no">
-        </iframe>
-      </div>
-      <div class="form-row">
-          <label for="eventDate">Event Date</label>
-          <input type="date" id="eventDate" required>
-          <label for="guestCount">Number of Guests</label>
-          <input type="number" id="guestCount" min="1" placeholder="2" required>
-          <label for="notes">Special Requests</label>
-          <textarea id="notes" name="notes" rows="3" placeholder="Dietary restrictions, song requests..."></textarea>
-      </div>
-      <h3 class="fancy-heading">
-        <img src="../assets/media/images/divider.svg" class="flourish-divider">
-        Addons:
-        <img src="../assets/media/images/divider.svg" class="flourish-divider-right">
-      </h3>
-      <div class="form-packages">
-        <label class="checkbox-btn">
-          <input type="checkbox">
-          <span>Additional Performer</span>
-        </label>      
-        <label class="checkbox-btn">
-          <input type="checkbox">
-          <span>Photography Services</span>
-        </label>    
-        <label class="checkbox-btn">
-          <input type="checkbox">
-          <span>Pianist Included</span>
-        </label>        
-        <label class="checkbox-btn">
-          <input type="checkbox">
-          <span>Chellist Included</span>
-        </label>        
-        <label class="checkbox-btn">
-          <input type="checkbox">
-          <span>Planning Services</span>
-        </label>
-      </div>
-      <button type="submit" class="rsvp-submit">Confirm Reservation</button>
-    </form>
-  </div>
-  <!-- Corner brackets -->
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-  <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
-</div>
-</section> 
-</main>
-  <!--Footer Embed Container-->
-  <footer id="site-footer-container"></footer>
-  <!--Scripts-->  
+    </section>
+  </main>
+  <footer id="site-footer-container" role="contentinfo" aria-label="Site footer"></footer>
+  <!-- Scripts -->
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/services.js" defer></script>
-  </body>
+</body>
 </html>

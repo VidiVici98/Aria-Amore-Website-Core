@@ -2,6 +2,7 @@
 Global Variables
 =============================================*/
 :root {
+  --accent-deep: #a2583e;
   --border-thin: 1px groove #333;
   --color-primary: #111;
   --color-subdued: #bbb;
@@ -170,17 +171,15 @@ footer h2 {
   width: 70%;
 }
 .sub-footer {
-  color: #333;
+  background: radial-gradient(circle at 50% 50%, #111111, #222222);
   font-style: italic;
   width: 100%;
   display: block;
   position: relative;
   text-align: center;
-  background-color: var(--color-primary);
   font-size: .75rem;
   padding: 5px;
 }
-/*Homepage*/
 .hero {
   width: 98%;
   height: 65vh;
@@ -199,20 +198,6 @@ footer h2 {
 .hero-mobile {
   display: none;
 }
-@media (max-width: 768px) {
-  .hero-mobile {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-    background-image: url(/assets/media/images/floral-background.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 100% 70%;
-  }
-}
 .hero-logo {
   position: relative;
   z-index: 2;
@@ -221,21 +206,21 @@ footer h2 {
   font-family: "Italianno";
   font-size: 5rem;
   font-weight: bold;
-  color: var(--color-active);
   text-align: center;
   letter-spacing: 2px;
+  color: var(--color-active);
   text-shadow:
     2px 3px 1px rgba(0, 0, 0, 1),
     0 0 15px rgba(255, 240, 200, 0.7),
     0 0 30px rgba(255, 240, 200, 0.3);
   position: relative;
-  top: -50px;
-  padding-top: 100px;
+  top: -170px;
+  padding-top: 350px;
   z-index: 2;
 }
 .music-notes {
   position: absolute;
-  top: -70px;
+  top: -175px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -246,61 +231,54 @@ footer h2 {
 .note {
   position: absolute;
   bottom: 0;
-  font-size: 1.5rem;
   opacity: 0;
-  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
   animation-name: floatNote;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   transform-origin: center;
 }
 .layer1 {
-  z-index: 1;
-  color: var(--color-active);
+  z-index: 4;
+  color: #fff2c2;
+  font-size: 2rem !important;
   animation-duration: 6s;
 }
 .layer2 {
-  z-index: 0;
-  color: #ffe8b0;
+  z-index: 3;
+  color: #ffe5a8;
+  font-size: 3.5rem !important;
   animation-duration: 8s;
+  filter: drop-shadow(0 0 8px rgba(255, 255, 180, 0.6));
 }
-.note:nth-child(1) { left: 20%; animation-delay: 0s; transform: translateX(0); }
-.note:nth-child(2) { left: 40%; animation-delay: 0.8s; transform: translateX(0); }
-.note:nth-child(3) { left: 55%; animation-delay: 1.6s; transform: translateX(0); }
-.note:nth-child(4) { left: 70%; animation-delay: 2.4s; transform: translateX(0); }
-.note:nth-child(5) { left: 30%; animation-delay: 3.2s; transform: translateX(0); }
-.note:nth-child(6) { left: 60%; animation-delay: 4s; transform: translateX(0); }
-.note:nth-child(7) { left: 25%; animation-delay: 1s; transform: translateX(0); }
-.note:nth-child(8) { left: 45%; animation-delay: 1.8s; transform: translateX(0); }
-.note:nth-child(9) { left: 50%; animation-delay: 2.6s; transform: translateX(0); }
-.note:nth-child(10){ left: 65%; animation-delay: 3.4s; transform: translateX(0); }
+.note:nth-child(1) { left: 22%; animation-delay: 0s; }
+.note:nth-child(2) { left: 38%; animation-delay: 0.6s; }
+.note:nth-child(3) { left: 52%; animation-delay: 1.3s; }
+.note:nth-child(4) { left: 67%; animation-delay: 2s; }
+.note:nth-child(5) { left: 28%; animation-delay: 2.8s; }
+.note:nth-child(6) { left: 60%; animation-delay: 3.4s; }
+.note:nth-child(7) { left: 33%; animation-delay: 1.5s; }
+.note:nth-child(8) { left: 45%; animation-delay: 2.3s; }
+.note:nth-child(9) { left: 58%; animation-delay: 3.1s; }
+.note:nth-child(10){ left: 70%; animation-delay: 3.9s; }
 @keyframes floatNote {
-  0% {
-    transform: translate(0,0) scale(1) rotate(0deg);
-    opacity: 0;}
-  10% {
-    opacity: 0.8;}
-  25% {
-    transform: translate(-5px, -70px) rotate(-10deg);
-    opacity: 0.9;}
-  40% {
-    transform: translate(8px, -140px) rotate(8deg);}
-  55% {
-    transform: translate(-7px, -210px) rotate(-5deg);
-    opacity: 0.7;}
-  70% {
-    transform: translate(6px, -260px) scale(1.05) rotate(4deg);
-    opacity: 0.5;}
-  85% {
-    transform: translate(-4px, -300px) scale(1.1) rotate(-2deg);}
-  100% {
-    transform: translate(3px, -350px) scale(1.15) rotate(0deg);
-    opacity: 0;}
+  0% {transform: translate(0, 0) scale(1) rotate(0deg);
+      opacity: 0;}
+  10% {opacity: 0.8;}
+  25% {transform: translate(calc(-10px - 5vw), -70px) rotate(-10deg);
+       opacity: 0.9;}
+  40% {transform: translate(calc(8px + 4vw), -140px) rotate(8deg);}
+  55% {transform: translate(calc(-12px - 3vw), -210px) rotate(-5deg);
+       opacity: 0.7;}
+  70% {transform: translate(calc(10px + 2vw), -270px) scale(1.05) rotate(4deg);
+       opacity: 0.5;}
+  85% {transform: translate(calc(-8px - 1vw), -330px) scale(1.1) rotate(-2deg);}
+  100% {transform: translate(0, -380px) scale(1.15) rotate(0deg);
+        opacity: 0;}
 }
-@media (max-width: 480px) {
-  .note { font-size: 1.1rem; }
-  .brand { font-size: 4rem; }
-}
+/* ================================
+   Desktop HERO
+  ================================ */
 .envelope {
   position: absolute;
   width: 100%;
@@ -492,6 +470,9 @@ footer h2 {
     scale: 125%;
     transform: translateY(-4px);
 }
+/* ================================
+   Info Cards
+   ================================ */
 #events {
   margin-top: 15%;
 }
@@ -514,6 +495,7 @@ footer h2 {
   border: var(--border-thin);
   border-radius: 15px;
   background: var(--sepia-gradient);
+  box-shadow: var(--box-shadow);
   position: relative;
   transition: var(--quick-transition);
 }
@@ -532,6 +514,9 @@ footer h2 {
   font-weight: bold;
   font-style: italic;
 }
+/* ================================
+   Staff Carousel
+   ================================ */
 .staff:hover {
   transform: var(--hover-transform);
 }  
@@ -579,9 +564,67 @@ footer h2 {
   position: relative;
   transition: var(--quick-transition);
 }
+/* ================================
+   Testimonials
+   ================================ */
+#testimonials {
+  background-color: #111111c9;
+  margin: 2%;
+  border: 2px groove #707070;
+  border-radius: 10px;
+  text-align: center;
+  padding: 1.5rem;
+}
+#testimonials h2 {
+  font-size: 2.5rem;
+  text-shadow: 2px 2px #111111;
+}
+.testimonial-text {
+  color: #d6c5a7;
+  font-size: 1.5rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  text-shadow: 1px 1px 1px #000;
+}
+.testimonial-author {
+  font-size: 1.25rem;
+  color: #707070;
+  text-shadow: 1px 1px 1px #000;
+}
+.stars-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin: 10px 0;
+  margin-bottom: 1rem;
+}
 .stars {
   width: 25px;
   filter: brightness(.75);
+}
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.testimonial-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  transition: all 0.3s ease;
+}
+.testimonial-slide.active {
+  opacity: 1;
+  position: relative;
+}
+.testimonial-carousel:hover .testimonial-slide.active {
+  transform: scale(1.05);
 }
 section {
   padding: 40px 20px;
@@ -594,94 +637,39 @@ section {
 blockquote:hover {
   scale: 105%;
 }
-.image-container {
-  flex: 1;
-}
-.checkbox-btn {
-  display: inline-flex;
-  align-items: center;
-  padding: 25px 25px;
-  background: var(--color-active);
-  color: var(--color-primary);
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1rem;
-  border: var(--border-thin);
-  width: 180px;
-  margin: 2%;
-  text-align: center;
-  transition: var(--quick-transition);
-}
-.checkbox-btn:hover {
-  background: #25252579;
-  scale: 110%;
-}
-.checkbox-btn input {
-  display: none;
-}
-.checkbox-btn input:checked + span::before {
-  content: "✔ ";
-}
 .home-page .content-wrapper {
-  position: relative; /* Needed for absolute positioning of corners */
+  position: relative; 
   }
 .home-page .corner {
   position: absolute;
-  width: 140px;   /* adjust as needed */
+  width: 140px;  
   height: auto;
   opacity: .5;
   padding: .5rem;
   border-radius: 35px;
-  pointer-events: none; /* so they don’t interfere with clicks */
+  pointer-events: none; 
 }
-/* Top-right (original orientation) */
 .home-page .corner-top-right {
   top: -5px;
   right: -5px; 
 }  
-/* Top-left (rotate horizontally) */
 .home-page .corner-top-left {
   top: -5px;
   left: -5px;
   transform: scaleX(-1);
 }
-/* Bottom-right (rotate vertically) */
 .home-page .corner-bottom-right {
   bottom: -5px;
   right: -5px;
   transform: scaleY(-1);
 }
-/* Bottom-left (rotate both axes) */
 .home-page .corner-bottom-left {
   bottom: -5px;
   left: -5px;
   transform: scaleX(-1) scaleY(-1);
 }
 /*=============================================
-Responsive Mobile Styles
-=============================================*/
-@media screen and (max-width: 700px){
-  .contact-card {
-    display: none;
-  }
-  .front, .back {
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-  }
-  .back {
-    transform: rotateY(180deg);
-  }
-  .mobile-flip-container.flipped .flipper {
-    transform: rotateY(180deg);
-  }
-}
-/*=============================================
-Additional Mobile & Tablet Responsiveness
+ Mobile & Tablet Responsiveness
 =============================================*/
 @media screen and (max-width: 1024px) {
   .hero-letter h1 { font-size: 3rem; }
@@ -803,14 +791,6 @@ Additional Mobile & Tablet Responsiveness
     margin: 10px auto;
     max-width: 300px;
   }
-  .contact-form {
-    width: 90%;
-    margin: auto;
-  }
-  .contact-form button {
-    margin: 10px auto;
-    width: 80%;
-  }
   footer {
     font-size: 0.9rem;
     text-align: center;
@@ -833,9 +813,6 @@ Additional Mobile & Tablet Responsiveness
   .price { font-size: 1.25rem; }
   footer h2 { font-size: 1.5rem; }
 }
-/*=========================================
-Extracted Inline CSS & Responsive Versions
-=========================================*/
 .featured-title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
@@ -856,59 +833,6 @@ Extracted Inline CSS & Responsive Versions
   height: auto;
   margin: 1rem auto;
   filter: opacity(.6);
-}
-#testimonials {
-  background-color: #111111c9;
-  margin: 2%;
-  border: 2px groove #707070;
-  border-radius: 10px;
-  text-align: center;
-  padding: 1.5rem;
-}
-#testimonials h2 {
-  font-size: 2.5rem;
-  text-shadow: 2px 2px #111111;
-}
-.testimonial-text {
-  color: #d6c5a7;
-  font-size: 1.5rem;
-  margin-top: 0.75rem;
-  margin-bottom: 0.5rem;
-  font-style: italic;
-  text-shadow: 1px 1px 1px #000;
-}
-.testimonial-author {
-  font-size: 1.25rem;
-  color: #707070;
-  text-shadow: 1px 1px 1px #000;
-}
-/* === Stars Row in Testimonials === */
-.stars-wrapper {
-  display: flex;
-  justify-content: center;
-  gap: 4px;
-  margin: 10px 0;
-  margin-bottom: 1rem;
-}
-/* Testimonials Carousel */
-.testimonial-carousel {
-  position: relative;
-  overflow: hidden;
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-.testimonial-slide {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-.testimonial-slide.active {
-  opacity: 1;
-  position: relative;
 }
 .envelope-container {
   position: relative;
@@ -1195,4 +1119,21 @@ Extracted Inline CSS & Responsive Versions
   #performers .staff { width: 85vw; }
   #performers .prev { left: 5%; }
   #performers .next { right: 5%; }
+  .hero-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(/assets/media/images/floral-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150% 120%;
+    top: 65px;
+  }
+}
+@media (max-width: 480px) {
+  .note { font-size: 1.1rem; }
+  .brand { font-size: 4rem; }
 }

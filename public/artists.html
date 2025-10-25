@@ -12,85 +12,144 @@
 <link rel="stylesheet" href="../assets/css/artists.css">
 </head>
 <body>
-   <!--Header Embed Container-->
-   <header id="site-header-container"></header>
-
-<main class="artists-page">
-<section class="artists-grid" aria-label="Artists">
-  <!-- Template for each artist -->
-  <template id="artist-template">
-    <article class="artist">
-      <div class="content-wrapper">
-        <div class="artist-portrait" tabindex="0" role="button">
-          <img src="" alt="">
-        </div>
-        <div class="artist-body">
-          <div class="headline-row">
-            <div class="name-block">
-              <h2 class="artist-name"></h2>
+  <!-- Header Embed Container -->
+  <header id="site-header-container" role="banner" aria-label="Site header"></header>
+  <main class="artists-page" id="main-content" role="main">
+    <!-- Fancy Page Heading -->
+    <div class="fancy-heading" role="region" aria-labelledby="artists-heading">
+      <img src="/assets/media/images/divider.svg" class="flourish-side-ornament" alt="" role="presentation">
+      <img src="/assets/media/images/divider.svg" class="flourish-side-ornament-right" alt="" role="presentation">
+      <h1 id="artists-heading">Meet the Artists Behind the Music</h1>
+      <img src="/assets/media/images/divider.svg" class="flourish-side-ornament bottom" alt="" role="presentation">
+      <img src="/assets/media/images/divider.svg" class="flourish-side-ornament-right bottom" alt="" role="presentation">
+    </div>
+    <!-- Artists Grid -->
+    <section class="artists-grid" aria-label="Artists directory">
+      <!-- Template for each artist -->
+      <template id="artist-template">
+        <article class="artist" role="article" aria-labelledby="artist-name">
+          <div class="content-wrapper">
+            <div
+              class="artist-portrait"
+              tabindex="0"
+              role="button"
+              aria-label="Open artist photo in lightbox">
+              <img src="" alt="Performer portrait" />
+            </div>
+            <div class="artist-body">
+              <div class="headline-row">
+                <div class="name-block">
+                  <h2 class="artist-name" id="artist-name"></h2>
+                </div>
+              </div>
+              <p class="artist-bio"></p>
+              <button
+                class="read-more"
+                aria-expanded="false"
+                aria-controls="artist-bio">
+                Read more
+              </button>
+              <div class="audio-list" aria-label="Audio previews" role="list"></div>
+              <div class="cta-row">
+                <a
+                  class="book-btn"
+                  href="#"
+                  role="button"
+                  aria-label="Request this artist">
+                  Request Artist
+                </a>
+              </div>
+            </div>
+            <!-- Corner Decorations -->
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="" role="presentation">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" role="presentation">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" role="presentation">
+            <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" role="presentation">
+          </div>
+        </article>
+      </template>
+    </section>
+    <!-- Footer Embed Container -->
+    <footer id="site-footer-container" role="contentinfo" aria-label="Site footer"></footer>
+    <!-- Lightbox Overlay -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Artist photo viewer"
+      aria-modal="true">
+      <div class="lightbox-backdrop" id="lightbox-backdrop" role="presentation"></div>
+      <div class="lightbox-panel" role="document">
+        <button
+          class="lightbox-close"
+          id="lightbox-close"
+          aria-label="Close lightbox"
+          type="button">✕</button>
+        <img src="#" alt="Artist portrait enlarged" class="lightbox-img" id="lightbox-img" />
+      </div>
+    </div>
+    <!-- Artist Modal -->
+    <div
+      id="artist-modal"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-name"
+      aria-describedby="modal-bio">
+      <div class="modal-backdrop" id="modal-backdrop" role="presentation"></div>
+      <div class="modal-content" role="document">
+        <button
+          class="modal-close"
+          id="modal-close"
+          aria-label="Close artist details"
+          type="button">✕</button>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img id="modal-portrait" src="" alt="Performer portrait">
+          </div>
+          <div class="modal-details">
+            <h2 id="modal-name">Artist Name</h2>
+            <p id="modal-bio">Artist bio information appears here.</p>
+            <div class="modal-audio" aria-labelledby="audio-heading">
+              <h3 id="audio-heading">Audio Samples</h3>
+              <div id="modal-audio-list" role="list"></div>
+            </div>
+            <div class="modal-social" aria-labelledby="social-heading">
+              <h3 id="social-heading">Connect</h3>
+              <div class="social-icons" role="group" aria-label="Social media links">
+                <a
+                  href="#"
+                  id="modal-instagram"
+                  aria-label="Instagram profile"
+                  class="icon">
+                  <img src="/assets/media/images/instagram-icon.svg" alt="Instagram icon">
+                </a>
+                <a
+                  href="#"
+                  id="modal-tiktok"
+                  aria-label="TikTok profile"
+                  class="icon">
+                  <img src="/assets/media/images/tiktok-icon.svg" alt="TikTok icon">
+                </a>
+              </div>
+            </div>
+            <div class="modal-actions">
+              <button
+                id="modal-book"
+                class="book-btn"
+                aria-label="Request this artist for your event"
+                type="button">
+                Request Artist
+              </button>
             </div>
           </div>
-          <p class="artist-bio"></p>
-          <button class="read-more" aria-expanded="false">Read more</button>
-          <div class="audio-list" aria-label="Audio previews"></div>
-          <div class="cta-row">
-            <a class="book-btn" href="#">Request Artist</a>
-          </div>
-        </div>
-        <!-- Corner decorations -->
-        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-        <img src="../assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
-      </div>
-    </article>
-  </template>
-</section>
-
-  <!--Footer Embed Container-->
-  <footer id="site-footer-container"></footer>
-
-<!-- Lightbox overlay (single instance) -->
-<div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-label="Lightbox">
-  <div class="lightbox-backdrop" id="lightbox-backdrop"></div>
-  <div class="lightbox-panel" role="document">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Close">✕</button>
-    <img src="#" alt="" class="lightbox-img" id="lightbox-img" />
-  </div>
-</div>
-
-<!-- Artist Modal -->
-<div id="artist-modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
-  <div class="modal-backdrop" id="modal-backdrop"></div>
-  <div class="modal-content">
-    <button class="modal-close" id="modal-close" aria-label="Close modal">✕</button>
-    <div class="modal-body">
-      <div class="modal-image">
-        <img id="modal-portrait" src="" alt="Performer portrait">
-      </div>
-      <div class="modal-details">
-        <h2 id="modal-name"></h2>
-        <p id="modal-bio"></p>
-        <div class="modal-audio">
-          <h3>Audio Samples</h3>
-          <div id="modal-audio-list"></div>
-        </div>
-        <div class="modal-social">
-          <h3>Connect</h3>
-          <div class="social-icons">
-            <a href="#" id="modal-instagram" aria-label="Instagram" class="icon"><img src="/assets/media/images/instagram-icon.svg"></a>
-            <a href="#" id="modal-tiktok" aria-label="TikTok" class="icon"><img src="/assets/media/images/tiktok-icon.svg"></a>
-          </div>
-        </div>
-        <div class="modal-actions">
-          <button id="modal-book" class="book-btn">Request Artist</button>
         </div>
       </div>
     </div>
-  </div>
-</div>
-</main>
-<script src="../assets/js/main.js" defer></script>
-<script src="../assets/js/artists.js" defer></script>
+  </main>
+  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/artists.js" defer></script>
 </body>
 </html>

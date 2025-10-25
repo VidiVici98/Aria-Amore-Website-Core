@@ -36,8 +36,8 @@
   "performers": [
     {
       "index": 0,
-      "name": "Performer Name",
-      "portrait": "/assets/media/images/performer.webp",
+      "name": "Latoya",
+      "portrait": "/assets/media/images/latoya.webp",
       "link": "/public/artists.html"
     },
     {

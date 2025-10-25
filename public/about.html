@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="">
+  <meta name="description" content="Learn more about Aria Amore and find answers to common questions.">
   <title>Aria Amore | About</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,74 +12,50 @@
   <link rel="stylesheet" href="/assets/css/about.css">
 </head>
 <body>
-  <!--Header Embed Container-->
-  <header id="site-header-container"></header>
-  <main class="about-page">
-<section class="faq-section">
-  <div class="faq-fancy-heading">
-    <h2 class="faq-heading">
-      <img src="../assets/media/images/divider.svg" class="flourish-side-ornament">
-      Frequently Asked Questions
-      <img src="../assets/media/images/divider.svg" class="flourish-side-ornament-right">
-    </h2>
-  </div>    
-
-  <div class="faq-container">
-    <!-- Template for cloning -->
-    <template id="faq-template">
-      <details class="faq-item">
-        <summary>
-          <span class="question-text"></span>
-          <span class="faq-icon" aria-hidden="true">➕</span>
-        </summary>
-        <p class="answer-text"></p>
-      </details>
-    </template>
-  </div>
-</section>
-
-    <div class="faq-fancy-heading">
-      <h2 class="faq-heading">
-        <img src="../assets/media/images/divider.svg" class="flourish-side-ornament">
-        Reach Out Anytime
-        <img src="../assets/media/images/divider.svg" class="flourish-side-ornament-right">
-      </h2>
-    </div>  
-    <section id="contact" class="flip-container">
-    <div class="flipper">
-    <!-- Front Side -->
-      <div class="front contact-card">
-        <div class="form-container">
-          <form class="contact-form" id="flipForm" style="margin-left: 25px;">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Message" rows="5" required></textarea>
-            <button type="submit"><b>Send Inquiry</b></button>
-          </form>
-        </div>
-        <div class="image-container">
-          <img src="/assets/media/images/aria-amore-transparent.png" width="300px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
-        </div>
+  <!-- Header Embed Container -->
+  <header id="site-header-container" role="banner" aria-label="Site header"></header>
+  <main class="about-page" id="main-content" role="main">
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+      <div class="faq-fancy-heading">
+        <h2 class="faq-heading" id="faq-heading">
+          <img
+            src="../assets/media/images/divider.svg"
+            class="flourish-side-ornament"
+            alt=""
+            role="presentation">
+          Frequently Asked Questions
+          <img
+            src="../assets/media/images/divider.svg"
+            class="flourish-side-ornament-right"
+            alt=""
+            role="presentation">
+        </h2>
+      </div>    
+      <div
+        class="faq-container"
+        role="region"
+        aria-label="Frequently Asked Questions list">
+        <!-- Template for cloning FAQ items -->
+        <template id="faq-template">
+          <details class="faq-item" role="group">
+            <summary
+              role="button"
+              aria-expanded="false"
+              aria-controls="faq-answer">
+              <span class="question-text"></span>
+              <span class="faq-icon" aria-hidden="true">➕</span>
+            </summary>
+            <p class="answer-text" id="faq-answer"></p>
+          </details>
+        </template>
       </div>
-    <!-- Back Side -->
-      <div class="back contact-card" style="background-color: #d6c5a7; padding: 25px; max-width: 800px; border: 2px groove #252525c9; border-radius: 25px;">
-        <div class="image-container">
-          <img src="/assets/media/images/aria-amore-transparent.png" width="300px" style="margin-right: 10px; margin-left:10px; border-radius: 25%;">
-        </div>
-        <div style="background-color: #252525c9; padding: 2%; border: 2px groove #252525c9; border-radius: 25px;">  
-          <h2 style="font-size: 2.5rem; font-family: italiano;">Thank You!</h2>
-          <img src="/assets/media/images/victorian-separator.svg" width="80%">
-          <p style="color: #ffffff; font-family: italiano;">Your inquiry has been submitted. We'll get back to you soon.</p>
-          <button onclick="flipBack()">Go Back</button>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
   </main>
-  <!--Footer Embed Container-->
-  <footer id="site-footer-container"></footer>
-  <!--Scripts-->  
+  <!-- Footer Embed Container -->
+  <footer id="site-footer-container" role="contentinfo" aria-label="Site footer"></footer>
+  <!-- Scripts -->  
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/about.js" defer></script>
-  </body>
+</body>
 </html>

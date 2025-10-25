@@ -9,11 +9,18 @@
     color: #222;
   }
   .about-page .faq-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: #4b2e1b;
+    grid-column: 1 / -1; /* <-- makes it span both grid columns */
+    font-family: "Italianno", cursive;
+    font-size: 1.75rem;
+    color: #4b2e1b;
     text-align: center;
-    font-size: 2.5rem;
-    letter-spacing: 0.04em;
-    color: #2d2d2d;
-    margin-bottom: 1rem;
+    margin-top: 1.25rem;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
   }
   .about-page .faq-container {
     margin-top: 2rem;
@@ -76,13 +83,15 @@
     gap: 0.75rem;
   }
   .about-page .flourish-side-ornament {
-    width: 150px;
+    min-width: 50px;
+    max-width: 100px;
     height: auto;
     opacity: 0.5;
   }
   .about-page .flourish-side-ornament-right {
     transform: scaleX(-1);
-    width: 150px;
+    min-width: 50px;
+    max-width: 100px;
     height: auto;
     opacity: 0.5;
   }
@@ -131,89 +140,6 @@
     bottom: -5px;
     left: -5px;
     transform: scaleX(-1) scaleY(-1);
-  }
-  /*Contact Form*/
-  .about-page .contact-form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
-  }
-  .about-page .contact-form input, .contact-form textarea {
-    margin-bottom: 10px;
-    padding: 15px;
-    font-size: 1.25rem;
-    border: var(--border-thin);
-    border-radius: 10px;
-    background: var(--sepia-gradient);
-    font-family: 'Times New Roman', Times, serif;
-    font-style: italic;
-    color: var(--color-secondary);
-  }
-  .about-page .contact-form button {
-    padding: 10px;
-    margin-left: 30%;
-    background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
-    color: var(--color-secondary);
-    border: var(--border-thin);
-    border-radius: 6px;
-    font-size: 1.75rem;
-    font-family: "Italianno", cursive;
-    font-weight: 400;
-    font-style: normal;    
-    text-shadow: var(--text-shadow);
-    cursor: pointer;
-    transition: var(--quick-transition);
-  }
-  .about-page .contact-form button:hover {
-    filter: brightness(1.1);
-    border: 2px groove var(--color-active);
-    color: var(--color-active);
-    text-shadow: var(--text-shadow);
-  }
-  .about-page .form-container {
-    flex: 1;
-  }
-  .about-page .contact-card {
-    display: flex;
-    margin-bottom: 5%;
-    margin-left: 5%;
-    align-items: center;
-    border-radius: 10px;
-    background-color: #d6c5a7c9; 
-    padding: 25px; 
-    max-width: 800px; 
-    border: 2px groove #252525c9; 
-    border-radius: 25px;
-  }
-  .about-page .flip-container {
-    perspective: 1000px;
-    width: 100%;
-    max-width: 800px;
-    height: 400px;
-    position: relative;
-  }
-  .about-page .flipper {
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
-  .about-page .front, 
-  .about-page .back {
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
-    text-align: center;
-  }
-  .about-page .back {
-    transform: rotateY(180deg);
-  }
-  .about-page .flip-container.flipped .flipper {
-    transform: rotateY(180deg);
   }
   /* ============ Responsiveness ============ */
   @media (max-width: 600px) {
