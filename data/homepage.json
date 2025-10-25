@@ -38,19 +38,19 @@
       "index": 0,
       "name": "Latoya",
       "portrait": "/assets/media/images/latoya.webp",
-      "link": "/public/artists.html"
+      "link": "/artists.html"
     },
     {
       "index": 1,
       "name": "Xavier Williams",
       "portrait": "/assets/media/images/xavier-williams-transparent.webp",
-      "link": "/public/artists.html"
+      "link": "/artists.html"
     },
     {
       "index": 2,
       "name": "Performer Name",
       "portrait": "/assets/media/images/placeholder.webp",
-      "link": "/public/artists.html"
+      "link": "/artists.html"
     }
   ],
   "performerCornerImages": [

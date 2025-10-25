@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(err => console.error(err));
   }
-  loadComponent("site-header-container", "/public/components/header.html");
-  loadComponent("site-footer-container", "/public/components/footer.html");
+  loadComponent("site-header-container", "/components/header.html");
+  loadComponent("site-footer-container", "/components/footer.html");
   // =======================
   // HOMEPAGE JSON POPULATION
   // =======================

@@ -54,7 +54,7 @@
     // Booking button — link to services page with artist name
     const bookBtn = clone.querySelector('.book-btn');
     const defaultPackage = 'Serenade'; // Change per artist if needed
-    bookBtn.href = `/public/services.html?artist=${encodeURIComponent(artist.name)}&package=${encodeURIComponent(defaultPackage)}`;
+    bookBtn.href = `/services.html?artist=${encodeURIComponent(artist.name)}&package=${encodeURIComponent(defaultPackage)}`;
     bookBtn.setAttribute('aria-label', `Request ${artist.name} for ${defaultPackage}`);
 
     grid.appendChild(clone);

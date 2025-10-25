@@ -66,7 +66,7 @@ These are the files you’ll modify when you want to update text, titles, bios, 
 
 <hr>
 
-`/public/`
+`/`
 
 This is where all your HTML files live — the actual pages of your site.
 
