@@ -57,6 +57,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1.7;
   width: 100vw;
+  height: auto;
   overflow-x: hidden;
   background-image: url(/assets/media/images/parchment-background.webp);
   font-family:Georgia, 'Times New Roman', Times, serif;
@@ -191,6 +192,114 @@ footer h2 {
   border: var(--border-thin);
   position: relative;
   overflow: hidden;
+}
+/* ================================
+   MOBILE HERO
+   ================================ */
+.hero-mobile {
+  display: none;
+}
+@media (max-width: 768px) {
+  .hero-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    background-image: url(/assets/media/images/floral-background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 70%;
+  }
+}
+.hero-logo {
+  position: relative;
+  z-index: 2;
+}
+.brand {
+  font-family: "Italianno";
+  font-size: 5rem;
+  font-weight: bold;
+  color: var(--color-active);
+  text-align: center;
+  letter-spacing: 2px;
+  text-shadow:
+    2px 3px 1px rgba(0, 0, 0, 1),
+    0 0 15px rgba(255, 240, 200, 0.7),
+    0 0 30px rgba(255, 240, 200, 0.3);
+  position: relative;
+  top: -50px;
+  padding-top: 100px;
+  z-index: 2;
+}
+.music-notes {
+  position: absolute;
+  top: -70px;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+  clip-path: inset(45% 0 0 0);
+}
+.note {
+  position: absolute;
+  bottom: 0;
+  font-size: 1.5rem;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
+  animation-name: floatNote;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+.layer1 {
+  z-index: 1;
+  color: var(--color-active);
+  animation-duration: 6s;
+}
+.layer2 {
+  z-index: 0;
+  color: #ffe8b0;
+  animation-duration: 8s;
+}
+.note:nth-child(1) { left: 20%; animation-delay: 0s; transform: translateX(0); }
+.note:nth-child(2) { left: 40%; animation-delay: 0.8s; transform: translateX(0); }
+.note:nth-child(3) { left: 55%; animation-delay: 1.6s; transform: translateX(0); }
+.note:nth-child(4) { left: 70%; animation-delay: 2.4s; transform: translateX(0); }
+.note:nth-child(5) { left: 30%; animation-delay: 3.2s; transform: translateX(0); }
+.note:nth-child(6) { left: 60%; animation-delay: 4s; transform: translateX(0); }
+.note:nth-child(7) { left: 25%; animation-delay: 1s; transform: translateX(0); }
+.note:nth-child(8) { left: 45%; animation-delay: 1.8s; transform: translateX(0); }
+.note:nth-child(9) { left: 50%; animation-delay: 2.6s; transform: translateX(0); }
+.note:nth-child(10){ left: 65%; animation-delay: 3.4s; transform: translateX(0); }
+@keyframes floatNote {
+  0% {
+    transform: translate(0,0) scale(1) rotate(0deg);
+    opacity: 0;}
+  10% {
+    opacity: 0.8;}
+  25% {
+    transform: translate(-5px, -70px) rotate(-10deg);
+    opacity: 0.9;}
+  40% {
+    transform: translate(8px, -140px) rotate(8deg);}
+  55% {
+    transform: translate(-7px, -210px) rotate(-5deg);
+    opacity: 0.7;}
+  70% {
+    transform: translate(6px, -260px) scale(1.05) rotate(4deg);
+    opacity: 0.5;}
+  85% {
+    transform: translate(-4px, -300px) scale(1.1) rotate(-2deg);}
+  100% {
+    transform: translate(3px, -350px) scale(1.15) rotate(0deg);
+    opacity: 0;}
+}
+@media (max-width: 480px) {
+  .note { font-size: 1.1rem; }
+  .brand { font-size: 4rem; }
 }
 .envelope {
   position: absolute;
@@ -386,10 +495,19 @@ footer h2 {
 #events {
   margin-top: 15%;
 }
+#events h3 {
+  font-size: 2.15rem;
+  color: #333;
+  text-shadow: 1px 1px 1px #000;
+  font-family: Italianno;
+}
 .event-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 20px;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: #333;
 }
 .event {
   padding: 5%;
@@ -403,7 +521,7 @@ footer h2 {
   transform: var(--hover-transform);
 }
 .event img {
-  width: 100px;
+  max-width: 100px;
 }
 #events .cta {
   padding-left: 10%; 
@@ -505,40 +623,40 @@ blockquote:hover {
   content: "✔ ";
 }
 .home-page .content-wrapper {
-    position: relative; /* Needed for absolute positioning of corners */
+  position: relative; /* Needed for absolute positioning of corners */
   }
- .home-page .corner {
-    position: absolute;
-    width: 140px;   /* adjust as needed */
-    height: auto;
-    opacity: .5;
-    padding: .5rem;
-    border-radius: 35px;
-    pointer-events: none; /* so they don’t interfere with clicks */
-  }
-  /* Top-right (original orientation) */
-  .home-page .corner-top-right {
-    top: -5px;
-    right: -5px; 
-  }  
-  /* Top-left (rotate horizontally) */
-  .home-page .corner-top-left {
-    top: -5px;
-    left: -5px;
-    transform: scaleX(-1);
-  }
-  /* Bottom-right (rotate vertically) */
-  .home-page .corner-bottom-right {
-    bottom: -5px;
-    right: -5px;
-    transform: scaleY(-1);
-  }
-  /* Bottom-left (rotate both axes) */
-  .home-page .corner-bottom-left {
-    bottom: -5px;
-    left: -5px;
-    transform: scaleX(-1) scaleY(-1);
-  }
+.home-page .corner {
+  position: absolute;
+  width: 140px;   /* adjust as needed */
+  height: auto;
+  opacity: .5;
+  padding: .5rem;
+  border-radius: 35px;
+  pointer-events: none; /* so they don’t interfere with clicks */
+}
+/* Top-right (original orientation) */
+.home-page .corner-top-right {
+  top: -5px;
+  right: -5px; 
+}  
+/* Top-left (rotate horizontally) */
+.home-page .corner-top-left {
+  top: -5px;
+  left: -5px;
+  transform: scaleX(-1);
+}
+/* Bottom-right (rotate vertically) */
+.home-page .corner-bottom-right {
+  bottom: -5px;
+  right: -5px;
+  transform: scaleY(-1);
+}
+/* Bottom-left (rotate both axes) */
+.home-page .corner-bottom-left {
+  bottom: -5px;
+  left: -5px;
+  transform: scaleX(-1) scaleY(-1);
+}
 /*=============================================
 Responsive Mobile Styles
 =============================================*/
@@ -635,12 +753,7 @@ Additional Mobile & Tablet Responsiveness
     padding: 0;
   }
   .hero {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    padding: 20px;
-    text-align: center;
-    overflow: hidden;
+    display: none;
   }
   .hero::before {
     content: none; /* hides oversized desktop image */
@@ -820,7 +933,11 @@ Extracted Inline CSS & Responsive Versions
   }
 }
 @media screen and (max-width: 700px) {
-  .featured-title {
+  #mobile-hero img {
+    width: 100%;
+    display: block;
+  }
+.featured-title {
     font-size: 1.75rem;
     padding: 10px;
     margin-bottom: 0.75rem;
@@ -862,7 +979,7 @@ Extracted Inline CSS & Responsive Versions
 }
 /* Header container */
 .aa-site-header {
-  position: fixed;
+  position: sticky;
   left: 0;
   right: 0;
   z-index: 1200;
@@ -926,7 +1043,7 @@ Extracted Inline CSS & Responsive Versions
 }
 .aa-mobile-menu {
   display: none;
-  position: fixed;
+  position: sticky;
   top: calc(0px + env(safe-area-inset-top, 0)); /* sits under header top padding */
   left: 0;
   right: 0;

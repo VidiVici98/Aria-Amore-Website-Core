@@ -14,10 +14,8 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(err => console.error(err));
   }
-
   loadComponent("site-header-container", "/public/components/header.html");
   loadComponent("site-footer-container", "/public/components/footer.html");
-
   // =======================
   // HOMEPAGE JSON POPULATION
   // =======================
@@ -26,7 +24,6 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch('/data/homepage.json');
       if (!res.ok) throw new Error('Failed to load homepage.json');
       const data = await res.json();
-
       // HERO
       const heroTitle = document.querySelector('.hero .envelope-body h1');
       const heroSubtitle = document.querySelector('.hero .envelope-body h2');
@@ -35,16 +32,13 @@ document.addEventListener("DOMContentLoaded", () => {
       const heroLetterText = document.querySelector('.hero-letter p');
       const heroLetterCta = document.querySelector('.hero-letter-btn');
       const heroIconsWrapper = document.querySelector('.hero-icons-wrapper');
-
       heroTitle.textContent = data.hero.title;
       heroSubtitle.textContent = data.hero.subtitle;
       heroSeparator.src = data.hero.separator;
-
       heroLetterHeading.textContent = data.hero.letter.heading;
       heroLetterText.textContent = data.hero.letter.text;
       heroLetterCta.textContent = data.hero.letter.ctaText;
       heroLetterCta.href = data.hero.letter.ctaHref;
-
       heroIconsWrapper.innerHTML = '';
       data.hero.letter.icons.forEach(icon => {
         const img = document.createElement('img');
@@ -53,7 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
         img.className = 'hero-icons';
         heroIconsWrapper.appendChild(img);
       });
-
       // EVENTS
       const eventGrid = document.querySelector('.event-grid');
       eventGrid.innerHTML = '';
@@ -67,10 +60,8 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         eventGrid.appendChild(div);
       });
-
       const eventsCta = document.querySelector('.event-grid + p.cta');
       eventsCta.textContent = data.eventsCta;
-
       // PERFORMERS
       const carousel = document.querySelector('#performers .carousel');
       carousel.innerHTML = '';
@@ -78,7 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const div = document.createElement('div');
         div.className = 'staff';
         div.dataset.index = i;
-
         div.innerHTML = `
           <div class="content-wrapper">
             <div class="staff-inner">
@@ -88,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
         `;
-
         // Corner images
         const cornerClasses = ['top-right','top-left','bottom-right','bottom-left'];
         data.performerCornerImages.forEach((src, idx) => {
@@ -98,10 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
           corner.alt = 'Floral Corner';
           div.appendChild(corner);
         });
-
         carousel.appendChild(div);
       });
-
       // TESTIMONIALS
       const testimonialCarousel = document.querySelector('.testimonial-carousel');
       testimonialCarousel.innerHTML = '';
@@ -118,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         testimonialCarousel.appendChild(div);
       });
-
       // Activate testimonial carousel after DOM is populated
       const slides = Array.from(testimonialCarousel.querySelectorAll('.testimonial-slide'));
       if (slides.length > 1) {
@@ -135,12 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
         showSlide(activeIndex);
         setInterval(nextSlide, 5000);
       }
-
     } catch (err) {
       console.error(err);
     }
   })();
-
   // =======================
   // MOBILE MENU
   // =======================
@@ -148,19 +132,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleButton = document.getElementById('aaMobileToggle');
     const mobileMenu = document.getElementById('aaMobileMenu');
     const body = document.body;
-
     if (!toggleButton || !mobileMenu) return;
     clearInterval(waitForDOM);
-
     const toggleMenu = () => {
       const isOpen = mobileMenu.classList.toggle('aa-open');
       toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       toggleButton.textContent = isOpen ? '✕' : '☰';
       body.style.overflow = isOpen ? 'hidden' : '';
     };
-
     toggleButton.addEventListener('click', toggleMenu);
-
     mobileMenu.addEventListener('click', e => {
       if (e.target.classList.contains('aa-mobile-link')) {
         mobileMenu.classList.remove('aa-open');
@@ -170,14 +150,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, 50);
-
   // =======================
   // PERFORMERS CAROUSEL
   // =======================
   let cards = [];
   let total = 0;
   let activeIndex = 0;
-
   function updateCarousel() {
     cards.forEach((card, i) => {
       const offset = (i - activeIndex + total) % total;
@@ -187,11 +165,9 @@ document.addEventListener("DOMContentLoaded", () => {
       else if (offset === 1) { angle = 15; xOffset = 650; zOffset = 100; scale = 0.85; card.style.opacity = "0.6"; card.style.zIndex = "2"; }
       else if (offset === total - 1) { angle = -15; xOffset = -650; zOffset = 100; scale = 0.85; card.style.opacity = "0.6"; card.style.zIndex = "2"; }
       else { angle = 0; xOffset = 0; zOffset = 0; scale = 0.7; card.style.opacity = "0"; card.style.zIndex = "1"; }
-
       card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) scale(${scale}) rotateY(${angle}deg)`;
     });
   }
-
   document.querySelector('#performers .next').addEventListener('click', () => { 
     activeIndex = (activeIndex + 1) % total; 
     updateCarousel(); 
@@ -200,7 +176,6 @@ document.addEventListener("DOMContentLoaded", () => {
     activeIndex = (activeIndex - 1 + total) % total; 
     updateCarousel(); 
   });
-
   // Wait until performers are loaded from JSON
   setTimeout(() => {
     cards = Array.from(document.querySelectorAll('#performers .staff'));
