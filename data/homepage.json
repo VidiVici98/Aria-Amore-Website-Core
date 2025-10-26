@@ -8,12 +8,12 @@
       "ctaText": "Reserve Your Date Today!",
       "ctaHref": "contact.html",
       "icons": [
-        { "src": "Aria-Amore-Website-Core/assets/media/images/tiktok-icon.svg", "alt": "TikTok" },
-        { "src": "Aria-Amore-Website-Core/assets/media/images/instagram-icon.svg", "alt": "Instagram" },
-        { "src": "Aria-Amore-Website-Core/assets/media/images/share-icon.svg", "alt": "Share" }
+        { "src": "/Aria-Amore-Website-Core/assets/media/images/tiktok-icon.svg", "alt": "TikTok" },
+        { "src": "/Aria-Amore-Website-Core/assets/media/images/instagram-icon.svg", "alt": "Instagram" },
+        { "src": "/Aria-Amore-Website-Core/assets/media/images/share-icon.svg", "alt": "Share" }
       ]
     },
-    "separator": "Aria-Amore-Website-Core/assets/media/images/victorian-separator.svg"
+    "separator": "/Aria-Amore-Website-Core/assets/media/images/victorian-separator.svg"
   },
   "events": [
     {
@@ -37,27 +37,27 @@
     {
       "index": 0,
       "name": "Latoya",
-      "portrait": "Aria-Amore-Website-Core/assets/media/images/latoya.webp",
-      "link": "Aria-Amore-Website-Core/artists.html"
+      "portrait": "/Aria-Amore-Website-Core/assets/media/images/latoya.webp",
+      "link": "/Aria-Amore-Website-Core/artists.html"
     },
     {
       "index": 1,
       "name": "Xavier Williams",
-      "portrait": "Aria-Amore-Website-Core/assets/media/images/xavier-williams-transparent.webp",
-      "link": "Aria-Amore-Website-Core/artists.html"
+      "portrait": "/Aria-Amore-Website-Core/assets/media/images/xavier-williams-transparent.webp",
+      "link": "/Aria-Amore-Website-Core/artists.html"
     },
     {
       "index": 2,
       "name": "Performer Name",
-      "portrait": "Aria-Amore-Website-Core/assets/media/images/placeholder.webp",
-      "link": "Aria-Amore-Website-Core/artists.html"
+      "portrait": "/Aria-Amore-Website-Core/assets/media/images/placeholder.webp",
+      "link": "/Aria-Amore-Website-Core/artists.html"
     }
   ],
   "performerCornerImages": [
-    "Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
-    "Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
-    "Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
-    "Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg"
+    "/Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
+    "/Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
+    "/Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
+    "/Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg"
   ],
   "testimonials": [
     {
@@ -76,5 +76,5 @@
       "author": "Happiest Client"
     }
   ],
-  "testimonialSeparator": "Aria-Amore-Website-Core/assets/media/images/victorian-separator.svg"
+  "testimonialSeparator": "/Aria-Amore-Website-Core/assets/media/images/victorian-separator.svg"
 }

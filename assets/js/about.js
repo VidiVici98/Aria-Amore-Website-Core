@@ -5,7 +5,7 @@
   if (!faqContainer || !faqTemplate) return;
 
   // Fetch FAQ data from JSON
-  fetch('/data/about.json')
+  fetch('data/about.json')
     .then(res => res.json())
     .then(data => {
       if (!data.faqs) return;

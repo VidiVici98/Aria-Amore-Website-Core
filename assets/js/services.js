@@ -70,7 +70,7 @@ updateCarousel();
 =====================================*/
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    const response = await fetch("/data/services.json");
+    const response = await fetch("data/services.json");
     if (!response.ok) throw new Error("Failed to load services.json");
 
     const data = await response.json();

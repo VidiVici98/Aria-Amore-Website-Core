@@ -1,5 +1,5 @@
 (async () => {
-  const res = await fetch('/data/artists.json');
+  const res = await fetch('data/artists.json');
   const artists = await res.json();
   const grid = document.querySelector('.artists-grid');
   const template = document.getElementById('artist-template');
@@ -54,7 +54,7 @@
     // Booking button — link to services page with artist name
     const bookBtn = clone.querySelector('.book-btn');
     const defaultPackage = 'Serenade'; // Change per artist if needed
-    bookBtn.href = `/public/services.html?artist=${encodeURIComponent(artist.name)}&package=${encodeURIComponent(defaultPackage)}`;
+    bookBtn.href = `services.html?artist=${encodeURIComponent(artist.name)}&package=${encodeURIComponent(defaultPackage)}`;
     bookBtn.setAttribute('aria-label', `Request ${artist.name} for ${defaultPackage}`);
 
     grid.appendChild(clone);
@@ -172,7 +172,7 @@
 
       modalInstagram.href = artist.social?.instagram || '#';
       modalFacebook.href = artist.social?.tiktok || '#';
-      modalBook.onclick = () => window.location.href = `/services.html?artist=${encodeURIComponent(artist.name)}&package=Serenade`;
+      modalBook.onclick = () => window.location.href = `services.html?artist=${encodeURIComponent(artist.name)}&package=Serenade`;
 
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
