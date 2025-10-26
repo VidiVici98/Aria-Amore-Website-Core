@@ -37,8 +37,8 @@
     {
       "index": 0,
       "name": "Latoya",
-      "portrait": "/assets/media/images/latoya.webp",
-      "link": "/artists.html"
+      "portrait": "assets/media/images/latoya.webp",
+      "link": "artists.html"
     },
     {
       "index": 1,
