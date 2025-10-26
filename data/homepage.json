@@ -37,14 +37,14 @@
     {
       "index": 0,
       "name": "Latoya",
-      "portrait": "assets/media/images/latoya.webp",
-      "link": "artists.html"
+      "portrait": "/Aria-Amore-Website-Core/assets/media/images/latoya.webp",
+      "link": "/Aria-Amore-Website-Core/artists.html"
     },
     {
       "index": 1,
       "name": "Xavier Williams",
-      "portrait": "/assets/media/images/xavier-williams-transparent.webp",
-      "link": "/artists.html"
+      "portrait": "/Aria-Amore-Website-Core/assets/media/images/xavier-williams-transparent.webp",
+      "link": "/Aria-Amore-Website-Core/artists.html"
     },
     {
       "index": 2,
