@@ -57,7 +57,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1.7;
-  width: 100vw;
+  width: 100%;
   height: auto;
   overflow-x: hidden;
   background-image: url(/Aria-Amore-Website-Core/assets/media/images/parchment-background.webp);
