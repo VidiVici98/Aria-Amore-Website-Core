@@ -60,7 +60,7 @@ body {
   width: 100vw;
   height: auto;
   overflow-x: hidden;
-  background-image: url(../assets/media/images/parchment-background.webp);
+  background-image: url(assets/media/images/parchment-background.webp);
   font-family:Georgia, 'Times New Roman', Times, serif;
   color: var(--color-primary);
   background-size: cover;

@@ -14,14 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(err => console.error(err));
   }
-  loadComponent("site-header-container", "/public/components/header.html");
-  loadComponent("site-footer-container", "/public/components/footer.html");
+  loadComponent("site-header-container", "components/header.html");
+  loadComponent("site-footer-container", "components/footer.html");
   // =======================
   // HOMEPAGE JSON POPULATION
   // =======================
   (async () => {
     try {
-      const res = await fetch('/data/homepage.json');
+      const res = await fetch('data/homepage.json');
       if (!res.ok) throw new Error('Failed to load homepage.json');
       const data = await res.json();
       // HERO
@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (idx === 0) div.classList.add('active'); // first slide active
         div.innerHTML = `
           <div class="stars-wrapper">
-            ${'<img class="stars" src="/assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
+            ${'<img class="stars" src="assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
           </div>
           <p class="testimonial-text">"${t.text}"</p>
           <cite class="testimonial-author">${t.author}</cite>
