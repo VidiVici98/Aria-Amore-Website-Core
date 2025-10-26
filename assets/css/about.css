@@ -1,5 +1,9 @@
 /* ============ FAQ Section Styles ============ */
-  .about-page .faq-section {
+.about-page {
+  overflow-x: hidden;
+  position: relative;
+}  
+.about-page .faq-section {
     position: relative;
     background: transparent;
     padding: 4rem 1.5rem;

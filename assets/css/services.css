@@ -17,6 +17,10 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+.services-page {
+  position: relative;
+  overflow-x: hidden;
+}
 .services-page #packages {
   text-align: center;
   padding: 60px 0;
@@ -27,6 +31,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
+  top: 30px;
 }
 .services-page #packages-heading {
     display: flex;
@@ -45,7 +50,7 @@ body {
 .services-page .carousel-container {
   position: relative;
   perspective: 2000px;
-  overflow: visible;
+  overflow-x: hidden;
   max-width: 100%;
   margin: auto;
   height: 520px;       /* define vertical space for cards */

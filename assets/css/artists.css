@@ -19,6 +19,7 @@
 /* ---------- Grid ---------- */
 .artists-page {
   position: relative;
+  overflow-x: hidden;
 }
 .artists-page .fancy-heading {
     display: flex;
