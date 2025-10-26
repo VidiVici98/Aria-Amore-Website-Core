@@ -56,7 +56,7 @@
     "name": "Collin Vasquez",
     "voice": "Baritone",
     "bio": "Collin’s resonant baritone lends dramatic presence to every performance, bringing timeless classics to life with sincerity and power.",
-    "portrait": "../assets/media/images/placeholder.webp",
+    "portrait": "assets/media/images/placeholder.webp",
     "tracks": [
       {
         "id": "collin-ave-maria",
