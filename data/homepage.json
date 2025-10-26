@@ -8,26 +8,26 @@
       "ctaText": "Reserve Your Date Today!",
       "ctaHref": "contact.html",
       "icons": [
-        { "src": "/assets/media/images/tiktok-icon.svg", "alt": "TikTok" },
-        { "src": "/assets/media/images/instagram-icon.svg", "alt": "Instagram" },
-        { "src": "/assets/media/images/share-icon.svg", "alt": "Share" }
+        { "src": "Aria-Amore-Website-Core/assets/media/images/tiktok-icon.svg", "alt": "TikTok" },
+        { "src": "Aria-Amore-Website-Core/assets/media/images/instagram-icon.svg", "alt": "Instagram" },
+        { "src": "Aria-Amore-Website-Core/assets/media/images/share-icon.svg", "alt": "Share" }
       ]
     },
-    "separator": "/assets/media/images/victorian-separator.svg"
+    "separator": "Aria-Amore-Website-Core/assets/media/images/victorian-separator.svg"
   },
   "events": [
     {
-      "icon": "/assets/media/images/wedding-rings-icon.png",
+      "icon": "Aria-Amore-Website-Core/assets/media/images/wedding-rings-icon.png",
       "title": "Weddings",
       "description": "A once in a lifetime event deserves more than just..."
     },
     {
-      "icon": "/assets/media/images/holiday-icon.png",
+      "icon": "Aria-Amore-Website-Core/assets/media/images/holiday-icon.png",
       "title": "Holiday Events",
       "description": "Sick of yet another yuletide season with boring carolers?"
     },
     {
-      "icon": "/assets/media/images/events-icon.png",
+      "icon": "Aria-Amore-Website-Core/assets/media/images/events-icon.png",
       "title": "Private Gatherings",
       "description": "Maybe you're simply planning a small family reunion, graduation, or birthday but want to make it truly special."
     }
@@ -49,15 +49,15 @@
     {
       "index": 2,
       "name": "Performer Name",
-      "portrait": "/assets/media/images/placeholder.webp",
-      "link": "/artists.html"
+      "portrait": "Aria-Amore-Website-Core/assets/media/images/placeholder.webp",
+      "link": "Aria-Amore-Website-Core/artists.html"
     }
   ],
   "performerCornerImages": [
-    "/assets/media/images/floral-top-right.svg",
-    "/assets/media/images/floral-top-right.svg",
-    "/assets/media/images/floral-top-right.svg",
-    "/assets/media/images/floral-top-right.svg"
+    "Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
+    "Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
+    "Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg",
+    "Aria-Amore-Website-Core/assets/media/images/floral-top-right.svg"
   ],
   "testimonials": [
     {
@@ -76,5 +76,5 @@
       "author": "Happiest Client"
     }
   ],
-  "testimonialSeparator": "/assets/media/images/victorian-separator.svg"
+  "testimonialSeparator": "Aria-Amore-Website-Core/assets/media/images/victorian-separator.svg"
 }
