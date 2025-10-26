@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (idx === 0) div.classList.add('active'); // first slide active
         div.innerHTML = `
           <div class="stars-wrapper">
-            ${'<img class="stars" src="/assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
+            ${'<img class="stars" src="assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
           </div>
           <p class="testimonial-text">"${t.text}"</p>
           <cite class="testimonial-author">${t.author}</cite>
