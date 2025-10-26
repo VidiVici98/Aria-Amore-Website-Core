@@ -27,7 +27,6 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
-  top: 65px;
 }
  #packages .packages-heading {
     display: flex;
@@ -198,7 +197,7 @@ body {
     gap: 20px 40px;
     margin-bottom: 30px;
   }
-  .services-page .fancy-heading {
+  .rsvp-card .fancy-heading {
     display: flex;
     align-items: center;
     justify-content: center;
