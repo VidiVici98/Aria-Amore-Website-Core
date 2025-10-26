@@ -142,7 +142,7 @@
     transform: scaleX(-1) scaleY(-1);
   }
   /* ============ Responsiveness ============ */
-  @media (max-width: 600px) {
+  @media (max-width: 700px) {
     .about-page .faq-heading {
       font-size: 1.75rem;
     }

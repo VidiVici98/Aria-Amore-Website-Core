@@ -20,17 +20,28 @@ body {
 .services-page #packages {
   text-align: center;
   padding: 60px 0;
-}
-.services-page #packages h2 {
-  font-size: 2.5rem;
-  background-color: #111111c9;
-  border: 2px groove var(--color-border);
-  border-radius: 10px;
-  padding: 15px;
-  margin: 10px 40px;
-  margin-bottom: 75px;
-  text-shadow: 2px 2px #000;
   position: relative;
+}
+#packages .fancy-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  top: 65px;
+}
+ #packages .packages-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: #3b2e26;
+    grid-column: 1 / -1; /* <-- makes it span both grid columns */
+    font-family: "Italianno", cursive;
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 2px #000;
+    color: var(--accent-deep);    
+    text-align: center;
+    margin-top: 1.25rem;
 }
 .services-page .carousel-container {
   position: relative;
@@ -205,13 +216,15 @@ body {
     font-size: 2.25rem;
   }
   .services-page .flourish-divider {
-    width: 20%;
+    min-width: 50px;
+    max-width: 100px;
     height: auto;
     opacity: 0.5;
   }
   .services-page .flourish-divider-right {
     transform: scaleX(-1);
-    width: 20%;
+    min-width: 50px;
+    max-width: 100px;
     height: auto;
     opacity: 0.5;
   }
@@ -393,6 +406,10 @@ body {
     .services-page .form-packages {
       grid-template-columns: 1fr;
     }
+    .services-page .rsvp-header h2 {
+      font-size: 1.75rem;
+      text-align: center;
+  }
     .services-page .corner { width: 70px; }
   }
   /* ✅ Keep desktop identical, fix mobile scaling */
@@ -405,10 +422,6 @@ body {
     margin: 0 auto;
     width: 95%;
     max-width: 600px;
-  }
-  .services-page .rsvp-header h2 {
-    font-size: 2.25rem;
-    text-align: center;
   }
   .services-page .rsvp-intro {
     font-size: 1rem;
