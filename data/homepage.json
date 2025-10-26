@@ -17,17 +17,17 @@
   },
   "events": [
     {
-      "icon": "Aria-Amore-Website-Core/assets/media/images/wedding-rings-icon.png",
+      "icon": "/Aria-Amore-Website-Core/assets/media/images/wedding-rings-icon.png",
       "title": "Weddings",
       "description": "A once in a lifetime event deserves more than just..."
     },
     {
-      "icon": "Aria-Amore-Website-Core/assets/media/images/holiday-icon.png",
+      "icon": "/Aria-Amore-Website-Core/assets/media/images/holiday-icon.png",
       "title": "Holiday Events",
       "description": "Sick of yet another yuletide season with boring carolers?"
     },
     {
-      "icon": "Aria-Amore-Website-Core/assets/media/images/events-icon.png",
+      "icon": "/Aria-Amore-Website-Core/assets/media/images/events-icon.png",
       "title": "Private Gatherings",
       "description": "Maybe you're simply planning a small family reunion, graduation, or birthday but want to make it truly special."
     }
