@@ -22,13 +22,13 @@ body {
   padding: 60px 0;
   position: relative;
 }
-#packages .fancy-heading {
+.services-page #packages .fancy-heading {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
 }
- #packages .packages-heading {
+.services-page #packages-heading {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -362,7 +362,7 @@ body {
     right: -5px; 
   }  
   .services-page .plan .corner-top-right {
-    top: -60px;
+    top: -40px;
     right: -40px;
   }
   /* Top-left (rotate horizontally) */
@@ -372,7 +372,7 @@ body {
     transform: scaleX(-1);
   }
   .services-page .plan .corner-top-left {
-    top: -60px;
+    top: -40px;
     left: -40px;
     transform: scaleX(-1);
   }
