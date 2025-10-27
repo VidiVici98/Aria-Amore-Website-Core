@@ -4,6 +4,7 @@
   const grid = document.querySelector('.artists-grid');
   const template = document.getElementById('artist-template');
 
+  // Populate Artists Grid
   artists.forEach(artist => {
     const clone = template.content.cloneNode(true);
     const article = clone.querySelector('.artist');
@@ -16,18 +17,15 @@
     img.alt = `${artist.name} portrait`;
     clone.querySelector('.artist-portrait').setAttribute('aria-label', `View ${artist.name} details`);
 
-    // Basic info
+    // Name and Bio
     clone.querySelector('.artist-name').textContent = artist.name;
     const bioEl = clone.querySelector('.artist-bio');
     bioEl.id = `bio-${artist.id}`;
     bioEl.textContent = artist.bio;
-
-    // Read more
     clone.querySelector('.read-more').setAttribute('data-target', `bio-${artist.id}`);
 
-    // Audio tracks
+    // Audio
     const audioList = clone.querySelector('.audio-list');
-    audioList.setAttribute('aria-label', `Audio previews for ${artist.name}`);
     artist.tracks.forEach(track => {
       const item = document.createElement('div');
       item.className = 'audio-item';
@@ -51,20 +49,21 @@
       audioList.appendChild(item);
     });
 
-    // Booking button — link to services page with artist name
+    // Booking
     const bookBtn = clone.querySelector('.book-btn');
-    const defaultPackage = 'Serenade'; // Change per artist if needed
+    const defaultPackage = 'Serenade';
     bookBtn.href = `services.html?artist=${encodeURIComponent(artist.name)}&package=${encodeURIComponent(defaultPackage)}`;
     bookBtn.setAttribute('aria-label', `Request ${artist.name} for ${defaultPackage}`);
 
     grid.appendChild(clone);
   });
 
-  // Interaction logic (audio and modal)
+  // =============================
+  // Artist Interactions
+  // =============================
   initArtistInteractions();
 
   function initArtistInteractions() {
-    const playButtons = Array.from(document.querySelectorAll('.play-btn'));
     let activeAudio = null;
     let activeItem = null;
 
@@ -81,9 +80,9 @@
 
     function onPlayButtonClick(btn) {
       const audioId = btn.getAttribute('data-audio');
-      if (!audioId) return;
       const audio = document.getElementById(audioId);
       if (!audio) return;
+
       if (activeAudio === audio) {
         audio.pause();
         if (activeItem) activeItem.classList.remove('playing');
@@ -93,6 +92,7 @@
         return;
       }
       if (activeAudio && activeAudio !== audio) stopActive();
+
       audio.play().then(() => {
         activeAudio = audio;
         activeItem = btn.closest('.audio-item');
@@ -107,27 +107,17 @@
       }).catch(err => console.warn('Playback failed', err));
     }
 
-    playButtons.forEach(btn => {
+    // Attach play button events
+    document.querySelectorAll('.play-btn').forEach(btn => {
       btn.addEventListener('click', () => onPlayButtonClick(btn));
-      btn.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPlayButtonClick(btn); }
-      });
+      btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPlayButtonClick(btn); } });
     });
 
     document.addEventListener('visibilitychange', () => { if (document.hidden) stopActive(); });
 
-    // Read more / modal
-    const readButtons = Array.from(document.querySelectorAll('.read-more'));
-    readButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        const id = btn.closest('.artist').dataset.artist;
-        const artist = artists.find(a => a.id === id);
-        if (!artist) return;
-        openModal(artist);
-        btn.setAttribute('aria-expanded', 'true');
-      });
-    });
-
+    // =============================
+    // Modal Logic
+    // =============================
     const modal = document.getElementById('artist-modal');
     const modalBackdrop = document.getElementById('modal-backdrop');
     const modalClose = document.getElementById('modal-close');
@@ -146,6 +136,7 @@
       modalName.textContent = artist.name;
       modalBio.textContent = artist.modalBio || artist.bio;
 
+      // Audio inside modal
       modalAudioList.innerHTML = '';
       artist.tracks.forEach(track => {
         const item = document.createElement('div');
@@ -170,16 +161,18 @@
         modalAudioList.appendChild(item);
       });
 
+      // Social
       modalInstagram.href = artist.social?.instagram || '#';
       modalFacebook.href = artist.social?.tiktok || '#';
       modalBook.onclick = () => window.location.href = `services.html?artist=${encodeURIComponent(artist.name)}&package=Serenade`;
 
+      // Open modal
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.style.overflow = 'hidden';
 
-      const modalPlayButtons = modalAudioList.querySelectorAll('.play-btn');
-      modalPlayButtons.forEach(btn => {
+      // Audio buttons inside modal
+      modalAudioList.querySelectorAll('.play-btn').forEach(btn => {
         btn.addEventListener('click', () => onPlayButtonClick(btn));
         btn.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onPlayButtonClick(btn); } });
       });
@@ -194,23 +187,14 @@
       stopActive();
     }
 
-    document.querySelectorAll('.artist-portrait').forEach(p => {
-      p.addEventListener('click', () => {
-        const id = p.closest('.artist').dataset.artist;
+    // Open modal when clicking portrait or name
+    document.querySelectorAll('.artist-portrait, .artist-name').forEach(el => {
+      el.addEventListener('click', () => {
+        const id = el.closest('.artist').dataset.artist;
         const artist = artists.find(a => a.id === id);
         if (artist) openModal(artist);
       });
-      p.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); p.click(); } });
-    });
-
-    document.querySelectorAll('.artist-name').forEach(n => {
-      if (!n.hasAttribute('tabindex')) n.setAttribute('tabindex', '0');
-      n.addEventListener('click', () => {
-        const id = n.closest('.artist').dataset.artist;
-        const artist = artists.find(a => a.id === id);
-        if (artist) openModal(artist);
-      });
-      n.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); n.click(); } });
+      el.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); el.click(); } });
     });
 
     modalBackdrop.addEventListener('click', closeModal);
