@@ -540,9 +540,6 @@
     align-items:center; 
     text-align:center; 
   }
-  .artists-page .artists-heading {
-    font-size: 1.75rem;
-  }
   .artists-page .artist-portrait{ 
     width: 180px; 
     height:180px; 
