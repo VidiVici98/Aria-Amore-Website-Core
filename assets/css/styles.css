@@ -575,10 +575,12 @@ footer h2 {
   text-align: center;
   padding: 1.5rem;
 }
+
 #testimonials h2 {
   font-size: 2.5rem;
   text-shadow: 2px 2px #111111;
 }
+
 .testimonial-text {
   color: #d6c5a7;
   font-size: 1.5rem;
@@ -587,11 +589,13 @@ footer h2 {
   font-style: italic;
   text-shadow: 1px 1px 1px #000;
 }
+
 .testimonial-author {
   font-size: 1.25rem;
   color: #707070;
   text-shadow: 1px 1px 1px #000;
 }
+
 .stars-wrapper {
   display: flex;
   justify-content: center;
@@ -599,17 +603,21 @@ footer h2 {
   margin: 10px 0;
   margin-bottom: 1rem;
 }
+
 .stars {
   width: 25px;
   filter: brightness(.75);
 }
+
 .testimonial-carousel {
   position: relative;
   overflow: hidden;
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
+  height: 220px; /* fixed height to avoid jumps */
 }
+
 .testimonial-slide {
   position: absolute;
   top: 0;
@@ -617,15 +625,14 @@ footer h2 {
   width: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
-  transition: all 0.3s ease;
+  z-index: 1;
 }
+
 .testimonial-slide.active {
   opacity: 1;
-  position: relative;
+  z-index: 2;
 }
-.testimonial-carousel:hover .testimonial-slide.active {
-  transform: scale(1.05);
-}
+
 section {
   padding: 40px 20px;
   text-align: center;

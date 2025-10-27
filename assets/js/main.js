@@ -14,8 +14,10 @@ document.addEventListener("DOMContentLoaded", () => {
       })
       .catch(err => console.error(err));
   }
+
   loadComponent("site-header-container", "components/header.html");
   loadComponent("site-footer-container", "components/footer.html");
+
   // =======================
   // HOMEPAGE JSON POPULATION
   // =======================
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch('data/homepage.json');
       if (!res.ok) throw new Error('Failed to load homepage.json');
       const data = await res.json();
+
       // HERO
       const heroTitle = document.querySelector('.hero .envelope-body h1');
       const heroSubtitle = document.querySelector('.hero .envelope-body h2');
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const heroLetterText = document.querySelector('.hero-letter p');
       const heroLetterCta = document.querySelector('.hero-letter-btn');
       const heroIconsWrapper = document.querySelector('.hero-icons-wrapper');
+
       heroTitle.textContent = data.hero.title;
       heroSubtitle.textContent = data.hero.subtitle;
       heroSeparator.src = data.hero.separator;
@@ -47,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
         img.className = 'hero-icons';
         heroIconsWrapper.appendChild(img);
       });
+
       // EVENTS
       const eventGrid = document.querySelector('.event-grid');
       eventGrid.innerHTML = '';
@@ -62,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
       const eventsCta = document.querySelector('.event-grid + p.cta');
       eventsCta.textContent = data.eventsCta;
+
       // PERFORMERS
       const carousel = document.querySelector('#performers .carousel');
       carousel.innerHTML = '';
@@ -89,13 +95,16 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         carousel.appendChild(div);
       });
-      // TESTIMONIALS
+
+      // =======================
+      // TESTIMONIALS (smooth fade, no crossfade)
+      // =======================
       const testimonialCarousel = document.querySelector('.testimonial-carousel');
       testimonialCarousel.innerHTML = '';
       data.testimonials.forEach((t, idx) => {
         const div = document.createElement('div');
         div.className = 'testimonial-slide';
-        if (idx === 0) div.classList.add('active'); // first slide active
+        if (idx === 0) div.classList.add('active'); // first slide visible
         div.innerHTML = `
           <div class="stars-wrapper">
             ${'<img class="stars" src="assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
@@ -105,26 +114,32 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
         testimonialCarousel.appendChild(div);
       });
-      // Activate testimonial carousel after DOM is populated
+
       const slides = Array.from(testimonialCarousel.querySelectorAll('.testimonial-slide'));
       if (slides.length > 1) {
         let activeIndex = 0;
-        function showSlide(index) {
-          slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-          });
-        }
+
         function nextSlide() {
+          // fade out current
+          slides[activeIndex].classList.remove('active');
+
+          // move to next slide
           activeIndex = (activeIndex + 1) % slides.length;
-          showSlide(activeIndex);
+
+          // fade in next after short delay
+          setTimeout(() => {
+            slides[activeIndex].classList.add('active');
+          }, 20);
         }
-        showSlide(activeIndex);
-        setInterval(nextSlide, 5000);
+
+        setInterval(nextSlide, 5000); // auto-transition every 5s
       }
+
     } catch (err) {
       console.error(err);
     }
   })();
+
   // =======================
   // MOBILE MENU
   // =======================
@@ -134,12 +149,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const body = document.body;
     if (!toggleButton || !mobileMenu) return;
     clearInterval(waitForDOM);
+
     const toggleMenu = () => {
       const isOpen = mobileMenu.classList.toggle('aa-open');
       toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       toggleButton.textContent = isOpen ? '✕' : '☰';
       body.style.overflow = isOpen ? 'hidden' : '';
     };
+
     toggleButton.addEventListener('click', toggleMenu);
     mobileMenu.addEventListener('click', e => {
       if (e.target.classList.contains('aa-mobile-link')) {
@@ -150,12 +167,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }, 50);
+
   // =======================
   // PERFORMERS CAROUSEL
   // =======================
   let cards = [];
   let total = 0;
   let activeIndex = 0;
+
   function updateCarousel() {
     cards.forEach((card, i) => {
       const offset = (i - activeIndex + total) % total;
@@ -168,14 +187,17 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) scale(${scale}) rotateY(${angle}deg)`;
     });
   }
+
   document.querySelector('#performers .next').addEventListener('click', () => { 
     activeIndex = (activeIndex + 1) % total; 
     updateCarousel(); 
   });
+
   document.querySelector('#performers .prev').addEventListener('click', () => { 
     activeIndex = (activeIndex - 1 + total) % total; 
     updateCarousel(); 
   });
+
   // Wait until performers are loaded from JSON
   setTimeout(() => {
     cards = Array.from(document.querySelectorAll('#performers .staff'));

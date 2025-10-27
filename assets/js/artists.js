@@ -180,7 +180,8 @@
       stopActive();
     }
 
-    document.querySelectorAll('.artist-portrait, .artist-name').forEach(el => {
+    // Open modal when clicking portrait, name, or read more
+    document.querySelectorAll('.artist-portrait, .artist-name, .read-more').forEach(el => {
       el.addEventListener('click', () => {
         const id = el.closest('.artist').dataset.artist;
         const artist = artists.find(a => a.id === id);
