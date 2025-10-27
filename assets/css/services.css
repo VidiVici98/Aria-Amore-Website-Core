@@ -51,7 +51,7 @@ body {
   perspective: 2000px;
   max-width: 100%;
   margin: auto;
-  height: 650px;       /* define vertical space for cards */
+  height: 700px;       /* define vertical space for cards */
 }
 .services-page .carousel {
   display: flex;
@@ -159,7 +159,6 @@ body {
     justify-content: center;
     padding: 60px 20px;
     background: transparent;
-    margin-top: 100px;
   }
   .services-page .rsvp-card {
     background-size: cover;
