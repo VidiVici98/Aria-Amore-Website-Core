@@ -1,16 +1,22 @@
 /*=============================================
-Global Variables
+    Global Variables
 =============================================*/
 :root {
+  --accent: #cfae7a;
   --accent-deep: #a2583e;
+  --accent-gradient: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
   --border-thin: 1px groove #333;
   --color-primary: #111;
   --color-subdued: #bbb;
   --color-secondary: #fff;
   --color-active: #d6c5a7;
   --text-shadow: 1px 2px 3px #111;
-  --quick-transition: all .3s ease;
   --hover-transform: translateY(-4px);
+  --muted: #6b6b6b;
+  --transition: all .32s cubic-bezier(.2,.9,.2,1);
+  --wave-color: hsla(16, 45%, 44%, 0.75);
+  --wave-dim: hsla(16, 45%, 44%, 0.5);
+  --font-script: 'Italianno', cursive;
   --sepia-gradient: linear-gradient(to bottom right,
                     hsl(41, 32%, 62%, 1),
                     hsla(38, 36%, 75%, 1) 60%,
@@ -87,7 +93,7 @@ ol, ul {
 }
 blockquote, q {
 	quotes: none;
-  transition: var(--quick-transition);
+  transition: var(--transition);
 }
 blockquote:before, blockquote:after,
 q:before, q:after {
@@ -147,6 +153,7 @@ header {
 footer {
   background: radial-gradient(circle at 50% 50%, #444444, #222222);
   border-top: var(--border-thin);
+  box-shadow: var(--box-shadow);
   color: var(--color-secondary);
   width: 100vw;
   margin-top: 5rem;
@@ -154,7 +161,8 @@ footer {
 footer h2 {
   text-align: center;
   font-size: 2rem; 
-  color: var(--color-active);  
+  color: var(--color-active);
+  text-shadow: 2px 3px 1px #000;
 }
 .footer-columns-wrapper {
   display: grid;
@@ -420,7 +428,7 @@ footer h2 {
   font-weight: bold;
   font-style: normal;  
   z-index: 1;
-  transition: var(--quick-transition);
+  transition: var(--transition);
 }
 .hero-letter p {
   font-size: 2.5rem;
@@ -464,7 +472,7 @@ footer h2 {
   position: relative;
   left: -25%;
   bottom: 0%;
-  transition: var(--quick-transition);
+  transition: var(--transition);
 }
 .hero-icons:hover {
     scale: 125%;
@@ -497,7 +505,7 @@ footer h2 {
   background: var(--sepia-gradient);
   box-shadow: var(--box-shadow);
   position: relative;
-  transition: var(--quick-transition);
+  transition: var(--transition);
 }
 .event:hover {
   transform: var(--hover-transform);
@@ -549,7 +557,7 @@ footer h2 {
   text-shadow: var(--text-shadow);
   color: var(--color-secondary);
   font-size: 1.5rem;
-  transition: var(--quick-transition);
+  transition: var(--transition);
   box-shadow: var(--box-shadow);
 }
 .btn:hover {
@@ -562,7 +570,7 @@ footer h2 {
   border-radius: 0;
   border: none;
   position: relative;
-  transition: var(--quick-transition);
+  transition: var(--transition);
 }
 /* ================================
    Testimonials
@@ -574,6 +582,7 @@ footer h2 {
   border-radius: 10px;
   text-align: center;
   padding: 1.5rem;
+  box-shadow: var(--box-shadow);
 }
 
 #testimonials h2 {
@@ -615,7 +624,7 @@ footer h2 {
   max-width: 800px;
   margin: 0 auto;
   text-align: center;
-  height: 220px; /* fixed height to avoid jumps */
+  height: 150px; /* prevents layout jumps */
 }
 
 .testimonial-slide {
@@ -624,12 +633,14 @@ footer h2 {
   left: 0;
   width: 100%;
   opacity: 0;
-  transition: opacity 1s ease-in-out;
+  transform: scale(0.95); /* start slightly smaller */
+  transition: opacity 1s ease-in-out, transform 1s ease-out;
   z-index: 1;
 }
 
 .testimonial-slide.active {
   opacity: 1;
+  transform: scale(1);
   z-index: 2;
 }
 
@@ -674,6 +685,17 @@ blockquote:hover {
   bottom: -5px;
   left: -5px;
   transform: scaleX(-1) scaleY(-1);
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* Prevent text wrapping */
+  border: 0;
 }
 /*=============================================
  Mobile & Tablet Responsiveness
@@ -920,7 +942,7 @@ blockquote:hover {
   padding-top: env(safe-area-inset-top, 0);
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
-  box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+  box-shadow: var(--box-shadow);
 }
 .aa-header-inner {
   display: flex;
@@ -1000,11 +1022,13 @@ blockquote:hover {
   font-weight: 500;
   border-radius: 24px;
   text-align: center;
+  transition: all 0.6s ease;
 }
 .aa-mobile-link:hover,
 .aa-mobile-link:focus {
   color: var(--color-active);
   background: rgba(255,255,255,0.03);
+  transform: translateY(-3px);
 }
 .aa-mobile-menu.aa-open {
   display: block;
@@ -1023,6 +1047,10 @@ blockquote:hover {
 .mobile-menu-social-icons {
   width: 36px;
   height: auto;
+  transition: all 0.3s ease;
+}
+.mobile-menu-social-icons:hover {
+  transform: translateY(-3px);
 }
 /* =============================
    Responsive breakpoints

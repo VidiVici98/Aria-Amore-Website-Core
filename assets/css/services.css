@@ -1,15 +1,38 @@
+/*=============================================
+    Global Variables
+=============================================*/
 :root {
-  --transition-speed: 0.8s;
-  --color-bg: #111;
-  --color-card: #111111c9;
-  --color-border: #707070;
-  --color-text: #d6c5a7;
-  --color-secondary: #f5f5f5;
+  --accent: #cfae7a;
+  --accent-deep: #a2583e;
+  --accent-gradient: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
+  --border-thin: 1px groove #333;
+  --color-primary: #111;
+  --color-subdued: #bbb;
+  --color-secondary: #fff;
   --color-active: #d6c5a7;
+  --text-shadow: 1px 2px 3px #111;
+  --hover-transform: translateY(-4px);
+  --muted: #6b6b6b;
+  --transition: all .32s cubic-bezier(.2,.9,.2,1);
+  --wave-color: hsla(16, 45%, 44%, 0.75);
+  --wave-dim: hsla(16, 45%, 44%, 0.5);
+  --font-script: 'Italianno', cursive;
+  --sepia-gradient: linear-gradient(to bottom right,
+                    hsl(41, 32%, 62%, 1),
+                    hsla(38, 36%, 75%, 1) 60%,
+                    hsl(33, 41%, 71%, 1));
   --box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
                 2px 6px 8px rgba(20, 25, 30, 0.25),
                 inset 0 1px 2px rgba(255, 255, 255, 0.25),
                 inset 0 -1px 3px rgba(0,0,0,0.4);
+  --envelope-inset: inset 0 1px 2px rgba(255,255,255,0.6),
+                    inset 0 -1px 2px rgba(0,0,0,0.1);
+  --envelope-background-gradient: repeating-radial-gradient(circle, 
+                                      rgba(0, 0, 0, 0.95) 0 0.5px,
+                                      transparent 0.5px 4px),
+                                  repeating-linear-gradient(50deg,
+                                      rgba(255, 255, 255, 0.95) 0 1px,
+                                      transparent 1px 4px);
 }
 body {
   color: var(--color-secondary);
@@ -59,7 +82,7 @@ body {
   align-items: center;
   position: relative;
   transform-style: preserve-3d;
-  transition: transform var(--transition-speed) ease;
+  transition: transform 0.8s ease;
 }
 .services-page .plan {
   position: absolute;
@@ -73,7 +96,7 @@ body {
   0 10px 20px rgba(0,0,0,0.3);
   border: 2px solid #d6c5a7;
   text-align: center;
-  transition: all var(--transition-speed) ease;
+  transition: all 0.8s ease;
   backface-visibility: hidden;
 }
 .services-page .plan h3 {

@@ -84,7 +84,6 @@ document.addEventListener("DOMContentLoaded", () => {
             </div>
           </div>
         `;
-        // Corner images
         const cornerClasses = ['top-right','top-left','bottom-right','bottom-left'];
         data.performerCornerImages.forEach((src, idx) => {
           const corner = document.createElement('img');
@@ -97,14 +96,14 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       // =======================
-      // TESTIMONIALS (smooth fade, no crossfade)
+      // TESTIMONIALS
       // =======================
       const testimonialCarousel = document.querySelector('.testimonial-carousel');
       testimonialCarousel.innerHTML = '';
       data.testimonials.forEach((t, idx) => {
         const div = document.createElement('div');
         div.className = 'testimonial-slide';
-        if (idx === 0) div.classList.add('active'); // first slide visible
+        if (idx === 0) div.classList.add('active');
         div.innerHTML = `
           <div class="stars-wrapper">
             ${'<img class="stars" src="assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
@@ -120,19 +119,19 @@ document.addEventListener("DOMContentLoaded", () => {
         let activeIndex = 0;
 
         function nextSlide() {
-          // fade out current
-          slides[activeIndex].classList.remove('active');
+          const current = slides[activeIndex];
+          current.classList.remove('active');
 
-          // move to next slide
-          activeIndex = (activeIndex + 1) % slides.length;
-
-          // fade in next after short delay
+          // Pause for fade-out before next fades in
           setTimeout(() => {
-            slides[activeIndex].classList.add('active');
-          }, 20);
+            activeIndex = (activeIndex + 1) % slides.length;
+            const next = slides[activeIndex];
+            next.classList.add('active');
+          }, 800); // pause duration in ms
         }
 
-        setInterval(nextSlide, 5000); // auto-transition every 5s
+        // Rotate every 6 seconds
+        setInterval(nextSlide, 6000);
       }
 
     } catch (err) {
@@ -180,25 +179,50 @@ document.addEventListener("DOMContentLoaded", () => {
       const offset = (i - activeIndex + total) % total;
       let angle, xOffset, zOffset, scale;
 
-      if (offset === 0) { angle = 0; xOffset = 0; zOffset = 250; scale = 1; card.style.opacity = "1"; card.style.zIndex = "3"; }
-      else if (offset === 1) { angle = 15; xOffset = 650; zOffset = 100; scale = 0.85; card.style.opacity = "0.6"; card.style.zIndex = "2"; }
-      else if (offset === total - 1) { angle = -15; xOffset = -650; zOffset = 100; scale = 0.85; card.style.opacity = "0.6"; card.style.zIndex = "2"; }
-      else { angle = 0; xOffset = 0; zOffset = 0; scale = 0.7; card.style.opacity = "0"; card.style.zIndex = "1"; }
+      if (offset === 0) {
+        angle = 0;
+        xOffset = 0;
+        zOffset = 250;
+        scale = 1;
+        card.style.opacity = "1";
+        card.style.zIndex = "3";
+      } else if (offset === 1) {
+        angle = 15;
+        xOffset = 650;
+        zOffset = 100;
+        scale = 0.85;
+        card.style.opacity = "0.6";
+        card.style.zIndex = "2";
+      } else if (offset === total - 1) {
+        angle = -15;
+        xOffset = -650;
+        zOffset = 100;
+        scale = 0.85;
+        card.style.opacity = "0.6";
+        card.style.zIndex = "2";
+      } else {
+        angle = 0;
+        xOffset = 0;
+        zOffset = 0;
+        scale = 0.7;
+        card.style.opacity = "0";
+        card.style.zIndex = "1";
+      }
+
       card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) scale(${scale}) rotateY(${angle}deg)`;
     });
   }
 
-  document.querySelector('#performers .next').addEventListener('click', () => { 
-    activeIndex = (activeIndex + 1) % total; 
-    updateCarousel(); 
+  document.querySelector('#performers .next').addEventListener('click', () => {
+    activeIndex = (activeIndex + 1) % total;
+    updateCarousel();
   });
 
-  document.querySelector('#performers .prev').addEventListener('click', () => { 
-    activeIndex = (activeIndex - 1 + total) % total; 
-    updateCarousel(); 
+  document.querySelector('#performers .prev').addEventListener('click', () => {
+    activeIndex = (activeIndex - 1 + total) % total;
+    updateCarousel();
   });
 
-  // Wait until performers are loaded from JSON
   setTimeout(() => {
     cards = Array.from(document.querySelectorAll('#performers .staff'));
     total = cards.length;
