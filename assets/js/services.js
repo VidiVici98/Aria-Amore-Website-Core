@@ -1,79 +1,60 @@
-/*=====================================
-  Carousel Logic
-=====================================*/
-const carousel = document.querySelector('.carousel');
-const cards = Array.from(document.querySelectorAll('.plan'));
-const total = cards.length;
-let activeIndex = 0;
-
-function updateCarousel() {
-  cards.forEach((card, i) => {
-    const offset = (i - activeIndex + total) % total;
-    let angle, xOffset, zOffset, scale;
-
-    if (offset === 0) {
-      angle = 0;
-      xOffset = 0;
-      zOffset = 250;
-      scale = 1;
-      card.style.opacity = "1";
-      card.style.zIndex = "3";
-    } 
-    else if (offset === 1) {
-      angle = 15;
-      xOffset = 650;
-      zOffset = 100;
-      scale = 0.85;
-      card.style.opacity = "0.6";
-      card.style.zIndex = "2";
-    } 
-    else if (offset === total - 1) {
-      angle = -15;
-      xOffset = -650;
-      zOffset = 100;
-      scale = 0.85;
-      card.style.opacity = "0.6";
-      card.style.zIndex = "2";
-    } 
-    else {
-      angle = 0;
-      xOffset = 0;
-      zOffset = 0;
-      scale = 0.7;
-      card.style.opacity = "0";
-      card.style.zIndex = "1";
-    }
-
-    card.style.transform = `
-      translateX(${xOffset}px)
-      translateZ(${zOffset}px)
-      scale(${scale})
-      rotateY(${angle}deg)
-    `;
-  });
-}
-
-document.querySelector('.next').addEventListener('click', () => {
-  activeIndex = (activeIndex + 1) % total;
-  updateCarousel();
-});
-
-document.querySelector('.prev').addEventListener('click', () => {
-  activeIndex = (activeIndex - 1 + total) % total;
-  updateCarousel();
-});
-
-updateCarousel();
-
-/*=====================================
-  Fetch & Embed Packages From JSON
-=====================================*/
 document.addEventListener("DOMContentLoaded", async () => {
+  /*=====================================
+    Carousel Logic
+  =====================================*/
+  const carousel = document.querySelector('.carousel');
+  const cards = Array.from(document.querySelectorAll('.plan'));
+  const total = cards.length;
+  let activeIndex = 0;
+
+  function updateCarousel() {
+    cards.forEach((card, i) => {
+      const offset = (i - activeIndex + total) % total;
+      let angle, xOffset, zOffset, scale;
+
+      if (offset === 0) {
+        angle = 0; xOffset = 0; zOffset = 250; scale = 1;
+        card.style.opacity = "1"; card.style.zIndex = "3";
+      } else if (offset === 1) {
+        angle = 15; xOffset = 650; zOffset = 100; scale = 0.85;
+        card.style.opacity = "0.6"; card.style.zIndex = "2";
+      } else if (offset === total - 1) {
+        angle = -15; xOffset = -650; zOffset = 100; scale = 0.85;
+        card.style.opacity = "0.6"; card.style.zIndex = "2";
+      } else {
+        angle = 0; xOffset = 0; zOffset = 0; scale = 0.7;
+        card.style.opacity = "0"; card.style.zIndex = "1";
+      }
+
+      card.style.transform = `
+        translateX(${xOffset}px)
+        translateZ(${zOffset}px)
+        scale(${scale})
+        rotateY(${angle}deg)
+      `;
+    });
+  }
+
+  document.querySelector('.next').addEventListener('click', () => {
+    activeIndex = (activeIndex + 1) % total;
+    updateCarousel();
+  });
+
+  document.querySelector('.prev').addEventListener('click', () => {
+    activeIndex = (activeIndex - 1 + total) % total;
+    updateCarousel();
+  });
+
+  updateCarousel();
+
+  /*=====================================
+    Fetch & Embed Packages From JSON
+  =====================================*/
   try {
     const response = await fetch("data/services.json");
     if (!response.ok) throw new Error("Failed to load services.json");
-
     const data = await response.json();
+
     const headingEl = document.getElementById("packages-heading");
     if (headingEl) headingEl.textContent = data.heading;
 
@@ -92,35 +73,28 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (btnEl) btnEl.textContent = plan.buttonText;
 
       if (featuresEl) {
-        featuresEl.innerHTML = plan.features
-          .map(feature => `<li>${feature}</li>`)
-          .join("");
+        featuresEl.innerHTML = plan.features.map(f => `<li>${f}</li>`).join("");
       }
     });
-  } catch (err) {
+  } catch(err) {
     console.error("Error embedding service data:", err);
   }
-});
 
-/*=====================================
-  Smooth Scroll + Auto-Select RSVP Package + Prefill Artist
-=====================================*/
-document.addEventListener("DOMContentLoaded", () => {
+  /*=====================================
+    Smooth Scroll + Auto-Select RSVP Package + Prefill Artist
+  =====================================*/
   const params = new URLSearchParams(window.location.search);
   const artistFromURL = params.get("artist");
   const packageFromURL = params.get("package");
 
-  // Prefill Special Requests with Artist
   if (artistFromURL) {
     const notesField = document.getElementById("notes");
     if (notesField) notesField.value = `Requesting artist: ${artistFromURL}`;
 
-    // Scroll to RSVP form
     const rsvpSection = document.querySelector(".rsvp-section");
     if (rsvpSection) rsvpSection.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  // Select package if passed via URL
   if (packageFromURL) {
     setTimeout(() => {
       const radio = document.querySelector(
@@ -130,7 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 600);
   }
 
-  // Attach click listeners to all carousel buttons
+  // Carousel buttons trigger RSVP prefill & highlight
   document.querySelectorAll(".carousel .plan .btn").forEach(button => {
     button.addEventListener("click", () => {
       const planCard = button.closest(".plan");
@@ -138,7 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!titleEl) return;
 
       const planName = titleEl.textContent.trim().toLowerCase();
-
       let packageValue = "";
       if (planName.includes("serenade")) packageValue = "serenade";
       else if (planName.includes("aria")) packageValue = "aria";
@@ -172,5 +145,62 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }, 600);
     });
+  });
+
+  /*=====================================
+    RSVP Form Logic (Modal Removed)
+  =====================================*/
+  const form = document.querySelector(".rsvp-form");
+  const submitBtn = form.querySelector(".rsvp-submit");
+  const pageLoadTime = Date.now();
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Bot check: <3s submission
+    if (Date.now() - pageLoadTime < 3000) {
+      alert("Form submitted too quickly. Please try again.");
+      return;
+    }
+
+    // Disable submit button & animate
+    submitBtn.disabled = true;
+    submitBtn.classList.add("sending");
+    submitBtn.textContent = "Sending...";
+
+    try {
+      const response = await fetch("sendmail.php", {
+        method: "POST",
+        body: new FormData(form)
+      });
+
+      let result;
+      try { result = await response.json(); } catch { throw new Error("Invalid JSON response"); }
+
+      if (result.success) {
+        submitBtn.classList.remove("sending");
+        submitBtn.classList.add("success");
+        submitBtn.textContent = "✔ Sent";
+
+        alert("Your reservation has been submitted successfully. We will contact you within 2 business days.");
+
+        form.reset();
+        setTimeout(() => {
+          submitBtn.classList.remove("success");
+          submitBtn.textContent = "Confirm Reservation";
+        }, 2500);
+      } else {
+        alert(result.error || "Something went wrong. Please try again later.");
+        submitBtn.classList.remove("sending");
+        submitBtn.textContent = "Confirm Reservation";
+      }
+    } catch(err) {
+      console.error(err);
+      alert("Unable to send message. Please try again later.");
+      submitBtn.classList.remove("sending");
+      submitBtn.textContent = "Confirm Reservation";
+    } finally {
+      submitBtn.disabled = false;
+    }
   });
 });

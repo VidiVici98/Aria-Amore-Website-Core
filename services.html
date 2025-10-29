@@ -139,110 +139,114 @@
     <!-- =====================
          RSVP SECTION
     ====================== -->
-    <section class="rsvp-section" aria-labelledby="rsvp-heading">
-      <div class="content-wrapper">
-        <div class="rsvp-card" role="form" aria-labelledby="rsvp-heading">
-          <div class="rsvp-header">
-            <h2 id="rsvp-heading">Save The Date</h2>
-            <img src="assets/media/images/divider.svg" class="flourish-divider-bottom" alt="" aria-hidden="true">
-            <img src="assets/media/images/divider.svg" class="flourish-divider-bottom-right" alt="" aria-hidden="true">
-          </div>
-          <p class="rsvp-intro">
-            Join us for a magical evening of operatic splendor. Please fill out your details below so we can reserve your place at this unforgettable celebration.
-          </p>
-          <form class="rsvp-form" aria-describedby="rsvp-intro">
-            <h3 class="fancy-heading">
-              <img src="assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
-              Organizer Info:
-              <img src="assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
-            </h3>
-            <div class="form-row">
-              <label for="guestName">Your Name</label>
-              <input type="text" id="guestName" name="guestName" placeholder="John Doe" required aria-required="true">
-            </div>
-            <div class="form-row">
-              <label for="guestEmail">Email Address</label>
-              <input type="email" id="guestEmail" name="guestEmail" placeholder="john@example.com" required aria-required="true">
-            </div>
-            <div class="form-row">
-              <label for="guestPhone">Phone Number</label>
-              <input type="tel" id="guestPhone" name="guestPhone" placeholder="(555)123-4567" required aria-required="true">
-            </div>
-            <h3 class="fancy-heading">
-              <img src="assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
-              Event Details:
-              <img src="assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
-            </h3>
-            <fieldset class="form-packages" role="radiogroup" aria-label="Package selection">
-              <legend class="sr-only">Choose a package</legend>
-              <label class="checkbox-btn">
-                <input type="radio" name="package" value="serenade" id="pkg-serenade">
-                <span>Serenade Package</span>
-              </label>      
-              <label class="checkbox-btn">
-                <input type="radio" name="package" value="aria" id="pkg-aria">
-                <span>Aria Package</span>
-              </label>    
-              <label class="checkbox-btn">
-                <input type="radio" name="package" value="grand-opera" id="pkg-grand-opera">
-                <span>Grand Opera Package</span>
-              </label>
-            </fieldset>
-            <div class="rsvp-calendar" role="region" aria-label="Calendar of available dates">
-              <iframe
-                src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York"
-                title="Google Calendar showing holidays and available dates"
-                frameborder="0"
-                scrolling="no">
-              </iframe>
-            </div>
-            <div class="form-row">
-              <label for="eventDate">Event Date</label>
-              <input type="date" id="eventDate" name="eventDate" required aria-required="true">
-              <label for="guestCount">Number of Guests</label>
-              <input type="number" id="guestCount" name="guestCount" min="1" placeholder="2" required aria-required="true">
-              <label for="notes">Special Requests</label>
-              <textarea id="notes" name="notes" rows="3" placeholder="Dietary restrictions, song requests..."></textarea>
-            </div>
-            <h3 class="fancy-heading">
-              <img src="assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
-              Addons:
-              <img src="assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
-            </h3>
-            <fieldset class="form-packages" role="group" aria-label="Add-on options">
-              <legend class="sr-only">Select any additional services</legend>
-              <label class="checkbox-btn">
-                <input type="checkbox" name="addon" value="additional-performer">
-                <span>Additional Performer</span>
-              </label>      
-              <label class="checkbox-btn">
-                <input type="checkbox" name="addon" value="photography">
-                <span>Photography Services</span>
-              </label>    
-              <label class="checkbox-btn">
-                <input type="checkbox" name="addon" value="pianist">
-                <span>Pianist Included</span>
-              </label>        
-              <label class="checkbox-btn">
-                <input type="checkbox" name="addon" value="cellist">
-                <span>Cellist Included</span>
-              </label>        
-              <label class="checkbox-btn">
-                <input type="checkbox" name="addon" value="planning">
-                <span>Planning Services</span>
-              </label>
-            </fieldset>
-            <button type="submit" class="rsvp-submit" aria-label="Confirm reservation">Confirm Reservation</button>
-          </form>
-        </div>
-        <!-- Decorative corners -->
-        <img src="assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="" aria-hidden="true">
-        <img src="assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" aria-hidden="true">
-        <img src="assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" aria-hidden="true">
-        <img src="assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" aria-hidden="true">
+   <section class="rsvp-section" aria-labelledby="rsvp-heading">
+  <div class="content-wrapper">
+    <div class="rsvp-card" role="form" aria-labelledby="rsvp-heading">
+      <div class="rsvp-header">
+        <h2 id="rsvp-heading">Save The Date</h2>
+        <img src="assets/media/images/divider.svg" class="flourish-divider-bottom" alt="" aria-hidden="true">
+        <img src="assets/media/images/divider.svg" class="flourish-divider-bottom-right" alt="" aria-hidden="true">
       </div>
-    </section>
-  </main>
+      <p class="rsvp-intro">
+        Join us for a magical evening of operatic splendor. Please fill out your details below so we can reserve your place at this unforgettable celebration.
+      </p>
+      <form class="rsvp-form" action="sendmail.php" method="POST" aria-describedby="rsvp-intro">
+        <h3 class="fancy-heading">
+          <img src="assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+          Organizer Info:
+          <img src="assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+        </h3>
+        <div class="form-row">
+          <label for="guestName">Your Name</label>
+          <input type="text" id="guestName" name="guestName" placeholder="John Doe" required aria-required="true">
+        </div>
+        <div class="form-row">
+          <label for="guestEmail">Email Address</label>
+          <input type="email" id="guestEmail" name="guestEmail" placeholder="john@example.com" required aria-required="true">
+        </div>
+        <div class="form-row">
+          <label for="guestPhone">Phone Number</label>
+          <input type="tel" id="guestPhone" name="guestPhone" placeholder="(555)123-4567" required aria-required="true">
+        </div>
+        <h3 class="fancy-heading">
+          <img src="assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+          Event Details:
+          <img src="assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+        </h3>
+        <fieldset class="form-packages" role="radiogroup" aria-label="Package selection">
+          <legend class="sr-only">Choose a package</legend>
+          <label class="checkbox-btn">
+            <input type="radio" name="package" value="serenade" id="pkg-serenade">
+            <span>Serenade Package</span>
+          </label>      
+          <label class="checkbox-btn">
+            <input type="radio" name="package" value="aria" id="pkg-aria">
+            <span>Aria Package</span>
+          </label>    
+          <label class="checkbox-btn">
+            <input type="radio" name="package" value="grand-opera" id="pkg-grand-opera">
+            <span>Grand Opera Package</span>
+          </label>
+        </fieldset>
+        <div class="rsvp-calendar" role="region" aria-label="Calendar of available dates">
+          <iframe
+            src="https://calendar.google.com/calendar/embed?src=en.usa%23holiday%40group.v.calendar.google.com&ctz=America%2FNew_York"
+            title="Google Calendar showing holidays and available dates"
+            frameborder="0"
+            scrolling="no">
+          </iframe>
+        </div>
+        <div class="form-row">
+          <label for="eventDate">Event Date</label>
+          <input type="date" id="eventDate" name="eventDate" required aria-required="true">
+          <input type="text" name="extra_info" style="display:none" autocomplete="off">
+          <label for="guestCount">Number of Guests</label>
+          <input type="number" id="guestCount" name="guestCount" min="1" placeholder="2" required aria-required="true">
+          <label for="notes">Special Requests</label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Dietary restrictions, song requests..."></textarea>
+        </div>
+        <h3 class="fancy-heading">
+          <img src="assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
+          Addons:
+          <img src="assets/media/images/divider.svg" class="flourish-divider-right" alt="" aria-hidden="true">
+        </h3>
+        <fieldset class="form-packages" role="group" aria-label="Add-on options">
+          <legend class="sr-only">Select any additional services</legend>
+          <label class="checkbox-btn">
+            <input type="checkbox" name="addon" value="additional-performer">
+            <span>Additional Performer</span>
+          </label>      
+          <label class="checkbox-btn">
+            <input type="checkbox" name="addon" value="photography">
+            <span>Photography Services</span>
+          </label>    
+          <label class="checkbox-btn">
+            <input type="checkbox" name="addon" value="pianist">
+            <span>Pianist Included</span>
+          </label>        
+          <label class="checkbox-btn">
+            <input type="checkbox" name="addon" value="cellist">
+            <span>Cellist Included</span>
+          </label>        
+          <label class="checkbox-btn">
+            <input type="checkbox" name="addon" value="planning">
+            <span>Planning Services</span>
+          </label>
+        </fieldset>
+        <button type="submit" class="rsvp-submit" aria-label="Confirm reservation">
+          Confirm Reservation
+          <span class="checkmark">&#10003;</span>
+        </button>
+      </form>
+    </div>
+    <!-- Decorative corners preserved -->
+    <img src="assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="" aria-hidden="true">
+    <img src="assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" aria-hidden="true">
+    <img src="assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" aria-hidden="true">
+    <img src="assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" aria-hidden="true">
+  </div>
+</section>
+</main>
   <footer id="site-footer-container" role="contentinfo" aria-label="Site footer"></footer>
   <!-- Scripts -->
   <script src="assets/js/main.js" defer></script>

@@ -427,6 +427,27 @@ body {
   .services-page #events {
     margin-top: 15%;
   }
+/* Animate submit button for success */
+.rsvp-submit {
+  position: relative;
+  transition: background 0.3s, color 0.3s;
+  background-color: var(--accent-gradient); /* brand color */
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.rsvp-submit[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+.rsvp-submit .checkmark {
+  display: none;
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+}
   @media screen and (max-width: 700px) {
     .services-page .form-packages {
       grid-template-columns: 1fr;
@@ -437,7 +458,6 @@ body {
   }
     .services-page .corner { width: 70px; }
   }
-  /* ✅ Keep desktop identical, fix mobile scaling */
 @media screen and (max-width: 900px) {
   .services-page .rsvp-section {
     padding: 40px 10px;
