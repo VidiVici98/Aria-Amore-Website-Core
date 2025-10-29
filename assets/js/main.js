@@ -127,11 +127,11 @@ document.addEventListener("DOMContentLoaded", () => {
             activeIndex = (activeIndex + 1) % slides.length;
             const next = slides[activeIndex];
             next.classList.add('active');
-          }, 800); // pause duration in ms
+          }, 1000); // pause duration in ms
         }
 
-        // Rotate every 6 seconds
-        setInterval(nextSlide, 6000);
+        // Rotate every 4 seconds
+        setInterval(nextSlide, 4500);
       }
 
     } catch (err) {

@@ -203,13 +203,6 @@ footer h2 {
 /* ================================
    MOBILE HERO
    ================================ */
-.hero-mobile {
-  display: none;
-}
-.hero-logo {
-  position: relative;
-  z-index: 2;
-}
 .brand {
   font-family: "Italianno";
   font-size: 5rem;
@@ -225,26 +218,91 @@ footer h2 {
   top: -170px;
   padding-top: 350px;
   z-index: 2;
+  opacity: 0;
+  transform: translateY(20px);
+  animation:
+    brandFadeUp 1.2s ease-out 2s forwards,
+    brandDrift 4s ease-in-out 3.2s infinite;
 }
-.music-notes {
-  position: absolute;
-  top: -175px;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  clip-path: inset(45% 0 0 0);
+
+/* Fade in smoothly and rise slightly */
+@keyframes brandFadeUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
+
+/* The entire title drifts slowly like floating on calm water */
+@keyframes brandDrift {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+  }
+  25% {
+    transform: translateY(-4px) translateX(2px);
+  }
+  50% {
+    transform: translateY(4px) translateX(-2px);
+  }
+  75% {
+    transform: translateY(-2px) translateX(1px);
+  }
+}
+/* =========================================
+   RANDOMIZED MICRO-MOTION FOR LETTERS
+   ========================================= */
+.brand span {
+  display: inline-block;
+  transform-origin: center;
+  animation-duration: 5.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  opacity: 1;
+}
+
+/* Each letter uses a different "floating" style */
+.brand span:nth-child(1) { animation-name: aliveFloatA; animation-delay: 3s; }
+.brand span:nth-child(2) { animation-name: aliveFloatB; animation-delay: 4.5s; }
+.brand span:nth-child(3) { animation-name: aliveFloatC; animation-delay: 5.2s; }
+.brand span:nth-child(4) { animation-name: aliveFloatA; animation-delay: 6.3s; }
+.brand span:nth-child(5) { animation-name: aliveFloatB; animation-delay: 7.1s; }
+.brand span:nth-child(6) { animation-name: aliveFloatC; animation-delay: 8s; }
+.brand span:nth-child(7) { animation-name: aliveFloatA; animation-delay: 9s; }
+.brand span:nth-child(8) { animation-name: aliveFloatB; animation-delay: 10s; }
+.brand span:nth-child(9) { animation-name: aliveFloatA; animation-delay: 11s; }
+
+/* Three slightly different movement patterns */
+@keyframes aliveFloatA {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(1px, -1.2px) rotate(-0.25deg) scale(1.004); }
+  50% { transform: translate(-1.5px, 1px) rotate(0.25deg) scale(0.998); }
+  75% { transform: translate(0.8px, 0.5px) rotate(-0.15deg) scale(1.002); }
+}
+
+@keyframes aliveFloatB {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(-0.8px, -1.5px) rotate(0.2deg) scale(1.006); }
+  50% { transform: translate(1.2px, 0.8px) rotate(-0.3deg) scale(0.994); }
+  75% { transform: translate(-0.5px, 0.4px) rotate(0.15deg) scale(1.003); }
+}
+
+@keyframes aliveFloatC {
+  0%, 100% { transform: translate(0, 0) rotate(0deg) scale(1); }
+  25% { transform: translate(1.2px, -0.6px) rotate(-0.35deg) scale(1.002); }
+  50% { transform: translate(-1px, 1.3px) rotate(0.4deg) scale(0.997); }
+  75% { transform: translate(0.6px, 0.6px) rotate(-0.2deg) scale(1.001); }
+}
+/* ================================
+   MUSIC NOTES (silent rhythmic start)
+   ================================ */
 .note {
   position: absolute;
-  bottom: 0;
+  bottom: 20%;
   opacity: 0;
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
   animation-name: floatNote;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   transform-origin: center;
+  animation-delay: 2s; /* notes start with the brand animation delay */
 }
 .layer1 {
   z-index: 4;
@@ -253,36 +311,31 @@ footer h2 {
   animation-duration: 6s;
 }
 .layer2 {
-  z-index: 3;
+  z-index: 2;
   color: #ffe5a8;
   font-size: 3.5rem !important;
   animation-duration: 8s;
   filter: drop-shadow(0 0 8px rgba(255, 255, 180, 0.6));
 }
-.note:nth-child(1) { left: 22%; animation-delay: 0s; }
-.note:nth-child(2) { left: 38%; animation-delay: 0.6s; }
-.note:nth-child(3) { left: 52%; animation-delay: 1.3s; }
-.note:nth-child(4) { left: 67%; animation-delay: 2s; }
-.note:nth-child(5) { left: 28%; animation-delay: 2.8s; }
-.note:nth-child(6) { left: 60%; animation-delay: 3.4s; }
-.note:nth-child(7) { left: 33%; animation-delay: 1.5s; }
-.note:nth-child(8) { left: 45%; animation-delay: 2.3s; }
-.note:nth-child(9) { left: 58%; animation-delay: 3.1s; }
-.note:nth-child(10){ left: 70%; animation-delay: 3.9s; }
+.note:nth-child(1) { left: 22%; animation-delay: 2s; }
+.note:nth-child(2) { left: 38%; animation-delay: 2.6s; }
+.note:nth-child(3) { left: 52%; animation-delay: 3.3s; }
+.note:nth-child(4) { left: 67%; animation-delay: 4s; }
+.note:nth-child(5) { left: 28%; animation-delay: 4.8s; }
+.note:nth-child(6) { left: 60%; animation-delay: 5.4s; }
+.note:nth-child(7) { left: 33%; animation-delay: 3.5s; }
+.note:nth-child(8) { left: 45%; animation-delay: 4.3s; }
+.note:nth-child(9) { left: 58%; animation-delay: 5.1s; }
+.note:nth-child(10){ left: 70%; animation-delay: 5.9s; }
 @keyframes floatNote {
-  0% {transform: translate(0, 0) scale(1) rotate(0deg);
-      opacity: 0;}
+  0% {transform: translate(0, 0) scale(1) rotate(0deg); opacity: 0;}
   10% {opacity: 0.8;}
-  25% {transform: translate(calc(-10px - 5vw), -70px) rotate(-10deg);
-       opacity: 0.9;}
+  25% {transform: translate(calc(-10px - 5vw), -70px) rotate(-10deg); opacity: 0.9;}
   40% {transform: translate(calc(8px + 4vw), -140px) rotate(8deg);}
-  55% {transform: translate(calc(-12px - 3vw), -210px) rotate(-5deg);
-       opacity: 0.7;}
-  70% {transform: translate(calc(10px + 2vw), -270px) scale(1.05) rotate(4deg);
-       opacity: 0.5;}
+  55% {transform: translate(calc(-12px - 3vw), -210px) rotate(-5deg); opacity: 0.7;}
+  70% {transform: translate(calc(10px + 2vw), -270px) scale(1.05) rotate(4deg); opacity: 0.5;}
   85% {transform: translate(calc(-8px - 1vw), -330px) scale(1.1) rotate(-2deg);}
-  100% {transform: translate(0, -380px) scale(1.15) rotate(0deg);
-        opacity: 0;}
+  100% {transform: translate(0, -380px) scale(1.15) rotate(0deg); opacity: 0;}
 }
 /* ================================
    Desktop HERO
@@ -634,7 +687,7 @@ footer h2 {
   width: 100%;
   opacity: 0;
   transform: scale(0.95); /* start slightly smaller */
-  transition: opacity 1s ease-in-out, transform 1s ease-out;
+  transition: opacity 1.75s ease-in-out, transform 1s ease-out;
   z-index: 1;
 }
 
