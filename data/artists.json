@@ -5,19 +5,19 @@
     "voice": "Soprano",
     "bio": "Xavier’s soaring soprano has been central to Aria Amore’s signature sound. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotions of weddings.",
     "modalBio": "Xavier Williams is a celebrated soprano known for her luminous tone and emotional depth. Trained at the Conservatorio, she blends classical technique with heartfelt expression — ideal for the intimate emotions of wedding ceremonies and recitals.",
-    "portrait": "/Aria-Amore-Website-Core/assets/media/images/xavier-williams.webp",
+    "portrait": "/assets/media/images/xavier-williams.webp",
     "tracks": [
       {
         "id": "xavier-night",
         "title": "Night (excerpt)",
         "sub": "Soprano • 2m 2s",
-        "src": "/Aria-Amore-Website-Core/assets/media/audio/xavier-night-price.mp3"
+        "src": "/assets/media/audio/xavier-night-price.mp3"
       },
       {
         "id": "xavier-ave-verum",
         "title": "Ave Verum (excerpt)",
         "sub": "Soprano • 1m 16s",
-        "src": "/Aria-Amore-Website-Core/assets/media/audio/xavier-ave-verum.mp4"
+        "src": "/assets/media/audio/xavier-ave-verum.mp4"
       }
     ],
     "social": {
@@ -31,19 +31,19 @@
     "voice": "Alto",
     "bio": "Latoya's warm alto tone brings emotional depth to both sacred and contemporary repertoire, captivating audiences with effortless grace and poise.",
     "modalBio": "Latoya is an accomplished alto whose warm tone and versatility captivate audiences worldwide. Her performances bridge genres, blending traditional hymns with soulful modern interpretations.",
-    "portrait": "/Aria-Amore-Website-Core/assets/media/images/latoya.webp",
+    "portrait": "/assets/media/images/latoya.webp",
     "tracks": [
       {
         "id": "latoya-ave-maria",
         "title": "Ave Maria (excerpt)",
         "sub": "Alto • 45s",
-        "src": "/Aria-Amore-Website-Core/assets/media/audio/latoya-ave-maria.mp3"
+        "src": "/assets/media/audio/latoya-ave-maria.mp3"
       },
       {
         "id": "latoya-night",
         "title": "Night (excerpt)",
         "sub": "Alto • 45s",
-        "src": "/Aria-Amore-Website-Core/assets/media/audio/latoya-night.mp3"
+        "src": "/assets/media/audio/latoya-night.mp3"
       }
     ],
     "social": {
@@ -56,19 +56,19 @@
     "name": "Collin Vasquez",
     "voice": "Baritone",
     "bio": "Collin’s resonant baritone lends dramatic presence to every performance, bringing timeless classics to life with sincerity and power.",
-    "portrait": "/Aria-Amore-Website-Core/assets/media/images/placeholder.webp",
+    "portrait": "/assets/media/images/placeholder.webp",
     "tracks": [
       {
         "id": "collin-ave-maria",
         "title": "Ave Maria (excerpt)",
         "sub": "Baritone • 45s",
-        "src": "/Aria-Amore-Website-Core/assets/media/audio/collin-ave-maria.mp3"
+        "src": "/assets/media/audio/collin-ave-maria.mp3"
       },
       {
         "id": "collin-ave-verum",
         "title": "Ave Verum (excerpt)",
         "sub": "Baritone • 45s",
-        "src": "/Aria-Amore-Website-Core/assets/media/audio/collin-ave-verum.mp3"
+        "src": "/assets/media/audio/collin-ave-verum.mp3"
       }
     ],
     "social": {
