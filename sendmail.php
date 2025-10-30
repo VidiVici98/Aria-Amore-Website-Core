@@ -16,7 +16,7 @@ if (!empty($_POST['extra_info'])) {
 }
 // === TIME CHECK ===
 $pageLoadTime = intval($_POST['pageLoadTime'] ?? 0);
-if (time() - $pageLoadTime < 3) {
+if (time() - $pageLoadTime < 1.5) {
     logError("Too fast submission");
     echo json_encode(['success'=>false,'error'=>'Bot detected']);
     exit;
@@ -97,9 +97,7 @@ function sendMail($to, $toName, $subject, $htmlBody, $attachments = []) {
     }
 }
 // === BRANDED EMAIL TEMPLATES ===
-// Google Fonts (Italianno + Lato) — many clients ignore web fonts but they will load where allowed
 $fontLink = "<link href=\"https://fonts.googleapis.com/css2?family=Italianno&family=Lato:wght@300;400;700&display=swap\" rel=\"stylesheet\">";
-// Shared inline styles — keep them small and inline-friendly
 $bgGradient = "linear-gradient(to bottom right, hsl(41, 32%, 62%), hsla(38, 36%, 75%, 1) 60%, hsl(33, 41%, 71%))";
 $buttonGradient = "radial-gradient(circle at 50% 50%, #d68b6c, #a2583e)";
 // Admin Email (owner)
@@ -173,7 +171,7 @@ $ownerHtml = <<<HTML
 <span style="margin-right:12px;"><span style="margin-right:12px;"><svg fill="#000000" height="50px" width="50px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512.114 512.114" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g transform="translate(1 1)"> <g> <g> <path d="M478.452,74.974c-0.883-4.414-5.297-7.945-9.71-7.945l-55.183,5.017c0.288-2.223,0.452-4.484,0.452-6.782 c0-29.131-23.834-52.966-52.966-52.966s-52.966,23.834-52.966,52.966c0,5.291,0.795,10.403,2.257,15.233L184.561,91.434 L41.486,78.505c-1.766-0.883-4.414,0-6.179,1.766c-2.648,1.766-3.531,3.531-3.531,6.179L-0.886,456.326 c-0.883,5.297,3.531,9.71,7.945,9.71l117.19,9.903l0.217,2.455c0.883,2.648,1.766,4.414,3.531,6.179 c0.883,0.883,3.531,1.766,5.297,1.766l56.48-4.987l187.162,16.463c5.297,0,8.828-3.531,8.828-7.945l2.053-26.007l115.354-10.186 c2.648-0.883,4.414-1.766,6.179-3.531c0.883-1.766,1.766-3.531,1.766-6.179L478.452,74.974z M361.045,29.953 c19.421,0,35.31,15.89,35.31,35.31c0,4.054-0.701,7.95-1.973,11.583c-0.29,0.502-0.524,1.052-0.675,1.658 c-4.943,12.356-16.804,20.863-29.845,21.945c-0.124,0.01-0.247,0.02-0.371,0.028c-0.812,0.059-1.627,0.095-2.447,0.095 c-0.682,0-1.36-0.026-2.036-0.064c-0.326-0.019-0.65-0.047-0.974-0.075c-0.296-0.024-0.591-0.052-0.886-0.083 c-7.43-0.825-14.18-3.98-19.504-8.712c-0.366-0.583-0.799-1.142-1.317-1.66s-1.077-0.951-1.66-1.317 c-1.354-1.523-2.579-3.161-3.657-4.901c-0.22-0.436-0.454-0.832-0.701-1.19c-2.905-5.124-4.575-11.03-4.575-17.31 C325.734,45.843,341.624,29.953,361.045,29.953z M17.652,448.381L48.548,97.043l45.903,4.414l-0.883,0.883 c-0.883,1.766-1.766,3.531-1.766,6.179l30.79,348.681L17.652,448.381z M368.989,479.277l-78.035-6.86l78.9-6.967L368.989,479.277 z M141.238,466.919l-30.82-350.462l77.606-7.055c1.283,0,2.487-0.381,3.556-1.019L316.649,97.3l-41.232,41.232 c-3.531,3.531-3.531,8.828,0,12.359c1.766,1.766,3.531,2.648,6.179,2.648c2.648,0,4.414-0.883,6.179-2.648l42.559-42.559 c8.679,6.217,19.282,9.897,30.71,9.897c20.585,0,38.512-11.909,47.267-29.17l53.368-4.374l30.897,351.338L141.238,466.919z"></path> <path d="M389.293,216.215l27.365-2.648c4.414-0.883,7.945-5.297,7.945-9.71c-0.883-4.414-5.297-7.945-9.71-7.945l-26.483,2.648 c-4.414,0.883-7.945,5.297-7.945,9.71C380.465,212.684,384.879,216.215,389.293,216.215z"></path> <path d="M292.189,225.043l62.676-5.297c4.414-0.883,7.945-5.297,7.945-9.71c-0.883-4.414-5.297-8.828-9.71-7.945l-61.793,5.297 c-4.414,0.883-7.945,5.297-7.945,9.71C284.245,221.512,287.776,225.043,292.189,225.043z"></path> <path d="M258.645,227.691c4.414-0.883,7.945-5.297,7.945-9.71c-0.883-4.414-4.414-8.828-9.71-7.945l-79.448,7.062 c-4.414,0.883-7.945,5.297-7.945,9.71c0.883,4.414,4.414,7.945,8.828,7.945L258.645,227.691z"></path> <path d="M419.307,248.877l-61.793,5.297c-4.414,0.883-7.945,5.297-7.945,9.71c0.883,4.414,4.414,7.945,8.828,7.945l62.676-5.297 c4.414-0.883,7.945-4.414,7.945-9.71C428.134,252.408,423.721,247.995,419.307,248.877z"></path> <path d="M235.693,274.478c0.883,4.414,4.414,7.945,8.828,7.945l62.676-5.297c4.414-0.883,8.828-5.297,7.945-9.71 c-0.883-4.414-5.297-7.945-9.71-7.945l-61.793,5.297C239.224,265.65,235.693,270.064,235.693,274.478z"></path> <path d="M210.093,285.071c4.414-0.883,7.945-5.297,7.945-9.71c-0.883-4.414-4.414-8.828-9.71-7.945l-26.483,2.648 c-4.414,0.883-7.945,5.297-7.945,9.71c0.883,4.414,4.414,7.945,8.828,7.945L210.093,285.071z"></path> <path d="M423.721,301.843l-17.655,1.766c-4.414,0.883-7.945,5.297-7.945,9.71c0,4.414,4.414,7.945,8.828,7.945l18.538-1.766 c4.414-0.883,7.945-5.297,7.945-9.71C432.548,305.374,428.134,300.96,423.721,301.843z"></path> <path d="M371.638,306.257l-88.276,7.945c-4.414,0.883-7.945,5.297-7.945,9.71c0.883,4.414,4.414,7.945,8.828,7.945l89.159-7.945 c4.414-0.883,8.828-5.297,7.945-9.71S376.052,305.374,371.638,306.257z"></path> <path d="M230.396,319.498l-44.138,3.531c-4.414,0.883-7.945,5.297-7.945,9.71c0.883,4.414,4.414,7.945,8.828,7.945l45.021-3.531 c4.414-0.883,7.945-5.297,7.945-9.71C239.224,323.029,235.693,318.615,230.396,319.498z"></path> <path d="M429.017,354.809l-88.276,7.945c-4.414,0.883-7.945,5.297-7.945,9.71c0.883,4.414,4.414,7.945,8.828,7.945l89.159-7.945 c4.414-0.883,7.945-5.297,7.945-9.71C437.845,358.34,433.431,354.809,429.017,354.809z"></path> <path d="M287.776,367.167l-35.31,2.648c-4.414,0.883-7.945,5.297-7.945,9.71c0.883,4.414,4.414,7.945,8.828,7.945l36.193-2.648 c4.414-0.883,8.828-5.297,7.945-9.71C296.603,370.698,292.189,366.284,287.776,367.167z"></path> <path d="M217.155,372.464l-26.483,2.648c-4.414,0.883-7.945,5.297-7.945,9.71c0.883,4.414,4.414,7.945,8.828,7.945l27.366-2.648 c4.414-0.883,7.945-5.297,7.945-9.71C225.983,375.995,222.452,371.581,217.155,372.464z"></path> </g> </g> </g> </g></svg></span><strong style="color:#8c4b32;text-shadow: 1px 1px 1px #111;">Notes:</strong>&nbsp;{$notes}
 </div>
 <div style="text-align:center;margin-top:24px;">
-<span><a href="mailto:{$email}?subject=Follow-up" style="display:inline-block;text-shadow: 1px 2px 1px #111; padding:12px 28px;border-radius:8px;background:radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);;color:#fff;text-decoration:none;font-weight:700;box-shadow:0px 1px 6px rgba(0, 0, 0, 0.4),
+<span><a href="mailto:{$email}?subject=Opera Reservation Update" style="display:inline-block;text-shadow: 1px 2px 1px #111; padding:12px 28px;border-radius:8px;background:radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);;color:#fff;text-decoration:none;font-weight:700;box-shadow:0px 1px 6px rgba(0, 0, 0, 0.4),
                 2px 6px 8px rgba(20, 25, 30, 0.25),
                 inset 0 1px 2px rgba(255, 255, 255, 0.25),
                 inset 0 -1px 3px rgba(0,0,0,0.4);border: 1px groove #7b7b7b;">Quick Follow-Up</a></span>
@@ -182,7 +180,7 @@ $ownerHtml = <<<HTML
 </tr>
 <tr>
 <td style="padding:18px 28px 28px;font-size:13px;color:#666;text-align:center;">
-Admin notification • Aria Amore
+Admin notification | Aria Amore
 </td>
 </tr>
 </table>
@@ -199,17 +197,16 @@ $clientHtml = <<<HTML
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Italianno&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 </head>
-<body style="margin:0;padding:20px;background:linear-gradient(to bottom right,
-                    hsl(41, 32%, 62%, 1),
-                    hsla(38, 36%, 75%, 1) 60%,
-                    hsl(33, 41%, 71%, 1));font-family:Times,serif;">
+<body style="background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');margin:0;padding:20px;background:linear-gradient(to bottom right,
+                    hsl(41, 32%, 62%, .75),
+                    hsla(38, 36%, 75%, .75) 60%,
+                    hsl(33, 41%, 71%, .75));font-family:Times,serif;">
 <center>
 <table width="100%" cellpadding="0" cellspacing="0" style="max-width:700px;background:transparent;border-radius:12px;overflow:hidden;box-shadow:0 12px 28px rgba(0,0,0,0.06);">
 <tr>
 <td style="padding:32px;text-align:center;background:transparent;">
 <img src="https://ariaamore.com/assets/media/images/aria-amore-transparent.png" alt="Aria Amore" width="140" style="display:block;margin:0 auto 16px;">
-<h1 style="font-family:'Italianno',Georgia,serif;margin:0;font-size:52px;color:#8c4b32;text-shadow: 1px 2px 2px #000;">Thank You,<br>{$name}!</h1>
-<p style="margin:8px 0 0;color:#555;font-size:15px;">Your reservation is confirmed</p>
+<h1 style="font-family:'Italianno',Georgia,serif;margin:0;font-size:52px;color:#8c4b32;text-shadow: 1px 1px 1px rgba(0,0,0,0.75);">Thank You,<br>{$name}!</h1>
 </td>
 </tr>
 <tr>
@@ -246,18 +243,31 @@ $clientHtml = <<<HTML
 </div>
 <p style="color:#555;text-align:center;margin-top:22px;font-size:15px;">We’ll reach out within 2 business days to finalize your details. We can’t wait to host you at Aria Amore!</p>
 <p style="margin-top:22px;color:#444;text-align:center;font-size:24px;font-family:'Italianno',Georgia,serif;">Warm regards,<br><strong style='color: #151515; font-family:Italianno,Georgia,serif; font-size: 36px; text-shadow: 1px 1px 1px #bbb;'>Aria Amore</strong></p>
-
 <div style="text-align:center;margin-top:24px;">
 <a href="mailto:info@ariaamore.com" style="border: 1px groove #7b7b7b; text-shadow: 1px 2px 1px #111; display:inline-block;padding:12px 28px;border-radius:8px;background:radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);color:#fff;text-decoration:none;font-weight:700;box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
                 2px 6px 8px rgba(20, 25, 30, 0.25),
                 inset 0 1px 2px rgba(255, 255, 255, 0.25),
                 inset 0 -1px 3px rgba(0,0,0,0.4);">Contact Us</a>
 </div>
-<p style="padding-top:18px;font-size:13px;color:#333;text-align:center;">For changes or questions, simply reply to this email or contact us at <a href="mailto:info@ariaamore.com">info@ariaamore.com</a>.</p>
 </td>
 </tr>
 </table>
 </center>
+<footer style="padding: 16px 0 10px;width: 100vw; justify-self: center; border-top: 1px solid #333; font-family: 'Playfair Display', serif; text-align: center; color: #473c2d; font-size: 14px; background: linear-gradient(to bottom right, hsl(41, 32%, 62%), hsla(38, 36%, 75%, 1) 60%, hsl(33, 41%, 71%));
+background-image: url('https://www.transparenttextures.com/patterns/paper-fibers.png');
+">
+  <p style="margin: 0; font-style: italic;">Making Any Experience Unforgetable</p>
+  <p style="margin: 10px 0 0;">Aria Amore Opera Performers</p>
+  <p style="margin: 5px 0 0;">
+    <a href="https://ariaamore.com" style="font-weight: bold; color: #b18b54; text-decoration: none;">ariaamore.com</a> · 
+    <a href="mailto:info@ariaamore.com" style="font-weight: bold; color: #b18b54; text-decoration: none;">info@ariaamore.com</a>
+  </p>
+  <p style="margin: 10px 0 0;">
+    <a href="https://instagram.com/ariaamore" style="text-decoration: none; margin: 0 5px; color: #b18b54;"><img src="ariaamore.com/assets/media/images/instagram-icon.svg"></a>
+    <a href="https://tiktok.com/ariaamore" style="text-decoration: none; margin: 0 5px; color: #b18b54;"><img src="ariaamore.comassets/media/images/tiktok-icon.svg"></a>
+  </p>
+  <p style="background-color: #000; margin: 15px 0 0; color: #a09480; font-size: 12px;">© 2025 Aria Amore — All Rights Reserved</p>
+</footer>
 </body>
 </html>
 HTML;
