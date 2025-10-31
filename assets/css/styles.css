@@ -303,6 +303,7 @@ footer h2 {
   animation-iteration-count: infinite;
   transform-origin: center;
   animation-delay: 2s; /* notes start with the brand animation delay */
+  pointer-events: none;
 }
 .layer1 {
   z-index: 4;
