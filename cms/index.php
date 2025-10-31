@@ -1,59 +1,41 @@
 <?php
-// cms/index.php
-require_once __DIR__ . '/config.php';
+require_once "config.php";
 
-// If already logged in, go to dashboard
-if (!empty($_SESSION['cms_logged_in'])) {
-    header('Location: dashboard.php');
-    exit;
-}
+$login_error = "";
 
-$error = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $pw = $_POST['password'] ?? '';
-    if (password_verify($pw, $PASSWORD_HASH)) {
-        session_regenerate_id(true);
-        $_SESSION['cms_logged_in'] = true;
-        $_SESSION['cms_csrf'] = bin2hex(random_bytes(16));
-        $_SESSION['cms_last_activity'] = time();
-        header('Location: dashboard.php');
+    $user = $_POST['username'] ?? '';
+    $pass = $_POST['password'] ?? '';
+
+    if ($user === $ADMIN_USER && password_verify($pass, $ADMIN_PASS_HASH)) {
+        $_SESSION['logged_in'] = true;
+        header("Location: dashboard.php");
         exit;
     } else {
-        $error = 'Incorrect password.';
+        $login_error = "Invalid username or password";
     }
 }
+
 ?>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aria Amore — CMS Login</title>
-  <link rel="stylesheet" href="css/cms.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CMS Login</title>
+<link rel="stylesheet" href="css/cms.css">
 </head>
-<body class="login-page">
-  <main class="login-card">
-    <div class="brand">
-      <div class="brand-mark">AA</div>
-      <div class="brand-text">Aria Amore — CMS</div>
-    </div>
-
-    <?php if ($error): ?>
-      <div class="alert error"><?=htmlspecialchars($error)?></div>
-    <?php endif; ?>
-
-    <form method="POST" class="login-form" autocomplete="off" novalidate>
-      <label class="field">
-        <span class="field-label">Password</span>
-        <input name="password" type="password" required autocomplete="current-password" />
-      </label>
-
-      <div class="actions">
-        <button class="btn primary" type="submit">Sign in</button>
-      </div>
-
-      <p class="hint">Local test password: <strong>changeme</strong> (replace hash in config.php for production)</p>
+<body class="cms-login">
+<div class="login-container">
+    <h1>Login</h1>
+    <form method="POST">
+        <input type="text" name="username" placeholder="Username" required autofocus>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <?php if ($login_error): ?>
+        <div class="error-msg"><?= htmlspecialchars($login_error) ?></div>
+        <?php endif; ?>
     </form>
-  </main>
+</div>
 </body>
 </html>

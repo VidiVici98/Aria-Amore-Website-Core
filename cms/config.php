@@ -1,37 +1,45 @@
 <?php
-// --------------------
-// cms/config.php
-// --------------------
-// Basic configuration for the CMS
-// --------------------
-
-// Start session for login/logout
 session_start();
+$SESSION_TIMEOUT = 3600; // 1 hour
 
-// Path to your JSON data folder (relative to the site root)
-define('DATA_DIR', realpath(__DIR__ . '/../data/') . '/');
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > $SESSION_TIMEOUT)) {
+    session_unset();
+    session_destroy();
+}
+$_SESSION['LAST_ACTIVITY'] = time();
 
-// Where uploaded images should go (relative to the site root)
-define('UPLOAD_DIR', realpath(__DIR__ . '/../assets/media/images/') . '/');
+// CMS Admin Credentials
+$ADMIN_USER = "admin";
+$ADMIN_PASS = "changeme"; // plain text for demo, hash in production
 
-// Allowed JSON files the CMS may edit (filenames only)
-$ALLOWED_JSON_FILES = [
-    'homepage.json',
-    'services.json',
-    'artists.json',
-    'about.json'
+// JSON data files (relative to cms folder)
+$JSON_FILES = [
+    "homepage" => __DIR__ . "/../data/homepage.json",
+    "services" => __DIR__ . "/../data/services.json",
+    "artists"  => __DIR__ . "/../data/artists.json",
+    "about"    => __DIR__ . "/../data/about.json"
 ];
 
-// Single-user password hash (change immediately for production)
-// Default password: "changeme"
-// To generate a new hash: echo password_hash('YourNewPassword', PASSWORD_DEFAULT);
-$PASSWORD_HASH = '$2y$10$HU2WMtCebVLn71FzUZQpceE8XAivkM8VV2B5da9k1swI6Ft7qUmWW'; // changeme
+// Media upload directory
+$IMAGE_DIR = __DIR__ . "/../assets/media/images/";
 
-// Minimum upload settings
-define('MAX_UPLOAD_BYTES', 4 * 1024 * 1024); // 4MB
-$ALLOWED_IMAGE_MIMES = ['image/jpeg', 'image/png', 'image/webp', 'image/svg+xml'];
+// Helper functions
+function is_logged_in() {
+    return isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+}
 
-// Session lifetime (seconds)
-define('SESSION_LIFETIME', 60*60*4); // 4 hours
-ini_set('session.gc_maxlifetime', SESSION_LIFETIME);
-session_set_cookie_params(SESSION_LIFETIME);
+function load_json($key) {
+    global $JSON_FILES;
+    if (!isset($JSON_FILES[$key])) return null;
+    $file = $JSON_FILES[$key];
+    if (!file_exists($file)) return null;
+    return json_decode(file_get_contents($file), true);
+}
+
+function save_json($key, $data) {
+    global $JSON_FILES;
+    if (!isset($JSON_FILES[$key])) return false;
+    $file = $JSON_FILES[$key];
+    return file_put_contents($file, json_encode($data, JSON_PRETTY_PRINT)) !== false;
+}
+?>
