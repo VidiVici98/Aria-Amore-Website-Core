@@ -82,6 +82,13 @@
   Options -Indexes
 </IfModule>
 
+# Custom error documents
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404-page.html
+ErrorDocument 410 /410.html
+ErrorDocument 500 /500.html
+ErrorDocument 503 /503.html
+
 # Rewrite rules
 <IfModule mod_rewrite.c>
   RewriteEngine On
@@ -94,9 +101,6 @@
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule ^([^.]+)$ $1.html [L]
-  
-  # Handle 404 errors
-  ErrorDocument 404 /404-page.html
 </IfModule>
 
 # Disable script execution in upload directories

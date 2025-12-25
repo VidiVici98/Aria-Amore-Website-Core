@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>503 - Service Unavailable</title>
+  <meta name="robots" content="noindex, nofollow">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      max-width: 600px;
+      text-align: center;
+      background: white;
+      padding: 60px 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .error-code {
+      font-size: 120px;
+      font-weight: bold;
+      color: #f5576c;
+      margin-bottom: 20px;
+      line-height: 1;
+    }
+    
+    h1 {
+      font-size: 32px;
+      color: #333;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    p {
+      font-size: 18px;
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+    
+    .maintenance-info {
+      background: #fff3cd;
+      padding: 20px;
+      border-radius: 5px;
+      margin: 30px 0;
+      border-left: 4px solid #ffc107;
+    }
+    
+    .maintenance-info strong {
+      color: #856404;
+    }
+    
+    .actions {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 40px;
+    }
+    
+    a {
+      display: inline-block;
+      padding: 12px 30px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primary {
+      background: #f5576c;
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: #e63453;
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background: #e0e0e0;
+      color: #333;
+    }
+    
+    .btn-secondary:hover {
+      background: #d0d0d0;
+      transform: translateY(-2px);
+    }
+    
+    .icon {
+      font-size: 80px;
+      margin-bottom: 20px;
+    }
+    
+    .status-indicator {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      background: #ffc107;
+      border-radius: 50%;
+      margin-right: 8px;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.5;
+      }
+    }
+    
+    .footer-note {
+      font-size: 12px;
+      color: #999;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🔧</div>
+    <div class="error-code">503</div>
+    <h1>Service Unavailable</h1>
+    <p>We're performing scheduled maintenance to serve you better.</p>
+    
+    <div class="maintenance-info">
+      <span class="status-indicator"></span>
+      <strong>Scheduled Maintenance</strong><br>
+      We expect to be back online shortly.<br>
+      Thank you for your patience!
+    </div>
+    
+    <p style="font-size: 16px; color: #999;">
+      We appreciate your understanding. Our team is working hard to improve the experience.
+    </p>
+    
+    <div class="actions">
+      <a href="/" class="btn-primary">Try Again</a>
+      <a href="mailto:info@ariaamore.com" class="btn-secondary">Notify Me</a>
+    </div>
+    
+    <div class="footer-note">
+      For updates, follow us on social media or email <strong>info@ariaamore.com</strong>
+    </div>
+  </div>
+</body>
+</html>
