@@ -1,18 +1,91 @@
-# Aria Amore Website – Content Management Guide
+# 🎭 Aria Amore - Live Opera for Weddings & Celebrations
 
-Welcome!  
-This guide will show you how to **update the text, images, and media** on your website — without touching any HTML code.
+Transform your special day into an unforgettable performance with live opera music and entertainment.
 
-Your site is designed to load most of its content from **JSON files**, which makes updates fast, safe, and easy.
+## 🌟 Features
 
----
+- **Live Opera Performances** - Professional singers and musicians for your special event
+- **Customizable Packages** - Choose from various performance options
+- **Professional Artists** - Meet our talented performers
+- **Wedding & Event Services** - Perfect for ceremonies, receptions, and celebrations
+- **Responsive Design** - Beautiful experience on all devices
+- **Optimized Performance** - Fast loading and smooth interactions
+- **SEO Ready** - Discoverable through search engines
+- **Accessible** - WCAG 2.1 compliant
+- **Production Ready** - Security, backups, monitoring, and testing
 
-## 📁 Where to Find the Editable Files
+## 📋 Quick Links
 
-Below is an overview of how the website’s files and folders are organized within the main repository.
-This structure helps keep everything modular, easy to maintain, and clearly separated by purpose.
+- [Getting Started](#-getting-started)
+- [Development](#-development)
+- [Deployment](#-deployment)
+- [Testing](#-testing)
+- [Security](#-security)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Web server (Apache with mod_rewrite, mod_headers, mod_deflate, mod_expires)
+- Or Node.js for local development
+- Python 3 (optional, for local testing)
+
+### Local Development
+
+```bash
+# Clone repository
+git clone https://github.com/yourusername/aria-amore.git
+cd aria-amore
+
+# Setup environment
+cp .env.example .env
+# Edit .env with your configuration
+
+# Start development server
+chmod +x start-dev-server.sh
+./start-dev-server.sh
+
+# Open http://localhost:8000 in your browser
+```
+
+## 💻 Development
+
+### Making Changes
+
+1. Create a feature branch
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. Make changes and test locally
+   ```bash
+   ./test-site.sh http://localhost:8000
+   ```
+
+3. Commit and push
+   ```bash
+   git commit -m "feat: Add your feature description"
+   git push origin feature/your-feature-name
+   ```
+
+### Project Structure
 
 ```
+aria-amore/
+├── index.html              # Home page
+├── about.html              # About us
+├── services.html           # Services & packages
+├── artists.html            # Our performers
+├── privacy-policy.html     # Privacy policy
+├── terms-of-service.html   # Terms of service
+├── 404-page.html          # 404 error page
+├── robots.txt             # Search engine rules
+├── sitemap.xml            # XML sitemap
+├── security.txt           # Vulnerability reporting
+├── .htaccess              # Apache configuration
+├── .env.example           # Environment template
+├── .gitignore             # Git ignore rules
+├── package.json           # Node.js config
 ├── assets/
 │   ├── css/
 │   │   └── [All site CSS files]

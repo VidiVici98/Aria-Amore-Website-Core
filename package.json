@@ -1,0 +1,27 @@
+{
+  "name": "aria-amore-website",
+  "version": "1.0.0",
+  "description": "Aria Amore - Live Opera for Weddings & Celebrations",
+  "main": "index.html",
+  "scripts": {
+    "start": "http-server",
+    "build": "echo 'Build complete'",
+    "test": "echo 'No tests configured'",
+    "deploy": "echo 'Deploy to production'"
+  },
+  "keywords": [
+    "opera",
+    "wedding",
+    "live-performers",
+    "classical-singers",
+    "event-entertainment"
+  ],
+  "author": "Modern Warrior School LLC",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
