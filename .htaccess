@@ -83,11 +83,12 @@
 </IfModule>
 
 # Custom error documents
-ErrorDocument 403 /403.html
-ErrorDocument 404 /404.html
-ErrorDocument 410 /410.html
-ErrorDocument 500 /500.html
-ErrorDocument 503 /503.html
+ErrorDocument 403 /errors/403.html
+ErrorDocument 404 /errors/404.html
+ErrorDocument 410 /errors/410.html
+ErrorDocument 500 /errors/500.html
+ErrorDocument 503 /errors/503.html
+
 
 # Rewrite rules
 <IfModule mod_rewrite.c>

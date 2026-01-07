@@ -6,9 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <!--Security Headers-->
   <meta http-equiv="Content-Security-Policy"
-      content="default-src 'self';
-               script-src 'self';
-               style-src 'self' https://fonts.googleapis.com;
+      content="script-src 'self';
                font-src 'self' https://fonts.gstatic.com;
                img-src 'self' data:;
                connect-src 'self';
@@ -19,39 +17,241 @@
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta name="robots" content="noindex, nofollow">
   <!--SEO & Branding-->
   <meta name="description" content="Aria Amore is currently tuning the stage. We'll be back soon." />
   <meta name="author" content="Modern Warrior School LLC">
+  <meta name="robots" content="noindex, nofollow">
   <!--External APIs-->
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   <link rel="preload" href="https://fonts.gstatic.com/s/italianno.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!--Stylesheets-->
-  <link rel="stylesheet" href="assets/css/maintenance-404.css">
+  <!--Media Load Optimization-->
+  <link rel="preload" href="/assets/media/images/floral-background.png" as="image">
+  <link rel="preload" href="/assets/media/images/parchment-background.webp" as="image">
+  <style>
+ * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url(/assets/media/images/parchment-background.webp);
+      background-clip: content-box;
+      height: 100%;
+      width: 100%;
+      display: block;
+      padding: 0;
+      position: relative;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      overflow-x: hidden;
+    }
+    .container {
+      max-width: 600px;
+      position: relative;
+      height: 100%;
+      text-align: center;
+      background: linear-gradient(to bottom right,
+                    hsl(41, 32%, 62%, 1),
+                    hsla(38, 36%, 75%, 1) 60%,
+                    hsl(33, 41%, 71%, 1));
+      padding: 30px 40px;
+      border-radius: 10px;
+      border: 1px groove #333;
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
+                2px 6px 8px rgba(20, 25, 30, 0.25),
+                inset 0 1px 2px rgba(255, 255, 255, 0.25),
+                inset 0 -1px 3px rgba(0,0,0,0.4);
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+      margin-left: 20px;
+      margin-right: 20px;
+      justify-self: center;
+    }
+    .error-code {
+      font-size: 10rem;
+      font-weight: bold;
+      color: #333;
+      text-shadow: 1px 2px 2px #666;
+      font-family: "Italianno", cursive;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 3.5rem;
+      color: #333;
+      text-shadow: 1px 1px 1px #666;
+      font-family: "Italianno", cursive;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }    
+    p {
+      font-size: 18px;
+      color: #333;
+      margin-bottom: 30px;
+      line-height: 1.25;
+    }
+    a {
+      display: inline-block;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+.victorian-separator {
+  display: block;
+  width: 90%;
+  max-width: 400px;
+  height: auto;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  filter: opacity(.6);
+}
+.corner {
+  position: absolute;
+  width: 140px;  
+  height: auto;
+  opacity: .5;
+  padding: .5rem;
+  border-radius: 35px;
+  pointer-events: none; 
+}
+.corner-top-right {
+  top: -8px;
+  right: -8px; 
+}  
+.corner-top-left {
+  top: -8px;
+  left: -8px;
+  transform: scaleX(-1);
+}
+.corner-bottom-right {
+  bottom: -8px;
+  right: -8px;
+  transform: scaleY(-1);
+}
+.corner-bottom-left {
+  bottom: -8px;
+  left: -8px;
+  transform: scaleX(-1) scaleY(-1);
+}
+.aa-site-header {
+  position: sticky;
+  top:0px;
+  width: 100%;
+  z-index: 1200;
+  overflow: hidden;
+  background: linear-gradient(to bottom right,
+              hsl(41, 32%, 62%, 1), hsl(40, 30%, 40%));  
+  border-bottom: 1px groove #252525;
+  padding-top: env(safe-area-inset-top, 0);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
+                2px 6px 8px rgba(20, 25, 30, 0.25),
+                inset 0 1px 2px rgba(255, 255, 255, 0.25),
+                inset 0 -1px 3px rgba(0,0,0,0.4);;
+}
+.aa-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+    overflow: hidden;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background-repeat: repeat-x;
+  background-image: url(/assets/media/images/floral-background.png),
+                    url(/assets/media/images/floral-background.png),
+                    url(/assets/media/images/floral-background.png);
+  background-position:
+    15% 10%,
+    30% 0%,   
+    40% 20%; 
+  background-size: 250px, 
+                   150px,
+                   200px;
+  opacity: .8;
+  filter: saturate(.9);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.75) 20%,
+    #000 70%);
+  mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.75) 20%,
+    #000 70%);
+}
+.aa-logo {
+  font-family: "Italianno", cursive;
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #d7ad2f50,
+               2px 2px 1px #000;
+  transition: all .25s ease-in-out;
+  position: absolute;
+  left: 20px;
+  top: 4px;
+}
+.aa-logo:hover {
+  color: #ccc;
+  transform: scale(1.02);
+}
+.logo-img {
+  height: 200px;
+  position: absolute;
+  left:-40px;
+  top:-45px;
+  z-index: -1;
+  opacity: .95;
+}
+footer {
+  color: #666;
+  width: 100vw;
+  height:30px;
+  position:static;
+  bottom: 0;
+  margin-top: 1rem;
+  background: radial-gradient(circle at 50% 50%, #111111, #222222);
+  font-style: italic;
+  text-align: center;
+  border-top: 2px groove #151515;
+  padding: 3px;
+}
+  </style>
 </head>
 <body>
+  <header class="aa-site-header" role="banner">
+  <div class="aa-header-inner">
+    <img class="logo-img" src="/assets/media/images/floral-background.png" fetchpriority="high">
+  </div>
+      <a class="aa-logo" href="index.html" aria-label="Aria Amore Home">Aria Amore</a>
+</header>
   <main class="maintenance-page">
-    <section class="hero">
-      <div class="content-wrapper">
-      <div class="envelope-container">
-        <div class="hero-letter">
+      <div class="container">
           <h1>The stage is being tuned</h1>
-          <p>Our ensemble is preparing a more harmonious experience.<br />
-             Please check back soon as Aria Amore takes a brief intermission.</p>
-          <div class="hero-letter-footer">
-            <a class="hero-letter-btn" href="">Return to home</a>
-          </div>
-        </div>
-      </div>
+          <img
+            id="hero-separator"
+            class="victorian-separator"
+            src="/assets/media/images/victorian-separator.svg"
+            alt=""
+            role="presentation">
+          <p>Please check back soon as Aria Amore takes a brief intermission for scheduled maintenance.</p>
  <!-- Corner brackets -->
-  <img src="assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
-  <img src="assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
-  <img src="assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
-  <img src="assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
+  <img src="/assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="Floral Corner">
+  <img src="/assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="Floral Corner">
+  <img src="/assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="Floral Corner">
+  <img src="/assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="Floral Corner">
     </div>
-    </section>
   </main>
+  <footer class="sub-footer">
+    <small>&copy; 2026 Aria Amore LLC | All Rights Reserved.</small>
+  </footer>
 </body>
 </html>

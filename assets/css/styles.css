@@ -60,7 +60,7 @@ body {
   width: 100vw;
   height: auto;
   overflow-x: hidden;
-  background-image: url(assets/media/images/parchment-background.webp);
+  background-image: url(/assets/media/images/parchment-background.webp);
   font-family:Georgia, 'Times New Roman', Times, serif;
   color: var(--color-primary);
   background-size: cover;
@@ -683,12 +683,13 @@ blockquote:hover {
   #mobile-nav-toggle {
     display: block;
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+    right: 0;
+    top: -16px;
+    width: fit-content;
     font-size: 2rem;
     text-align: left;
-    background-color: var(--color-primary);
+    background: transparent;
+    text-shadow: 1px 2px 1px #000;
     color: var(--color-secondary);
     border: none;
     padding: 12px 20px;
@@ -1012,7 +1013,8 @@ blockquote:hover {
   display: none; /* visible only in mobile breakpoint */
   background: transparent;
   color: var(--color-secondary);
-  border: var(--border-thin);
+  text-shadow: 1px 2px 1px #000;
+  border: none;
   padding: 8px 12px;
   font-size: 1.6rem;
   cursor: pointer;
@@ -1179,7 +1181,7 @@ blockquote:hover {
     height: 350px;
     overflow: hidden;
     position: relative;
-    background-image: url(assets/media/images/floral-background.png);
+    background-image: url(/assets/media/images/floral-background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 150% 120%;

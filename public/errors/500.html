@@ -4,10 +4,11 @@
   <title>500 - Server Error</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="error-code" content="500">
+  <meta name="error-type" content="internal-server-error">
   <!--Security Headers-->
   <meta http-equiv="Content-Security-Policy"
-      content="script-src 'self';
-               font-src 'self' https://fonts.gstatic.com;
+      content="font-src 'self' https://fonts.gstatic.com;
                img-src 'self' data:;
                connect-src 'self';
                frame-ancestors 'none';
@@ -17,12 +18,15 @@
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta name="robots" content="noindex, nofollow">
   <!--SEO & Branding-->
   <meta name="author" content="Modern Warrior School LLC">
+  <meta name="robots" content="noindex, nofollow">
   <!--External APIs-->
   <link rel="preload" href="https://fonts.gstatic.com/s/italianno.woff2" as="font" type="font/woff2" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <!--Media Load Optimization-->
+  <link rel="preload" href="/assets/media/images/floral-background.png" as="image">
+  <link rel="preload" href="/assets/media/images/parchment-background.webp" as="image">
   <style>
     * {
       margin: 0;
@@ -32,22 +36,23 @@
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-image: url(/assets/media/images/parchment-background.webp);
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
+      height: 100%;
+      width: 100%;
+      display: block;
+      padding: 0;
+      position: relative;
       font-family: Georgia, 'Times New Roman', Times, serif;
+      overflow-x: hidden;
     }
     .container {
       max-width: 600px;
-      height: 100%;
       position: relative;
+      height: 100%;
       text-align: center;
       background: linear-gradient(to bottom right,
                     hsl(41, 32%, 62%, 1),
                     hsla(38, 36%, 75%, 1) 60%,
-                    hsl(33, 41%, 71%, 1));      
+                    hsl(33, 41%, 71%, 1));
       padding: 30px 40px;
       border-radius: 10px;
       border: 1px groove #333;
@@ -55,6 +60,11 @@
                 2px 6px 8px rgba(20, 25, 30, 0.25),
                 inset 0 1px 2px rgba(255, 255, 255, 0.25),
                 inset 0 -1px 3px rgba(0,0,0,0.4);
+      margin-bottom: 3rem;
+      margin-top: 2rem;
+      margin-left: 20px;
+      margin-right: 20px;
+      justify-self: center;
     }
     .error-code {
       font-size: 10rem;
@@ -79,17 +89,40 @@
       line-height: 1.25;
     }
     .details {
-      background: #15151570;
+      background: linear-gradient(180deg,
+        rgba(78, 180, 75, 0.08),
+        rgba(91, 147, 27, 0.02)),
+        rgba(28, 22, 18, 0.45);      
       padding: 20px;
       border-radius: 5px;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
       margin: 30px 0;
+      color:#000;
+      text-shadow: 0px 1px 1px #252525bb;
+      font-weight: bold;
       text-align: left;
-      border-left: 4px solid #fa709a;
-      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
-                2px 6px 8px rgba(20, 25, 30, 0.25),
-                inset 0 1px 2px rgba(255, 255, 255, 0.25),
-                inset 0 -1px 3px rgba(0,0,0,0.4);
-    }
+      border: 1px groove #333333bb;
+      border-left: 6px solid #1e320bdd;
+      background-clip: padding-box;
+      -webkit-backdrop-filter: blur(6px) saturate(115%);
+      backdrop-filter: blur(6px) saturate(115%);
+      isolation: isolate;
+      -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 100%,
+        rgba(0, 0, 0, 0.85) 70%,
+        transparent 55%);
+      mask-image: radial-gradient(
+        ellipse at center,
+        black 100%,
+        rgba(0, 0, 0, 0.85) 70%,
+        transparent 55%);
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.74),
+                2px 6px 8px rgba(20, 25, 30, 0.5),
+                inset 0 1px 2px rgba(255, 255, 255, 0.5),
+                inset 0 -1px 3px rgba(0,0,0,0.74);
+    }  
     .actions {
       display: flex;
       gap: 20px;
@@ -163,10 +196,106 @@
   left: -8px;
   transform: scaleX(-1) scaleY(-1);
 }
+.aa-site-header {
+  position: sticky;
+  top:0px;
+  width: 100%;
+  z-index: 1200;
+  overflow: hidden;
+  background: linear-gradient(to bottom right,
+              hsl(41, 32%, 62%, 1), hsl(40, 30%, 40%));  
+  border-bottom: 1px groove #252525;
+  padding-top: env(safe-area-inset-top, 0);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
+                2px 6px 8px rgba(20, 25, 30, 0.25),
+                inset 0 1px 2px rgba(255, 255, 255, 0.25),
+                inset 0 -1px 3px rgba(0,0,0,0.4);;
+}
+.aa-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+    overflow: hidden;
+  height: 50px;
+  margin: 0 auto;
+  padding: 0 16px;
+  box-sizing: border-box;
+  background-repeat: repeat-x;
+  background-image: url(/assets/media/images/floral-background.png),
+                    url(/assets/media/images/floral-background.png),
+                    url(/assets/media/images/floral-background.png);
+  background-position:
+    15% 10%,
+    30% 0%,   
+    40% 20%; 
+  background-size: 250px, 
+                   150px,
+                   200px;
+  opacity: .8;
+  filter: saturate(.9);
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.75) 20%,
+    #000 70%);
+  mask-image: linear-gradient(
+    to top,
+    rgba(0,0,0,0.5) 0%,
+    rgba(0,0,0,0.75) 20%,
+    #000 70%);
+}
+.aa-logo {
+  font-family: "Italianno", cursive;
+  font-size: 2.25rem;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #d7ad2f50,
+               2px 2px 1px #000;
+  transition: all .25s ease-in-out;
+  position: absolute;
+  left: 20px;
+  top: 4px;
+}
+.aa-logo:hover {
+  color: #ccc;
+  transform: scale(1.02);
+}
+.logo-img {
+  height: 200px;
+  position: absolute;
+  left:-40px;
+  top:-45px;
+  z-index: -1;
+  opacity: .95;
+}
+footer {
+  color: #666;
+  width: 100vw;
+  height:30px;
+  position:static;
+  bottom: 0;
+  margin-top: 1rem;
+  background: radial-gradient(circle at 50% 50%, #111111, #222222);
+  font-style: italic;
+  text-align: center;
+  border-top: 2px groove #151515;
+  padding: 3px;
+}
   </style>
 </head>
 <body>
-  <div class="container">
+  <header class="aa-site-header" role="banner">
+  <div class="aa-header-inner">
+    <img class="logo-img" src="/assets/media/images/floral-background.png" fetchpriority="high">
+  </div>
+      <a class="aa-logo" href="index.html" aria-label="Aria Amore Home">Aria Amore</a>
+</header>
+<main>
+  <div class="container" aria-live="polite">
     <div class="error-code">500</div>
       <img
           id="hero-separator"
@@ -175,11 +304,11 @@
           alt=""
           role="presentation">
     <h1>Server Error</h1>
-    <p>We're sorry! Something went wrong on our end. Our team has been notified and is working to fix the issue.</p>
+    <p>We're sorry! Something went wrong on our end. This error has been logged and our team will address it promptly.</p>
     <div class="details">
-      <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Error:</strong> Internal Server Error<br>
-      <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Time:</strong> <span id="timestamp"></span><br>
-      <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Support:</strong> security@ariaamore.com
+      <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Error:</strong> <span style="text-shadow: none; color: #222; font-family: monospace;">Internal Server Error</span><br>
+      <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Time:</strong> <span id="timestamp" style="text-shadow: none; color: #222; font-family: monospace;"></span><br>
+      <strong style="font-family: Georgia, 'Times New Roman', Times, serif;">Support:</strong> <span style="text-shadow: none; color: #151515;">info@ariaamore.com</span>
     </div>
     <div class="actions">
       <a href="/" class="btn-primary">Return Home</a>
@@ -192,6 +321,10 @@
     <img src="/assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" role="presentation">
     <img src="/assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" role="presentation">
   </div>
+  </main>
+    <footer class="sub-footer">
+  <small>&copy; 2026 Aria Amore LLC | All Rights Reserved.</small>
+  </footer>
   <script>
     document.getElementById('timestamp').textContent = new Date().toLocaleString();
   </script>

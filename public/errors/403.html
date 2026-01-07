@@ -17,9 +17,9 @@
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
-  <meta name="robots" content="noindex, nofollow">
   <!--SEO & Branding-->
   <meta name="author" content="Modern Warrior School LLC">
+  <meta name="robots" content="noindex, nofollow">
   <!--External APIs-->
   <link rel="preload" href="https://fonts.gstatic.com/s/italianno.woff2" as="font" type="font/woff2" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
@@ -61,6 +61,8 @@
                 inset 0 -1px 3px rgba(0,0,0,0.4);
       margin-bottom: 3rem;
       margin-top: 2rem;
+      margin-left: 20px;
+      margin-right: 20px;
       justify-self: center;
     }
     .error-code {
@@ -80,24 +82,45 @@
       font-weight: 600;
     }
     p {
-      font-size: 18px;
+      font-size: 1rem;
       color: #666;
       margin-bottom: 30px;
       line-height: 1.6;
     }
     .details {
-      background: #15151570;
+      background: linear-gradient(180deg,
+        rgba(78, 180, 75, 0.08),
+        rgba(91, 147, 27, 0.02)),
+        rgba(28, 22, 18, 0.45);      
       padding: 20px;
       border-radius: 5px;
       border-top-left-radius: 2px;
       border-bottom-left-radius: 2px;
       margin: 30px 0;
+      color:#000;
+      text-shadow: 0px 1px 1px #252525bb;
+      font-weight: bold;
       text-align: left;
-      border-left: 6px solid hsl(16, 40%, 45%);
-      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.4),
-                2px 6px 8px rgba(20, 25, 30, 0.25),
-                inset 0 1px 2px rgba(255, 255, 255, 0.25),
-                inset 0 -1px 3px rgba(0,0,0,0.4);
+      border: 1px groove #333333bb;
+      border-left: 6px solid #1e320bdd;
+      background-clip: padding-box;
+      -webkit-backdrop-filter: blur(6px) saturate(115%);
+      backdrop-filter: blur(6px) saturate(115%);
+      isolation: isolate;
+      -webkit-mask-image: radial-gradient(
+        ellipse at center,
+        black 100%,
+        rgba(0, 0, 0, 0.85) 70%,
+        transparent 55%);
+      mask-image: radial-gradient(
+        ellipse at center,
+        black 100%,
+        rgba(0, 0, 0, 0.85) 70%,
+        transparent 55%);
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.74),
+                2px 6px 8px rgba(20, 25, 30, 0.5),
+                inset 0 1px 2px rgba(255, 255, 255, 0.5),
+                inset 0 -1px 3px rgba(0,0,0,0.74);
     }  
     .actions {
       display: flex;
@@ -173,16 +196,12 @@
   transform: scaleX(-1) scaleY(-1);
 }
 footer {
-  background: radial-gradient(circle at 50% 50%, #444444, #222222);
   color: #666;
   width: 100vw;
   height:30px;
   position:static;
   bottom: 0;
   margin-top: 1rem;
-
-}
-.sub-footer {
   background: radial-gradient(circle at 50% 50%, #111111, #222222);
   font-style: italic;
   text-align: center;
