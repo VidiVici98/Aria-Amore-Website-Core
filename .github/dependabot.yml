@@ -1,0 +1,90 @@
+version: 2
+updates:
+  # ----------------------
+  # PHP (Composer)
+  # ----------------------
+  - package-ecosystem: "composer"
+    directory: "/"  # Adjust if PHP files are moved into a subdirectory
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "deps"
+    labels:
+      - "dependencies"
+      - "php"
+    versioning-strategy: "auto"
+    # Group all minor/patch updates into one PR
+    groups:
+      all-composer:
+        patterns:
+          - "*"
+        pull-request-title: "chore: update PHP dependencies"
+
+  # ----------------------
+  # Python (pip)
+  # ----------------------
+  - package-ecosystem: "pip"
+    directory: "/"  # Adjust if Python scripts are in a subdir
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "deps"
+    labels:
+      - "dependencies"
+      - "python"
+    versioning-strategy: "auto"
+    groups:
+      all-pip:
+        patterns:
+          - "*"
+        pull-request-title: "chore: update Python dependencies"
+
+  # ----------------------
+  # Node.js (npm)
+  # ----------------------
+  - package-ecosystem: "npm"
+    directory: "/"  # Root, adjust if frontend assets are in a subdir
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "deps"
+    labels:
+      - "dependencies"
+      - "npm"
+    versioning-strategy: "auto"
+    groups:
+      all-npm:
+        patterns:
+          - "*"
+        pull-request-title: "chore: update npm dependencies"
+
+  # ----------------------
+  # GitHub Actions
+  # ----------------------
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    open-pull-requests-limit: 2
+    commit-message:
+      prefix: "deps"
+    labels:
+      - "dependencies"
+      - "actions"
+    versioning-strategy: "auto"
+    groups:
+      all-actions:
+        patterns:
+          - "*"
+        pull-request-title: "chore: update GitHub Actions"
+
+# ----------------------
+# Optional: Ignore major versions automatically (safe for low-traffic sites)
+# Uncomment and adjust as needed
+# ----------------------
+# ignore:
+#   - dependency-name: "*"
+#     versions: [">=2.0.0"]
