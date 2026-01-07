@@ -1,10 +1,11 @@
 <!-- AA: Clean site header (replace old header/nav) -->
-<header class="aa-site-header" role="banner">
+<header class="aa-site-header" role="banner" style="position: relative; height: 50px; display: block;">
   <div class="aa-header-inner">
-    <a class="aa-logo" href="index.html" aria-label="Aria Amore Home">Aria Amore</a>
-
+    <img class="logo-img" src="/assets/media/images/floral-background.png">
+  </div>
+      <a class="aa-logo" href="index.html" aria-label="Aria Amore Home">Aria Amore</a>
     <!-- Desktop navigation -->
-    <nav class="aa-desktop-nav" role="navigation" aria-label="Primary">
+    <nav class="aa-desktop-nav" role="navigation" aria-label="Primary" style="position: absolute; right: 0;top:8px;z-index: 3500;display: block;">
       <a href="index.html" class="aa-nav-link">Home</a>
       <a href="services.html" class="aa-nav-link">What We Offer</a>
       <a href="artists.html" class="aa-nav-link">Meet The Artists</a>
@@ -19,7 +20,6 @@
       aria-expanded="false"
       aria-label="Open menu"
     >☰</button>
-  </div>
 
   <!-- Mobile menu (keeps separate markup from desktop) -->
   <nav id="aaMobileMenu" class="aa-mobile-menu" role="navigation" aria-label="Mobile Primary">
