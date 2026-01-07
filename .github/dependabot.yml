@@ -14,12 +14,10 @@ updates:
       - "dependencies"
       - "php"
     versioning-strategy: "auto"
-    # Group all minor/patch updates into one PR
     groups:
       all-composer:
         patterns:
           - "*"
-        pull-request-title: "chore: update PHP dependencies"
 
   # ----------------------
   # Python (pip)
@@ -39,7 +37,6 @@ updates:
       all-pip:
         patterns:
           - "*"
-        pull-request-title: "chore: update Python dependencies"
 
   # ----------------------
   # Node.js (npm)
@@ -59,7 +56,6 @@ updates:
       all-npm:
         patterns:
           - "*"
-        pull-request-title: "chore: update npm dependencies"
 
   # ----------------------
   # GitHub Actions
@@ -79,7 +75,6 @@ updates:
       all-actions:
         patterns:
           - "*"
-        pull-request-title: "chore: update GitHub Actions"
 
 # ----------------------
 # Optional: Ignore major versions automatically (safe for low-traffic sites)
