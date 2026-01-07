@@ -34,13 +34,13 @@
   Header always set X-XSS-Protection "1; mode=block"
 
   # Content Security Policy - strict but flexible
-  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' data: https:; connect-src 'self' https:; frame-ancestors 'self';"
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com https://fonts.gstatic.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' data: https:; connect-src 'self'; frame-ancestors 'none'; upgrade-insecure-requests;"
 
   # Referrer Policy
   Header always set Referrer-Policy "strict-origin-when-cross-origin"
 
   # Feature Policy / Permissions Policy
-  Header always set Permissions-Policy "accelerometer=(), ambient-light-sensor=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+  Header always set Permissions-Policy "accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=(), picture-in-picture=(), fullscreen=(self)"
 
   # Enforce HTTPS
   Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
@@ -84,7 +84,7 @@
 
 # Custom error documents
 ErrorDocument 403 /403.html
-ErrorDocument 404 /404-page.html
+ErrorDocument 404 /404.html
 ErrorDocument 410 /410.html
 ErrorDocument 500 /500.html
 ErrorDocument 503 /503.html

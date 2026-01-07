@@ -36,7 +36,7 @@ Aria-Amore-Website-Core/
 │   ├── artists.html              # Artists/performers page
 │   ├── privacy-policy.html       # Privacy policy (legal)
 │   ├── terms-of-service.html     # Terms of service (legal)
-│   ├── 404-page.html             # 404 error page
+│   ├── 404.html             # 404 error page
 │   ├── maintenance-page.html     # Maintenance page
 │   ├── robots.txt                # Search engine crawler rules
 │   ├── sitemap.xml               # XML sitemap for SEO
@@ -107,7 +107,7 @@ Aria-Amore-Website-Core/
 - **Pages**: *.html files (served to browsers)
 - **SEO**: robots.txt, sitemap.xml, humans.txt
 - **Security**: security.txt
-- **Error Pages**: 404-page.html, maintenance-page.html
+- **Error Pages**: 404.html, maintenance-page.html
 
 ### Scripts (scripts/)
 - **Deployment**: deploy.sh

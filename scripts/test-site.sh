@@ -56,7 +56,7 @@ done
 
 # Test 3: Validate HTML files
 echo -e "${YELLOW}3️⃣  Validating HTML structure...${NC}"
-HTML_FILES=("index.html" "about.html" "services.html" "artists.html" "404-page.html" "privacy-policy.html" "terms-of-service.html")
+HTML_FILES=("index.html" "about.html" "services.html" "artists.html" "404.html" "privacy-policy.html" "terms-of-service.html")
 
 for file in "${HTML_FILES[@]}"; do
   if [ -f "$file" ]; then

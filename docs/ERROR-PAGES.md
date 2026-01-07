@@ -6,7 +6,7 @@ Your Aria Amore website now has professional, branded error pages for all common
 
 ## Error Pages Created
 
-### 1. **404 Page Not Found** (`404-page.html`)
+### 1. **404 Page Not Found** (`404.html`)
 - Displays when a user accesses a non-existent URL
 - Already existed in your codebase
 - Professional design with navigation options
@@ -37,7 +37,7 @@ The `.htaccess` file has been updated to map errors to these custom pages:
 
 ```apache
 ErrorDocument 403 /403.html
-ErrorDocument 404 /404-page.html
+ErrorDocument 404 /404.html
 ErrorDocument 410 /410.html
 ErrorDocument 500 /500.html
 ErrorDocument 503 /503.html
@@ -70,7 +70,7 @@ public/
 ├── privacy-policy.html     # Privacy policy
 ├── terms-of-service.html   # Terms of service
 ├── maintenance-page.html   # Maintenance page
-├── 404-page.html          # 404 error page
+├── 404.html          # 404 error page
 ├── 403.html               # 403 error page (NEW)
 ├── 410.html               # 410 error page (NEW)
 ├── 500.html               # 500 error page (NEW)
@@ -156,7 +156,7 @@ Edit the HTML files directly:
 - `public/503.html` - Maintenance message
 - `public/403.html` - Access denied message
 - `public/410.html` - Permanently deleted message
-- `public/404-page.html` - Not found message
+- `public/404.html` - Not found message
 
 ### Changing Colors & Styling
 Each error page has inline CSS that can be customized:
@@ -196,7 +196,7 @@ Add your logo to error pages:
   
   # Error pages
   ErrorDocument 403 /403.html
-  ErrorDocument 404 /404-page.html
+  ErrorDocument 404 /404.html
   ErrorDocument 410 /410.html
   ErrorDocument 500 /500.html
   ErrorDocument 503 /503.html
@@ -218,7 +218,7 @@ server {
   root /var/www/html/aria-amore/public;
   
   error_page 403 /403.html;
-  error_page 404 /404-page.html;
+  error_page 404 /404.html;
   error_page 410 /410.html;
   error_page 500 /500.html;
   error_page 503 /503.html;
@@ -242,7 +242,7 @@ server {
 
 ### 404 not working
 1. Verify `.htaccess` is readable
-2. Check `ErrorDocument 404 /404-page.html` is set
+2. Check `ErrorDocument 404 /404.html` is set
 3. Test with: `curl -v https://ariaamore.com/test`
 
 ## Best Practices

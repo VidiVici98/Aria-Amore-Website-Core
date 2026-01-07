@@ -78,7 +78,7 @@ aria-amore/
 ├── artists.html            # Our performers
 ├── privacy-policy.html     # Privacy policy
 ├── terms-of-service.html   # Terms of service
-├── 404-page.html          # 404 error page
+├── 404.html          # 404 error page
 ├── robots.txt             # Search engine rules
 ├── sitemap.xml            # XML sitemap
 ├── security.txt           # Vulnerability reporting

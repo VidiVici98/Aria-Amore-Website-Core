@@ -110,7 +110,7 @@ Aria-Amore-Website-Core/
 ├── about.html
 ├── services.html
 ├── artists.html
-├── 404-page.html
+├── 404.html
 ├── maintenance-page.html
 ├── assets/
 ├── components/
