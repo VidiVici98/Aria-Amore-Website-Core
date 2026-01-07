@@ -70,7 +70,6 @@ updates:
     labels:
       - "dependencies"
       - "actions"
-    versioning-strategy: "auto"
     groups:
       all-actions:
         patterns:
