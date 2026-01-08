@@ -11,11 +11,14 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         const container = document.getElementById(containerId);
         if (container) container.innerHTML = data;
+        return container; // return for chaining
       })
       .catch(err => console.error(err));
   }
   loadComponent("site-header-container", "/components/header.html");
   loadComponent("site-footer-container", "/components/footer.html");
+  loadComponent("event-banner-container", "/components/event-banner.html");
+
   // =======================
   // HOMEPAGE JSON POPULATION
   // =======================
@@ -98,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (idx === 0) div.classList.add('active'); // first slide active
         div.innerHTML = `
           <div class="stars-wrapper">
-            ${'<img class="stars" src="assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
+            ${'<img class="stars" src="/assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
           </div>
           <p class="testimonial-text">"${t.text}"</p>
           <cite class="testimonial-author">${t.author}</cite>
@@ -183,3 +186,24 @@ document.addEventListener("DOMContentLoaded", () => {
     updateCarousel();
   }, 200);
 });
+document.addEventListener("DOMContentLoaded", () => {
+  loadComponent("event-banner-container", "/components/event-banner.html")
+    .then(container => {
+      if (!container) return;
+      const banner = container.querySelector('#event-banner');
+      const closeBtn = container.querySelector('#event-banner-close');
+      if (banner && closeBtn) {
+        // Hide banner if previously dismissed
+        if (localStorage.getItem('eventBannerDismissed') === 'true') {
+          banner.style.display = 'none';
+          return;
+        }
+        // Close button functionality
+        closeBtn.addEventListener('click', () => {
+          banner.style.display = 'none';
+          localStorage.setItem('eventBannerDismissed', 'true');
+        });
+      }
+    });
+});
+

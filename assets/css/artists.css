@@ -2,7 +2,7 @@
 :root{
   --max-width:1200px;
   --pad:24px;
-  --bg-paper: url('assets/media/images/parchment-background.webp');
+  --bg-paper: url('/assets/media/images/parchment-background.webp');
   --accent: #cfae7a;
   --accent-deep: #a2583e;
   --muted: #6b6b6b;

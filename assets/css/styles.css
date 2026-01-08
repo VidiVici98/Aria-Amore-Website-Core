@@ -58,8 +58,9 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1.7;
   width: 100vw;
-  height: auto;
+  height: 100%;
   overflow-x: hidden;
+  position: relative;
   background-image: url(/assets/media/images/parchment-background.webp);
   font-family:Georgia, 'Times New Roman', Times, serif;
   color: var(--color-primary);
@@ -149,18 +150,6 @@ footer {
   border-top: var(--border-thin);
   color: var(--color-secondary);
   width: 100vw;
-  margin-top: 5rem;
-}
-footer h2 {
-  text-align: center;
-  font-size: 2rem; 
-  color: var(--color-active);  
-}
-.footer-columns-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  padding-top: .75rem;
-  justify-items: center;
 }
 .about-column {
   width: 70%;
@@ -558,11 +547,12 @@ footer h2 {
   transform: var(--hover-transform);
 }
 .social-icons {
-  width: 2rem;
-  border-radius: 0;
   border: none;
-  position: relative;
   transition: var(--quick-transition);
+  margin-left: 8px;
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
 }
 /* ================================
    Testimonials
@@ -677,7 +667,6 @@ blockquote:hover {
   .envelope-container { width: 70%; left: 15px; }
   .event-grid { gap: 15px; }
   .plan { max-width: 200px; padding: 20px; }
-  footer h2 { font-size: 1.75rem; }
 }
 @media screen and (max-width: 700px) {
   #mobile-nav-toggle {
@@ -796,10 +785,6 @@ blockquote:hover {
     font-size: 0.9rem;
     text-align: center;
   }
-  .footer-columns-wrapper {
-    grid-template-columns: 1fr;
-    padding: 10px;
-  }
   .about-column, .socials-column {
     width: 90%;
   }
@@ -812,7 +797,6 @@ blockquote:hover {
   .staff .artist-portrait { width: 200px; height: 200px; }
   .plan { padding: 15px; }
   .price { font-size: 1.25rem; }
-  footer h2 { font-size: 1.5rem; }
 }
 .featured-title {
   font-size: 2.5rem;
@@ -931,7 +915,7 @@ blockquote:hover {
   align-items: center;
   justify-content: space-between;
   max-width: 1200px;
-    overflow: hidden;
+  overflow: hidden;
   height: 50px;
   margin: 0 auto;
   padding: 0 16px;
@@ -962,7 +946,7 @@ blockquote:hover {
 }
 .aa-logo {
   font-family: "Italianno", cursive;
-  font-size: 2.25rem;
+  font-size: 2.75rem;
   font-weight: 400;
   color: #fff;
   text-decoration: none;
@@ -971,7 +955,7 @@ blockquote:hover {
   transition: all .25s ease-in-out;
   position: absolute;
   left: 20px;
-  top: 4px;
+  top: -4px;
 }
 .aa-logo:hover {
   color: #ccc;
@@ -990,16 +974,18 @@ blockquote:hover {
   gap: 24px;
   align-items: center;
   position: absolute;
-  right:30px;
-  top:4px;
+  right:40px;
+  top:2px;
 }
 .aa-nav-link {
   color: var(--color-secondary);
+  font-family: "Quintessential", serif;
   text-decoration: none;
   font-style: italic;
-  font-size: 1.75rem;
-  font-weight: 500;
-  text-shadow: 2px 2px 1px #000;
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 1px 2px 1px #000,
+               1px 2px 2px #151515dd;
   padding: 8px 6px;
   transition: color .25s ease, transform .25s ease;
   z-index: 5000;
@@ -1191,4 +1177,58 @@ blockquote:hover {
 @media (max-width: 480px) {
   .note { font-size: 1.1rem; }
   .brand { font-size: 4rem; }
+}
+.header-area {
+  position: relative;
+  z-index: 1200;
+}
+/* Sitewide Event Banner */
+#event-banner-container {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  z-index: 9999;
+}
+.event-banner {
+  background: linear-gradient(to top, #151515 15%, #252525dd 70%, #222222 100%);
+  color: #ddd;
+  text-align: center;
+  height: 30px;
+  padding: 2px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 600;
+  font-size: .9rem;
+  width: 100%;
+  z-index: 9999;
+  backdrop-filter: blur(4px);
+  text-shadow: 1px 1px 1px #000;
+}
+.event-banner span {
+  color:hsl(20, 75%, 75%);
+  font-style: italic;
+  font-size: .95rem;
+  text-shadow: 1px 1px 1px #4e0606,
+               2px 2px 3px #000000bb;
+}
+.event-banner a.event-banner-link {
+  color: #ddd;
+  text-decoration: underline;
+  font-weight: 700;
+  margin-left: 0.25em;
+  font-size: .9rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style:italic;
+}
+.event-banner button.event-banner-close {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000,
+               2px 2px 4px #666;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
