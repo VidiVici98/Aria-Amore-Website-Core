@@ -1,0 +1,108 @@
+/* =========================
+   EVENTS PAGE
+   ========================= */
+.events-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem .5rem;
+}
+/* Hero */
+.events-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.events-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.events-hero p {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.85;
+}
+/* Sections */
+.events-section {
+  margin-bottom: 4rem;
+}
+.events-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 2px solid #b08b4f;
+  padding-bottom: 0.5rem;
+}
+/* Event Card */
+.event-card {
+  border: 1px groove #333;
+  border-radius: 6px;
+  margin-bottom: 2rem;
+  padding: .75rem;
+  background: linear-gradient(to bottom right,
+                    hsl(41, 32%, 62%, 1),
+                    hsla(38, 36%, 75%, 1) 60%,
+                    hsl(33, 41%, 71%, 1));
+  box-shadow:  0px 1px 6px rgba(0, 0, 0, 0.4),
+                2px 6px 8px rgba(20, 25, 30, 0.25),
+                inset 0 1px 2px rgba(255, 255, 255, 0.25),
+                inset 0 -1px 3px rgba(0,0,0,0.4);
+}
+/* Details / Summary */
+.event-card details summary {
+  cursor: pointer;
+  font-weight: 600;
+  margin: 1rem 0;
+  list-style: none;
+}
+.event-card details summary::-webkit-details-marker {
+  display: none;
+}
+.event-card details summary::after {
+  content: "▾";
+  float: right;
+  transition: transform 0.2s ease;
+}
+.event-card details[open] summary::after {
+  transform: rotate(180deg);
+}
+/* Event Content */
+.event-content {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+.event-content img {
+  width: 100%;
+  border-radius: 4px;
+}
+/* Text */
+.event-description p {
+  margin-bottom: 1rem;
+}
+.event-details {
+  margin-bottom: 1.5rem;
+  padding-left: 1.2rem;
+}
+.event-details li {
+  margin-bottom: 0.4rem;
+}
+/* Archived */
+.events-section.archived .event-card {
+  background: #f8f8f8;
+  opacity: 0.9;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .event-content {
+    grid-template-columns: 1fr;
+  }
+  .events-hero h1 {
+    font-size: 2.2rem;
+  }
+}
+.share-icons-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+  position: relative;
+}
