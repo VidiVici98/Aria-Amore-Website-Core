@@ -50,6 +50,7 @@ time, mark, audio, video {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
+  scroll-behavior: smooth;
 }
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
@@ -964,14 +965,14 @@ blockquote:hover {
   align-items: center;
   position: absolute;
   right:40px;
-  top:2px;
+  top:10px;
 }
 .aa-nav-link {
   color: var(--color-secondary);
   font-family: "Quintessential", serif;
   text-decoration: none;
   font-style: italic;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 400;
   text-shadow: 1px 2px 1px #000,
                1px 2px 2px #151515dd;
