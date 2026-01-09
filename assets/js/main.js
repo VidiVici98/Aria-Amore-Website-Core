@@ -206,4 +206,14 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 });
-
+const curtain = document.querySelector(".curtain-wrapper");
+// Open curtains on page load
+setTimeout(() => curtain.classList.add("open"), 100);
+// Navigation with curtain animation
+document.querySelectorAll("a[href]").forEach(link => {
+  link.addEventListener("click", e => {
+    e.preventDefault();
+    curtain.classList.remove("open");
+    setTimeout(() => window.location.href = link.href, 1400);
+  });
+});
