@@ -150,7 +150,7 @@ ${ev.address}
           </ul>
           <img class="victorian-separator" src="/assets/media/images/victorian-separator.svg" alt="" role="presentation">
           <div class="share-icons-wrapper">
-            <strong>Save The Date & Spread The Word</strong>
+            <strong class="spread-word">Save The Date & Spread The Word</strong>
             <a href="${googleCalendarLink(ev)}" target="_blank" rel="noopener">
               <img src="/assets/media/images/google-calendar.svg" class="share-icons">
             </a>
@@ -247,25 +247,6 @@ if (calendarWrapper && upcomingEvents.length) {
     setTimeout(() => scrollToEventWithHighlight(id), 300);
   }
 });
-// =========================
-// ACCESSIBILITY: REDUCED MOTION
-// =========================
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-// Patch scroll helper
-const originalScroll = window.scrollToEventWithHighlight;
-window.scrollToEventWithHighlight = function (id) {
-  const target = document.getElementById(id);
-  if (!target) return;
-  target.scrollIntoView({
-    behavior: prefersReducedMotion ? 'auto' : 'smooth',
-    block: 'start'
-  });
-  if (!prefersReducedMotion) {
-    target.classList.add('event-highlight');
-    setTimeout(() => target.classList.remove('event-highlight'), 2000);
-  }
-  history.pushState(null, '', `#${id}`);
-};
 // =========================
 // IMAGE OPTIMIZATION
 // =========================
