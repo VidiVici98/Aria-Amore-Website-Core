@@ -17,20 +17,42 @@ body {
   margin: 0;
   overflow-x: hidden;
 }
+.services-page {
+  position: relative
+}
 .services-page #packages {
   text-align: center;
-  padding: 60px 0;
 }
 .services-page #packages h2 {
   font-size: 2.5rem;
-  background-color: #111111c9;
-  border: 2px groove var(--color-border);
+  background-color: transparent;
+  border: none;
   border-radius: 10px;
   padding: 15px;
   margin: 10px 40px;
   margin-bottom: 75px;
-  text-shadow: 2px 2px #000;
+  color: var(--accent-deep);
+  text-shadow: 2px 2px 2px #000;
   position: relative;
+}
+.fancy-heading {
+  top: 65px;
+  position: relative;
+  justify-self: center;
+}
+.fancy-heading .flourish-side-ornament,
+.fancy-heading .flourish-side-ornament-right {
+  width: 350px;
+  opacity: .65;
+}
+.fancy-heading .flourish-side-ornament-right {
+  transform: scaleX(-1);
+}
+.fancy-heading .flourish-side-ornament.bottom {
+  transform: scaleY(-1);
+}
+.fancy-heading .flourish-side-ornament-right.bottom {
+  transform: scale(-1);
 }
 .services-page .carousel-container {
   position: relative;
