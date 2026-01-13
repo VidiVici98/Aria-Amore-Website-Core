@@ -1,0 +1,49 @@
+name: CodeQL
+
+on:
+  schedule:
+    - cron: '0 3 1 * *'   # once a month
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  analyze:
+    name: Analyze
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: [ 'javascript', 'php', 'python' ]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: security
+
+      # No explicit build step needed.
+      # Your "server folder rearrangement" script is irrelevant to static analysis.
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
+          paths-ignore: |
+            docs/**
+            scripts/**
+            .github/**
+            .vscode/**
+            .well-known/**
+            **/*.txt
+            README*
