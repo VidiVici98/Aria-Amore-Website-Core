@@ -1,10 +1,16 @@
 # Aria Amore Website Screenshots
 
-This directory contains comprehensive screenshots of all pages in the Aria Amore website. Each screenshot captures the viewport to ensure proper rendering of backgrounds, styles, and all visual elements.
+This directory contains comprehensive screenshots of all pages in the Aria Amore website. Each screenshot is captured **after the curtain opening animation completes** to ensure all page content and features are fully visible.
 
 ## Screenshot Approach
 
-Due to full-page screenshot limitations with complex backgrounds and styles, these screenshots use viewport captures that show the actual rendered appearance of each page as users would see it.
+**Important:** Screenshots are taken 3 seconds after page load to allow the curtain opening animation to complete (animation duration: 2 seconds). This ensures that:
+- All page content is fully visible
+- No red curtain overlay obscures the page
+- All major features are properly showcased
+- Users see the actual rendered page as intended
+
+Due to full-page screenshot limitations with complex backgrounds and styles, these screenshots use viewport captures (1280x720) that show the actual rendered appearance of each page as users would see it.
 
 ## Main Pages
 
@@ -15,7 +21,8 @@ Due to full-page screenshot limitations with complex backgrounds and styles, the
   - ![Homepage Hero](https://github.com/user-attachments/assets/9715a2b3-45b4-41ca-a9ad-9d28950d2774)
 
 - **01-homepage-packages.png** - Package comparison section
-  - Shows: Same hero view (viewport capture)
+  - Shows: Packages section (scrolled 800px down from hero)
+  - Features: Service package options and booking information
   - ![Homepage Packages](https://github.com/user-attachments/assets/c6a7cd35-d91b-4b78-ad6c-03e5e86b705b)
 
 ### 2. About Page (about.html)
@@ -77,9 +84,10 @@ The following pages were intentionally **not** screenshotted per requirements:
 ## Screenshot Details
 
 - **Format**: PNG
-- **Capture Method**: Viewport screenshots (not full-page) to ensure proper background rendering
+- **Capture Method**: Viewport screenshots (1280x720) taken **after curtain animation completes**
 - **Browser**: Chromium (via Playwright)
-- **Viewport Size**: Default desktop viewport (1280x720)
+- **Viewport Size**: 1280x720 (standard desktop viewport)
+- **Animation Wait**: 3 seconds after page load to ensure curtain has fully opened
 - **Date Captured**: January 29, 2026
 
 ## Technical Notes
@@ -109,40 +117,55 @@ These screenshots can be used for:
 
 ## Updating Screenshots
 
-### ⚠️ IMPORTANT: Server Must Be Running
+### Automated Script (Recommended)
 
-Screenshots will **only render correctly** if the PHP development server is running. The site uses symlinks (`public/assets -> ../assets`) which require an active server to resolve.
-
-### Quick Start (Recommended)
-
-```bash
-# Use the screenshot capture script (handles server automatically)
-./scripts/capture-screenshots.sh
-```
-
-This script will:
-1. Check if server is running (or start it)
-2. Verify assets are accessible
-3. Keep server alive during screenshot capture
-4. Display instructions for capturing screenshots
-
-### Manual Process
-
-If you prefer to start the server manually:
+Use the Node.js script with Playwright to automatically capture all screenshots after curtain animation:
 
 ```bash
 # 1. Start the PHP development server
-cd /home/runner/work/Aria-Amore-Website-Core/Aria-Amore-Website-Core
+cd /path/to/Aria-Amore-Website-Core  # Navigate to your project root
+php -S localhost:8000 -t public &
+
+# 2. Run the screenshot capture script
+node scripts/capture-screenshots.js http://localhost:8000
+
+# The script will:
+# - Wait for curtain animation to complete (3 seconds)
+# - Capture all main pages
+# - Capture homepage sections with different scroll positions
+# - Save screenshots to docs/screenshots/
+```
+
+### Script Features
+
+The automated script (`scripts/capture-screenshots.js`):
+- ✅ Waits 3 seconds for curtain animation to complete
+- ✅ Captures screenshots with curtain fully opened
+- ✅ Handles scrolling for homepage sections
+- ✅ Creates sections/ subfolder automatically
+- ✅ Uses consistent viewport (1280x720)
+- ✅ Provides progress feedback
+- ✅ Captures all 13 screenshots automatically
+
+### Manual Process (Alternative)
+
+If you need to capture screenshots manually:
+
+```bash
+# 1. Start the PHP development server
+cd /path/to/Aria-Amore-Website-Core  # Navigate to your project root
 php -S localhost:8000 -t public
 
 # 2. Keep server running in background or separate terminal
 
-# 3. Use Playwright to capture screenshots
+# 3. Use Playwright or browser DevTools to capture screenshots
 # - Navigate to http://localhost:8000/[page].html
-# - Wait 2-3 seconds for full page load
+# - **IMPORTANT:** Wait 3+ seconds for curtain animation to complete
 # - Take viewport screenshot (NOT full-page)
 # - Save to docs/screenshots/
 ```
+
+**Critical:** Always wait at least 3 seconds after page load before taking screenshots to ensure the curtain opening animation has completed.
 
 ### Why Server is Required
 
@@ -157,6 +180,13 @@ HTML files use absolute paths (`/assets/css/styles.css`) which:
 - ✅ Resolve properly in production build (symlinks copied as real files)
 
 ### Troubleshooting
+
+**Problem: Screenshot shows red curtain overlay**
+- **Cause:** Screenshot taken before curtain animation completed
+- **Solution:** 
+  1. Wait 3+ seconds after page load
+  2. Use the automated script which handles timing automatically
+  3. Verify curtain has `.open` class in browser DevTools
 
 **Problem: Screenshot shows only background, no content**
 - **Cause:** Server not running or assets not loading
@@ -175,4 +205,6 @@ HTML files use absolute paths (`/assets/css/styles.css`) which:
 ---
 
 **Last Updated**: January 29, 2026  
-**Total Screenshots**: 11 main pages + 2 homepage sections = 13 total
+**Total Screenshots**: 11 main pages + 2 homepage sections = 13 total  
+**Capture Method**: Automated with Playwright (waits for curtain animation)  
+**Animation Handling**: 3-second wait ensures curtain is fully opened
