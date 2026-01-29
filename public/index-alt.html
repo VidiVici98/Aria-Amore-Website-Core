@@ -402,6 +402,10 @@
       font-size: 0.9rem;
     }
 
+    #calendar-days {
+      display: contents;
+    }
+
     .calendar-day {
       aspect-ratio: 1;
       display: flex;
@@ -412,6 +416,7 @@
       transition: var(--transition-smooth);
       position: relative;
       background: rgba(255,255,255,0.05);
+      min-height: 60px;
     }
 
     .calendar-day:hover {
@@ -1008,7 +1013,7 @@
       
       <div class="calendar-container animate-on-scroll">
         <div class="calendar-header">
-          <div class="calendar-month" id="calendar-month">March 2026</div>
+          <div class="calendar-month" id="calendar-month"></div>
           <div class="calendar-nav">
             <button onclick="changeMonth(-1)">← Prev</button>
             <button onclick="changeMonth(1)">Next →</button>
@@ -1241,8 +1246,9 @@
     }
 
     // Calendar Functionality
-    let currentMonth = 2; // March (0-indexed)
-    let currentYear = 2026;
+    const today = new Date();
+    let currentMonth = today.getMonth();
+    let currentYear = today.getFullYear();
 
     function generateCalendar() {
       const daysContainer = document.getElementById('calendar-days');
