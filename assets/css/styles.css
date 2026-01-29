@@ -28,6 +28,20 @@ Global Variables
                                   repeating-linear-gradient(50deg,
                                       rgba(255, 255, 255, 0.95) 0 1px,
                                       transparent 1px 4px);
+  
+  /* Spacing System */
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 1rem;      /* 16px */
+  --space-md: 1.5rem;    /* 24px */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 3rem;      /* 48px */
+  --space-xxl: 4rem;     /* 64px */
+  --space-xxxl: 6rem;    /* 96px */
+  
+  /* Layout Constants */
+  --content-max-width: 1200px;
+  --section-padding: var(--space-xxl) var(--space-lg);
+  --card-gap: var(--space-lg);
 }
 
 /* Smooth scrolling for the entire page */
@@ -92,6 +106,19 @@ h1, h2 {
   font-weight: 400;
   font-style: normal;
   color: var(--color-subdued);
+  margin-bottom: var(--space-md);
+  line-height: 1.2;
+}
+h3, h4, h5, h6 {
+  margin-bottom: var(--space-sm);
+  line-height: 1.3;
+}
+p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.7;
+}
+p:last-child {
+  margin-bottom: 0;
 }
 a {
   font-family: "Italianno", cursive;

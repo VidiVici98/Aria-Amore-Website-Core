@@ -73,7 +73,7 @@ section {
     url('/assets/media/images/parchment-background.webp');
   background-size: cover;
   background-attachment: fixed;
-  padding: 4rem 2rem;
+  padding: var(--space-xxl) var(--space-lg);
   margin: 0;
   border-top: 3px solid #b08b4f;
   border-bottom: 3px solid #b08b4f;
@@ -228,7 +228,7 @@ section {
     linear-gradient(to bottom, rgba(26, 20, 16, 0.95) 0%, rgba(44, 36, 22, 0.95) 50%, rgba(26, 20, 16, 0.95) 100%),
     url('/assets/media/images/parchment-background.webp');
   background-size: cover;
-  padding: 4rem 2rem;
+  padding: var(--space-xxl) var(--space-lg);
   text-align: center;
   position: relative;
   box-shadow: inset 0 3px 10px rgba(0,0,0,0.2);
@@ -269,7 +269,7 @@ section {
 .sales-funnel-section .subtitle {
   color: #b08b4f;
   font-size: 1.3rem;
-  margin-bottom: 3rem;
+  margin-bottom: var(--space-lg);
   font-style: italic;
   font-family: Georgia, serif;
   letter-spacing: 0.5px;
@@ -280,8 +280,8 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
-  margin-bottom: 3rem;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-xl);
   position: relative;
 }
 
@@ -473,7 +473,7 @@ section {
     linear-gradient(to right, rgba(44, 36, 22, 0.95) 0%, rgba(61, 48, 32, 0.95) 50%, rgba(44, 36, 22, 0.95) 100%),
     url('/assets/media/images/parchment-background.webp');
   background-size: cover;
-  padding: 5rem 2rem;
+  padding: var(--space-xxl) var(--space-lg);
   margin: 0;
   position: relative;
   border-top: 5px double #b08b4f;

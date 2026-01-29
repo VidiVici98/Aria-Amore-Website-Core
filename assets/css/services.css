@@ -166,7 +166,7 @@ body {
 .services-page .rsvp-section {
     display: flex;
     justify-content: center;
-    padding: 60px 20px;
+    padding: var(--space-xxl) var(--space-lg);
     background: transparent;
   }
   .services-page .rsvp-card {
@@ -174,7 +174,7 @@ body {
     background: linear-gradient(to bottom,
      rgba(245,235,215,0.6),
      rgba(230,210,180,0.8));
-    padding: 40px;
+    padding: var(--space-xl);
     max-width: 800px;
     border-radius: 25px;
     box-shadow: var(--box-shadow);
@@ -199,15 +199,15 @@ body {
     font-family: Georgia, serif;
     font-size: 1.25rem;
     color: #1a1a1a;
-    margin-bottom: 30px;
+    margin-bottom: var(--space-lg);
     text-align: center;
     line-height: 1.7;
   }
   .services-page .rsvp-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px 40px;
-    margin-bottom: 30px;
+    gap: var(--space-md) var(--space-xl);
+    margin-bottom: var(--space-lg);
   }
   .services-page .fancy-heading {
     display: flex;
