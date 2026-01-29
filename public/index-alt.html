@@ -54,6 +54,14 @@
       --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
+    /* Body background from main styles.css */
+    body {
+      background-image: url(/assets/media/images/parchment-background.webp);
+      background-size: cover;
+      background-attachment: fixed;
+      position: relative;
+    }
+
     /* Modern Hero Section */
     .hero-alt {
       min-height: 90vh;
@@ -201,7 +209,8 @@
     /* Package Comparison Section */
     .comparison-section {
       padding: 6rem 2rem;
-      background: linear-gradient(to bottom, #f9f6f0, #fff);
+      background: rgba(249, 246, 240, 0.8);
+      backdrop-filter: blur(5px);
     }
 
     .section-header {
@@ -454,7 +463,8 @@
     /* Video Gallery Section */
     .video-gallery-section {
       padding: 6rem 2rem;
-      background: linear-gradient(to bottom, #fff, #f9f6f0);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(5px);
     }
 
     .video-grid {
@@ -673,7 +683,8 @@
     /* Process Timeline Section */
     .process-section {
       padding: 6rem 2rem;
-      background: #fff;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
     }
 
     .timeline {
@@ -845,6 +856,45 @@
     .animate-on-scroll.animated {
       opacity: 1;
       transform: translateY(0);
+    }
+
+    /* Ensure sections have proper backgrounds and spacing */
+    section {
+      position: relative;
+    }
+
+    #performers, #testimonials {
+      padding: 6rem 2rem;
+      min-height: 400px;
+      background: rgba(249, 246, 240, 0.7);
+      backdrop-filter: blur(5px);
+    }
+
+    #performers h2, #testimonials h2 {
+      text-align: center;
+      font-family: 'Italianno', cursive;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--accent-deep);
+      margin-bottom: 3rem;
+    }
+
+    .carousel-wrapper {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      min-height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .testimonial-carousel {
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
 </head>
