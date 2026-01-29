@@ -21,6 +21,9 @@ const SERVER_URL = process.argv[2] || 'http://localhost:8000';
 const SCREENSHOT_DIR = path.join(__dirname, '../docs/screenshots');
 const VIEWPORT = { width: 1280, height: 720 };
 
+// Timing configuration
+const CURTAIN_ANIMATION_WAIT_MS = 3000; // Wait for curtain animation (100ms delay + 2s animation + buffer)
+
 // Pages to screenshot
 const PAGES = [
   { url: '/index.html', filename: '01-homepage-hero.png', description: 'Homepage Hero', scrollY: 0 },
@@ -48,6 +51,11 @@ async function captureScreenshots() {
   console.log(`Server URL: ${SERVER_URL}`);
   console.log(`Viewport: ${VIEWPORT.width}x${VIEWPORT.height}`);
   console.log(`Output Directory: ${SCREENSHOT_DIR}\n`);
+
+  // Track success/failure
+  let totalScreenshots = 0;
+  let successfulScreenshots = 0;
+  let failedScreenshots = 0;
 
   // Ensure screenshot directories exist
   if (!fs.existsSync(SCREENSHOT_DIR)) {
@@ -90,8 +98,8 @@ async function captureScreenshots() {
         });
 
         // CRITICAL: Wait for curtain animation to complete
-        console.log('   ⏳ Waiting for curtain animation to complete (3 seconds)...');
-        await page.waitForTimeout(3000);
+        console.log(`   ⏳ Waiting for curtain animation to complete (${CURTAIN_ANIMATION_WAIT_MS/1000} seconds)...`);
+        await page.waitForTimeout(CURTAIN_ANIMATION_WAIT_MS);
 
         // Additional check: ensure curtain wrapper has 'open' class
         await page.waitForSelector('.curtain-wrapper.open', { 
@@ -131,7 +139,13 @@ async function captureScreenshots() {
       const outputPath = path.join(SCREENSHOT_DIR, pageInfo.filename);
 
       console.log(`\n[${i + 1}/${PAGES.length}] ${pageInfo.description}`);
-      await capturePageScreenshot(url, outputPath, pageInfo.description, pageInfo.scrollY || 0);
+      totalScreenshots++;
+      const success = await capturePageScreenshot(url, outputPath, pageInfo.description, pageInfo.scrollY || 0);
+      if (success) {
+        successfulScreenshots++;
+      } else {
+        failedScreenshots++;
+      }
     }
 
     // Capture homepage sections
@@ -142,7 +156,13 @@ async function captureScreenshots() {
       const outputPath = path.join(SCREENSHOT_DIR, sectionInfo.filename);
 
       console.log(`\n[Section ${i + 1}/${HOMEPAGE_SECTIONS.length}] ${sectionInfo.description}`);
-      await capturePageScreenshot(url, outputPath, sectionInfo.description, sectionInfo.scrollY);
+      totalScreenshots++;
+      const success = await capturePageScreenshot(url, outputPath, sectionInfo.description, sectionInfo.scrollY);
+      if (success) {
+        successfulScreenshots++;
+      } else {
+        failedScreenshots++;
+      }
     }
 
     await context.close();
@@ -159,13 +179,26 @@ async function captureScreenshots() {
   console.log(`\nScreenshots saved to: ${SCREENSHOT_DIR}`);
   console.log(`Main pages: ${PAGES.length}`);
   console.log(`Homepage sections: ${HOMEPAGE_SECTIONS.length}`);
-  console.log(`Total: ${PAGES.length + HOMEPAGE_SECTIONS.length} screenshots\n`);
+  console.log(`\n📊 Results:`);
+  console.log(`   Total: ${totalScreenshots}`);
+  console.log(`   Successful: ${successfulScreenshots}`);
+  console.log(`   Failed: ${failedScreenshots}`);
+  
+  if (failedScreenshots > 0) {
+    console.log(`\n⚠️  Warning: ${failedScreenshots} screenshot(s) failed to capture`);
+    console.log('   Please check the error messages above for details.');
+    return false;
+  }
+  
+  console.log('\n✅ All screenshots captured successfully!\n');
+  return true;
 }
 
 // Main execution
 (async () => {
   try {
-    await captureScreenshots();
+    const success = await captureScreenshots();
+    process.exit(success ? 0 : 1);
   } catch (error) {
     console.error('Error:', error);
     process.exit(1);

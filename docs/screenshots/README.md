@@ -123,7 +123,7 @@ Use the Node.js script with Playwright to automatically capture all screenshots 
 
 ```bash
 # 1. Start the PHP development server
-cd /home/runner/work/Aria-Amore-Website-Core/Aria-Amore-Website-Core
+cd /path/to/Aria-Amore-Website-Core  # Navigate to your project root
 php -S localhost:8000 -t public &
 
 # 2. Run the screenshot capture script
@@ -153,7 +153,7 @@ If you need to capture screenshots manually:
 
 ```bash
 # 1. Start the PHP development server
-cd /home/runner/work/Aria-Amore-Website-Core/Aria-Amore-Website-Core
+cd /path/to/Aria-Amore-Website-Core  # Navigate to your project root
 php -S localhost:8000 -t public
 
 # 2. Keep server running in background or separate terminal
