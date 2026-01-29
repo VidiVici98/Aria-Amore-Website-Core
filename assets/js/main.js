@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const res = await fetch('/data/homepage.json');
       if (!res.ok) throw new Error('Failed to load homepage.json');
       const data = await res.json();
-      // HERO
+      // HERO (only for index.html with envelope design)
       const heroTitle = document.querySelector('.hero .envelope-body h1');
       const heroSubtitle = document.querySelector('.hero .envelope-body h2');
       const heroSeparator = document.querySelector('.hero .envelope-body .victorian-separator');
@@ -35,94 +35,104 @@ document.addEventListener("DOMContentLoaded", () => {
       const heroLetterText = document.querySelector('.hero-letter p');
       const heroLetterCta = document.querySelector('.hero-letter-btn');
       const heroIconsWrapper = document.querySelector('.hero-icons-wrapper');
-      heroTitle.textContent = data.hero.title;
-      heroSubtitle.textContent = data.hero.subtitle;
-      heroSeparator.src = data.hero.separator;
-      heroLetterHeading.textContent = data.hero.letter.heading;
-      heroLetterText.textContent = data.hero.letter.text;
-      heroLetterCta.textContent = data.hero.letter.ctaText;
-      heroLetterCta.href = data.hero.letter.ctaHref;
-      heroIconsWrapper.innerHTML = '';
-      data.hero.letter.icons.forEach(icon => {
-        const img = document.createElement('img');
-        img.src = icon.src;
-        img.alt = icon.alt;
-        img.className = 'hero-icons';
-        heroIconsWrapper.appendChild(img);
-      });
-      // EVENTS
-      const eventGrid = document.querySelector('.event-grid');
-      eventGrid.innerHTML = '';
-      data.events.forEach(ev => {
-        const div = document.createElement('div');
-        div.className = 'event';
-        div.innerHTML = `
-          <img src="${ev.icon}" alt="${ev.title} Icon">
-          <h3>${ev.title}</h3>
-          <p>${ev.description}</p>
-        `;
-        eventGrid.appendChild(div);
-      });
-      const eventsCta = document.querySelector('.event-grid + p.cta');
-      eventsCta.textContent = data.eventsCta;
-      // PERFORMERS
-      const carousel = document.querySelector('#performers .carousel');
-      carousel.innerHTML = '';
-      data.performers.forEach((perf, i) => {
-        const div = document.createElement('div');
-        div.className = 'staff';
-        div.dataset.index = i;
-        div.innerHTML = `
-          <div class="content-wrapper">
-            <div class="staff-inner">
-              <img class="artist-portrait" src="${perf.portrait}" alt="${perf.name}">
-              <h3>${perf.name}</h3>
-              <a href="${perf.link}" class="btn">Learn More</a>
-            </div>
-          </div>
-        `;
-        // Corner images
-        const cornerClasses = ['top-right','top-left','bottom-right','bottom-left'];
-        data.performerCornerImages.forEach((src, idx) => {
-          const corner = document.createElement('img');
-          corner.src = src;
-          corner.className = `corner corner-${cornerClasses[idx]}`;
-          corner.alt = 'Floral Corner';
-          div.appendChild(corner);
+      if (heroTitle) heroTitle.textContent = data.hero.title;
+      if (heroSubtitle) heroSubtitle.textContent = data.hero.subtitle;
+      if (heroSeparator) heroSeparator.src = data.hero.separator;
+      if (heroLetterHeading) heroLetterHeading.textContent = data.hero.letter.heading;
+      if (heroLetterText) heroLetterText.textContent = data.hero.letter.text;
+      if (heroLetterCta) {
+        heroLetterCta.textContent = data.hero.letter.ctaText;
+        heroLetterCta.href = data.hero.letter.ctaHref;
+      }
+      if (heroIconsWrapper) {
+        heroIconsWrapper.innerHTML = '';
+        data.hero.letter.icons.forEach(icon => {
+          const img = document.createElement('img');
+          img.src = icon.src;
+          img.alt = icon.alt;
+          img.className = 'hero-icons';
+          heroIconsWrapper.appendChild(img);
         });
-        carousel.appendChild(div);
-      });
-      // TESTIMONIALS
-      const testimonialCarousel = document.querySelector('.testimonial-carousel');
-      testimonialCarousel.innerHTML = '';
-      data.testimonials.forEach((t, idx) => {
-        const div = document.createElement('div');
-        div.className = 'testimonial-slide';
-        if (idx === 0) div.classList.add('active'); // first slide active
-        div.innerHTML = `
-          <div class="stars-wrapper">
-            ${'<img class="stars" src="/assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
-          </div>
-          <p class="testimonial-text">"${t.text}"</p>
-          <cite class="testimonial-author">${t.author}</cite>
-        `;
-        testimonialCarousel.appendChild(div);
-      });
-      // Activate testimonial carousel after DOM is populated
-      const slides = Array.from(testimonialCarousel.querySelectorAll('.testimonial-slide'));
-      if (slides.length > 1) {
-        let activeIndex = 0;
-        function showSlide(index) {
-          slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
+      }
+      // EVENTS (only for index.html)
+      const eventGrid = document.querySelector('.event-grid');
+      if (eventGrid) {
+        eventGrid.innerHTML = '';
+        data.events.forEach(ev => {
+          const div = document.createElement('div');
+          div.className = 'event';
+          div.innerHTML = `
+            <img src="${ev.icon}" alt="${ev.title} Icon">
+            <h3>${ev.title}</h3>
+            <p>${ev.description}</p>
+          `;
+          eventGrid.appendChild(div);
+        });
+        const eventsCta = document.querySelector('.event-grid + p.cta');
+        if (eventsCta) eventsCta.textContent = data.eventsCta;
+      }
+      // PERFORMERS (handled by home.js for modern browsers)
+      const carousel = document.querySelector('#performers .carousel');
+      if (carousel) {
+        carousel.innerHTML = '';
+        data.performers.forEach((perf, i) => {
+          const div = document.createElement('div');
+          div.className = 'staff';
+          div.dataset.index = i;
+          div.innerHTML = `
+            <div class="content-wrapper">
+              <div class="staff-inner">
+                <img class="artist-portrait" src="${perf.portrait}" alt="${perf.name}">
+                <h3>${perf.name}</h3>
+                <a href="${perf.link}" class="btn">Learn More</a>
+              </div>
+            </div>
+          `;
+          // Corner images
+          const cornerClasses = ['top-right','top-left','bottom-right','bottom-left'];
+          data.performerCornerImages.forEach((src, idx) => {
+            const corner = document.createElement('img');
+            corner.src = src;
+            corner.className = `corner corner-${cornerClasses[idx]}`;
+            corner.alt = 'Floral Corner';
+            div.appendChild(corner);
           });
-        }
-        function nextSlide() {
-          activeIndex = (activeIndex + 1) % slides.length;
+          carousel.appendChild(div);
+        });
+      }
+      // TESTIMONIALS (handled by home.js for modern browsers)
+      const testimonialCarousel = document.querySelector('.testimonial-carousel');
+      if (testimonialCarousel) {
+        testimonialCarousel.innerHTML = '';
+        data.testimonials.forEach((t, idx) => {
+          const div = document.createElement('div');
+          div.className = 'testimonial-slide';
+          if (idx === 0) div.classList.add('active'); // first slide active
+          div.innerHTML = `
+            <div class="stars-wrapper">
+              ${'<img class="stars" src="/assets/media/images/star.svg" alt="Star">'.repeat(t.stars)}
+            </div>
+            <p class="testimonial-text">"${t.text}"</p>
+            <cite class="testimonial-author">${t.author}</cite>
+          `;
+          testimonialCarousel.appendChild(div);
+        });
+        // Activate testimonial carousel after DOM is populated
+        const slides = Array.from(testimonialCarousel.querySelectorAll('.testimonial-slide'));
+        if (slides.length > 1) {
+          let activeIndex = 0;
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.classList.toggle('active', i === index);
+            });
+          }
+          function nextSlide() {
+            activeIndex = (activeIndex + 1) % slides.length;
+            showSlide(activeIndex);
+          }
           showSlide(activeIndex);
+          setInterval(nextSlide, 5000);
         }
-        showSlide(activeIndex);
-        setInterval(nextSlide, 5000);
       }
     } catch (err) {
       console.error(err);
@@ -171,14 +181,18 @@ document.addEventListener("DOMContentLoaded", () => {
       card.style.transform = `translateX(${xOffset}px) translateZ(${zOffset}px) scale(${scale}) rotateY(${angle}deg)`;
     });
   }
-  document.querySelector('#performers .next').addEventListener('click', () => { 
-    activeIndex = (activeIndex + 1) % total; 
-    updateCarousel(); 
-  });
-  document.querySelector('#performers .prev').addEventListener('click', () => { 
-    activeIndex = (activeIndex - 1 + total) % total; 
-    updateCarousel(); 
-  });
+  const nextBtn = document.querySelector('#performers .next');
+  const prevBtn = document.querySelector('#performers .prev');
+  if (nextBtn && prevBtn) {
+    nextBtn.addEventListener('click', () => { 
+      activeIndex = (activeIndex + 1) % total; 
+      updateCarousel(); 
+    });
+    prevBtn.addEventListener('click', () => { 
+      activeIndex = (activeIndex - 1 + total) % total; 
+      updateCarousel(); 
+    });
+  }
   // Wait until performers are loaded from JSON
   setTimeout(() => {
     cards = Array.from(document.querySelectorAll('#performers .staff'));
@@ -207,13 +221,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 const curtain = document.querySelector(".curtain-wrapper");
-// Open curtains on page load
-setTimeout(() => curtain.classList.add("open"), 100);
-// Navigation with curtain animation
-document.querySelectorAll("a[href]").forEach(link => {
-  link.addEventListener("click", e => {
-    e.preventDefault();
-    curtain.classList.remove("open");
-    setTimeout(() => window.location.href = link.href, 1400);
+if (curtain) {
+  // Open curtains on page load
+  setTimeout(() => curtain.classList.add("open"), 100);
+  // Navigation with curtain animation
+  document.querySelectorAll("a[href]").forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();
+      curtain.classList.remove("open");
+      setTimeout(() => window.location.href = link.href, 1400);
+    });
   });
-});
+}
