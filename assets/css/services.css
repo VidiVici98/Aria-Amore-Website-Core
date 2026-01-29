@@ -360,8 +360,8 @@ body {
     transition: width 0.6s, height 0.6s;
   }
   .services-page .rsvp-submit:hover::before {
-    width: 300px;
-    height: 300px;
+    width: 200%;
+    height: 200%;
   }
   .services-page .rsvp-submit:hover {
     transform: translateY(-3px) scale(1.02);
