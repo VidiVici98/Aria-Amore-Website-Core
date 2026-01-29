@@ -71,7 +71,14 @@ function sendMail($to, $toName, $subject, $htmlBody, $attachments = []) {
         $mail->Host = getenv('SMTP_HOST') ?: 'mail.ariaamore.com';
         $mail->SMTPAuth = true;
         $mail->Username = getenv('SMTP_USER') ?: 'no-reply@ariaamore.com';
-        $mail->Password = getenv('SMTP_PASS') ?: 'Elloree25!';
+        $mail->Password = getenv('SMTP_PASS');
+        
+        // Check if password is set
+        if (empty($mail->Password)) {
+            logError("SMTP_PASS not configured in environment");
+            return false;
+        }
+        
         $smtpSecure = getenv('SMTP_SECURE') ?: 'ssl';
         if (strtolower($smtpSecure) === 'tls') {
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;

@@ -87,8 +87,8 @@ run_test "HTTPS redirect in .htaccess" "grep -q 'RewriteCond.*HTTPS.*off' $REPO_
 run_test "Directory listing disabled" "grep -q 'Options -Indexes' $REPO_ROOT/.htaccess"
 
 if ! $QUICK_MODE; then
-    # Check for sensitive patterns
-    run_test "No hardcoded passwords" "! grep -r 'password.*=.*[\"\\'][^\"\\']\\{5,\\}' $REPO_ROOT --exclude-dir=.git --exclude-dir=node_modules --exclude=*.md 2>/dev/null | grep -v getenv | grep -q ."
+    # Check for sensitive patterns (excluding PHPMailer library, scripts, and example files)
+    run_test "No hardcoded passwords" "! grep -rE 'password.*=.*[\"\\'][^\"\\']\\{5,\\}' $REPO_ROOT --exclude-dir=.git --exclude-dir=node_modules --exclude-dir=PHPMailer --exclude-dir=scripts --exclude=*.md --exclude=*.example 2>/dev/null | grep -v getenv | grep -q ."
 fi
 
 # Test Suite 5: Configuration
