@@ -1,0 +1,110 @@
+{
+  "hero": {
+    "title": "Performance Gallery",
+    "subtitle": "Witness the Magic of Live Opera Through Our Past Performances"
+  },
+  "categories": [
+    {
+      "id": "all",
+      "name": "All Events",
+      "icon": "✨"
+    },
+    {
+      "id": "weddings",
+      "name": "Weddings",
+      "icon": "💒"
+    },
+    {
+      "id": "corporate",
+      "name": "Corporate",
+      "icon": "🏢"
+    },
+    {
+      "id": "holiday",
+      "name": "Holiday",
+      "icon": "🎄"
+    },
+    {
+      "id": "private",
+      "name": "Private Events",
+      "icon": "🎭"
+    }
+  ],
+  "mediaItems": [
+    {
+      "id": 1,
+      "type": "video",
+      "category": "weddings",
+      "title": "Romantic Wedding Ceremony",
+      "description": "Ave Maria performed at an intimate garden wedding in Charleston",
+      "thumbnail": "/assets/media/images/placeholder.webp",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "date": "June 2024",
+      "location": "Charleston, SC",
+      "performers": ["Xavier Williams", "Latoya"]
+    },
+    {
+      "id": 2,
+      "type": "video",
+      "category": "corporate",
+      "title": "Corporate Gala Performance",
+      "description": "Grand opera quartet at prestigious corporate event",
+      "thumbnail": "/assets/media/images/placeholder.webp",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "date": "October 2024",
+      "location": "Charleston, SC",
+      "performers": ["Xavier Williams", "Latoya", "Collin Vasquez"]
+    },
+    {
+      "id": 3,
+      "type": "video",
+      "category": "holiday",
+      "title": "Holiday Special Performance",
+      "description": "Festive opera selections bringing joy to the season",
+      "thumbnail": "/assets/media/images/placeholder.webp",
+      "videoUrl": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+      "date": "December 2024",
+      "location": "Charleston, SC",
+      "performers": ["Xavier Williams"]
+    },
+    {
+      "id": 4,
+      "type": "image",
+      "category": "weddings",
+      "title": "Elegant Reception Performance",
+      "description": "Opera duet during wedding reception dinner",
+      "imageUrl": "/assets/media/images/placeholder.webp",
+      "date": "August 2024",
+      "location": "Hilton Head, SC",
+      "performers": ["Xavier Williams", "Latoya"]
+    },
+    {
+      "id": 5,
+      "type": "image",
+      "category": "corporate",
+      "title": "Executive Dinner Entertainment",
+      "description": "Classical repertoire for executive dinner event",
+      "imageUrl": "/assets/media/images/placeholder.webp",
+      "date": "September 2024",
+      "location": "Charleston, SC",
+      "performers": ["Collin Vasquez"]
+    },
+    {
+      "id": 6,
+      "type": "image",
+      "category": "private",
+      "title": "50th Anniversary Celebration",
+      "description": "Intimate performance for golden anniversary party",
+      "imageUrl": "/assets/media/images/placeholder.webp",
+      "date": "July 2024",
+      "location": "Mount Pleasant, SC",
+      "performers": ["Latoya"]
+    }
+  ],
+  "stats": {
+    "totalPerformances": "500+",
+    "happyClients": "450+",
+    "eventsThisYear": "75+",
+    "averageRating": "4.9"
+  }
+}

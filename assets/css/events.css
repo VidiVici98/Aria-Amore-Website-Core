@@ -2,27 +2,27 @@
    EVENTS PAGE
    ========================= */
 .events-page {
-  max-width: 1200px;
+  max-width: var(--content-max-width);
   margin: 0 auto;
-  padding: 3rem .5rem;
+  padding: var(--space-xl) var(--space-lg);
 }
 /* ================================
    EVENTS OVERVIEW (ABOVE THE FOLD)
 ================================ */
 
 .events-overview {
-  padding: clamp(2rem, 4vw, 4rem) 1rem;
-  max-width: 1200px;
+  padding: var(--space-xxl) var(--space-lg);
+  max-width: var(--content-max-width);
   margin-inline: auto;
 }
 .events-overview-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 2rem;
+  gap: var(--space-xl);
 }
 .events-calendar-wrapper {
   border: 2px groove rgba(150, 125, 30, 0.5);
-  padding: 1.5rem;
+  padding: var(--space-lg);
   border-radius: 0.5rem;
   background: linear-gradient(to bottom right,
                     hsl(41, 32%, 62%, .6),
@@ -132,8 +132,8 @@
   padding: 0.6rem 1.25rem;
   font-size: 0.9rem;
   white-space: nowrap;
-  color: #151515;
-  text-shadow: 1px 1px 1px #000;;
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   font-family: Georgia, 'Times New Roman', Times, serif;
   background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
   border: 1px groove #333;

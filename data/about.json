@@ -1,4 +1,34 @@
 {
+  "hero": {
+    "heading": "About Aria Amore",
+    "subheading": "Transforming Celebrations With Live Opera"
+  },
+  "mission": {
+    "heading": "Our Mission",
+    "text": "At Aria Amore, we believe that every special moment deserves an extraordinary soundtrack. Our mission is to bring the timeless beauty and emotional power of live opera to your most cherished celebrations. Whether it's a wedding ceremony, corporate gala, or intimate gathering, we create unforgettable musical experiences that touch hearts and create lasting memories."
+  },
+  "story": {
+    "heading": "Our Story",
+    "text": "Founded in the heart of Charleston's vibrant arts community, Aria Amore was born from a passion for making classical music accessible and personal. What started as a small ensemble of dedicated performers has grown into the Lowcountry's premier opera entertainment service. We've had the privilege of performing at hundreds of events, each one unique and meaningful in its own way. Our performers are not just technically skilled musicians—they're storytellers who understand the profound impact that live music can have on life's most important moments."
+  },
+  "values": [
+    {
+      "title": "Excellence",
+      "description": "Every performance showcases the highest level of artistry and professionalism"
+    },
+    {
+      "title": "Personalization",
+      "description": "We work closely with each client to create a customized musical experience"
+    },
+    {
+      "title": "Passion",
+      "description": "Our love for opera and dedication to our craft shines through in every note"
+    },
+    {
+      "title": "Accessibility",
+      "description": "We make the beauty of live opera approachable and enjoyable for all"
+    }
+  ],
   "faqs": [
     {
       "question": "What types of events does Aria Amore perform at?",
