@@ -561,24 +561,26 @@ Add these to your server's crontab for automated maintenance:
 # Edit crontab
 crontab -e
 
-# Add these lines:
+# Add these lines (replace /path/to/aria-amore with your actual installation path):
 
 # Daily backup at 2 AM
-0 2 * * * cd /var/www/html/aria-amore && ./scripts/backup.sh >> /var/log/aria-amore-backup.log 2>&1
+0 2 * * * cd /path/to/aria-amore && ./scripts/backup.sh >> /var/log/aria-amore-backup.log 2>&1
 
 # Health check every 5 minutes
-*/5 * * * * cd /var/www/html/aria-amore && ./scripts/health-check.sh --once >> /var/log/aria-amore-health.log 2>&1
+*/5 * * * * cd /path/to/aria-amore && ./scripts/health-check.sh --once >> /var/log/aria-amore-health.log 2>&1
 
 # Weekly security check on Sundays at 3 AM
-0 3 * * 0 cd /var/www/html/aria-amore && ./scripts/security-check.sh >> /var/log/aria-amore-security.log 2>&1
+0 3 * * 0 cd /path/to/aria-amore && ./scripts/security-check.sh >> /var/log/aria-amore-security.log 2>&1
 
 # Monthly full test suite on 1st at 4 AM
-0 4 1 * * cd /var/www/html/aria-amore && ./scripts/test.sh >> /var/log/aria-amore-test.log 2>&1
+0 4 1 * * cd /path/to/aria-amore && ./scripts/test.sh >> /var/log/aria-amore-test.log 2>&1
 ```
+
+**Note**: Replace `/path/to/aria-amore` with your actual installation path (e.g., `/var/www/html/aria-amore`).
 
 ### Cron Job Best Practices
 
-1. **Always use absolute paths**: `/var/www/html/aria-amore/scripts/backup.sh`
+1. **Always use absolute paths**: Replace `/path/to/aria-amore` with your actual installation path (e.g., `/var/www/html/aria-amore`)
 2. **Log output**: Redirect to log files for monitoring
 3. **Set proper timing**: Avoid peak traffic hours
 4. **Test first**: Run manually before scheduling
@@ -605,14 +607,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4  # Use latest version
       - name: Run tests
         run: ./scripts/test.sh
       
   security:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4  # Use latest version
       - name: Security check
         run: ./scripts/security-check.sh
       
@@ -620,10 +622,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: [test, security]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4  # Use latest version
       - name: Build
         run: ./scripts/build.sh
 ```
+
+**Note**: Always verify the action versions against current GitHub Actions best practices.
 
 ---
 
