@@ -1331,3 +1331,11 @@ blockquote:hover {
    ================================ */
 .curtain-wrapper.open .curtain.left { transform: translateX(-105%); }
 .curtain-wrapper.open .curtain.right { transform: translateX(105%); }
+/* Footer link styling */
+.footer-link {
+  color: inherit;
+  text-decoration: underline;
+}
+.footer-link:hover {
+  opacity: 0.8;
+}
