@@ -91,7 +91,7 @@
     /* Section divider decorative element */
     .section-divider {
       text-align: center;
-      margin: 3rem auto;
+      margin: 2rem auto;
       position: relative;
       max-width: 100%;
       overflow: hidden;
@@ -99,7 +99,7 @@
     
     .section-divider img {
       max-width: 400px;
-      width: 80%;
+      width: 60%;
       opacity: 0.8;
       filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
@@ -133,57 +133,53 @@
         url('/assets/media/images/parchment-background.webp');
       background-size: cover;
       background-attachment: fixed;
-      padding: 5rem 2rem;
+      padding: 4rem 2rem;
       margin: 0;
-      border-top: 5px double #b08b4f;
-      border-bottom: 5px double #b08b4f;
+      border-top: 3px solid #b08b4f;
+      border-bottom: 3px solid #b08b4f;
       position: relative;
-      box-shadow: inset 0 10px 30px rgba(0,0,0,0.3), inset 0 -10px 30px rgba(0,0,0,0.3);
+      box-shadow: inset 0 5px 15px rgba(0,0,0,0.2);
     }
     
     .announcements-section::before {
       content: '';
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
       height: 1px;
       background: linear-gradient(90deg, 
         transparent 0%, 
-        #d4af76 20%, 
-        #d4af76 80%, 
+        #d4af76 50%, 
         transparent 100%);
-      box-shadow: 0 1px 3px rgba(212, 175, 118, 0.5);
     }
     
     .announcements-section h2 {
       text-align: center;
       color: #d4af76;
       font-family: 'Italianno', cursive;
-      font-size: 4rem;
-      margin-bottom: 1rem;
-      text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.7),
-        0 0 20px rgba(212, 175, 118, 0.3);
+      font-size: 3.5rem;
+      margin-bottom: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       letter-spacing: 2px;
       animation: fadeIn 1s ease-in;
     }
     
     .announcement-card {
       background: linear-gradient(135deg, 
-        rgba(61, 48, 32, 0.7) 0%, 
-        rgba(44, 36, 22, 0.8) 100%);
-      border: 3px solid #b08b4f;
-      border-radius: 15px;
-      padding: 2.5rem;
-      margin: 2rem auto;
-      max-width: 850px;
-      backdrop-filter: blur(10px);
+        rgba(61, 48, 32, 0.6) 0%, 
+        rgba(44, 36, 22, 0.7) 100%);
+      border: 2px solid #b08b4f;
+      border-radius: 12px;
+      padding: 2rem;
+      margin: 1.5rem auto;
+      max-width: 800px;
+      backdrop-filter: blur(8px);
       box-shadow: 
-        0 8px 32px rgba(0,0,0,0.4),
-        inset 0 1px 0 rgba(212, 175, 118, 0.2),
-        0 0 0 1px rgba(176, 139, 79, 0.1);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        0 6px 20px rgba(0,0,0,0.3),
+        inset 0 1px 0 rgba(212, 175, 118, 0.15);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       overflow: hidden;
       animation: fadeInUp 0.6s ease-out backwards;
@@ -203,10 +199,10 @@
       background: linear-gradient(
         90deg,
         transparent 0%,
-        rgba(212, 175, 118, 0.1) 50%,
+        rgba(212, 175, 118, 0.08) 50%,
         transparent 100%
       );
-      transition: left 0.6s ease;
+      transition: left 0.5s ease;
     }
     
     .announcement-card:hover::before {
@@ -214,21 +210,20 @@
     }
     
     .announcement-card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-5px);
       box-shadow: 
-        0 15px 45px rgba(176, 139, 79, 0.4),
-        inset 0 1px 0 rgba(212, 175, 118, 0.3),
-        0 0 0 1px rgba(176, 139, 79, 0.2);
+        0 10px 30px rgba(176, 139, 79, 0.35),
+        inset 0 1px 0 rgba(212, 175, 118, 0.2);
       border-color: #d4af76;
     }
     
     .announcement-card h3 {
       color: #d4af76;
-      font-family: 'Quintessential', cursive;
-      font-size: 2rem;
-      margin-bottom: 0.8rem;
+      font-family: Georgia, serif;
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
       text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
     
     .announcement-card .date {
@@ -293,10 +288,10 @@
         linear-gradient(to bottom, rgba(26, 20, 16, 0.95) 0%, rgba(44, 36, 22, 0.95) 50%, rgba(26, 20, 16, 0.95) 100%),
         url('/assets/media/images/parchment-background.webp');
       background-size: cover;
-      padding: 5rem 2rem;
+      padding: 4rem 2rem;
       text-align: center;
       position: relative;
-      box-shadow: inset 0 5px 15px rgba(0,0,0,0.3);
+      box-shadow: inset 0 3px 10px rgba(0,0,0,0.2);
     }
     
     .sales-funnel-section::before,
@@ -305,8 +300,8 @@
       position: absolute;
       left: 50%;
       transform: translateX(-50%);
-      width: 200px;
-      height: 2px;
+      width: 150px;
+      height: 1px;
       background: linear-gradient(90deg, 
         transparent 0%, 
         #b08b4f 50%, 
@@ -314,32 +309,30 @@
     }
     
     .sales-funnel-section::before {
-      top: 2rem;
+      top: 1.5rem;
     }
     
     .sales-funnel-section::after {
-      bottom: 2rem;
+      bottom: 1.5rem;
     }
     
     .sales-funnel-section h2 {
       color: #d4af76;
       font-family: 'Italianno', cursive;
-      font-size: 4.5rem;
-      margin-bottom: 1rem;
-      text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.7),
-        0 0 30px rgba(212, 175, 118, 0.4);
+      font-size: 3.5rem;
+      margin-bottom: 0.75rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
       animation: fadeIn 1s ease-in;
-      letter-spacing: 3px;
+      letter-spacing: 2px;
     }
     
     .sales-funnel-section .subtitle {
       color: #b08b4f;
-      font-size: 1.5rem;
-      margin-bottom: 3.5rem;
+      font-size: 1.3rem;
+      margin-bottom: 3rem;
       font-style: italic;
       font-family: Georgia, serif;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
     }
     
     .funnel-steps {
@@ -347,8 +340,8 @@
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 3rem;
-      margin-bottom: 4rem;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
       position: relative;
     }
     
@@ -358,34 +351,34 @@
       top: 50%;
       left: 0;
       right: 0;
-      height: 2px;
+      height: 1px;
       background: linear-gradient(90deg, 
         transparent 0%, 
-        rgba(176, 139, 79, 0.3) 20%, 
-        rgba(176, 139, 79, 0.3) 80%, 
+        rgba(176, 139, 79, 0.25) 25%, 
+        rgba(176, 139, 79, 0.25) 75%, 
         transparent 100%);
       z-index: 0;
     }
     
     .funnel-step {
       background: linear-gradient(135deg, 
-        rgba(176, 139, 79, 0.15) 0%, 
-        rgba(212, 175, 118, 0.1) 100%);
-      border: 3px solid #b08b4f;
+        rgba(176, 139, 79, 0.12) 0%, 
+        rgba(212, 175, 118, 0.08) 100%);
+      border: 2px solid #b08b4f;
       border-radius: 50%;
-      width: 200px;
-      height: 200px;
+      width: 170px;
+      height: 170px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       padding: 1.5rem;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
       position: relative;
       z-index: 1;
       box-shadow: 
-        0 8px 25px rgba(0,0,0,0.3),
-        inset 0 2px 5px rgba(212, 175, 118, 0.2);
+        0 6px 20px rgba(0,0,0,0.25),
+        inset 0 1px 3px rgba(212, 175, 118, 0.15);
       animation: fadeInUp 0.6s ease-out backwards;
     }
     
@@ -396,7 +389,7 @@
     .funnel-step::before {
       content: '';
       position: absolute;
-      inset: -5px;
+      inset: -3px;
       border-radius: 50%;
       border: 1px solid transparent;
       background: linear-gradient(135deg, #b08b4f, #d4af76) border-box;
@@ -413,29 +406,27 @@
     
     .funnel-step:hover {
       background: linear-gradient(135deg, 
-        rgba(176, 139, 79, 0.25) 0%, 
-        rgba(212, 175, 118, 0.2) 100%);
-      transform: scale(1.15) rotate(5deg);
+        rgba(176, 139, 79, 0.18) 0%, 
+        rgba(212, 175, 118, 0.12) 100%);
+      transform: scale(1.08);
       box-shadow: 
-        0 15px 40px rgba(176, 139, 79, 0.5),
-        inset 0 2px 8px rgba(212, 175, 118, 0.3);
+        0 10px 30px rgba(176, 139, 79, 0.4),
+        inset 0 1px 4px rgba(212, 175, 118, 0.2);
       border-color: #d4af76;
     }
     
     .funnel-step .step-number {
-      font-size: 3.5rem;
+      font-size: 3rem;
       color: #d4af76;
       font-weight: bold;
       margin-bottom: 0.5rem;
-      text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.5),
-        0 0 20px rgba(212, 175, 118, 0.5);
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
       font-family: Georgia, serif;
     }
     
     .funnel-step .step-text {
       color: #e8e8e8;
-      font-size: 1.1rem;
+      font-size: 1rem;
       text-align: center;
       font-weight: 600;
       line-height: 1.4;
@@ -447,22 +438,21 @@
       background: linear-gradient(135deg, #d4af76 0%, #b08b4f 50%, #d4af76 100%);
       background-size: 200% 100%;
       color: #1a1410;
-      padding: 1.8rem 4.5rem;
-      font-size: 1.6rem;
-      border-radius: 12px;
+      padding: 1.4rem 3.5rem;
+      font-size: 1.3rem;
+      border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
       box-shadow: 
-        0 8px 30px rgba(176, 139, 79, 0.6),
-        inset 0 -3px 8px rgba(0,0,0,0.3),
-        inset 0 2px 2px rgba(255,255,255,0.2);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      margin: 1.2rem;
-      border: 3px solid rgba(212, 175, 118, 0.4);
+        0 6px 20px rgba(176, 139, 79, 0.5),
+        inset 0 -2px 5px rgba(0,0,0,0.2);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      margin: 1rem;
+      border: 2px solid rgba(212, 175, 118, 0.3);
       position: relative;
       overflow: hidden;
       text-transform: uppercase;
-      letter-spacing: 1px;
+      letter-spacing: 0.5px;
       animation: fadeInUp 0.8s ease-out backwards;
       animation-delay: 0.8s;
     }
@@ -475,9 +465,9 @@
       width: 0;
       height: 0;
       border-radius: 50%;
-      background: rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.2);
       transform: translate(-50%, -50%);
-      transition: width 0.6s ease, height 0.6s ease;
+      transition: width 0.5s ease, height 0.5s ease;
     }
     
     .big-cta-button:hover::before {
