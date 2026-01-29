@@ -626,7 +626,7 @@ blockquote:hover {
   }
 .home-page .corner {
   position: absolute;
-  width: 140px;  
+  width: clamp(80px, 10vw, 140px);  
   height: auto;
   opacity: .5;
   padding: .5rem;
@@ -805,10 +805,10 @@ blockquote:hover {
 .victorian-separator {
   display: block;
   width: 60%;
-  max-width: 400px;
+  max-width: 600px;
   height: auto;
-  margin: 1rem auto;
-  filter: opacity(.6);
+  margin: 1.5rem auto;
+  filter: brightness(1.2) contrast(1.1);
 }
 .envelope-container {
   position: relative;
@@ -843,7 +843,8 @@ blockquote:hover {
     margin-bottom: 0.75rem;
   }
   .victorian-separator {
-    width: 80%;
+    width: 75%;
+    max-width: 500px;
   }
   #testimonials {
     margin: 5%;
@@ -874,7 +875,8 @@ blockquote:hover {
     font-size: 0.9rem;
   }
   .victorian-separator {
-    width: 90%;
+    width: 85%;
+    max-width: 400px;
   }
 }
 /* Header container */

@@ -1,110 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Aria Amore - Live Opera for Your Event</title>
+  <title>Aria Amore - Experience Live Opera Excellence</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!--Security Headers-->
   <meta http-equiv="Content-Security-Policy"
       content="default-src 'self';
-               script-src 'self';
-               style-src 'self' https://fonts.googleapis.com;
+               script-src 'self' 'unsafe-inline';
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
                font-src 'self' https://fonts.gstatic.com;
-               img-src 'self' data:;
+               img-src 'self' data: https:;
                connect-src 'self';
+               frame-src 'self' https://www.youtube.com;
                frame-ancestors 'none';
                base-uri 'self';
-               form-action 'self';
-               upgrade-insecure-requests;">
+               form-action 'self';">
   <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
   <meta http-equiv="X-Content-Type-Options" content="nosniff">
   <meta http-equiv="X-Frame-Options" content="DENY">
   <meta name="robots" content="index, follow">
   <!-- SEO & Branding -->
-  <meta name="description" content="Make Your Next Event Unforgettable With Live Opera">
-  <meta name="keywords" content="wedding opera, live performers, ceremony music, classical singers, opera wedding entertainment, live event music, wedding performance, Aria Amore">
+  <meta name="description" content="Experience world-class live opera performances for your special events. Book elite vocalists, compare packages, and create unforgettable memories.">
+  <meta name="keywords" content="wedding opera, live performers, ceremony music, classical singers, opera wedding entertainment, live event music, wedding performance, Aria Amore, book opera singer">
   <meta name="author" content="Modern Warrior School LLC">
-  <link rel="canonical" href="https://ariaamore.com/">
-  <!-- Open Graph (Facebook, Instagram, iMessage, etc.) -->
-  <meta property="og:title" content="Aria Amore — Live Opera for Weddings & Celebrations">
-  <meta property="og:description" content="Transform your special day into an unforgettable performance with live opera. Explore packages for ceremonies, receptions, and grand events.">
+  <link rel="canonical" href="https://ariaamore.com/alternative">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aria Amore — Book Elite Opera Performers">
+  <meta property="og:description" content="Transform your event with world-class live opera. Interactive booking, package comparison, and instant availability.">
   <meta property="og:image" content="https://ariaamore.com/assets/media/images/preview-image.jpg">
-  <meta property="og:url" content="https://ariaamore.com/">
+  <meta property="og:url" content="https://ariaamore.com/alternative">
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Aria Amore">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Aria Amore — Live Opera for Weddings & Celebrations">
-  <meta name="twitter:description" content="Transform your special day into an unforgettable performance with live opera.">
-  <meta name="twitter:image" content="https://ariaamore.com/assets/media/images/preview-image.jpg">
-  <!-- Favicon & App Icons -->
+  <!-- Icons -->
   <link rel="icon" type="image/png" href="/assets/media/icons/favicon.png">
   <link rel="apple-touch-icon" href="/assets/media/icons/apple-touch-icon.png">
-  <!-- Theme Colors for Mobile Browsers -->
   <meta name="theme-color" content="#b08b4f">
-  <meta name="msapplication-TileColor" content="#b08b4f">
-  <link rel="icon" type="image/png" href="/assets/media/icons/favicon-96x96.png" sizes="96x96" />
-  <link rel="icon" type="image/svg+xml" href="/assets/media/icons/favicon.svg" />
-  <link rel="shortcut icon" href="/assets/media/icons/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/icons/apple-touch-icon.png" />
-  <meta name="apple-mobile-web-app-title" content="Aria Amore" />
-  <link rel="manifest" href="/assets/media/icons/site.webmanifest" />
   <!--External APIs-->
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://fonts.gstatic.com/s/italianno.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
   <!--Stylesheets-->
   <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/index-alt.css">
   <style>
-    /* Alternate Homepage Specific Styles - Production Ready Polish */
-    
-    /* Fix mobile horizontal overflow issues */
-    html {
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-      width: 100%;
+    /* Enhanced Modern Styling for Alternative Homepage */
+    :root {
+      --accent-gold: #d4af37;
+      --accent-deep: #a2583e;
+      --dark-bg: #1a1410;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --shadow-soft: 0 10px 40px rgba(0,0,0,0.15);
+      --shadow-hover: 0 15px 50px rgba(0,0,0,0.25);
+      --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
+    /* Body background from main styles.css */
     body {
-      overflow-x: hidden;
-      width: 100%;
-      max-width: 100%;
+      background-image: url(/assets/media/images/parchment-background.webp);
+      background-size: cover;
+      background-attachment: fixed;
       position: relative;
     }
-    
-    * {
-      box-sizing: border-box;
-    }
-    
-    /* Ensure all sections respect viewport width */
-    .announcements-section,
-    .sales-funnel-section,
-    .about-company-section,
-    main,
-    section {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-    
-    /* Section divider decorative element */
-    .section-divider {
-      text-align: center;
-      margin: 2rem auto;
+
+    /* Modern Hero Section */
+    .hero-alt {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, rgba(26, 20, 16, 0.95) 0%, rgba(44, 36, 22, 0.95) 100%),
+                  url('/assets/media/images/parchment-background.webp');
+      background-size: cover;
+      background-attachment: fixed;
       position: relative;
-      max-width: 100%;
       overflow: hidden;
     }
-    
-    .section-divider img {
-      max-width: 400px;
-      width: 60%;
-      opacity: 0.8;
-      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+
+    .hero-alt::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 50% 50%, transparent 0%, rgba(0,0,0,0.3) 100%);
+      pointer-events: none;
     }
-    
-    /* Fade-in animation */
+
+    .hero-content-alt {
+      text-align: center;
+      color: #fff;
+      z-index: 10;
+      max-width: 900px;
+      padding: 2rem;
+      animation: fadeInUp 1s ease-out;
+    }
+
     @keyframes fadeInUp {
       from {
         opacity: 0;
@@ -115,1010 +106,1268 @@
         transform: translateY(0);
       }
     }
-    
+
+    .hero-content-alt h1 {
+      font-family: 'Italianno', cursive;
+      font-size: clamp(3rem, 8vw, 6rem);
+      margin-bottom: 1rem;
+      color: var(--accent-gold);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      line-height: 1.2;
+    }
+
+    .hero-content-alt .tagline {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      margin-bottom: 2rem;
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      opacity: 0.95;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    .cta-primary, .cta-secondary {
+      padding: 1rem 2.5rem;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cta-primary {
+      background: linear-gradient(135deg, var(--accent-gold), #f0c850);
+      color: #1a1410;
+      border: none;
+    }
+
+    .cta-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      background: linear-gradient(135deg, #f0c850, var(--accent-gold));
+    }
+
+    .cta-secondary {
+      background: transparent;
+      color: #fff;
+      border: 2px solid var(--accent-gold);
+    }
+
+    .cta-secondary:hover {
+      background: var(--accent-gold);
+      color: #1a1410;
+      transform: translateY(-3px);
+    }
+
+    /* Stats Section */
+    .stats-section {
+      background: var(--dark-bg);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .stat-item {
+      color: #fff;
+      animation: fadeIn 1s ease-out;
+    }
+
+    .stat-number {
+      font-size: 3.5rem;
+      font-weight: 700;
+      color: var(--accent-gold);
+      font-family: 'Playfair Display', serif;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 300;
+    }
+
+    /* Package Comparison Section */
+    .comparison-section {
+      padding: 6rem 2rem;
+      background: rgba(249, 246, 240, 0.5);
+      backdrop-filter: blur(3px);
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 4rem;
+    }
+
+    .section-header h2 {
+      font-family: 'Italianno', cursive;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--accent-deep);
+      margin-bottom: 1rem;
+    }
+
+    .section-header p {
+      font-size: 1.2rem;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .package-card {
+      background: var(--card-bg);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-smooth);
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent;
+    }
+
+    .package-card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--accent-gold);
+    }
+
+    .package-card.featured {
+      border-color: var(--accent-gold);
+      background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
+    }
+
+    .package-card.featured::before {
+      content: 'MOST POPULAR';
+      position: absolute;
+      top: 20px;
+      right: -35px;
+      background: var(--accent-gold);
+      color: #1a1410;
+      padding: 5px 40px;
+      transform: rotate(45deg);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .package-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--accent-deep);
+      margin-bottom: 1rem;
+    }
+
+    .package-price {
+      font-size: 3rem;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .package-price-label {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 2rem;
+    }
+
+    .package-features {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+
+    .package-features li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .package-features li::before {
+      content: '✓';
+      color: var(--accent-gold);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .package-btn {
+      width: 100%;
+      padding: 1rem;
+      background: var(--accent-deep);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      margin-top: 1.5rem;
+    }
+
+    .package-btn:hover {
+      background: var(--accent-gold);
+      color: #1a1410;
+      transform: scale(1.05);
+    }
+
+    /* Interactive Calendar Section */
+    .calendar-section {
+      padding: 6rem 2rem;
+      background: var(--dark-bg);
+      color: #fff;
+    }
+
+    .calendar-container {
+      max-width: 1000px;
+      margin: 3rem auto;
+      background: rgba(255,255,255,0.05);
+      border-radius: 20px;
+      padding: 3rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .calendar-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+    }
+
+    .calendar-month {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--accent-gold);
+    }
+
+    .calendar-nav {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .calendar-nav button {
+      background: rgba(212, 175, 55, 0.2);
+      border: 1px solid var(--accent-gold);
+      color: var(--accent-gold);
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .calendar-nav button:hover {
+      background: var(--accent-gold);
+      color: #1a1410;
+    }
+
+    .calendar-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 0.5rem;
+    }
+
+    .calendar-day-label {
+      text-align: center;
+      font-weight: 600;
+      padding: 1rem 0;
+      color: var(--accent-gold);
+      font-size: 0.9rem;
+    }
+
+    .calendar-day {
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      position: relative;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .calendar-day:hover {
+      background: rgba(212, 175, 55, 0.2);
+      transform: scale(1.05);
+    }
+
+    .calendar-day.available {
+      background: rgba(76, 175, 80, 0.2);
+      border: 1px solid rgba(76, 175, 80, 0.5);
+    }
+
+    .calendar-day.booked {
+      background: rgba(244, 67, 54, 0.2);
+      border: 1px solid rgba(244, 67, 54, 0.5);
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+
+    .calendar-day.selected {
+      background: var(--accent-gold);
+      color: #1a1410;
+      font-weight: 700;
+    }
+
+    .calendar-legend {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .legend-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .legend-dot.available { background: rgba(76, 175, 80, 0.7); }
+    .legend-dot.booked { background: rgba(244, 67, 54, 0.7); }
+
+    /* Video Gallery Section */
+    .video-gallery-section {
+      padding: 6rem 2rem;
+      background: rgba(255, 255, 255, 0.5);
+      backdrop-filter: blur(3px);
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      max-width: 1400px;
+      margin: 3rem auto;
+    }
+
+    .video-card {
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+      transition: var(--transition-smooth);
+      cursor: pointer;
+      position: relative;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .video-thumbnail {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: #ddd;
+    }
+
+    .video-info {
+      padding: 1.5rem;
+      background: #fff;
+    }
+
+    .video-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .video-description {
+      color: #666;
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .play-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 80px;
+      height: 80px;
+      background: rgba(212, 175, 55, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      pointer-events: none;
+      transition: var(--transition-smooth);
+    }
+
+    .video-card:hover .play-overlay {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: var(--accent-gold);
+    }
+
+    .play-overlay::after {
+      content: '▶';
+      color: #1a1410;
+      font-size: 2rem;
+      margin-left: 5px;
+    }
+
+    /* FAQ Accordion Section */
+    .faq-section {
+      padding: 6rem 2rem;
+      background: var(--dark-bg);
+      color: #fff;
+    }
+
+    .faq-container {
+      max-width: 900px;
+      margin: 3rem auto;
+    }
+
+    .faq-item {
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      transition: var(--transition-smooth);
+    }
+
+    .faq-item.active {
+      border-color: var(--accent-gold);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .faq-question {
+      padding: 1.5rem 2rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: var(--transition-smooth);
+    }
+
+    .faq-question:hover {
+      background: rgba(212, 175, 55, 0.1);
+    }
+
+    .faq-icon {
+      font-size: 1.5rem;
+      color: var(--accent-gold);
+      transition: transform 0.3s;
+    }
+
+    .faq-item.active .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+      padding: 0 2rem;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 500px;
+      padding: 0 2rem 1.5rem;
+    }
+
+    .faq-answer p {
+      color: rgba(255,255,255,0.9);
+      line-height: 1.7;
+      font-size: 1.05rem;
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, var(--accent-gold), #f0c850);
+      text-align: center;
+    }
+
+    .newsletter-content {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .newsletter-content h2 {
+      font-family: 'Italianno', cursive;
+      font-size: 3.5rem;
+      color: #1a1410;
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-content p {
+      color: #2a2010;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 2rem auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .newsletter-input {
+      flex: 1;
+      min-width: 250px;
+      padding: 1rem 1.5rem;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .newsletter-submit {
+      padding: 1rem 2.5rem;
+      background: var(--dark-bg);
+      color: #fff;
+      border: none;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .newsletter-submit:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .newsletter-incentive {
+      margin-top: 1rem;
+      color: #1a1410;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    /* Process Timeline Section */
+    .process-section {
+      padding: 6rem 2rem;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(3px);
+    }
+
+    .timeline {
+      max-width: 1200px;
+      margin: 3rem auto;
+      position: relative;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      bottom: 0;
+      width: 3px;
+      background: linear-gradient(to bottom, var(--accent-gold), var(--accent-deep));
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      display: flex;
+      margin-bottom: 3rem;
+      position: relative;
+      align-items: center;
+    }
+
+    .timeline-item:nth-child(odd) {
+      flex-direction: row;
+    }
+
+    .timeline-item:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .timeline-content {
+      flex: 1;
+      padding: 2rem;
+      background: var(--card-bg);
+      border-radius: 15px;
+      box-shadow: var(--shadow-soft);
+      margin: 0 2rem;
+      transition: var(--transition-smooth);
+    }
+
+    .timeline-content:hover {
+      transform: scale(1.02);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .timeline-number {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 60px;
+      background: var(--accent-gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #1a1410;
+      border: 4px solid #fff;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .timeline-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: var(--accent-deep);
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-description {
+      color: #555;
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .hero-cta-group {
+        flex-direction: column;
+      }
+      
+      .comparison-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .timeline::before {
+        left: 30px;
+      }
+      
+      .timeline-item,
+      .timeline-item:nth-child(even) {
+        flex-direction: row !important;
+        padding-left: 70px;
+      }
+      
+      .timeline-number {
+        left: 30px;
+        transform: none;
+      }
+      
+      .timeline-content {
+        margin: 0;
+      }
+      
+      .calendar-grid {
+        gap: 0.25rem;
+      }
+      
+      .calendar-day {
+        font-size: 0.85rem;
+      }
+    }
+
+    /* Animation Classes */
+    .fade-in {
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
     }
-    
-    @keyframes shimmer {
-      0% { background-position: -1000px 0; }
-      100% { background-position: 1000px 0; }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
-    
-    /* Announcements Section - Enhanced */
-    .announcements-section {
-      background: 
-        linear-gradient(135deg, rgba(44, 36, 22, 0.95) 0%, rgba(61, 48, 32, 0.95) 50%, rgba(44, 36, 22, 0.95) 100%),
-        url('/assets/media/images/parchment-background.webp');
-      background-size: cover;
-      background-attachment: fixed;
-      padding: 4rem 2rem;
-      margin: 0;
-      border-top: 3px solid #b08b4f;
-      border-bottom: 3px solid #b08b4f;
-      position: relative;
-      box-shadow: inset 0 5px 15px rgba(0,0,0,0.2);
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
     }
-    
-    .announcements-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 200px;
-      height: 1px;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        #d4af76 50%, 
-        transparent 100%);
-    }
-    
-    .announcements-section h2 {
-      text-align: center;
-      color: #d4af76;
-      font-family: 'Italianno', cursive;
-      font-size: 3.5rem;
-      margin-bottom: 2.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      letter-spacing: 2px;
-      animation: fadeIn 1s ease-in;
-    }
-    
-    .announcement-card {
-      background: linear-gradient(135deg, 
-        rgba(61, 48, 32, 0.6) 0%, 
-        rgba(44, 36, 22, 0.7) 100%);
-      border: 2px solid #b08b4f;
-      border-radius: 12px;
-      padding: 2rem;
-      margin: 1.5rem auto;
-      max-width: 800px;
-      backdrop-filter: blur(8px);
-      box-shadow: 
-        0 6px 20px rgba(0,0,0,0.3),
-        inset 0 1px 0 rgba(212, 175, 118, 0.15);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      animation: fadeInUp 0.6s ease-out backwards;
-    }
-    
-    .announcement-card:nth-child(2) { animation-delay: 0.1s; }
-    .announcement-card:nth-child(3) { animation-delay: 0.2s; }
-    .announcement-card:nth-child(4) { animation-delay: 0.3s; }
-    
-    .announcement-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(
-        90deg,
-        transparent 0%,
-        rgba(212, 175, 118, 0.08) 50%,
-        transparent 100%
-      );
-      transition: left 0.5s ease;
-    }
-    
-    .announcement-card:hover::before {
-      left: 100%;
-    }
-    
-    .announcement-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 
-        0 10px 30px rgba(176, 139, 79, 0.35),
-        inset 0 1px 0 rgba(212, 175, 118, 0.2);
-      border-color: #d4af76;
-    }
-    
-    .announcement-card h3 {
-      color: #d4af76;
-      font-family: Georgia, serif;
-      font-size: 1.75rem;
-      margin-bottom: 0.75rem;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-      letter-spacing: 0.5px;
-    }
-    
-    .announcement-card .date {
-      color: #b08b4f;
-      font-style: italic;
-      margin-bottom: 1.2rem;
-      display: block;
-      font-size: 1.1rem;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-    }
-    
-    .announcement-card p {
-      color: #e8e8e8;
-      line-height: 1.8;
-      margin-bottom: 1.2rem;
-      font-size: 1.05rem;
-    }
-    
-    .announcement-card .cta-btn {
-      display: inline-block;
-      background: linear-gradient(135deg, #b08b4f 0%, #d4af76 50%, #b08b4f 100%);
-      background-size: 200% 100%;
-      color: #1a1410;
-      padding: 0.9rem 2.5rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.4s ease;
-      margin-top: 1rem;
-      box-shadow: 
-        0 4px 15px rgba(176, 139, 79, 0.4),
-        inset 0 -2px 5px rgba(0,0,0,0.2);
-      border: 2px solid rgba(212, 175, 118, 0.3);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .announcement-card .cta-btn::after {
-      content: '→';
-      margin-left: 8px;
-      transition: transform 0.3s ease;
-      display: inline-block;
-    }
-    
-    .announcement-card .cta-btn:hover::after {
-      transform: translateX(5px);
-    }
-    
-    .announcement-card .cta-btn:hover {
-      background-position: 100% 0;
-      transform: scale(1.05);
-      box-shadow: 
-        0 6px 25px rgba(212, 175, 118, 0.6),
-        inset 0 -2px 5px rgba(0,0,0,0.2);
-      border-color: #d4af76;
-    }
-    
-    /* Sales Funnel Section - Enhanced */
-    .sales-funnel-section {
-      background: 
-        linear-gradient(to bottom, rgba(26, 20, 16, 0.95) 0%, rgba(44, 36, 22, 0.95) 50%, rgba(26, 20, 16, 0.95) 100%),
-        url('/assets/media/images/parchment-background.webp');
-      background-size: cover;
-      padding: 4rem 2rem;
-      text-align: center;
-      position: relative;
-      box-shadow: inset 0 3px 10px rgba(0,0,0,0.2);
-    }
-    
-    .sales-funnel-section::before,
-    .sales-funnel-section::after {
-      content: '';
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 150px;
-      height: 1px;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        #b08b4f 50%, 
-        transparent 100%);
-    }
-    
-    .sales-funnel-section::before {
-      top: 1.5rem;
-    }
-    
-    .sales-funnel-section::after {
-      bottom: 1.5rem;
-    }
-    
-    .sales-funnel-section h2 {
-      color: #d4af76;
-      font-family: 'Italianno', cursive;
-      font-size: 3.5rem;
-      margin-bottom: 0.75rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-      animation: fadeIn 1s ease-in;
-      letter-spacing: 2px;
-    }
-    
-    .sales-funnel-section .subtitle {
-      color: #b08b4f;
-      font-size: 1.3rem;
-      margin-bottom: 3rem;
-      font-style: italic;
-      font-family: Georgia, serif;
-      letter-spacing: 0.5px;
-    }
-    
-    .funnel-steps {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
-      gap: 2.5rem;
-      margin-bottom: 3rem;
-      position: relative;
-    }
-    
-    .funnel-steps::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        rgba(176, 139, 79, 0.25) 25%, 
-        rgba(176, 139, 79, 0.25) 75%, 
-        transparent 100%);
-      z-index: 0;
-    }
-    
-    .funnel-step {
-      background: linear-gradient(135deg, 
-        rgba(176, 139, 79, 0.12) 0%, 
-        rgba(212, 175, 118, 0.08) 100%);
-      border: 2px solid #b08b4f;
-      border-radius: 50%;
-      width: 170px;
-      height: 170px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 1.5rem;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      z-index: 1;
-      box-shadow: 
-        0 6px 20px rgba(0,0,0,0.25),
-        inset 0 1px 3px rgba(212, 175, 118, 0.15);
-      animation: fadeInUp 0.6s ease-out backwards;
-    }
-    
-    .funnel-step:nth-child(1) { animation-delay: 0.2s; }
-    .funnel-step:nth-child(2) { animation-delay: 0.4s; }
-    .funnel-step:nth-child(3) { animation-delay: 0.6s; }
-    
-    .funnel-step::before {
-      content: '';
-      position: absolute;
-      inset: -3px;
-      border-radius: 50%;
-      border: 1px solid transparent;
-      background: linear-gradient(135deg, #b08b4f, #d4af76) border-box;
-      -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-      -webkit-mask-composite: xor;
-      mask-composite: exclude;
+
+    /* Scroll Animation Trigger */
+    .animate-on-scroll {
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
     }
-    
-    .funnel-step:hover::before {
+
+    .animate-on-scroll.animated {
       opacity: 1;
+      transform: translateY(0);
     }
-    
-    .funnel-step:hover {
-      background: linear-gradient(135deg, 
-        rgba(176, 139, 79, 0.18) 0%, 
-        rgba(212, 175, 118, 0.12) 100%);
-      transform: scale(1.08);
-      box-shadow: 
-        0 10px 30px rgba(176, 139, 79, 0.4),
-        inset 0 1px 4px rgba(212, 175, 118, 0.2);
-      border-color: #d4af76;
-    }
-    
-    .funnel-step .step-number {
-      font-size: 3rem;
-      color: #d4af76;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-      font-family: Georgia, serif;
-    }
-    
-    .funnel-step .step-text {
-      color: #e8e8e8;
-      font-size: 1rem;
-      text-align: center;
-      font-weight: 600;
-      line-height: 1.4;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.7);
-    }
-    
-    .big-cta-button {
-      display: inline-block;
-      background: linear-gradient(135deg, #d4af76 0%, #b08b4f 50%, #d4af76 100%);
-      background-size: 200% 100%;
-      color: #1a1410;
-      padding: 1.4rem 3.5rem;
-      font-size: 1.3rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 
-        0 6px 20px rgba(176, 139, 79, 0.5),
-        inset 0 -2px 5px rgba(0,0,0,0.2);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      margin: 1rem;
-      border: 2px solid rgba(212, 175, 118, 0.3);
+
+    /* Ensure sections have proper backgrounds and spacing */
+    section {
       position: relative;
-      overflow: hidden;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      animation: fadeInUp 0.8s ease-out backwards;
-      animation-delay: 0.8s;
     }
-    
-    .big-cta-button::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.2);
-      transform: translate(-50%, -50%);
-      transition: width 0.5s ease, height 0.5s ease;
+
+    #performers, #testimonials {
+      padding: 6rem 2rem;
+      min-height: 400px;
+      background: rgba(249, 246, 240, 0.5);
+      backdrop-filter: blur(3px);
     }
-    
-    .big-cta-button:hover::before {
-      width: 300px;
-      height: 300px;
-    }
-    
-    .big-cta-button:hover {
-      background-position: 100% 0;
-      transform: translateY(-5px);
-      box-shadow: 
-        0 12px 45px rgba(212, 175, 118, 0.8),
-        inset 0 -3px 8px rgba(0,0,0,0.3),
-        inset 0 2px 2px rgba(255,255,255,0.3);
-      border-color: #d4af76;
-    }
-    
-    .big-cta-button.secondary {
-      background: linear-gradient(135deg, #8a6e3f 0%, #6b5530 50%, #8a6e3f 100%);
-      background-size: 200% 100%;
-      animation-delay: 0.9s;
-    }
-    
-    .big-cta-button.secondary:hover {
-      background-position: 100% 0;
-    }
-    
-    .social-proof {
+
+    #performers h2, #testimonials h2 {
       text-align: center;
-      padding: 2.5rem;
-      background: linear-gradient(135deg, 
-        rgba(176, 139, 79, 0.08) 0%, 
-        rgba(212, 175, 118, 0.05) 100%);
-      margin: 3rem auto;
-      max-width: 850px;
-      border-radius: 15px;
-      border: 2px solid rgba(176, 139, 79, 0.3);
-      box-shadow: 
-        0 5px 20px rgba(0,0,0,0.2),
-        inset 0 1px 2px rgba(212, 175, 118, 0.2);
-      animation: fadeInUp 1s ease-out backwards;
-      animation-delay: 1s;
-    }
-    
-    .social-proof h3 {
-      color: #d4af76;
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      font-family: 'Quintessential', cursive;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-    
-    .social-proof-text {
-      color: #e8e8e8;
-      font-style: italic;
-      font-size: 1.15rem;
-      line-height: 1.6;
-    }
-    
-    /* About Company Section - Enhanced */
-    .about-company-section {
-      background: 
-        linear-gradient(to right, rgba(44, 36, 22, 0.95) 0%, rgba(61, 48, 32, 0.95) 50%, rgba(44, 36, 22, 0.95) 100%),
-        url('/assets/media/images/parchment-background.webp');
-      background-size: cover;
-      padding: 5rem 2rem;
-      margin: 0;
-      position: relative;
-      border-top: 5px double #b08b4f;
-      border-bottom: 5px double #b08b4f;
-      box-shadow: inset 0 10px 30px rgba(0,0,0,0.3), inset 0 -10px 30px rgba(0,0,0,0.3);
-    }
-    
-    .about-company-section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px;
-      height: 1px;
-      background: linear-gradient(90deg, 
-        transparent 0%, 
-        #d4af76 50%, 
-        transparent 100%);
-      box-shadow: 0 1px 3px rgba(212, 175, 118, 0.5);
-    }
-    
-    .about-company-section h2 {
-      text-align: center;
-      color: #d4af76;
       font-family: 'Italianno', cursive;
-      font-size: 4rem;
-      margin-bottom: 1.5rem;
-      text-shadow: 
-        2px 2px 4px rgba(0,0,0,0.7),
-        0 0 30px rgba(212, 175, 118, 0.3);
-      animation: fadeIn 1s ease-in;
-      letter-spacing: 2px;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      color: var(--accent-deep);
+      margin-bottom: 3rem;
     }
-    
-    .about-content {
-      max-width: 950px;
+
+    .carousel-wrapper {
+      max-width: 1200px;
       margin: 0 auto;
-      color: #e8e8e8;
-      line-height: 1.9;
-      animation: fadeInUp 0.8s ease-out backwards;
-      animation-delay: 0.2s;
-    }
-    
-    .about-content p {
-      margin-bottom: 1.8rem;
-      font-size: 1.15rem;
-      text-align: justify;
-      text-indent: 2rem;
       position: relative;
-      padding: 0 1rem;
-    }
-    
-    .about-content p:first-of-type::first-letter {
-      font-size: 3.5rem;
-      font-family: 'Italianno', cursive;
-      color: #d4af76;
-      float: left;
-      line-height: 0.8;
-      margin: 0.1rem 0.5rem 0 0;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-    }
-    
-    .about-content strong {
-      color: #d4af76;
-      font-weight: bold;
-      text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
-    }
-    
-    .company-values {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-      margin-top: 4rem;
-      animation: fadeInUp 1s ease-out backwards;
-      animation-delay: 0.4s;
-    }
-    
-    .value-card {
-      background: linear-gradient(135deg, 
-        rgba(176, 139, 79, 0.15) 0%, 
-        rgba(212, 175, 118, 0.1) 100%);
-      border: 3px solid #b08b4f;
-      border-radius: 15px;
-      padding: 2.5rem;
-      text-align: center;
-      transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 
-        0 6px 20px rgba(0,0,0,0.3),
-        inset 0 1px 3px rgba(212, 175, 118, 0.2);
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .value-card::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: radial-gradient(circle, rgba(212, 175, 118, 0.1) 0%, transparent 70%);
-      opacity: 0;
-      transition: opacity 0.5s ease;
-    }
-    
-    .value-card:hover::before {
-      opacity: 1;
-    }
-    
-    .value-card:hover {
-      background: linear-gradient(135deg, 
-        rgba(176, 139, 79, 0.25) 0%, 
-        rgba(212, 175, 118, 0.15) 100%);
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 
-        0 12px 35px rgba(176, 139, 79, 0.5),
-        inset 0 1px 5px rgba(212, 175, 118, 0.3);
-      border-color: #d4af76;
-    }
-    
-    .value-card h3 {
-      color: #d4af76;
-      font-size: 1.8rem;
-      margin-bottom: 1.2rem;
-      font-family: 'Quintessential', cursive;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-    
-    .value-card p {
-      color: #e8e8e8;
-      font-size: 1.05rem;
-      text-align: center;
-      line-height: 1.7;
-      text-indent: 0;
-      padding: 0;
-    }
-    
-    /* Social Links Enhancement */
-    .social-links {
+      min-height: 300px;
       display: flex;
+      align-items: center;
       justify-content: center;
-      gap: 2.5rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
     }
-    
-    .social-links a {
-      color: #b08b4f;
-      font-size: 1.25rem;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      padding: 0.8rem 1.5rem;
-      border: 2px solid rgba(176, 139, 79, 0.3);
-      border-radius: 8px;
-      background: rgba(176, 139, 79, 0.05);
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
-    }
-    
-    .social-links a:hover {
-      color: #d4af76;
-      transform: translateY(-3px) scale(1.05);
-      border-color: #d4af76;
-      background: rgba(212, 175, 118, 0.15);
-      box-shadow: 0 6px 20px rgba(176, 139, 79, 0.4);
-    }
-    
-    /* Responsive Design Enhancements */
-    @media (max-width: 768px) {
-      /* Prevent horizontal overflow on mobile */
-      html, body {
-        overflow-x: hidden;
-        max-width: 100vw;
-        position: relative;
-      }
-      
-      .announcements-section,
-      .sales-funnel-section,
-      .about-company-section {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-        margin-left: 0;
-        margin-right: 0;
-      }
-      
-      .announcement-card,
-      .social-proof {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100%;
-        max-width: 100%;
-      }
-      
-      .announcements-section h2,
-      .sales-funnel-section h2,
-      .about-company-section h2 {
-        font-size: 3rem;
-      }
-      
-      .announcement-card {
-        padding: 2rem 1.5rem;
-      }
-      
-      .funnel-step {
-        width: 160px;
-        height: 160px;
-      }
-      
-      .funnel-step .step-number {
-        font-size: 2.8rem;
-      }
-      
-      .funnel-step .step-text {
-        font-size: 0.95rem;
-      }
-      
-      .big-cta-button {
-        padding: 1.3rem 2.8rem;
-        font-size: 1.3rem;
-        margin: 0.8rem 0.5rem;
-        max-width: calc(100% - 1rem);
-      }
-      
-      .about-content p {
-        text-align: left;
-        text-indent: 0;
-        font-size: 1.05rem;
-      }
-      
-      .value-card {
-        padding: 2rem;
-      }
-      
-      .company-values {
-        gap: 1.5rem;
-      }
-    }
-    
-    @media (max-width: 480px) {
-      /* Extra small mobile fixes */
-      .announcements-section,
-      .sales-funnel-section,
-      .about-company-section {
-        padding: 3rem 1rem;
-      }
-      
-      .announcement-card {
-        padding: 1.5rem 1rem;
-        margin: 1rem 0;
-      }
-      
-      .funnel-steps::before {
-        display: none;
-      }
-      
-      .funnel-step {
-        width: 140px;
-        height: 140px;
-      }
-      
-      .funnel-steps {
-        gap: 1.5rem;
-        padding: 0 0.5rem;
-      }
-      
-      .big-cta-button {
-        display: block;
-        width: 100%;
-        max-width: 100%;
-        margin: 0.8rem 0;
-        padding: 1.2rem 1.5rem;
-        font-size: 1.1rem;
-      }
-      
-      .social-links {
-        flex-direction: column;
-        gap: 1rem;
-        padding: 0 1rem;
-      }
-      
-      .social-links a {
-        display: block;
-        width: 100%;
-      }
-      
-      .about-content {
-        padding: 0 0.5rem;
-      }
-      
-      .section-divider img {
-        max-width: 90%;
-      }
+
+    .testimonial-carousel {
+      max-width: 900px;
+      margin: 0 auto;
+      min-height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
   </style>
 </head>
 <body>
   <!-- Header Embed Container -->
   <header id="site-header-container" role="banner" aria-label="Site header"></header>
-  
-  <div class="curtain-wrapper">
-    <div class="curtain left">
-      <div class="fold fold1"></div>
-      <div class="fold fold2"></div>
-      <div class="fold fold3"></div>
-      <div class="fold fold4"></div>
-      <div class="fold fold5"></div>
-      <div class="fold fold6"></div>
-      <div class="fold fold7"></div>
-      <div class="fold fold8"></div>
-      <div class="fold fold9"></div>
-    </div>
-    <div class="curtain right">
-      <div class="fold fold1"></div>
-      <div class="fold fold2"></div>
-      <div class="fold fold3"></div>
-      <div class="fold fold4"></div>
-      <div class="fold fold5"></div>
-      <div class="fold fold6"></div>
-      <div class="fold fold7"></div>
-      <div class="fold fold8"></div>
-      <div class="fold fold9"></div>
-    </div>
-  </div>
-  
+
   <main class="home-page" id="main-content" role="main">
-    <!-- Hero Section -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="envelope-container" role="presentation">
-        <div class="envelope" aria-hidden="true">
-          <div class="envelope-flap" aria-hidden="true"></div>
-          <div class="envelope-body">
-            <h1 id="hero-title">Aria Amore</h1>
-            <img
-              id="hero-separator"
-              class="victorian-separator"
-              src="/assets/media/images/victorian-separator.svg"
-              alt=""
-              role="presentation">
-            <h2 id="hero-subtitle">Live Opera Experiences for Your Events</h2>
+    
+    <!-- Enhanced Hero Section -->
+    <section class="hero-alt" aria-labelledby="hero-title-alt">
+      <div class="hero-content-alt">
+        <h1 id="hero-title-alt">Elevate Your Event</h1>
+        <p class="tagline">World-Class Opera Performers for Life's Most Precious Moments</p>
+        <div class="hero-cta-group">
+          <a href="#booking-calendar" class="cta-primary">
+            Check Availability
+            <span>→</span>
+          </a>
+          <a href="#packages" class="cta-secondary">
+            Compare Packages
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="stats-grid">
+        <div class="stat-item animate-on-scroll">
+          <div class="stat-number">500+</div>
+          <div class="stat-label">Events Performed</div>
+        </div>
+        <div class="stat-item animate-on-scroll" style="animation-delay: 0.2s;">
+          <div class="stat-number">98%</div>
+          <div class="stat-label">Client Satisfaction</div>
+        </div>
+        <div class="stat-item animate-on-scroll" style="animation-delay: 0.4s;">
+          <div class="stat-number">15+</div>
+          <div class="stat-label">Elite Performers</div>
+        </div>
+        <div class="stat-item animate-on-scroll" style="animation-delay: 0.6s;">
+          <div class="stat-number">10+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Package Comparison -->
+    <section id="packages" class="comparison-section">
+      <div class="section-header animate-on-scroll">
+        <h2>Choose Your Perfect Package</h2>
+        <p>Compare our performance packages and select the one that brings your vision to life</p>
+      </div>
+      
+      <div class="comparison-grid">
+        <div class="package-card animate-on-scroll">
+          <h3 class="package-name">Serenade</h3>
+          <div class="package-price">$500</div>
+          <div class="package-price-label">per event</div>
+          <ul class="package-features">
+            <li>One professional opera singer</li>
+            <li>Two carefully selected songs</li>
+            <li>Virtual song consultation</li>
+            <li>Up to 20 minutes performance</li>
+            <li>Professional audio equipment</li>
+          </ul>
+          <button class="package-btn" onclick="selectPackage('Serenade')">Select Package</button>
+        </div>
+
+        <div class="package-card featured animate-on-scroll" style="animation-delay: 0.2s;">
+          <h3 class="package-name">Aria</h3>
+          <div class="package-price">$1,500</div>
+          <div class="package-price-label">per event</div>
+          <ul class="package-features">
+            <li>Two professional opera singers</li>
+            <li>Up to 30 minutes performance</li>
+            <li>Customizable song selection</li>
+            <li>In-person consultation</li>
+            <li>Premium audio equipment</li>
+            <li>Costume coordination</li>
+          </ul>
+          <button class="package-btn" onclick="selectPackage('Aria')">Select Package</button>
+        </div>
+
+        <div class="package-card animate-on-scroll" style="animation-delay: 0.4s;">
+          <h3 class="package-name">Grand Opera</h3>
+          <div class="package-price">$3,000</div>
+          <div class="package-price-label">per event</div>
+          <ul class="package-features">
+            <li>Trio or quartet of performers</li>
+            <li>Up to one hour performance</li>
+            <li>Custom arrangements available</li>
+            <li>Professional accompaniment</li>
+            <li>Full costume & staging</li>
+            <li>Rehearsal & coordination</li>
+            <li>Recording available</li>
+          </ul>
+          <button class="package-btn" onclick="selectPackage('Grand Opera')">Select Package</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Availability Calendar -->
+    <section id="booking-calendar" class="calendar-section">
+      <div class="section-header">
+        <h2 style="color: var(--accent-gold);">Check Our Availability</h2>
+        <p style="color: rgba(255,255,255,0.9);">Select a date to see if we're available for your event</p>
+      </div>
+      
+      <div class="calendar-container animate-on-scroll">
+        <div class="calendar-header">
+          <div class="calendar-month" id="calendar-month">March 2026</div>
+          <div class="calendar-nav">
+            <button onclick="changeMonth(-1)">← Prev</button>
+            <button onclick="changeMonth(1)">Next →</button>
           </div>
         </div>
-        <div class="hero-letter" role="region" aria-labelledby="hero-letter-heading">
-          <h1 id="hero-letter-heading">You're Invited</h1>
-          <p id="hero-letter-text">
-            Experience the beauty and passion of live opera, brought directly to your celebration.
-          </p>
-          <div class="hero-letter-footer">
-            <div
-              class="hero-icons-wrapper"
-              id="hero-icons-wrapper"
-              aria-label="Social media and contact icons"></div>
-            <div class="hero-letter-btn-wrapper">
-              <a id="hero-letter-cta"
-                class="hero-letter-btn"
-                href="#booking"
-                role="button"
-                aria-label="Reserve your date today">
-                Reserve Your Date Today!
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Mobile Hero -->
-    <section class="hero-mobile" aria-labelledby="mobile-hero-title">
-      <div class="hero-logo" role="img" aria-label="Aria Amore logo with musical notes">
-        <h1 id="mobile-hero-title" class="brand">Aria Amore</h1>
-        <div class="music-notes" aria-hidden="true">
-          <span class="note layer1">♪</span>
-          <span class="note layer2">♩</span>
-          <span class="note layer2">♫</span>
-          <span class="note layer1">♬</span>
-          <span class="note layer1">♭</span>
-          <span class="note layer2">♮</span>
-          <span class="note layer2">♪</span>
-          <span class="note layer1">♫</span>
-          <span class="note layer2">♪</span>
-          <span class="note layer1">♭</span>
-        </div>
-      </div>
-    </section>
-    
-    <!-- Decorative Separator -->
-    <div class="section-divider">
-      <img src="/assets/media/images/victorian-separator.svg" alt="" role="presentation">
-    </div>
-    
-    <!-- Announcements Section (NEW) -->
-    <section class="announcements-section" aria-labelledby="announcements-heading">
-      <h2 id="announcements-heading">Latest News & Upcoming Events</h2>
-      
-      <div class="announcement-card">
-        <h3>🎭 Special Performance: Deliverance</h3>
-        <span class="date">February 22, 2026</span>
-        <p>
-          Join us for an extraordinary evening at the Albert Simons Center Recital Hall in Charleston, SC. 
-          <strong>Xaivier Williams</strong> presents "Deliverance" - a powerful journey through spirituals, 
-          testimony, and classical opera that will move your soul.
-        </p>
-        <p>
-          <strong>Admission:</strong> $15 General Admission · Free with College of Charleston Student ID
-        </p>
-        <a href="/events.html#deliverance-2026-02-22" class="cta-btn">Get Event Details →</a>
-      </div>
-      
-      <div class="announcement-card">
-        <h3>📱 Follow Our Journey</h3>
-        <p>
-          Stay connected with Aria Amore on social media! Get behind-the-scenes glimpses of our performances, 
-          meet our talented artists, and be the first to know about special events and exclusive offers.
-        </p>
-        <div class="social-links">
-          <a href="https://www.tiktok.com" title="Follow us on TikTok" target="_blank" rel="noopener noreferrer">TikTok 📱</a>
-          <a href="https://www.instagram.com" title="Follow us on Instagram" target="_blank" rel="noopener noreferrer">Instagram 📸</a>
-          <a href="/services.html#rsvp" title="Share with friends">Book Now ✨</a>
-        </div>
-      </div>
-      
-      <div class="announcement-card">
-        <h3>💍 Wedding Season 2026 - Book Now!</h3>
-        <span class="date">Limited Availability</span>
-        <p>
-          Planning your 2026 wedding? Our calendar is filling up fast! Reserve your date now to ensure 
-          your special day features the unforgettable elegance of live opera performance.
-        </p>
-        <a href="#booking" class="cta-btn">Check Availability →</a>
-      </div>
-    </section>
-    
-    <!-- Enhanced Sales Funnel Section (NEW) -->
-    <section id="booking" class="sales-funnel-section" aria-labelledby="booking-heading">
-      <h2 id="booking-heading">Book Your Perfect Performance</h2>
-      <p class="subtitle">In Just 3 Simple Steps</p>
-      
-      <div class="funnel-steps">
-        <div class="funnel-step">
-          <div class="step-number">1</div>
-          <div class="step-text">Browse Our Packages</div>
-        </div>
-        <div class="funnel-step">
-          <div class="step-number">2</div>
-          <div class="step-text">Select Your Date & Artists</div>
-        </div>
-        <div class="funnel-step">
-          <div class="step-number">3</div>
-          <div class="step-text">Confirm & Celebrate!</div>
-        </div>
-      </div>
-      
-      <a href="/services.html#rsvp" class="big-cta-button">Start Your Booking Journey →</a>
-      <br>
-      <a href="/services.html" class="big-cta-button secondary">View All Packages</a>
-      
-      <div class="social-proof">
-        <h3>✨ Trusted by Over 100 Happy Couples</h3>
-        <p class="social-proof-text">
-          "From intimate ceremonies to grand celebrations, we bring the magic of opera to your most precious moments."
-        </p>
-      </div>
-    </section>
-    
-    <!-- Decorative Separator -->
-    <div class="section-divider">
-      <img src="/assets/media/images/floral-swirl-complex.svg" alt="" role="presentation">
-    </div>
-    
-    <!-- Event Info Boxes -->
-    <section id="events" aria-labelledby="events-heading">
-      <h2 id="events-heading">Our Opera Event Packages</h2>
-      <div
-        class="event-grid"
-        id="event-grid"
-        role="list"
-        aria-label="Opera event options"></div>
-      <p class="cta" id="events-cta">Choose the perfect experience for your occasion.</p>
-    </section>
-    
-    <!-- Decorative Separator -->
-    <div class="section-divider">
-      <img src="/assets/media/images/victorian-separator.svg" alt="" role="presentation">
-    </div>
-    
-    <!-- About Company Section (NEW) -->
-    <section class="about-company-section" aria-labelledby="about-company-heading">
-      <h2 id="about-company-heading">About Aria Amore</h2>
-      
-      <div class="about-content">
-        <p>
-          <strong>Aria Amore</strong> was founded with a singular vision: to bring the timeless beauty and 
-          emotional power of live opera to life's most important celebrations. We believe that every milestone 
-          deserves more than just background music—it deserves an experience that resonates in the hearts 
-          of all who attend.
-        </p>
         
-        <p>
-          Our journey began with a passion for classical music and a desire to share it beyond traditional 
-          concert halls. Today, we're proud to work with some of the finest classically-trained vocalists 
-          in the region, each bringing their unique artistry and dedication to every performance.
-        </p>
+        <div class="calendar-grid">
+          <div class="calendar-day-label">Sun</div>
+          <div class="calendar-day-label">Mon</div>
+          <div class="calendar-day-label">Tue</div>
+          <div class="calendar-day-label">Wed</div>
+          <div class="calendar-day-label">Thu</div>
+          <div class="calendar-day-label">Fri</div>
+          <div class="calendar-day-label">Sat</div>
+          <!-- Calendar days will be populated by JavaScript -->
+          <div id="calendar-days"></div>
+        </div>
         
-        <p>
-          Whether you're planning an intimate wedding ceremony, a grand corporate gala, or a meaningful 
-          private celebration, Aria Amore transforms your event into an unforgettable artistic experience. 
-          Our performers don't just sing—they tell stories, evoke emotions, and create moments that will 
-          be cherished for a lifetime.
-        </p>
-        
-        <div class="company-values">
-          <div class="value-card">
-            <h3>🎵 Excellence</h3>
-            <p>World-class trained vocalists with years of professional experience</p>
+        <div class="calendar-legend">
+          <div class="legend-item">
+            <span class="legend-dot available"></span>
+            <span>Available</span>
           </div>
-          
-          <div class="value-card">
-            <h3>💖 Personalization</h3>
-            <p>Custom song selections and arrangements tailored to your vision</p>
-          </div>
-          
-          <div class="value-card">
-            <h3>✨ Professionalism</h3>
-            <p>Reliable, punctual service from first contact to final bow</p>
-          </div>
-          
-          <div class="value-card">
-            <h3>🌟 Passion</h3>
-            <p>A genuine love for our craft that shines in every performance</p>
+          <div class="legend-item">
+            <span class="legend-dot booked"></span>
+            <span>Booked</span>
           </div>
         </div>
       </div>
     </section>
-    
-    <!-- Featured Performers -->
+
+    <!-- Video Gallery -->
+    <section class="video-gallery-section">
+      <div class="section-header animate-on-scroll">
+        <h2>Experience Our Performances</h2>
+        <p>Watch highlights from past events and imagine what we could create for you</p>
+      </div>
+      
+      <div class="video-grid">
+        <div class="video-card animate-on-scroll" onclick="playVideo('video1')">
+          <img src="/assets/media/images/placeholder.webp" alt="Wedding Performance" class="video-thumbnail">
+          <div class="play-overlay"></div>
+          <div class="video-info">
+            <h3 class="video-title">Romantic Wedding Ceremony</h3>
+            <p class="video-description">Ave Maria performed at an intimate garden wedding in Charleston</p>
+          </div>
+        </div>
+        
+        <div class="video-card animate-on-scroll" style="animation-delay: 0.2s;" onclick="playVideo('video2')">
+          <img src="/assets/media/images/placeholder.webp" alt="Corporate Event" class="video-thumbnail">
+          <div class="play-overlay"></div>
+          <div class="video-info">
+            <h3 class="video-title">Corporate Gala Performance</h3>
+            <p class="video-description">Grand opera quartet at prestigious corporate event</p>
+          </div>
+        </div>
+        
+        <div class="video-card animate-on-scroll" style="animation-delay: 0.4s;" onclick="playVideo('video3')">
+          <img src="/assets/media/images/placeholder.webp" alt="Holiday Event" class="video-thumbnail">
+          <div class="play-overlay"></div>
+          <div class="video-info">
+            <h3 class="video-title">Holiday Special</h3>
+            <p class="video-description">Festive opera selections bringing joy to the season</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Timeline -->
+    <section class="process-section">
+      <div class="section-header animate-on-scroll">
+        <h2>Your Booking Journey</h2>
+        <p>From first contact to standing ovation - here's how we make magic happen</p>
+      </div>
+      
+      <div class="timeline">
+        <div class="timeline-item animate-on-scroll">
+          <div class="timeline-content">
+            <h3 class="timeline-title">Initial Consultation</h3>
+            <p class="timeline-description">We discuss your event, vision, and musical preferences. Whether it's a wedding, corporate gala, or private celebration, we'll help you choose the perfect package and songs.</p>
+          </div>
+          <div class="timeline-number">1</div>
+          <div style="flex: 1;"></div>
+        </div>
+        
+        <div class="timeline-item animate-on-scroll" style="animation-delay: 0.2s;">
+          <div style="flex: 1;"></div>
+          <div class="timeline-number">2</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Customization & Planning</h3>
+            <p class="timeline-description">Our team works with you to customize every detail - from song selections to performance timing. We coordinate with your venue and other vendors to ensure seamless integration.</p>
+          </div>
+        </div>
+        
+        <div class="timeline-item animate-on-scroll" style="animation-delay: 0.4s;">
+          <div class="timeline-content">
+            <h3 class="timeline-title">Rehearsal & Preparation</h3>
+            <p class="timeline-description">Our performers rehearse extensively, ensuring every note is perfect. We conduct venue walkthroughs and sound checks to guarantee flawless execution on your special day.</p>
+          </div>
+          <div class="timeline-number">3</div>
+          <div style="flex: 1;"></div>
+        </div>
+        
+        <div class="timeline-item animate-on-scroll" style="animation-delay: 0.6s;">
+          <div style="flex: 1;"></div>
+          <div class="timeline-number">4</div>
+          <div class="timeline-content">
+            <h3 class="timeline-title">Unforgettable Performance</h3>
+            <p class="timeline-description">We arrive early, fully prepared. Then we deliver a stunning performance that elevates your event and creates memories that last a lifetime. Your guests will be talking about it for years.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section class="faq-section">
+      <div class="section-header">
+        <h2 style="color: var(--accent-gold);">Frequently Asked Questions</h2>
+        <p style="color: rgba(255,255,255,0.9);">Everything you need to know about booking with Aria Amore</p>
+      </div>
+      
+      <div class="faq-container">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>How far in advance should I book?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>We recommend booking 3-6 months in advance for weddings and major events, especially during peak season (May-October). However, we can often accommodate shorter notice for smaller events based on availability.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What types of events do you perform at?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>We perform at weddings, corporate galas, holiday parties, private celebrations, anniversaries, proposals, and more. Any occasion that deserves exceptional musical entertainment is perfect for live opera.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>Can I request specific songs?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely! We have an extensive repertoire and love to accommodate special requests. During our consultation, we'll discuss your favorite pieces and suggest options that fit your event's mood and theme.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>Do you provide sound equipment?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! All our packages include professional sound equipment and setup. For larger venues or outdoor events, we can arrange enhanced audio systems to ensure perfect sound quality for all your guests.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>What's your cancellation policy?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Cancellations made 90+ days before the event receive a full refund minus a 10% processing fee. 30-90 days: 50% refund. Less than 30 days: no refund, but we'll work with you to reschedule when possible.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <span>Do you travel for events?</span>
+            <span class="faq-icon">▼</span>
+          </div>
+          <div class="faq-answer">
+            <p>Yes! We're based in Charleston, SC, but regularly travel throughout the Southeast. Travel fees may apply for distances over 100 miles. Contact us to discuss your specific location.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+      <div class="newsletter-content">
+        <h2>Stay in the Know</h2>
+        <p>Join our mailing list for exclusive offers, performance updates, and event inspiration</p>
+        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+          <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+          <button type="submit" class="newsletter-submit">Subscribe</button>
+        </form>
+        <p class="newsletter-incentive">🎁 Get 10% off your first booking when you subscribe!</p>
+      </div>
+    </section>
+
+    <!-- Keep existing sections from original -->
+    <!-- Featured Performers Section -->
     <section id="performers" aria-labelledby="performers-heading">
-      <h2 id="performers-heading" class="featured-title">Featured Performers</h2>
-      <div class="carousel-container" role="region" aria-label="Performer carousel">
-        <button
-          class="prev"
-          aria-label="Previous performer"
-          type="button"
-        >❮</button>
-        <div
-          class="carousel"
-          id="performer-carousel"
-          role="list"
-          aria-live="polite"
-          aria-atomic="true"></div>
-        <button
-          class="next"
-          aria-label="Next performer"
-          type="button">❯</button>
+      <h2 id="performers-heading">Featured Performers</h2>
+      <div class="carousel-wrapper" role="region" aria-label="Performer carousel">
+        <button class="carousel-btn prev" aria-label="Previous performer">❮</button>
+        <div class="carousel"></div>
+        <button class="carousel-btn next" aria-label="Next performer">❯</button>
       </div>
     </section>
-    
-    <!-- Client Reviews -->
+
+    <!-- Testimonials Section -->
     <section id="testimonials" aria-labelledby="testimonials-heading">
-      <img
-        class="victorian-separator"
-        id="testimonial-separator"
-        src="/assets/media/images/victorian-separator.svg"
-        alt=""
-        role="presentation">
       <h2 id="testimonials-heading">What Our Clients Are Saying</h2>
-      <div
-        class="testimonial-carousel"
-        id="testimonial-carousel"
-        role="region"
-        aria-label="Client testimonials carousel"
-        aria-live="polite"></div>
-      <img
-        class="victorian-separator"
-        src="/assets/media/images/victorian-separator.svg"
-        alt=""
-        role="presentation">
+      <div class="testimonial-carousel" role="region" aria-label="Client testimonials carousel"></div>
     </section>
+
   </main>
-  
-  <!--Events Banner-->
-  <div id="event-banner-container"></div>
-  
-  <!-- Footer Embed Container -->
+
+  <!-- Footer -->
+  <footer id="event-banner-container" role="contentinfo" aria-label="Upcoming event banner"></footer>
   <footer id="site-footer-container" role="contentinfo" aria-label="Site footer"></footer>
-  
-  <!-- Scripts -->
-  <script src="/assets/js/main.js" defer></script>
+
+  <!-- JavaScript for Interactive Features -->
+  <script src="/assets/js/main.js"></script>
+  <script>
+    // Package Selection
+    function selectPackage(packageName) {
+      alert(`Great choice! You've selected the ${packageName} package. Redirecting to booking form...`);
+      // In production, this would redirect to services.html#rsvp with the package pre-selected
+      window.location.href = '/services.html#rsvp';
+    }
+
+    // Calendar Functionality
+    let currentMonth = 2; // March (0-indexed)
+    let currentYear = 2026;
+
+    function generateCalendar() {
+      const daysContainer = document.getElementById('calendar-days');
+      if (!daysContainer) return;
+      
+      daysContainer.innerHTML = '';
+      
+      const firstDay = new Date(currentYear, currentMonth, 1).getDay();
+      const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+      
+      // Simulated booked dates (in production, this would come from an API)
+      const bookedDates = [5, 12, 18, 25];
+      
+      // Add empty cells for days before the first of the month
+      for (let i = 0; i < firstDay; i++) {
+        const emptyDay = document.createElement('div');
+        emptyDay.className = 'calendar-day';
+        daysContainer.appendChild(emptyDay);
+      }
+      
+      // Add days of the month
+      for (let day = 1; day <= daysInMonth; day++) {
+        const dayElement = document.createElement('div');
+        dayElement.className = 'calendar-day';
+        dayElement.textContent = day;
+        
+        if (bookedDates.includes(day)) {
+          dayElement.classList.add('booked');
+        } else {
+          dayElement.classList.add('available');
+          dayElement.onclick = () => selectDate(day);
+        }
+        
+        daysContainer.appendChild(dayElement);
+      }
+      
+      updateMonthDisplay();
+    }
+
+    function selectDate(day) {
+      const days = document.querySelectorAll('.calendar-day');
+      days.forEach(d => d.classList.remove('selected'));
+      event.target.classList.add('selected');
+      alert(`You've selected ${getMonthName(currentMonth)} ${day}, ${currentYear}. Continue to booking?`);
+      // In production, this would store the date and proceed to booking form
+    }
+
+    function changeMonth(direction) {
+      currentMonth += direction;
+      if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+      } else if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+      }
+      generateCalendar();
+    }
+
+    function getMonthName(month) {
+      const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                      'July', 'August', 'September', 'October', 'November', 'December'];
+      return months[month];
+    }
+
+    function updateMonthDisplay() {
+      const monthElement = document.getElementById('calendar-month');
+      if (monthElement) {
+        monthElement.textContent = `${getMonthName(currentMonth)} ${currentYear}`;
+      }
+    }
+
+    // FAQ Toggle
+    function toggleFAQ(element) {
+      const faqItem = element.parentElement;
+      const isActive = faqItem.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // Open clicked item if it wasn't active
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    }
+
+    // Video Player
+    function playVideo(videoId) {
+      alert(`Playing video: ${videoId}. In production, this would open a modal with the embedded video.`);
+      // In production, this would open a modal with an embedded YouTube/Vimeo player
+    }
+
+    // Newsletter Subscription
+    function subscribeNewsletter(event) {
+      event.preventDefault();
+      const email = event.target.querySelector('input[type="email"]').value;
+      alert(`Thank you for subscribing with: ${email}\n\nYou'll receive your 10% discount code via email shortly!`);
+      event.target.reset();
+    }
+
+    // Scroll Animation Observer
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animated');
+        }
+      });
+    }, observerOptions);
+
+    // Initialize when DOM is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize calendar
+      generateCalendar();
+      
+      // Observe all elements with animate-on-scroll class
+      document.querySelectorAll('.animate-on-scroll').forEach(el => {
+        observer.observe(el);
+      });
+    });
+  </script>
 </body>
 </html>

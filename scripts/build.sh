@@ -19,22 +19,23 @@ rm -rf "$BUILD_ROOT"
 mkdir -p "$BUILD_ROOT"
 
 # -------------------------------
-# 2. Copy public web root
+# 2. Copy public web root (excluding symlinks)
 # -------------------------------
 echo "→ Copying public/ contents..."
-cp -R "$REPO_ROOT/public/." "$BUILD_ROOT/"
+# Copy all files and directories except symlinks
+rsync -a --no-links "$REPO_ROOT/public/" "$BUILD_ROOT/"
 
 # -------------------------------
-# 3. Copy runtime directories
+# 3. Copy runtime directories (resolving symlinks)
 # -------------------------------
 echo "→ Copying assets/"
-cp -R "$REPO_ROOT/assets" "$BUILD_ROOT/"
+cp -rL "$REPO_ROOT/assets" "$BUILD_ROOT/"
 
 echo "→ Copying data/"
-cp -R "$REPO_ROOT/data" "$BUILD_ROOT/"
+cp -rL "$REPO_ROOT/data" "$BUILD_ROOT/"
 
 echo "→ Copying components/"
-cp -R "$REPO_ROOT/components" "$BUILD_ROOT/"
+cp -rL "$REPO_ROOT/components" "$BUILD_ROOT/"
 
 # -------------------------------
 # 4. Copy root-level production files
