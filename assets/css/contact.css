@@ -2,10 +2,24 @@
   CONTACT PAGE STYLES
 =====================================*/
 
+/* Box-sizing for all elements */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent horizontal overflow */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
 /* Hero Section */
 .contact-hero {
   text-align: center;
-  padding: 6rem 2rem 4rem;
+  padding: 4rem 1.5rem 3rem;
   background: var(--sepia-gradient);
 }
 
@@ -33,7 +47,7 @@
 
 /* Contact Content */
 .contact-content {
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem;
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -41,8 +55,15 @@
 .contact-content .content-wrapper {
   display: grid;
   grid-template-columns: 1fr 1.5fr;
-  gap: 3rem;
+  gap: 2rem;
   align-items: start;
+}
+
+@media (max-width: 992px) {
+  .contact-content .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }
 
 /* Contact Info Card */
@@ -50,9 +71,15 @@
   background: var(--sepia-gradient);
   border: var(--border-thin);
   border-radius: 15px;
-  padding: 2.5rem;
+  padding: 2rem;
   position: relative;
   box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 768px) {
+  .contact-info-card {
+    padding: 1.5rem;
+  }
 }
 
 .contact-info-card h2 {
@@ -132,9 +159,15 @@
   background: var(--sepia-gradient);
   border: var(--border-thin);
   border-radius: 15px;
-  padding: 2.5rem;
+  padding: 2rem;
   position: relative;
   box-shadow: var(--box-shadow);
+}
+
+@media (max-width: 768px) {
+  .contact-form-card {
+    padding: 1.5rem;
+  }
 }
 
 .contact-form-card h2 {
@@ -292,7 +325,7 @@
 
 /* FAQ Section */
 .contact-faq {
-  padding: 4rem 2rem;
+  padding: 3rem 1.5rem;
   max-width: 1000px;
   margin: 0 auto;
   background: var(--sepia-gradient);
