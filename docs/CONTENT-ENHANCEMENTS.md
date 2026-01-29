@@ -165,7 +165,7 @@ This document outlines recommended improvements for the Aria Amore website, part
   "text": "Aria Amore made our wedding ceremony absolutely magical. Their performance of 'Ave Maria' brought tears to everyone's eyes. Professional, punctual, and incredibly talented.",
   "author": "Sarah & Michael T.",
   "eventType": "Wedding Ceremony",
-  "date": "June 2025",
+  "date": "June 2024",
   "location": "Charleston, SC"
 }
 ```

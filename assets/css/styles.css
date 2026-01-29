@@ -1425,40 +1425,40 @@ blockquote:hover {
    Footer Responsive Styles
    ================================ */
 @media (max-width: 1024px) {
-  .footer-content {
+  .aa-site-footer .footer-content {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
   }
   
-  .footer-about {
+  .aa-site-footer .footer-about {
     grid-column: 1 / -1;
   }
 }
 
 @media (max-width: 768px) {
-  footer {
+  .aa-site-footer {
     padding: 2rem 1.5rem 0;
   }
   
-  .footer-content {
+  .aa-site-footer .footer-content {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   
-  .footer-about {
+  .aa-site-footer .footer-about {
     grid-column: 1;
     text-align: center;
   }
   
-  .footer-section {
+  .aa-site-footer .footer-section {
     text-align: center;
   }
   
-  .footer-links nav {
+  .aa-site-footer .footer-links nav {
     align-items: center;
   }
   
-  .footer-social {
+  .aa-site-footer .footer-social {
     justify-content: center;
   }
 }

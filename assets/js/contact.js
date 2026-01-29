@@ -25,8 +25,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const phone = document.getElementById('contact-phone');
     if (phone) {
       phone.textContent = data.contactInfo.phone;
-      const cleanPhone = data.contactInfo.phone.replace(/\D/g, '');
-      phone.href = `tel:+1${cleanPhone}`;
+      // Use the dialable phone number if available, otherwise fall back to cleaning the display number
+      const phoneHref = data.contactInfo.phoneDialable || `tel:${data.contactInfo.phone.replace(/\D/g, '')}`;
+      phone.href = phoneHref.startsWith('tel:') ? phoneHref : `tel:${phoneHref}`;
     }
 
     const hours = document.getElementById('contact-hours');
@@ -142,14 +143,21 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (response.ok) {
-        // Success message
-        const successMsg = document.createElement('div');
-        successMsg.className = 'form-success';
-        successMsg.innerHTML = `
-          <h3>Thank you for your inquiry!</h3>
-          <p>We've received your message and will get back to you within 24-48 hours.</p>
-        `;
-        form.replaceWith(successMsg);
+        // Parse response to verify success
+        const result = await response.json().catch(() => ({ success: true }));
+        
+        if (result.success !== false) {
+          // Success message
+          const successMsg = document.createElement('div');
+          successMsg.className = 'form-success';
+          successMsg.innerHTML = `
+            <h3>Thank you for your inquiry!</h3>
+            <p>We've received your message and will get back to you within 24-48 hours.</p>
+          `;
+          form.replaceWith(successMsg);
+        } else {
+          throw new Error(result.error || 'Form submission failed');
+        }
       } else {
         throw new Error('Form submission failed');
       }
