@@ -172,7 +172,7 @@
 
       modalInstagram.href = artist.social?.instagram || '#';
       modalFacebook.href = artist.social?.tiktok || '#';
-      modalBook.onclick = () => window.location.href = `/services.html?artist=${encodeURIComponent(artist.name)}&package=Serenade`;
+      modalBook.onclick = () => window.location.href = `/public/services.html?artist=${encodeURIComponent(artist.name)}&package=Serenade`;
 
       modal.classList.add('open');
       modal.setAttribute('aria-hidden', 'false');

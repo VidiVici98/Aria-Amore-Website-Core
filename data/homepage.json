@@ -6,7 +6,7 @@
       "heading": "More Than Just Entertainment",
       "text": "Make Your Next Event Unforgettable With Live Opera.",
       "ctaText": "Reserve Your Date Today!",
-      "ctaHref": "contact.html",
+      "ctaHref": "/public/services.html#rsvp",
       "icons": [
         { "src": "/assets/media/images/tiktok-icon.svg", "alt": "TikTok" },
         { "src": "/assets/media/images/instagram-icon.svg", "alt": "Instagram" },
@@ -38,19 +38,19 @@
       "index": 0,
       "name": "Latoya",
       "portrait": "/assets/media/images/latoya.webp",
-      "link": "/artists.html"
+      "link": "/public/artists.html"
     },
     {
       "index": 1,
       "name": "Xavier Williams",
       "portrait": "/assets/media/images/xavier-williams-transparent.webp",
-      "link": "/artists.html"
+      "link": "/public/artists.html"
     },
     {
       "index": 2,
       "name": "Performer Name",
       "portrait": "/assets/media/images/placeholder.webp",
-      "link": "/artists.html"
+      "link": "/public/artists.html"
     }
   ],
   "performerCornerImages": [
