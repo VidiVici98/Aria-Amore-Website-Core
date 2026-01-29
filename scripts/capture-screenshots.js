@@ -1,0 +1,173 @@
+#!/usr/bin/env node
+
+/**
+ * Screenshot Capture Script
+ * 
+ * Captures screenshots of all pages after curtain animation completes.
+ * 
+ * Usage:
+ *   node scripts/capture-screenshots.js [server-url]
+ * 
+ * Example:
+ *   node scripts/capture-screenshots.js http://localhost:8000
+ */
+
+const { chromium } = require('playwright');
+const path = require('path');
+const fs = require('fs');
+
+// Configuration
+const SERVER_URL = process.argv[2] || 'http://localhost:8000';
+const SCREENSHOT_DIR = path.join(__dirname, '../docs/screenshots');
+const VIEWPORT = { width: 1280, height: 720 };
+
+// Pages to screenshot
+const PAGES = [
+  { url: '/index.html', filename: '01-homepage-hero.png', description: 'Homepage Hero', scrollY: 0 },
+  { url: '/index.html', filename: '01-homepage-packages.png', description: 'Homepage Packages Section', scrollY: 800 },
+  { url: '/about.html', filename: '02-about-page.png', description: 'About Page' },
+  { url: '/services.html', filename: '03-services-page.png', description: 'Services Page' },
+  { url: '/artists.html', filename: '04-artists-page.png', description: 'Artists Page' },
+  { url: '/repertoire.html', filename: '05-repertoire-page.png', description: 'Repertoire Page' },
+  { url: '/events.html', filename: '06-events-page.png', description: 'Events Page' },
+  { url: '/gallery.html', filename: '07-gallery-page.png', description: 'Gallery Page' },
+  { url: '/contact.html', filename: '08-contact-page.png', description: 'Contact Page' },
+  { url: '/privacy-policy.html', filename: '09-privacy-policy-page.png', description: 'Privacy Policy' },
+  { url: '/terms-of-service.html', filename: '10-terms-of-service-page.png', description: 'Terms of Service' }
+];
+
+// Homepage sections for sections/ subfolder
+const HOMEPAGE_SECTIONS = [
+  { filename: 'sections/homepage-section-1-hero.png', description: 'Homepage Section 1 - Hero', scrollY: 0 },
+  { filename: 'sections/homepage-section-2-packages.png', description: 'Homepage Section 2 - Packages', scrollY: 800 }
+];
+
+async function captureScreenshots() {
+  console.log('📸 Aria Amore Screenshot Capture');
+  console.log('================================\n');
+  console.log(`Server URL: ${SERVER_URL}`);
+  console.log(`Viewport: ${VIEWPORT.width}x${VIEWPORT.height}`);
+  console.log(`Output Directory: ${SCREENSHOT_DIR}\n`);
+
+  // Ensure screenshot directories exist
+  if (!fs.existsSync(SCREENSHOT_DIR)) {
+    console.log(`Creating screenshot directory: ${SCREENSHOT_DIR}`);
+    fs.mkdirSync(SCREENSHOT_DIR, { recursive: true });
+  }
+  
+  const sectionsDir = path.join(SCREENSHOT_DIR, 'sections');
+  if (!fs.existsSync(sectionsDir)) {
+    console.log(`Creating sections directory: ${sectionsDir}`);
+    fs.mkdirSync(sectionsDir, { recursive: true });
+  }
+
+  // Launch browser
+  console.log('→ Launching browser...');
+  const browser = await chromium.launch({
+    headless: true
+  });
+
+  try {
+    const context = await browser.newContext({
+      viewport: VIEWPORT,
+      deviceScaleFactor: 1
+    });
+
+    const page = await context.newPage();
+
+    // Helper function to capture a screenshot with optional scroll
+    async function capturePageScreenshot(url, outputPath, description, scrollY = 0) {
+      console.log(`   URL: ${url}`);
+      if (scrollY > 0) {
+        console.log(`   📜 Scroll position: ${scrollY}px`);
+      }
+
+      try {
+        // Navigate to page
+        await page.goto(url, { 
+          waitUntil: 'networkidle',
+          timeout: 30000
+        });
+
+        // CRITICAL: Wait for curtain animation to complete
+        console.log('   ⏳ Waiting for curtain animation to complete (3 seconds)...');
+        await page.waitForTimeout(3000);
+
+        // Additional check: ensure curtain wrapper has 'open' class
+        await page.waitForSelector('.curtain-wrapper.open', { 
+          timeout: 5000,
+          state: 'attached'
+        }).catch(() => {
+          console.log('   ⚠️  Curtain wrapper not found or not opened (may not have curtain animation)');
+        });
+
+        // Scroll if needed
+        if (scrollY > 0) {
+          await page.evaluate((y) => window.scrollTo(0, y), scrollY);
+          await page.waitForTimeout(500); // Wait for scroll to complete
+        }
+
+        // Take screenshot
+        console.log('   📷 Capturing screenshot...');
+        await page.screenshot({
+          path: outputPath,
+          type: 'png',
+          fullPage: false  // Viewport only for consistency
+        });
+
+        console.log(`   ✓ Saved: ${path.basename(outputPath)}`);
+        return true;
+
+      } catch (error) {
+        console.error(`   ❌ Error capturing ${description}:`, error.message);
+        return false;
+      }
+    }
+
+    // Capture main pages
+    for (let i = 0; i < PAGES.length; i++) {
+      const pageInfo = PAGES[i];
+      const url = `${SERVER_URL}${pageInfo.url}`;
+      const outputPath = path.join(SCREENSHOT_DIR, pageInfo.filename);
+
+      console.log(`\n[${i + 1}/${PAGES.length}] ${pageInfo.description}`);
+      await capturePageScreenshot(url, outputPath, pageInfo.description, pageInfo.scrollY || 0);
+    }
+
+    // Capture homepage sections
+    console.log('\n\n=== Homepage Sections ===\n');
+    for (let i = 0; i < HOMEPAGE_SECTIONS.length; i++) {
+      const sectionInfo = HOMEPAGE_SECTIONS[i];
+      const url = `${SERVER_URL}/index.html`;
+      const outputPath = path.join(SCREENSHOT_DIR, sectionInfo.filename);
+
+      console.log(`\n[Section ${i + 1}/${HOMEPAGE_SECTIONS.length}] ${sectionInfo.description}`);
+      await capturePageScreenshot(url, outputPath, sectionInfo.description, sectionInfo.scrollY);
+    }
+
+    await context.close();
+
+  } catch (error) {
+    console.error('\n❌ Fatal error:', error);
+    process.exit(1);
+  } finally {
+    await browser.close();
+  }
+
+  console.log('\n================================');
+  console.log('✅ Screenshot capture complete!');
+  console.log(`\nScreenshots saved to: ${SCREENSHOT_DIR}`);
+  console.log(`Main pages: ${PAGES.length}`);
+  console.log(`Homepage sections: ${HOMEPAGE_SECTIONS.length}`);
+  console.log(`Total: ${PAGES.length + HOMEPAGE_SECTIONS.length} screenshots\n`);
+}
+
+// Main execution
+(async () => {
+  try {
+    await captureScreenshots();
+  } catch (error) {
+    console.error('Error:', error);
+    process.exit(1);
+  }
+})();

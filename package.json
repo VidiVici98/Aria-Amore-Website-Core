@@ -16,7 +16,8 @@
     "health": "./scripts/health-check.sh --once",
     "setup": "./scripts/setup-env.sh development",
     "setup:prod": "./scripts/setup-env.sh production",
-    "content:validate": "./scripts/update-content.sh"
+    "content:validate": "./scripts/update-content.sh",
+    "screenshots": "node scripts/capture-screenshots.js http://localhost:8000"
   },
   "keywords": [
     "opera",
@@ -33,7 +34,8 @@
     "node": ">=14.0.0"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "http-server": "^14.1.1",
+    "playwright": "^1.58.0"
   },
   "repository": {
     "type": "git",
