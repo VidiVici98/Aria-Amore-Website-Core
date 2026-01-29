@@ -41,7 +41,7 @@ function generateCalendar() {
       dayElement.classList.add('booked');
     } else {
       dayElement.classList.add('available');
-      dayElement.onclick = () => selectDate(day);
+      dayElement.onclick = (event) => selectDate(day, event);
     }
     
     daysContainer.appendChild(dayElement);
@@ -50,10 +50,12 @@ function generateCalendar() {
   updateMonthDisplay();
 }
 
-function selectDate(day) {
+function selectDate(day, event) {
   const days = document.querySelectorAll('.calendar-day');
   days.forEach(d => d.classList.remove('selected'));
-  event.target.classList.add('selected');
+  if (event && event.target) {
+    event.target.classList.add('selected');
+  }
   alert(`You've selected ${getMonthName(currentMonth)} ${day}, ${currentYear}. Continue to booking?`);
   // In production, this would store the date and proceed to booking form
 }
