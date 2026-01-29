@@ -70,8 +70,8 @@ document.addEventListener("DOMContentLoaded", async () => {
           });
         }
 
-        const nextBtn = document.querySelector('#performers .next');
-        const prevBtn = document.querySelector('#performers .prev');
+        const nextBtn = document.querySelector('#performers .carousel-btn.next') || document.querySelector('#performers .next');
+        const prevBtn = document.querySelector('#performers .carousel-btn.prev') || document.querySelector('#performers .prev');
         
         if (nextBtn && prevBtn) {
           nextBtn.addEventListener('click', () => { 
