@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Repertoire Catalog | Aria Amore</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our extensive repertoire of opera arias, sacred music, and classical pieces. Find the perfect music for your special event.">
+  <meta name="keywords" content="opera repertoire, classical music catalog, wedding songs, opera arias, sacred music, aria amore">
+  
+  <!-- Security Headers -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self'; media-src 'self';">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/assets/media/icons/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/media/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#b08b4f">
+  
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/opera-effects.css">
+  <style>
+    /* Repertoire Catalog Specific Styles */
+    .repertoire-hero {
+      background: linear-gradient(135deg, rgba(26, 20, 16, 0.95) 0%, rgba(44, 36, 22, 0.95) 100%),
+                  url('/assets/media/images/parchment-background.webp');
+      background-size: cover;
+      background-attachment: fixed;
+      padding: 4rem 2rem;
+      text-align: center;
+      color: #fff;
+      position: relative;
+    }
+    
+    .repertoire-hero h1 {
+      font-family: 'Italianno', cursive;
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      color: #d4af37;
+      margin-bottom: 1rem;
+    }
+    
+    .repertoire-hero p {
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-family: 'Playfair Display', serif;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
+    }
+    
+    /* Search and Filter Section */
+    .search-filter-section {
+      background: #f8f6f3;
+      padding: 2rem;
+      border-bottom: 2px solid #d4af37;
+    }
+    
+    .search-filter-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .search-box {
+      position: relative;
+    }
+    
+    .search-box input {
+      width: 100%;
+      padding: 1rem 3rem 1rem 1rem;
+      border: 2px solid #d4af37;
+      border-radius: 50px;
+      font-size: 1rem;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .search-icon {
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #b08b4f;
+      font-size: 1.2rem;
+    }
+    
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+    
+    .filter-label {
+      font-weight: 600;
+      color: #333;
+      font-family: 'Playfair Display', serif;
+    }
+    
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    
+    .filter-btn {
+      padding: 0.5rem 1.2rem;
+      border: 2px solid #d4af37;
+      background: white;
+      color: #333;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Playfair Display', serif;
+      font-size: 0.9rem;
+    }
+    
+    .filter-btn:hover {
+      background: #d4af37;
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .filter-btn.active {
+      background: #b08b4f;
+      color: white;
+      border-color: #b08b4f;
+    }
+    
+    /* Catalog Grid */
+    .catalog-section {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 3rem 2rem;
+    }
+    
+    .category-section {
+      margin-bottom: 4rem;
+    }
+    
+    .category-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    
+    .category-header h2 {
+      font-family: 'Italianno', cursive;
+      font-size: 3rem;
+      color: #b08b4f;
+      margin-bottom: 0.5rem;
+    }
+    
+    .category-header p {
+      font-family: 'Playfair Display', serif;
+      color: #666;
+      font-style: italic;
+    }
+    
+    .pieces-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+    
+    .piece-card {
+      background: white;
+      border: 2px solid #e0d5c7;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .piece-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.2),
+                  0 0 20px rgba(212, 175, 55, 0.2);
+      border-color: #d4af37;
+    }
+    
+    .piece-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      margin-bottom: 1rem;
+    }
+    
+    .piece-title {
+      flex: 1;
+    }
+    
+    .piece-title h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: #333;
+      margin-bottom: 0.25rem;
+    }
+    
+    .piece-composer {
+      color: #b08b4f;
+      font-style: italic;
+      font-size: 0.95rem;
+    }
+    
+    .popularity-badge {
+      background: linear-gradient(135deg, #d4af37, #f0c850);
+      color: #1a1410;
+      padding: 0.3rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    
+    .piece-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .meta-tag {
+      background: #f8f6f3;
+      padding: 0.3rem 0.8rem;
+      border-radius: 15px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+    
+    .meta-tag.voice {
+      background: #e8e3dc;
+      color: #a2583e;
+      font-weight: 600;
+    }
+    
+    .piece-description {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+    
+    .mood-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1rem;
+    }
+    
+    .mood-tag {
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(212, 175, 55, 0.2));
+      border: 1px solid #d4af37;
+      padding: 0.25rem 0.7rem;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      color: #666;
+    }
+    
+    .piece-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid #e0d5c7;
+    }
+    
+    .action-btn {
+      flex: 1;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-listen {
+      background: linear-gradient(135deg, #d4af37, #f0c850);
+      color: #1a1410;
+    }
+    
+    .btn-listen:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 15px rgba(212, 175, 55, 0.3);
+    }
+    
+    .btn-request {
+      background: white;
+      border: 2px solid #d4af37;
+      color: #333;
+    }
+    
+    .btn-request:hover {
+      background: #d4af37;
+      color: white;
+    }
+    
+    /* Voice Types Guide */
+    .voice-guide {
+      background: #f8f6f3;
+      padding: 3rem 2rem;
+      margin: 3rem 0;
+    }
+    
+    .voice-guide-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .voice-guide h2 {
+      text-align: center;
+      font-family: 'Italianno', cursive;
+      font-size: 3rem;
+      color: #b08b4f;
+      margin-bottom: 2rem;
+    }
+    
+    .voice-types-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .voice-type-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 2px solid #e0d5c7;
+      transition: all 0.3s ease;
+    }
+    
+    .voice-type-card:hover {
+      border-color: #d4af37;
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .voice-type-card h3 {
+      font-family: 'Playfair Display', serif;
+      color: #b08b4f;
+      margin-bottom: 0.5rem;
+    }
+    
+    .voice-range {
+      color: #a2583e;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    
+    .voice-characteristics {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+    
+    .characteristic-tag {
+      background: #f0f0f0;
+      padding: 0.3rem 0.7rem;
+      border-radius: 12px;
+      font-size: 0.85rem;
+      color: #555;
+    }
+    
+    /* No Results */
+    .no-results {
+      text-align: center;
+      padding: 4rem 2rem;
+      color: #666;
+    }
+    
+    .no-results h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #b08b4f;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .pieces-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .repertoire-hero {
+        padding: 2rem 1rem;
+      }
+      
+      .search-filter-container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header Component -->
+  <div id="header-placeholder"></div>
+  
+  <!-- Hero Section -->
+  <section class="repertoire-hero">
+    <h1>Our Repertoire</h1>
+    <p>Explore our extensive catalog of classical arias, sacred music, and beloved pieces. Find the perfect music for your special moment.</p>
+  </section>
+  
+  <!-- Search and Filter -->
+  <section class="search-filter-section">
+    <div class="search-filter-container">
+      <div class="search-box">
+        <input type="text" id="search-input" placeholder="Search by title, composer, or mood..." aria-label="Search repertoire">
+        <span class="search-icon">🔍</span>
+      </div>
+      
+      <div class="filter-group">
+        <span class="filter-label">Category:</span>
+        <div class="filter-buttons" id="category-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+        </div>
+      </div>
+      
+      <div class="filter-group">
+        <span class="filter-label">Voice Type:</span>
+        <div class="filter-buttons" id="voice-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+        </div>
+      </div>
+      
+      <div class="filter-group">
+        <span class="filter-label">Mood:</span>
+        <div class="filter-buttons" id="mood-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Catalog -->
+  <section class="catalog-section" id="catalog-container">
+    <!-- Dynamically loaded -->
+  </section>
+  
+  <!-- Voice Types Guide -->
+  <section class="voice-guide">
+    <div class="voice-guide-container">
+      <h2>Understanding Voice Types</h2>
+      <div class="voice-types-grid" id="voice-types-grid">
+        <!-- Dynamically loaded -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer Component -->
+  <div id="footer-placeholder"></div>
+  
+  <!-- Scripts -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/opera-effects.js"></script>
+  <script src="/assets/js/repertoire.js"></script>
+  
+  <script>
+    // Load components
+    document.addEventListener('DOMContentLoaded', function() {
+      if (typeof loadComponent === 'function') {
+        loadComponent('header', 'header-placeholder');
+        loadComponent('footer', 'footer-placeholder');
+      }
+    });
+  </script>
+</body>
+</html>
