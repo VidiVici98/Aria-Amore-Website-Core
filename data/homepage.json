@@ -62,18 +62,18 @@
   "testimonials": [
     {
       "stars": 5,
-      "text": "Simply breathtaking.",
-      "author": "Happy Client"
+      "text": "Aria Amore brought elegance and beauty to our special day. Highly recommended!",
+      "author": "Recent Client"
     },
     {
       "stars": 5,
-      "text": "They shook the room with their voices.",
-      "author": "Very Happy Client"
+      "text": "Professional, talented, and a joy to work with.",
+      "author": "Charleston Wedding"
     },
     {
       "stars": 5,
-      "text": "They brought the entire room to tears.",
-      "author": "Happiest Client"
+      "text": "Their performance exceeded our expectations.",
+      "author": "Local Event Planner"
     }
   ],
   "testimonialSeparator": "/assets/media/images/victorian-separator.svg"

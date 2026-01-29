@@ -197,7 +197,7 @@ footer {
   border-top: var(--border-thin);
   color: var(--color-secondary);
   width: 100vw;
-  padding: 3rem 2rem 0;
+  padding: 2rem 2rem 0;
 }
 
 /* Footer Content Grid */
@@ -206,8 +206,8 @@ footer {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
-  padding-bottom: 2rem;
+  gap: 2rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -284,7 +284,7 @@ footer {
   position: relative;
   text-align: center;
   font-size: .75rem;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
 }
 .hero {
   width: 98%;
