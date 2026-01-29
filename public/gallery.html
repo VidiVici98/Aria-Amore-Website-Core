@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Performance Gallery | Aria Amore</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!--Security Headers-->
+  <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               script-src 'self' 'unsafe-inline';
+               style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+               font-src 'self' https://fonts.gstatic.com;
+               img-src 'self' data: https:;
+               connect-src 'self';
+               frame-src 'self' https://www.youtube.com;
+               frame-ancestors 'none';
+               base-uri 'self';
+               form-action 'self';">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="robots" content="index, follow">
+  
+  <!-- SEO & Branding -->
+  <meta name="description" content="Browse our gallery of past performances including weddings, corporate events, and private celebrations. See why clients choose Aria Amore for live opera entertainment.">
+  <meta name="keywords" content="opera performance gallery, wedding opera videos, live performance photos, Aria Amore gallery, Charleston opera singers">
+  <meta name="author" content="Modern Warrior School LLC">
+  <link rel="canonical" href="https://ariaamore.com/gallery.html">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Performance Gallery | Aria Amore">
+  <meta property="og:description" content="View photos and videos from our past opera performances at weddings, corporate events, and celebrations.">
+  <meta property="og:image" content="https://ariaamore.com/assets/media/images/preview-image.jpg">
+  <meta property="og:url" content="https://ariaamore.com/gallery.html">
+  <meta property="og:type" content="website">
+  
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="/assets/media/icons/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/media/icons/apple-touch-icon.png">
+  <meta name="theme-color" content="#b08b4f">
+  
+  <!--External APIs-->
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
+  
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/gallery.css">
+</head>
+<body class="gallery-page">
+  
+  <!--Header-->
+  <div id="header"></div>
+  
+  <!--Main Content-->
+  <main>
+    <!-- Hero Section -->
+    <section class="gallery-hero">
+      <div class="hero-content">
+        <h1 id="gallery-title">Performance Gallery</h1>
+        <p id="gallery-subtitle">Witness the Magic of Live Opera Through Our Past Performances</p>
+      </div>
+    </section>
+    
+    <!-- Stats Section -->
+    <section class="gallery-stats">
+      <div class="stats-container">
+        <div class="stat-card">
+          <div class="stat-number" id="stat-performances">500+</div>
+          <div class="stat-label">Total Performances</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-clients">450+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-year">75+</div>
+          <div class="stat-label">Events This Year</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" id="stat-rating">4.9★</div>
+          <div class="stat-label">Average Rating</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Filter Section -->
+    <section class="gallery-filters">
+      <div class="filters-container">
+        <button class="filter-btn active" data-category="all">
+          <span class="filter-icon">✨</span>
+          <span class="filter-name">All Events</span>
+        </button>
+        <button class="filter-btn" data-category="weddings">
+          <span class="filter-icon">💒</span>
+          <span class="filter-name">Weddings</span>
+        </button>
+        <button class="filter-btn" data-category="corporate">
+          <span class="filter-icon">🏢</span>
+          <span class="filter-name">Corporate</span>
+        </button>
+        <button class="filter-btn" data-category="holiday">
+          <span class="filter-icon">🎄</span>
+          <span class="filter-name">Holiday</span>
+        </button>
+        <button class="filter-btn" data-category="private">
+          <span class="filter-icon">🎭</span>
+          <span class="filter-name">Private Events</span>
+        </button>
+      </div>
+    </section>
+    
+    <!-- Gallery Grid -->
+    <section class="gallery-grid-section">
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Gallery items will be loaded here by JavaScript -->
+        <div class="loading-state">
+          <div class="loading-spinner"></div>
+          <p>Loading gallery...</p>
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="gallery-cta">
+      <div class="cta-content">
+        <h2>Ready to Create Your Own Unforgettable Experience?</h2>
+        <p>Let us bring the magic of live opera to your special event</p>
+        <a href="/contact.html" class="cta-button">Get In Touch</a>
+      </div>
+    </section>
+  </main>
+  
+  <!-- Lightbox Modal -->
+  <div id="lightbox-modal" class="lightbox-modal" style="display: none;">
+    <button class="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+    <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+    <div class="lightbox-content">
+      <!-- Content will be loaded here -->
+    </div>
+  </div>
+  
+  <!--Event Banner-->
+  <div id="event-banner"></div>
+  
+  <!--Footer-->
+  <div id="footer"></div>
+  
+  <!--Scripts-->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/gallery.js"></script>
+</body>
+</html>
