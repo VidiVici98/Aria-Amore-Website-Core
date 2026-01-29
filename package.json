@@ -4,17 +4,28 @@
   "description": "Aria Amore - Live Opera for Weddings & Celebrations",
   "main": "index.html",
   "scripts": {
-    "start": "http-server",
-    "build": "echo 'Build complete'",
-    "test": "echo 'No tests configured'",
-    "deploy": "echo 'Deploy to production'"
+    "start": "http-server -p 8000 public",
+    "build": "./scripts/build.sh",
+    "test": "./scripts/test.sh",
+    "test:quick": "./scripts/test.sh --quick",
+    "deploy": "./scripts/deploy.sh production",
+    "deploy:siteground": "./scripts/siteground-deploy.sh",
+    "security": "./scripts/security-check.sh",
+    "security:fix": "./scripts/security-check.sh --fix",
+    "backup": "./scripts/backup.sh",
+    "health": "./scripts/health-check.sh --once",
+    "setup": "./scripts/setup-env.sh development",
+    "setup:prod": "./scripts/setup-env.sh production",
+    "content:validate": "./scripts/update-content.sh"
   },
   "keywords": [
     "opera",
     "wedding",
     "live-performers",
     "classical-singers",
-    "event-entertainment"
+    "event-entertainment",
+    "siteground",
+    "production-ready"
   ],
   "author": "Modern Warrior School LLC",
   "license": "MIT",
@@ -23,5 +34,9 @@
   },
   "devDependencies": {
     "http-server": "^14.1.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/VidiVici98/Aria-Amore-Website-Core"
   }
 }

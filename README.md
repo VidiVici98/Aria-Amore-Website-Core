@@ -26,26 +26,45 @@ Transform your special day into an unforgettable performance with live opera mus
 
 ### Prerequisites
 
-- Web server (Apache with mod_rewrite, mod_headers, mod_deflate, mod_expires)
-- Or Node.js for local development
-- Python 3 (optional, for local testing)
+- Web server (Apache/LiteSpeed with mod_rewrite, mod_headers, mod_deflate, mod_expires)
+- PHP 7.4+ (for email functionality)
+- Node.js 14+ (for local development)
+- SiteGround hosting (or similar cPanel-based hosting)
 
-### Local Development
+### Quick Setup
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/aria-amore.git
-cd aria-amore
+git clone https://github.com/VidiVici98/Aria-Amore-Website-Core.git
+cd Aria-Amore-Website-Core
 
-# Setup environment
-cp .env.example .env
-# Edit .env with your configuration
+# Automated setup (creates .env, sets permissions, etc.)
+npm run setup
+# or
+./scripts/setup-env.sh development
 
 # Start development server
-chmod +x start-dev-server.sh
-./start-dev-server.sh
+npm start
+# or
+php -S localhost:8000 -t public/
 
 # Open http://localhost:8000 in your browser
+```
+
+### Available NPM Scripts
+
+```bash
+npm start              # Start development server
+npm run build          # Build production files
+npm test               # Run full test suite
+npm run test:quick     # Run quick tests
+npm run deploy         # Deploy to production
+npm run deploy:siteground  # Create SiteGround deployment package
+npm run security       # Run security checks
+npm run security:fix   # Fix security issues automatically
+npm run backup         # Create backup
+npm run health         # Run health check
+npm run content:validate  # Validate JSON content files
 ```
 
 ## 💻 Development
@@ -371,3 +390,230 @@ If something still doesn’t look right:
 3. Restore your backup file if needed — just replace the broken JSON with your saved copy.
 
 If all else fails, send the broken JSON file to your developer for a quick fix.
+
+## 🛠️ Production Scripts & Maintenance
+
+The project includes comprehensive scripts for server maintenance and deployment:
+
+### Backup Script
+Create timestamped backups with compression and checksums:
+```bash
+./scripts/backup.sh [backup_directory]
+# Creates: aria-amore-backup-YYYYMMDD_HHMMSS.tar.gz
+# With: SHA256 checksum
+# Auto-cleanup: Removes backups older than 30 days
+```
+
+### Health Check Script
+Monitor website health and send alerts:
+```bash
+./scripts/health-check.sh --once     # Run once
+./scripts/health-check.sh             # Continuous monitoring
+```
+Checks:
+- HTTP status (200 OK)
+- SSL certificate expiry
+- Disk space usage
+- Critical files existence
+
+### Security Check Script
+Validate security configuration:
+```bash
+./scripts/security-check.sh           # Scan for issues
+./scripts/security-check.sh --fix     # Auto-fix issues
+```
+Validates:
+- File permissions
+- Environment security
+- Security headers
+- Hardcoded secrets
+- Form protection
+- HTTPS enforcement
+
+### Deployment Scripts
+Deploy to production or create SiteGround packages:
+```bash
+./scripts/deploy.sh production        # Standard deployment
+./scripts/siteground-deploy.sh        # SiteGround-specific package
+```
+
+### Content Management
+Validate and manage JSON content files:
+```bash
+./scripts/update-content.sh           # Validate all files
+./scripts/update-content.sh artists.json  # Validate specific file
+```
+
+### Environment Setup
+Automated environment configuration:
+```bash
+./scripts/setup-env.sh development    # Dev environment
+./scripts/setup-env.sh production     # Production environment
+```
+
+### Test Suite
+Comprehensive testing:
+```bash
+./scripts/test.sh                     # Full test suite (50+ tests)
+./scripts/test.sh --quick             # Quick tests only
+```
+
+## 🌐 SiteGround Deployment
+
+This site is optimized for SiteGround hosting. See the complete deployment guide:
+
+### Quick SiteGround Deployment
+
+1. **Create Deployment Package**
+   ```bash
+   npm run deploy:siteground
+   ```
+   Creates: `aria-amore-siteground-YYYYMMDD_HHMMSS.zip`
+
+2. **Upload to SiteGround**
+   - Login to cPanel
+   - Open File Manager
+   - Go to `public_html`
+   - Upload files from the package
+
+3. **Configure Email**
+   - Create `.env` file with SiteGround SMTP settings
+   - Set up email accounts in cPanel
+
+4. **Enable SSL**
+   - Install Let's Encrypt certificate via cPanel
+   - HTTPS redirect is automatic
+
+### SiteGround Features Supported
+✅ cPanel integration
+✅ LiteSpeed optimization
+✅ Local SMTP support
+✅ SuperCacher compatibility
+✅ Cloudflare CDN ready
+✅ Automated backups
+✅ SSH/Git deployment (GrowBig/GoGeek)
+
+**Full Guide:** See [docs/SITEGROUND-DEPLOYMENT.md](docs/SITEGROUND-DEPLOYMENT.md)
+
+## 📧 Email & Form Configuration
+
+### Email Setup Options
+
+**Option 1: SiteGround SMTP (Recommended)**
+```env
+SMTP_HOST=localhost
+SMTP_USER=no-reply@yourdomain.com
+SMTP_PASS=your-password
+SMTP_PORT=465
+SMTP_SECURE=ssl
+```
+
+**Option 2: Gmail SMTP**
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_USER=your-gmail@gmail.com
+SMTP_PASS=your-app-password
+SMTP_PORT=587
+SMTP_SECURE=tls
+```
+
+**Option 3: SendGrid**
+```env
+SMTP_HOST=smtp.sendgrid.net
+SMTP_USER=apikey
+SMTP_PASS=your-api-key
+SMTP_PORT=587
+SMTP_SECURE=tls
+```
+
+### Form Validation
+
+Client-side validation with security features:
+- Real-time field validation
+- Honeypot spam protection
+- Bot detection (time-based)
+- Input sanitization
+- XSS prevention
+
+Include in your HTML:
+```html
+<script src="/assets/js/form-validation.js"></script>
+<script>
+  FormValidator.init('your-form-id', {
+    realTimeValidation: true,
+    honeypot: true,
+    preventDoubleSubmit: true,
+    submitHandler: function(form, data) {
+      // Custom submit logic
+    }
+  });
+</script>
+```
+
+## 🔒 Security Features
+
+### Built-in Security
+- **HTTPS enforcement** - Automatic HTTP to HTTPS redirect
+- **Security headers** - CSP, HSTS, X-Frame-Options, etc.
+- **Input sanitization** - XSS and injection prevention
+- **Form protection** - Honeypot and bot detection
+- **File permissions** - Secure defaults (644/755)
+- **Secrets management** - Environment variables only
+
+### Security Validation
+Run regular security checks:
+```bash
+npm run security
+```
+
+### Monitoring
+Set up automated health checks:
+```bash
+# Add to crontab (every 5 minutes)
+*/5 * * * * /path/to/scripts/health-check.sh --once
+```
+
+## 📊 Testing
+
+### Test Coverage
+- ✅ File structure validation
+- ✅ Data file integrity (JSON validation)
+- ✅ Asset existence checks
+- ✅ Security configuration
+- ✅ Email configuration
+- ✅ Build system validation
+- ✅ Documentation completeness
+
+### Running Tests
+```bash
+npm test              # Full suite (50+ tests)
+npm run test:quick    # Quick tests only
+```
+
+## 🔧 Maintenance
+
+### Daily Tasks (Automated)
+- Automated backups (via cron)
+- Health monitoring
+- Error log monitoring
+
+### Weekly Tasks
+- Review error logs: `tail -f logs/errors.log`
+- Check backup status
+- Verify SSL certificate validity
+- Monitor site performance
+
+### Monthly Tasks
+- Security audit: `npm run security`
+- Content validation: `npm run content:validate`
+- Performance testing (GTmetrix, PageSpeed)
+- Backup restoration test
+
+### Cron Job Setup
+```bash
+# Daily backup at 2 AM
+0 2 * * * cd /path/to/site && ./scripts/backup.sh
+
+# Health check every 5 minutes
+*/5 * * * * cd /path/to/site && ./scripts/health-check.sh --once
+```
