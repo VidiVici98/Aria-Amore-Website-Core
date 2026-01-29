@@ -153,3 +153,170 @@
       font-size: 1.1rem;
     }
   }
+/* ============ About Page Additional Sections ============ */
+
+/* Hero Section */
+.about-hero {
+  text-align: center;
+  padding: 6rem 2rem 4rem;
+  background: linear-gradient(135deg, rgba(176, 139, 79, 0.1) 0%, rgba(176, 139, 79, 0.05) 100%);
+}
+
+.about-hero h1 {
+  font-family: 'Italianno', cursive;
+  font-size: 4rem;
+  color: var(--gold, #b08b4f);
+  margin-bottom: 1rem;
+}
+
+.about-hero .separator {
+  width: 200px;
+  height: auto;
+  margin: 1.5rem auto;
+  display: block;
+}
+
+.about-hero .subheading {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  line-height: 1.8;
+  color: #333;
+  font-weight: 600;
+}
+
+/* About Section General Styles */
+.about-section {
+  padding: 4rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-section h2 {
+  font-family: 'Italianno', cursive;
+  font-size: 3rem;
+  color: var(--gold, #b08b4f);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.about-section .flourish-divider {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+.mission-text, .story-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  color: #333;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Story Section Background */
+.story-section {
+  background: linear-gradient(135deg, rgba(176, 139, 79, 0.05) 0%, rgba(176, 139, 79, 0.1) 100%);
+}
+
+/* Values Section */
+.values-section {
+  padding: 5rem 2rem;
+  background: #fff;
+  text-align: center;
+}
+
+.values-section h2 {
+  font-family: 'Italianno', cursive;
+  font-size: 3.5rem;
+  color: var(--gold, #b08b4f);
+  margin-bottom: 1rem;
+}
+
+.values-section .separator {
+  width: 200px;
+  height: auto;
+  margin: 1.5rem auto 3rem;
+  display: block;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background: #fff;
+  border: 2px solid var(--gold, #b08b4f);
+  border-radius: 12px;
+  padding: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.value-card h3 {
+  font-size: 1.5rem;
+  color: var(--gold, #b08b4f);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.value-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #555;
+}
+
+/* Responsive Styles for New Sections */
+@media (max-width: 1024px) {
+  .values-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .about-hero {
+    padding: 4rem 1.5rem 3rem;
+  }
+  
+  .about-hero h1 {
+    font-size: 3rem;
+  }
+  
+  .about-hero .subheading {
+    font-size: 1.1rem;
+  }
+  
+  .about-section {
+    padding: 3rem 1.5rem;
+  }
+  
+  .about-section h2 {
+    font-size: 2.5rem;
+  }
+  
+  .values-section h2 {
+    font-size: 2.8rem;
+  }
+  
+  .values-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-hero h1 {
+    font-size: 2.5rem;
+  }
+}

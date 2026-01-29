@@ -152,7 +152,85 @@ footer {
   border-top: var(--border-thin);
   color: var(--color-secondary);
   width: 100vw;
+  padding: 3rem 2rem 0;
 }
+
+/* Footer Content Grid */
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-section h3 {
+  font-family: 'Italianno', cursive;
+  font-size: 2rem;
+  color: var(--gold, #b08b4f);
+  margin-bottom: 1rem;
+}
+
+/* Footer About Section */
+.footer-about p {
+  line-height: 1.7;
+  color: #ccc;
+}
+
+/* Footer Links Section */
+.footer-links nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease, padding-left 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  color: var(--gold, #b08b4f);
+  padding-left: 5px;
+}
+
+/* Footer Contact Section */
+.footer-contact p {
+  line-height: 1.8;
+  color: #ccc;
+}
+
+.footer-contact a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: var(--gold, #b08b4f);
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.footer-social-icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.footer-social-icon:hover {
+  transform: scale(1.1);
+  opacity: 0.8;
+}
+
 .sub-footer {
   background: radial-gradient(circle at 50% 50%, #111111, #222222);
   font-style: italic;
@@ -161,7 +239,7 @@ footer {
   position: relative;
   text-align: center;
   font-size: .75rem;
-  padding: 5px;
+  padding: 1.5rem 1rem;
 }
 .hero {
   width: 98%;
@@ -1342,3 +1420,46 @@ blockquote:hover {
 .footer-link:hover {
   opacity: 0.8;
 }
+
+/* ================================
+   Footer Responsive Styles
+   ================================ */
+@media (max-width: 1024px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .footer-about {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem 1.5rem 0;
+  }
+  
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .footer-about {
+    grid-column: 1;
+    text-align: center;
+  }
+  
+  .footer-section {
+    text-align: center;
+  }
+  
+  .footer-links nav {
+    align-items: center;
+  }
+  
+  .footer-social {
+    justify-content: center;
+  }
+}
+

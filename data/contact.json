@@ -1,0 +1,48 @@
+{
+  "heading": "Get In Touch",
+  "intro": "Ready to bring live opera to your special occasion? We'd love to hear from you. Fill out the form below or reach out directly using the contact information provided.",
+  "contactInfo": {
+    "email": "info@ariaamore.com",
+    "phone": "(843) 555-ARIA",
+    "hours": "Monday - Friday: 9:00 AM - 6:00 PM EST",
+    "address": "Charleston, South Carolina"
+  },
+  "social": {
+    "instagram": "https://www.instagram.com/ariaamore.art",
+    "tiktok": "https://www.tiktok.com/@ariaamore.art"
+  },
+  "formFields": {
+    "nameLabel": "Your Name",
+    "namePlaceholder": "John Doe",
+    "emailLabel": "Email Address",
+    "emailPlaceholder": "john@example.com",
+    "phoneLabel": "Phone Number (Optional)",
+    "phonePlaceholder": "(555) 123-4567",
+    "eventTypeLabel": "Event Type",
+    "eventTypes": [
+      "Wedding",
+      "Corporate Event",
+      "Holiday Celebration",
+      "Private Gathering",
+      "Other"
+    ],
+    "dateLabel": "Preferred Event Date",
+    "messageLabel": "Tell Us About Your Event",
+    "messagePlaceholder": "Share details about your event, preferred songs, number of guests, or any questions you have...",
+    "submitText": "Send Inquiry"
+  },
+  "faq": [
+    {
+      "question": "How far in advance should I book?",
+      "answer": "We recommend booking at least 3-6 months in advance for weddings and major events. However, we'll do our best to accommodate shorter timelines when possible."
+    },
+    {
+      "question": "What is your service area?",
+      "answer": "We primarily serve Charleston, SC and the surrounding Lowcountry region. For events outside this area, please contact us to discuss travel arrangements."
+    },
+    {
+      "question": "Do you offer consultations?",
+      "answer": "Yes! We offer complimentary virtual consultations to discuss your event, musical preferences, and answer any questions you may have."
+    }
+  ]
+}
