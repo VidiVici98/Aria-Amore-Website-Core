@@ -626,7 +626,7 @@ blockquote:hover {
   }
 .home-page .corner {
   position: absolute;
-  width: 140px;  
+  width: clamp(80px, 10vw, 140px);  
   height: auto;
   opacity: .5;
   padding: .5rem;
