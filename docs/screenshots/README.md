@@ -109,12 +109,68 @@ These screenshots can be used for:
 
 ## Updating Screenshots
 
-To update screenshots, run the local development server and use Playwright or similar tools to capture viewport screenshots of each page:
+### ⚠️ IMPORTANT: Server Must Be Running
+
+Screenshots will **only render correctly** if the PHP development server is running. The site uses symlinks (`public/assets -> ../assets`) which require an active server to resolve.
+
+### Quick Start (Recommended)
 
 ```bash
-php -S localhost:8000 -t public
-# Then use Playwright to capture screenshots
+# Use the screenshot capture script (handles server automatically)
+./scripts/capture-screenshots.sh
 ```
+
+This script will:
+1. Check if server is running (or start it)
+2. Verify assets are accessible
+3. Keep server alive during screenshot capture
+4. Display instructions for capturing screenshots
+
+### Manual Process
+
+If you prefer to start the server manually:
+
+```bash
+# 1. Start the PHP development server
+cd /home/runner/work/Aria-Amore-Website-Core/Aria-Amore-Website-Core
+php -S localhost:8000 -t public
+
+# 2. Keep server running in background or separate terminal
+
+# 3. Use Playwright to capture screenshots
+# - Navigate to http://localhost:8000/[page].html
+# - Wait 2-3 seconds for full page load
+# - Take viewport screenshot (NOT full-page)
+# - Save to docs/screenshots/
+```
+
+### Why Server is Required
+
+The repository structure uses symlinks for the build process:
+- `public/assets -> ../assets`
+- `public/components -> ../components`  
+- `public/data -> ../data`
+
+HTML files use absolute paths (`/assets/css/styles.css`) which:
+- ✅ Work correctly with PHP server running
+- ❌ Fail without server (shows only backgrounds)
+- ✅ Resolve properly in production build (symlinks copied as real files)
+
+### Troubleshooting
+
+**Problem: Screenshot shows only background, no content**
+- **Cause:** Server not running or assets not loading
+- **Solution:** 
+  1. Check server: `curl -I http://localhost:8000/index.html`
+  2. Check assets: `curl -I http://localhost:8000/assets/css/styles.css`
+  3. Both should return `200 OK`
+
+**Problem: CSS not loading**
+- **Cause:** Symlinks not working or server document root incorrect
+- **Solution:** 
+  - Verify: `ls -la public/assets` shows `assets -> ../assets`
+  - Server must use `-t public` flag
+  - Restart server if needed
 
 ---
 
