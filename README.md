@@ -14,6 +14,13 @@ Transform your special day into an unforgettable performance with live opera mus
 - **Accessible** - WCAG 2.1 compliant
 - **Production Ready** - Security, backups, monitoring, and testing
 
+## 📸 Documentation & Screenshots
+
+**NEW!** Comprehensive documentation with screenshots of all page features:
+- **[FEATURES.md](docs/FEATURES.md)** - Detailed visual guide to all website features with screenshots
+- **[AUTOMATION.md](docs/AUTOMATION.md)** - Complete automation and build scripts documentation
+- **[docs/screenshots/](docs/screenshots/)** - Full-page screenshots of all primary pages
+
 ## 📋 Quick Links
 
 - [Getting Started](#-getting-started)
@@ -21,6 +28,8 @@ Transform your special day into an unforgettable performance with live opera mus
 - [Deployment](#-deployment)
 - [Testing](#-testing)
 - [Security](#-security)
+- [📸 Page Features Documentation](docs/FEATURES.md) - **NEW!** Screenshots and detailed feature descriptions
+- [🤖 Automation & Build Scripts](docs/AUTOMATION.md) - **NEW!** Complete automation guide
 
 ## 🚀 Getting Started
 
