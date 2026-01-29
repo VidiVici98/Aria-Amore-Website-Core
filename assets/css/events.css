@@ -132,8 +132,8 @@
   padding: 0.6rem 1.25rem;
   font-size: 0.9rem;
   white-space: nowrap;
-  color: #151515;
-  text-shadow: 1px 1px 1px #000;;
+  color: #fff;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.6);
   font-family: Georgia, 'Times New Roman', Times, serif;
   background: radial-gradient(circle at 50% 50%, #d68b6c, #a2583e);
   border: 1px groove #333;

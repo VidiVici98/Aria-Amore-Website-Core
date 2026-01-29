@@ -470,8 +470,8 @@
 }
 .modal-details h3 {
   margin-top: 0;
-  color: #333;
-  text-shadow: 1px 1px 1px #000;
+  color: #1a1a1a;
+  text-shadow: 2px 2px 3px rgba(0,0,0,0.4);
   font-size: 1.5rem;
 }
 .modal-details p {
