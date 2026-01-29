@@ -8,6 +8,7 @@ Global Variables
   --color-subdued: #bbb;
   --color-secondary: #fff;
   --color-active: #d6c5a7;
+  --gold: #b08b4f;
   --text-shadow: 1px 2px 3px #111;
   --quick-transition: all .3s ease;
   --hover-transform: translateY(-4px);
@@ -27,6 +28,23 @@ Global Variables
                                   repeating-linear-gradient(50deg,
                                       rgba(255, 255, 255, 0.95) 0 1px,
                                       transparent 1px 4px);
+}
+
+/* Smooth scrolling for the entire page */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 /*=============================================
 Global Style Reset
