@@ -88,7 +88,7 @@ The following pages were intentionally **not** screenshotted per requirements:
 - **Browser**: Chromium (via Playwright)
 - **Viewport Size**: 1280x720 (standard desktop viewport)
 - **Animation Wait**: 3 seconds after page load to ensure curtain has fully opened
-- **Date Captured**: January 29, 2026
+- **Date Captured**: January 30, 2026
 
 ## Technical Notes
 
@@ -204,7 +204,7 @@ HTML files use absolute paths (`/assets/css/styles.css`) which:
 
 ---
 
-**Last Updated**: January 29, 2026  
+**Last Updated**: January 30, 2026  
 **Total Screenshots**: 11 main pages + 2 homepage sections = 13 total  
 **Capture Method**: Automated with Playwright (waits for curtain animation)  
 **Animation Handling**: 3-second wait ensures curtain is fully opened
