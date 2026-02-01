@@ -712,7 +712,7 @@ https://ariaamore.com/events.html?utm_source=facebook&utm_medium=post&utm_campai
 
 **Setup:**
 1. Create Facebook ad targeting engaged couples
-2. Link to: `https://ariaamore.com/?utm_source=facebook&utm_medium=paid&utm_campaign=wedding_season_2024&utm_content=video_ad`
+2. Link to: `https://ariaamore.com/?utm_source=facebook&utm_medium=paid&utm_campaign=wedding_season_2026&utm_content=video_ad`
 3. Set up Facebook Pixel (add to website)
 
 **Tracking:**
