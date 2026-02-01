@@ -6,9 +6,9 @@ Free chat solution with professional polish
 /* Fallback Chat Button (when Tawk.to not configured) */
 .fallback-chat-button {
   position: fixed;
-  bottom: 5rem; /* Increased to clear event banner */
+  bottom: 2rem; /* Optimal position pinned to viewport */
   right: 2rem;
-  z-index: 10000; /* Above event banner (9999) */
+  z-index: 10000; /* Above event banner (9000) */
   display: flex;
   align-items: center;
   gap: 0.75rem;
@@ -243,7 +243,7 @@ Free chat solution with professional polish
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .fallback-chat-button {
-    bottom: 4.5rem; /* Adjusted for mobile event banner */
+    bottom: 1.5rem; /* Optimal mobile position */
     right: 1rem;
     padding: 0.875rem 1.25rem;
     font-size: 0.95rem;
@@ -286,8 +286,8 @@ Free chat solution with professional polish
 
 @media (max-width: 480px) {
   .fallback-chat-button {
-    bottom: 4rem; /* Ensure clearance above event banner */
-    right: 0.75rem;
+    bottom: 1rem; /* Compact mobile position */
+    right: 1rem;
     padding: 0.75rem;
     border-radius: 50%;
     width: 56px;
