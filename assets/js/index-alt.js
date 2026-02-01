@@ -107,13 +107,62 @@ function playVideo(videoId) {
   // In production, this would open a modal with an embedded YouTube/Vimeo player
 }
 
-// Newsletter Subscription
+// Newsletter Subscription with Enhanced UX
 function subscribeNewsletter(event) {
   event.preventDefault();
-  const email = event.target.querySelector('input[type="email"]').value;
-  alert(`Thank you for subscribing with: ${email}\n\nYou'll receive your 10% discount code via email shortly!`);
-  event.target.reset();
+  const form = event.target;
+  const emailInput = form.querySelector('input[type="email"]');
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const email = emailInput.value.trim();
+  
+  // Validate email format
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    showNewsletterMessage(form, 'Please enter a valid email address.', 'error');
+    return;
+  }
+  
+  // Show loading state
+  const originalBtnText = submitBtn.textContent;
+  submitBtn.textContent = 'Subscribing...';
+  submitBtn.disabled = true;
+  
+  // Simulate API call (replace with actual implementation)
+  setTimeout(() => {
+    // Success feedback
+    showNewsletterMessage(form, `Thank you for subscribing! You'll receive your 10% discount code at ${email} shortly.`, 'success');
+    form.reset();
+    submitBtn.textContent = originalBtnText;
+    submitBtn.disabled = false;
+    
+    // TODO: In production, integrate with email service (e.g., Mailchimp, SendGrid)
+    // Example: fetch('/api/newsletter/subscribe', { method: 'POST', body: JSON.stringify({ email }) })
+  }, 1000);
 }
+
+// Display newsletter feedback messages
+function showNewsletterMessage(form, message, type) {
+  // Remove existing message
+  const existingMsg = form.querySelector('.newsletter-message');
+  if (existingMsg) existingMsg.remove();
+  
+  // Create new message
+  const messageEl = document.createElement('div');
+  messageEl.className = `newsletter-message newsletter-${type}`;
+  messageEl.setAttribute('role', 'alert');
+  messageEl.setAttribute('aria-live', 'polite');
+  messageEl.textContent = message;
+  
+  // Insert after form
+  form.parentNode.insertBefore(messageEl, form.nextSibling);
+  
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    messageEl.style.opacity = '0';
+    setTimeout(() => messageEl.remove(), 300);
+  }, 5000);
+}
+
 
 // Scroll Animation Observer
 const observerOptions = {

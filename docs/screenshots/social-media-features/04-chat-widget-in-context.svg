@@ -1,0 +1,94 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Page Background -->
+  <rect width="1200" height="800" fill="#faf9f7"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1200" height="80" fill="#2a2a2a"/>
+  <text x="600" y="50" font-family="Georgia, serif" font-size="32" fill="#b08b4f" text-anchor="middle" font-weight="bold">Aria Amore</text>
+  
+  <!-- Content Area (representing page) -->
+  <rect x="50" y="120" width="1100" height="600" rx="8" fill="#fff" opacity="0.3"/>
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="18" fill="#999" text-anchor="middle">Page Content Here...</text>
+  <text x="600" y="230" font-family="Arial, sans-serif" font-size="14" fill="#999" text-anchor="middle">(Testimonials, Services, etc.)</text>
+  
+  <!-- Annotations -->
+  <text x="100" y="280" font-family="Arial, sans-serif" font-size="14" fill="#666">The chat button appears on ALL pages</text>
+  <text x="100" y="305" font-family="Arial, sans-serif" font-size="14" fill="#666">in a fixed position at bottom-right</text>
+  
+  <!-- Live Chat Widget - Fixed Position -->
+  <g id="chat-widget">
+    <!-- Pulse effect (subtle) -->
+    <ellipse cx="1050" cy="720" rx="110" ry="35" fill="#b08b4f" opacity="0.1" filter="url(#pulseGlow)"/>
+    
+    <!-- Button with shadow -->
+    <g filter="url(#chatShadow)">
+      <rect x="965" y="695" width="170" height="50" rx="25" fill="url(#goldGradient)"/>
+      
+      <!-- Icon -->
+      <g transform="translate(985, 710)">
+        <circle cx="10" cy="10" r="12" fill="#fff" opacity="0.9"/>
+        <circle cx="6" cy="8" r="1.5" fill="#b08b4f"/>
+        <circle cx="10" cy="8" r="1.5" fill="#b08b4f"/>
+        <circle cx="14" cy="8" r="1.5" fill="#b08b4f"/>
+      </g>
+      
+      <!-- Text -->
+      <text x="1050" y="728" font-family="Arial, sans-serif" font-size="16" fill="#fff" font-weight="600">Contact Us</text>
+    </g>
+  </g>
+  
+  <!-- Annotation arrows and text -->
+  <g id="annotations">
+    <!-- Arrow pointing to chat button -->
+    <path d="M 850 680 L 950 705" stroke="#b08b4f" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    <rect x="600" y="660" width="240" height="50" rx="8" fill="#fff" stroke="#b08b4f" stroke-width="2"/>
+    <text x="720" y="682" font-family="Arial, sans-serif" font-size="13" fill="#333" text-anchor="middle" font-weight="600">💬 Live Chat Widget</text>
+    <text x="720" y="698" font-family="Arial, sans-serif" font-size="11" fill="#666" text-anchor="middle">Click to get instant support</text>
+  </g>
+  
+  <!-- Features List -->
+  <g id="features" transform="translate(100, 350)">
+    <text x="0" y="0" font-family="Georgia, serif" font-size="20" fill="#b08b4f" font-weight="bold">Chat Widget Features:</text>
+    
+    <g transform="translate(0, 30)">
+      <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" fill="#333">✓ Fixed position (always visible)</text>
+      <text x="0" y="25" font-family="Arial, sans-serif" font-size="14" fill="#333">✓ Gold gradient (brand colors)</text>
+      <text x="0" y="50" font-family="Arial, sans-serif" font-size="14" fill="#333">✓ Pulse animation (draws attention)</text>
+      <text x="0" y="75" font-family="Arial, sans-serif" font-size="14" fill="#333">✓ Hover effect (lifts up 4px)</text>
+      <text x="0" y="100" font-family="Arial, sans-serif" font-size="14" fill="#333">✓ Opens contact modal on click</text>
+      <text x="0" y="125" font-family="Arial, sans-serif" font-size="14" fill="#333">✓ Mobile responsive (icon only)</text>
+      <text x="0" y="150" font-family="Arial, sans-serif" font-size="14" fill="#333">✓ FREE forever (Tawk.to)</text>
+    </g>
+  </g>
+  
+  <!-- Cost Badge -->
+  <g id="cost-badge" transform="translate(950, 600)">
+    <rect x="0" y="0" width="180" height="60" rx="8" fill="#4caf50" filter="url(#badgeShadow)"/>
+    <text x="90" y="25" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="bold">💰 $0/month</text>
+    <text x="90" y="45" font-family="Arial, sans-serif" font-size="12" fill="#fff" text-anchor="middle">vs $40-400 paid</text>
+  </g>
+  
+  <!-- Gradients, Filters, and Markers -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b08b4f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b6f3f;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="chatShadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#b08b4f" flood-opacity="0.4"/>
+    </filter>
+    
+    <filter id="pulseGlow">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+    
+    <filter id="badgeShadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.2"/>
+    </filter>
+    
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#b08b4f"/>
+    </marker>
+  </defs>
+</svg>

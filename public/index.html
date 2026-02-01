@@ -25,23 +25,54 @@
   <meta name="keywords" content="wedding opera, live performers, ceremony music, classical singers, opera wedding entertainment, live event music, wedding performance, Aria Amore, book opera singer">
   <meta name="author" content="Modern Warrior School LLC">
   <link rel="canonical" href="https://ariaamore.com/">
-  <!-- Open Graph -->
+  <!-- Enhanced Open Graph / Facebook -->
   <meta property="og:title" content="Aria Amore — Book Elite Opera Performers">
   <meta property="og:description" content="Transform your event with world-class live opera. Interactive booking, package comparison, and instant availability.">
   <meta property="og:image" content="https://ariaamore.com/assets/media/images/preview-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
   <meta property="og:url" content="https://ariaamore.com/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aria Amore">
+  <meta property="og:locale" content="en_US">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@ariaamore">
+  <meta name="twitter:creator" content="@ariaamore">
+  <meta name="twitter:title" content="Aria Amore — Book Elite Opera Performers">
+  <meta name="twitter:description" content="Transform your event with world-class live opera. Interactive booking, package comparison, and instant availability.">
+  <meta name="twitter:image" content="https://ariaamore.com/assets/media/images/preview-image.jpg">
+  <meta name="twitter:image:alt" content="Aria Amore - Live Opera Performances">
+  <!-- Pinterest -->
+  <meta name="pinterest-rich-pin" content="true">
+  <meta property="og:see_also" content="https://www.instagram.com/ariaamore.art">
+  <!-- Social Profile Links -->
+  <link rel="me" href="https://www.instagram.com/ariaamore.art">
+  <link rel="me" href="https://www.tiktok.com/@ariaamore.art">
   <!-- Icons -->
   <link rel="icon" type="image/png" href="/assets/media/icons/favicon.png">
   <link rel="apple-touch-icon" href="/assets/media/icons/apple-touch-icon.png">
   <meta name="theme-color" content="#b08b4f">
+  
+  <!--Performance: Preconnect to external resources-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <!--External APIs-->
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!--Performance: Preload critical assets-->
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+  <link rel="preload" href="/assets/media/images/parchment-background.webp" as="image">
   <!--Stylesheets-->
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/index-alt.css">
+  <link rel="stylesheet" href="/assets/css/newsletter.css">
+  <link rel="stylesheet" href="/assets/css/social-share.css">
+  <link rel="stylesheet" href="/assets/css/marketing.css">
+  <link rel="stylesheet" href="/assets/css/live-chat.css">
   <style>
     /* Enhanced Modern Styling for Alternative Homepage */
     :root {
@@ -1290,6 +1321,35 @@
       <div class="testimonial-carousel" id="testimonial-carousel" role="region" aria-label="Client testimonials carousel"></div>
     </section>
 
+    <!-- Social Media & Share Section -->
+    <section class="social-media-section" aria-labelledby="social-heading">
+      <h2 id="social-heading">Connect With Us</h2>
+      <p class="social-intro">Follow us on social media for behind-the-scenes content, performance videos, and special offers!</p>
+      
+      <div class="social-platforms">
+        <a href="https://www.instagram.com/ariaamore.art" target="_blank" rel="noopener" class="social-platform-card" aria-label="Follow us on Instagram">
+          <img src="/assets/media/images/instagram-icon.svg" alt="Instagram" class="platform-icon"/>
+          <h3>Instagram</h3>
+          <p>@ariaamore.art</p>
+          <span class="follow-cta">Follow Us →</span>
+        </a>
+        
+        <a href="https://www.tiktok.com/@ariaamore.art" target="_blank" rel="noopener" class="social-platform-card" aria-label="Follow us on TikTok">
+          <img src="/assets/media/images/tiktok-icon.svg" alt="TikTok" class="platform-icon"/>
+          <h3>TikTok</h3>
+          <p>@ariaamore.art</p>
+          <span class="follow-cta">Follow Us →</span>
+        </a>
+      </div>
+      
+      <!-- Share this page -->
+      <div data-social-share 
+           data-title="Aria Amore - Live Opera for Your Event"
+           data-description="Experience world-class live opera performances for your special occasion"
+           data-image="https://ariaamore.com/assets/media/images/preview-image.jpg">
+      </div>
+    </section>
+
   </main>
 
   <!-- Footer -->
@@ -1300,5 +1360,8 @@
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/home.js" defer></script>
   <script src="/assets/js/index-alt.js" defer></script>
+  <script src="/assets/js/social-share.js" defer></script>
+  <script src="/assets/js/marketing-tracker.js" defer></script>
+  <script src="/assets/js/live-chat.js" defer></script>
 </body>
 </html>
