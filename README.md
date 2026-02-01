@@ -14,6 +14,14 @@ Transform your special day into an unforgettable performance with live opera mus
 - **Accessible** - WCAG 2.1 compliant
 - **Production Ready** - Security, backups, monitoring, and testing
 
+### 📊 Analytics & Marketing (NEW!)
+- **One-Touch Analytics** - Universal analytics integration (GA4, Facebook Pixel, TikTok, LinkedIn)
+- **Campaign Tracking** - UTM parameters and social media attribution
+- **Conversion Funnel** - Track visitor journey from awareness to booking
+- **Automatic Event Tracking** - CTAs, forms, videos, scroll depth
+- **Social Media Integration** - Content generator and posting templates
+- **CTA Optimization** - Strategic placement and conversion-focused design
+
 ## 📸 Documentation & Screenshots
 
 **UPDATED!** All screenshots refreshed to show current site state (February 2026):
@@ -32,10 +40,19 @@ Transform your special day into an unforgettable performance with live opera mus
 - [Deployment](#-deployment)
 - [Testing](#-testing)
 - [Security](#-security)
+
+### 📖 Documentation
 - [📸 Page Features Documentation](docs/FEATURES.md) - Screenshots and detailed feature descriptions
 - [💬 Chat Widget Enhancements](docs/CHAT-WIDGET-ENHANCEMENTS.md) - Enhanced support widget with roadmap
 - [🤖 Automation & Build Scripts](docs/AUTOMATION.md) - Complete automation guide
 - [📸 Screenshots](docs/screenshots/) - Desktop and mobile screenshots of all pages
+
+### 🚀 NEW: Analytics & Marketing
+- [⚡ Quick Start: Analytics Setup](docs/QUICK-START-ANALYTICS.md) - 30-minute setup guide
+- [📊 Analytics Setup Guide](docs/ANALYTICS-SETUP.md) - Complete analytics integration
+- [🎯 CTA Strategy](docs/CTA-STRATEGY.md) - Conversion optimization guide
+- [📱 Social Media Integration](docs/SOCIAL-MEDIA-INTEGRATION.md) - Content creation & posting
+- [📦 Dependencies Management](docs/DEPENDENCIES-MANAGEMENT.md) - Package management guide
 
 ## 🚀 Getting Started
 
@@ -80,7 +97,69 @@ npm run security:fix   # Fix security issues automatically
 npm run backup         # Create backup
 npm run health         # Run health check
 npm run content:validate  # Validate JSON content files
+npm run screenshots       # Capture screenshots (requires server running)
 ```
+
+## 📊 Analytics & Marketing Setup
+
+### Quick Setup (30 minutes)
+
+Get analytics and marketing tracking up and running fast!
+
+```bash
+# 1. Get your Google Analytics ID from analytics.google.com
+# 2. Add to your .env file
+echo "GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX" >> .env
+
+# 3. Add meta tags to your HTML pages (see docs/QUICK-START-ANALYTICS.md)
+```
+
+**What You Get:**
+- ✅ Google Analytics 4 tracking
+- ✅ Facebook Pixel integration (optional)
+- ✅ TikTok Pixel integration (optional) 
+- ✅ Automatic event tracking (CTAs, forms, videos)
+- ✅ UTM campaign tracking
+- ✅ Social media attribution
+- ✅ Conversion funnel tracking
+
+**Complete Guide:** [docs/QUICK-START-ANALYTICS.md](docs/QUICK-START-ANALYTICS.md)
+
+### Social Media Content Generation
+
+Generate platform-optimized social media posts instantly:
+
+```javascript
+// Generate Instagram post
+const post = SocialContentGenerator.generatePost({
+  platform: 'instagram',
+  type: 'package',
+  data: {
+    name: 'Serenade Package',
+    price: '$500',
+    features: ['Professional singer', '2 songs', 'Travel included']
+  }
+});
+
+console.log(post.caption);  // Ready-to-post caption with hashtags
+console.log(post.link);     // UTM-tracked link
+```
+
+**Supported Platforms:** Instagram, TikTok, Facebook, Twitter/X  
+**Content Types:** Packages, Artists, Testimonials, Events, General  
+**Complete Guide:** [docs/SOCIAL-MEDIA-INTEGRATION.md](docs/SOCIAL-MEDIA-INTEGRATION.md)
+
+### CTA Optimization
+
+Strategic call-to-action placement and design for maximum conversions:
+
+- Primary, secondary, and tertiary CTA hierarchy
+- Page-by-page CTA strategy
+- Mobile-optimized sticky CTAs
+- A/B testing recommendations
+- Conversion rate optimization tips
+
+**Complete Guide:** [docs/CTA-STRATEGY.md](docs/CTA-STRATEGY.md)
 
 ## 💻 Development
 
