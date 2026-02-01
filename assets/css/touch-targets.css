@@ -1,0 +1,221 @@
+/*=============================================
+Touch Target Optimization for Mobile
+WCAG 2.1 Level AAA: Minimum 44x44 CSS pixels
+Recommended: 48x48 CSS pixels
+=============================================*/
+
+/* Ensure all interactive elements meet minimum touch target size */
+button,
+.btn,
+input[type="submit"],
+input[type="button"],
+input[type="reset"],
+a.button,
+[role="button"] {
+  min-height: 48px;
+  min-width: 48px;
+  padding: 12px 20px;
+}
+
+/* Navigation links */
+.aa-nav-link,
+.aa-mobile-link,
+nav a {
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  padding: 12px 16px;
+}
+
+/* Mobile menu toggle */
+.aa-mobile-toggle {
+  min-width: 48px;
+  min-height: 48px;
+  padding: 12px;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+input[type="time"],
+input[type="search"],
+select,
+textarea {
+  min-height: 48px;
+  padding: 12px 16px;
+  font-size: 16px; /* Prevents iOS zoom on focus */
+}
+
+/* Checkbox and radio buttons - increase hit area */
+input[type="checkbox"],
+input[type="radio"] {
+  min-width: 24px;
+  min-height: 24px;
+  /* Add padding to label to increase touch target */
+}
+
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  padding: 12px 8px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Social media icons */
+.social-icon,
+.social-link {
+  min-width: 48px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+
+/* Close buttons and icon-only buttons */
+.close-btn,
+.icon-btn,
+[aria-label][role="button"] {
+  min-width: 48px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Gallery items and cards */
+.gallery-item,
+.artist-card,
+.service-card,
+.card {
+  /* Ensure cards have adequate spacing */
+  margin: 8px;
+}
+
+/* Filter buttons */
+.filter-btn {
+  min-height: 48px;
+  padding: 12px 24px;
+  margin: 4px;
+}
+
+/* Calendar days */
+.calendar-day {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* Pagination controls */
+.pagination button,
+.pagination a {
+  min-width: 48px;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Carousel controls */
+.carousel-control,
+.slider-control {
+  min-width: 48px;
+  min-height: 48px;
+}
+
+/* Accordion/Expandable headers */
+.accordion-header,
+.expandable-header,
+[aria-expanded] {
+  min-height: 48px;
+  padding: 12px 16px;
+}
+
+/* Tab controls */
+[role="tab"] {
+  min-height: 48px;
+  padding: 12px 24px;
+}
+
+/* Ensure spacing between adjacent interactive elements */
+button + button,
+.btn + .btn,
+a + a {
+  margin-left: 8px;
+}
+
+/* Stack buttons on very small screens */
+@media (max-width: 400px) {
+  button,
+  .btn,
+  input[type="submit"],
+  input[type="button"] {
+    width: 100%;
+    margin-bottom: 8px;
+  }
+  
+  button + button,
+  .btn + .btn {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Maintain touch targets on tablets */
+  button,
+  .btn,
+  a.button,
+  nav a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Ensure adequate spacing for touch */
+@media (hover: none) and (pointer: coarse) {
+  /* This targets touch devices */
+  button,
+  .btn,
+  a,
+  input,
+  select,
+  textarea {
+    /* Add extra padding for touch comfort */
+    padding: 14px 20px;
+  }
+  
+  /* Increase spacing between interactive elements */
+  nav a {
+    margin: 4px 0;
+  }
+}
+
+/* Large touch targets for primary CTAs */
+.cta-button,
+.primary-button,
+.newsletter-submit,
+.contact-submit {
+  min-height: 56px;
+  min-width: 200px;
+  padding: 16px 32px;
+  font-size: 18px;
+}
+
+/* Accessibility note for developers */
+/* To check touch targets in Chrome DevTools:
+   1. Open DevTools
+   2. Toggle Device Toolbar (Cmd+Shift+M / Ctrl+Shift+M)
+   3. Click "..." menu > "Show device frame"
+   4. Use "Show rulers" to measure
+   
+   Minimum: 44x44px (WCAG 2.1 AA)
+   Recommended: 48x48px (best practice)
+*/

@@ -1,0 +1,112 @@
+/*=============================================
+Enhanced Focus Indicators for Accessibility
+=============================================*/
+
+/* Global focus styles for keyboard navigation */
+*:focus {
+  outline: 3px solid var(--gold, #b08b4f);
+  outline-offset: 2px;
+}
+
+/* Remove default outline for mouse users (but keep for keyboard) */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus-visible for modern browsers */
+*:focus-visible {
+  outline: 3px solid var(--gold, #b08b4f);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(176, 139, 79, 0.2);
+}
+
+/* Button focus states */
+button:focus-visible,
+.btn:focus-visible,
+input[type="submit"]:focus-visible,
+input[type="button"]:focus-visible {
+  outline: 3px solid var(--gold, #b08b4f);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(176, 139, 79, 0.3);
+  transform: translateY(-2px);
+  transition: all 0.2s ease;
+}
+
+/* Link focus states */
+a:focus-visible {
+  outline: 3px solid var(--gold, #b08b4f);
+  outline-offset: 3px;
+  text-decoration: underline;
+  text-decoration-color: var(--gold, #b08b4f);
+  text-decoration-thickness: 2px;
+}
+
+/* Form input focus states */
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--gold, #b08b4f);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 4px rgba(176, 139, 79, 0.15);
+  border-color: var(--gold, #b08b4f);
+}
+
+/* Navigation link focus enhancement */
+.aa-nav-link:focus-visible,
+.aa-mobile-link:focus-visible {
+  outline: 3px solid var(--gold, #b08b4f);
+  outline-offset: 3px;
+  background: rgba(176, 139, 79, 0.1);
+}
+
+/* Card/Article focus states */
+.gallery-item:focus-visible,
+.artist-card:focus-visible,
+.service-card:focus-visible,
+article:focus-visible {
+  outline: 3px solid var(--gold, #b08b4f);
+  outline-offset: 4px;
+  box-shadow: 0 0 0 6px rgba(176, 139, 79, 0.2);
+  transform: translateY(-4px);
+}
+
+/* Interactive elements in dark backgrounds */
+.dark-bg a:focus-visible,
+.hero-section a:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3);
+}
+
+/* Modal/Dialog focus trap */
+[role="dialog"]:focus,
+[role="alertdialog"]:focus {
+  outline: none; /* Dialog itself doesn't need outline */
+}
+
+/* Ensure tab index elements have visible focus */
+[tabindex]:focus-visible {
+  outline: 3px solid var(--gold, #b08b4f);
+  outline-offset: 2px;
+}
+
+/* Remove outline for negative tabindex (programmatic focus) */
+[tabindex="-1"]:focus {
+  outline: none;
+}
+
+/* Enhanced contrast mode support */
+@media (prefers-contrast: high) {
+  *:focus-visible {
+    outline-width: 4px;
+    outline-color: currentColor;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *:focus-visible {
+    transition: none !important;
+    transform: none !important;
+  }
+}
