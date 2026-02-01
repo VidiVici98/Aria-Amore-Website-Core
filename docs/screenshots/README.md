@@ -1,5 +1,49 @@
 # Aria Amore Website Screenshots
 
+## 🆕 New Social Media Features (February 2026)
+
+### Visual Documentation for PR Review
+
+The website now includes comprehensive social media marketing features. All new features are documented with visual guides:
+
+#### Quick View Screenshots (SVG - Perfect Scaling)
+
+1. **[Social Media Section](social-media-features/01-social-section-desktop.svg)** - Desktop view
+   - Instagram & TikTok platform cards
+   - 7-platform share buttons
+   - Gold gradient CTAs
+
+2. **[Contact Modal](social-media-features/02-contact-modal-desktop.svg)** - Live chat fallback
+   - 4 contact options with hover arrows
+   - Online indicator
+   - Professional styling
+
+3. **[Mobile View](social-media-features/03-mobile-view.svg)** - Responsive layout
+   - Stacked social cards
+   - 3-column share buttons
+   - Icon-only chat button
+
+4. **[Chat Widget](social-media-features/04-chat-widget-in-context.svg)** - In context
+   - Fixed position bottom-right
+   - Features list
+   - Cost comparison ($0/month)
+
+#### Complete Documentation
+- **[SOCIAL-FEATURES-GUIDE.md](SOCIAL-FEATURES-GUIDE.md)** - Feature index with descriptions (10KB)
+- **[VISUAL-MOCKUPS.md](social-media-features/VISUAL-MOCKUPS.md)** - Detailed ASCII mockups (12KB)
+
+### What's New
+✨ Social platform cards (Instagram, TikTok)  
+✨ 7-platform share buttons (FB, Twitter, LinkedIn, Pinterest, WA, Email, Copy)  
+✨ FREE live chat widget ($0/month vs $40-400)  
+✨ Campaign tracking (UTM parameters)  
+✨ Welcome banners for social visitors  
+✨ Zero cost, zero maintenance
+
+---
+
+## Original Website Screenshots
+
 This directory contains comprehensive screenshots of all pages in the Aria Amore website. Each screenshot is captured **after the curtain opening animation completes** to ensure all page content and features are fully visible.
 
 ## Screenshot Approach
