@@ -55,6 +55,18 @@ const MOBILE_PAGES = [
   { url: '/index.html', filename: 'mobile/05-chat-widget-button.png', description: 'Chat Widget Button (Mobile)', scrollY: 0 }
 ];
 
+// Chat widget screenshots (desktop)
+const CHAT_WIDGET_DESKTOP = [
+  { url: '/index.html', filename: 'chat-widget-collapsed.png', description: 'Chat Widget Collapsed (Desktop)', action: 'collapsed' },
+  { url: '/index.html', filename: 'chat-widget-expanded.png', description: 'Chat Widget Expanded (Desktop)', action: 'expanded' }
+];
+
+// Chat widget screenshots (mobile)
+const CHAT_WIDGET_MOBILE = [
+  { url: '/index.html', filename: 'mobile/chat-widget-collapsed.png', description: 'Chat Widget Collapsed (Mobile)', action: 'collapsed' },
+  { url: '/index.html', filename: 'mobile/chat-widget-expanded.png', description: 'Chat Widget Expanded (Mobile)', action: 'expanded' }
+];
+
 async function captureScreenshots() {
   console.log('📸 Aria Amore Screenshot Capture');
   console.log('================================\n');
@@ -145,6 +157,70 @@ async function captureScreenshots() {
       }
     }
 
+    // Helper function to capture chat widget screenshots
+    async function captureChatWidgetScreenshot(context, url, outputPath, description, action) {
+      console.log(`   URL: ${url}`);
+      console.log(`   Action: ${action}`);
+
+      try {
+        const page = await context.newPage();
+        
+        // Navigate to page
+        await page.goto(url, { 
+          waitUntil: 'networkidle',
+          timeout: 30000
+        });
+
+        // CRITICAL: Wait for curtain animation and chat widget to load
+        console.log(`   ⏳ Waiting for curtain animation and chat widget...`);
+        await page.waitForTimeout(CURTAIN_ANIMATION_WAIT_MS);
+
+        // Wait for chat button to be visible
+        await page.waitForSelector('.fallback-chat-button', {
+          timeout: 5000,
+          state: 'visible'
+        });
+
+        if (action === 'expanded') {
+          // Click the chat button to open the modal
+          console.log('   🖱️  Opening chat modal...');
+          
+          // Use JavaScript to trigger the click event directly
+          await page.evaluate(() => {
+            const button = document.querySelector('.fallback-chat-button');
+            if (button) {
+              button.click();
+            }
+          });
+          
+          // Wait for modal to appear
+          await page.waitForSelector('.contact-modal', {
+            timeout: 5000,
+            state: 'visible'
+          });
+          
+          // Wait a bit for animations to complete
+          await page.waitForTimeout(500);
+        }
+
+        // Take screenshot
+        console.log('   📷 Capturing screenshot...');
+        await page.screenshot({
+          path: outputPath,
+          type: 'png',
+          fullPage: false
+        });
+
+        console.log(`   ✓ Saved: ${path.basename(outputPath)}`);
+        await page.close();
+        return true;
+
+      } catch (error) {
+        console.error(`   ❌ Error capturing ${description}:`, error.message);
+        return false;
+      }
+    }
+
     // ========================================
     // DESKTOP SCREENSHOTS
     // ========================================
@@ -218,6 +294,60 @@ async function captureScreenshots() {
 
     await mobileContext.close();
 
+    // ========================================
+    // CHAT WIDGET SCREENSHOTS (DESKTOP)
+    // ========================================
+    console.log('\n\n=== CHAT WIDGET SCREENSHOTS (Desktop) ===\n');
+    const desktopChatContext = await browser.newContext({
+      viewport: VIEWPORT_DESKTOP,
+      deviceScaleFactor: 1
+    });
+
+    for (let i = 0; i < CHAT_WIDGET_DESKTOP.length; i++) {
+      const widgetInfo = CHAT_WIDGET_DESKTOP[i];
+      const url = `${SERVER_URL}${widgetInfo.url}`;
+      const outputPath = path.join(SCREENSHOT_DIR, widgetInfo.filename);
+
+      console.log(`\n[${i + 1}/${CHAT_WIDGET_DESKTOP.length}] ${widgetInfo.description}`);
+      totalScreenshots++;
+      const success = await captureChatWidgetScreenshot(desktopChatContext, url, outputPath, widgetInfo.description, widgetInfo.action);
+      if (success) {
+        successfulScreenshots++;
+      } else {
+        failedScreenshots++;
+      }
+    }
+
+    await desktopChatContext.close();
+
+    // ========================================
+    // CHAT WIDGET SCREENSHOTS (MOBILE)
+    // ========================================
+    console.log('\n\n=== CHAT WIDGET SCREENSHOTS (Mobile) ===\n');
+    const mobileChatContext = await browser.newContext({
+      viewport: VIEWPORT_MOBILE,
+      deviceScaleFactor: 2,
+      isMobile: true,
+      hasTouch: true
+    });
+
+    for (let i = 0; i < CHAT_WIDGET_MOBILE.length; i++) {
+      const widgetInfo = CHAT_WIDGET_MOBILE[i];
+      const url = `${SERVER_URL}${widgetInfo.url}`;
+      const outputPath = path.join(SCREENSHOT_DIR, widgetInfo.filename);
+
+      console.log(`\n[${i + 1}/${CHAT_WIDGET_MOBILE.length}] ${widgetInfo.description}`);
+      totalScreenshots++;
+      const success = await captureChatWidgetScreenshot(mobileChatContext, url, outputPath, widgetInfo.description, widgetInfo.action);
+      if (success) {
+        successfulScreenshots++;
+      } else {
+        failedScreenshots++;
+      }
+    }
+
+    await mobileChatContext.close();
+
   } catch (error) {
     console.error('\n❌ Fatal error:', error);
     process.exit(1);
@@ -231,6 +361,8 @@ async function captureScreenshots() {
   console.log(`Desktop pages: ${PAGES.length}`);
   console.log(`Desktop sections: ${HOMEPAGE_SECTIONS.length}`);
   console.log(`Mobile pages: ${MOBILE_PAGES.length}`);
+  console.log(`Chat widget (desktop): ${CHAT_WIDGET_DESKTOP.length}`);
+  console.log(`Chat widget (mobile): ${CHAT_WIDGET_MOBILE.length}`);
   console.log(`\n📊 Results:`);
   console.log(`   Total: ${totalScreenshots}`);
   console.log(`   Successful: ${successfulScreenshots}`);
