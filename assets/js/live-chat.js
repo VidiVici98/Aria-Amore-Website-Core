@@ -16,20 +16,23 @@
   const LiveChat = {
     /**
      * Initialize Tawk.to chat widget
-     * Replace with your actual Tawk.to Property ID and Widget ID
+     * For demo purposes, uses fallback with enhanced styling
+     * To activate Tawk.to: Replace IDs below with your actual credentials
      */
     initTawkTo: function() {
-      // Tawk.to widget will be initialized here
-      // Site owner needs to:
-      // 1. Sign up at https://www.tawk.to (100% free)
-      // 2. Get their Property ID and Widget ID
-      // 3. Replace the IDs below
+      // DEMO MODE: Using fallback for demonstration
+      // To activate live chat:
+      // 1. Sign up at https://www.tawk.to (100% free, no credit card)
+      // 2. Create a property for ariaamore.com
+      // 3. Get your Property ID and Widget ID from the dashboard
+      // 4. Replace the values below with your actual IDs
       
-      const propertyId = 'YOUR_PROPERTY_ID'; // Replace with actual ID from Tawk.to
-      const widgetId = 'YOUR_WIDGET_ID'; // Replace with actual ID from Tawk.to
+      const propertyId = 'DEMO_MODE'; // Replace with actual Property ID (e.g., '5a3d2f8c9b1e4a5b6c7d8e9f')
+      const widgetId = 'DEMO_MODE'; // Replace with actual Widget ID (e.g., 'default' or '1gca9b7h8')
       
       // Only initialize if IDs are set
-      if (propertyId !== 'YOUR_PROPERTY_ID' && widgetId !== 'YOUR_WIDGET_ID') {
+      if (propertyId !== 'DEMO_MODE' && widgetId !== 'DEMO_MODE' && 
+          propertyId !== 'YOUR_PROPERTY_ID' && widgetId !== 'YOUR_WIDGET_ID') {
         var Tawk_API = Tawk_API || {};
         var Tawk_LoadStart = new Date();
         
@@ -43,16 +46,29 @@
           s0.parentNode.insertBefore(s1,s0);
         })();
         
-        // Customize widget appearance
+        // Customize widget appearance to match Aria Amore branding
         Tawk_API.onLoad = function(){
-          // Set custom color to match Aria Amore branding
+          // Set custom color to gold (#b08b4f)
           Tawk_API.setAttributes({
             name: '',
             email: ''
           }, function(error){});
+          
+          // Custom welcome message
+          Tawk_API.addTags(['website-visitor'], function(error){});
+        };
+        
+        // Track chat events
+        Tawk_API.onChatStarted = function(){
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'chat_started', {
+              event_category: 'engagement',
+              event_label: 'Tawk.to Chat'
+            });
+          }
         };
       } else {
-        // Show fallback contact button if Tawk.to not configured
+        // Show enhanced fallback button with demo features
         this.showFallbackButton();
       }
     },
@@ -84,69 +100,124 @@
     showContactOptions: function() {
       const modal = document.createElement('div');
       modal.className = 'contact-modal';
+      modal.setAttribute('role', 'dialog');
+      modal.setAttribute('aria-labelledby', 'contact-modal-title');
+      modal.setAttribute('aria-modal', 'true');
       modal.innerHTML = `
         <div class="contact-modal-content">
-          <button class="modal-close" aria-label="Close">&times;</button>
-          <h3>Get In Touch</h3>
-          <p>We'd love to hear from you!</p>
+          <button class="modal-close" aria-label="Close contact options">&times;</button>
+          <h3 id="contact-modal-title">Get In Touch</h3>
+          <p>We'd love to hear from you! Choose your preferred way to connect:</p>
           
           <div class="contact-options">
-            <a href="/contact.html" class="contact-option">
+            <a href="/contact.html" class="contact-option" data-option="form">
               <span class="option-icon">✉️</span>
               <span class="option-text">
                 <strong>Contact Form</strong>
                 <small>Send us a detailed message</small>
               </span>
+              <span class="option-arrow">→</span>
             </a>
             
-            <a href="tel:+18435552742" class="contact-option">
+            <a href="tel:+18435552742" class="contact-option" data-option="phone">
               <span class="option-icon">📞</span>
               <span class="option-text">
                 <strong>Call Us</strong>
                 <small>(843) 555-2742</small>
               </span>
+              <span class="option-arrow">→</span>
             </a>
             
-            <a href="mailto:info@ariaamore.com" class="contact-option">
+            <a href="mailto:info@ariaamore.com" class="contact-option" data-option="email">
               <span class="option-icon">📧</span>
               <span class="option-text">
                 <strong>Email Us</strong>
                 <small>info@ariaamore.com</small>
               </span>
+              <span class="option-arrow">→</span>
             </a>
             
-            <a href="https://www.instagram.com/ariaamore.art" target="_blank" rel="noopener" class="contact-option">
+            <a href="https://www.instagram.com/ariaamore.art" target="_blank" rel="noopener" class="contact-option" data-option="instagram">
               <span class="option-icon">📱</span>
               <span class="option-text">
                 <strong>DM on Instagram</strong>
                 <small>@ariaamore.art</small>
               </span>
+              <span class="option-arrow">→</span>
             </a>
+          </div>
+          
+          <div class="modal-footer">
+            <p class="response-time">
+              <span class="online-indicator"></span>
+              We typically respond within 24 hours
+            </p>
           </div>
         </div>
       `;
       
       document.body.appendChild(modal);
       
+      // Focus management for accessibility
+      const closeBtn = modal.querySelector('.modal-close');
+      closeBtn.focus();
+      
+      // Track modal open
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'contact_modal_open', {
+          event_category: 'engagement'
+        });
+      }
+      
       // Close modal on background click
       modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-          modal.remove();
+          this.closeModal(modal);
         }
       });
       
       // Close button
-      modal.querySelector('.modal-close').addEventListener('click', () => {
-        modal.remove();
+      closeBtn.addEventListener('click', () => {
+        this.closeModal(modal);
+      });
+      
+      // Track option clicks
+      modal.querySelectorAll('.contact-option').forEach(option => {
+        option.addEventListener('click', () => {
+          const optionType = option.dataset.option;
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'contact_option_selected', {
+              event_category: 'engagement',
+              event_label: optionType
+            });
+          }
+        });
       });
       
       // ESC key to close
-      document.addEventListener('keydown', function closeOnEsc(e) {
+      const escHandler = (e) => {
         if (e.key === 'Escape' && document.querySelector('.contact-modal')) {
-          modal.remove();
-          document.removeEventListener('keydown', closeOnEsc);
+          this.closeModal(modal);
+          document.removeEventListener('keydown', escHandler);
         }
-      });
+      };
+      document.addEventListener('keydown', escHandler);
+      
+      // Store handler for cleanup
+      modal._escHandler = escHandler;
+    },
+
+    /**
+     * Close modal with animation
+     */
+    closeModal: function(modal) {
+      modal.style.opacity = '0';
+      setTimeout(() => {
+        modal.remove();
+        if (modal._escHandler) {
+          document.removeEventListener('keydown', modal._escHandler);
+        }
+      }, 300);
     },
 
     /**

@@ -305,3 +305,132 @@ Free chat solution with professional polish
     opacity: 0.8;
   }
 }
+
+/* Enhanced Contact Modal Features */
+.contact-option {
+  position: relative;
+  overflow: hidden;
+}
+
+.option-arrow {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: var(--gold, #b08b4f);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.contact-option:hover .option-arrow {
+  opacity: 1;
+  right: 0.75rem;
+}
+
+/* Modal Footer */
+.modal-footer {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+.response-time {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.online-indicator {
+  width: 8px;
+  height: 8px;
+  background: #4caf50;
+  border-radius: 50%;
+  animation: pulse-indicator 2s infinite;
+}
+
+@keyframes pulse-indicator {
+  0%, 100% {
+    opacity: 1;
+    box-shadow: 0 0 0 0 rgba(76, 175, 80, 0.7);
+  }
+  50% {
+    opacity: 0.8;
+    box-shadow: 0 0 0 4px rgba(76, 175, 80, 0);
+  }
+}
+
+/* Enhanced Button Styling */
+.fallback-chat-button {
+  position: relative;
+  overflow: visible;
+}
+
+.fallback-chat-button::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 50px;
+  background: linear-gradient(135deg, var(--gold, #b08b4f), #8b6f3f);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.fallback-chat-button:hover::before {
+  opacity: 0.3;
+}
+
+/* Modal Fade Animation */
+.contact-modal {
+  transition: opacity 0.3s ease;
+}
+
+/* Prestige Touch - Subtle Pattern Overlay */
+.contact-modal-content::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(176, 139, 79, 0.03) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(176, 139, 79, 0.03) 0%, transparent 50%);
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+/* Enhanced Close Button */
+.modal-close {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.modal-close:hover {
+  background: rgba(0, 0, 0, 0.05);
+  transform: rotate(90deg);
+}
+
+/* Responsive Enhancements */
+@media (max-width: 480px) {
+  .modal-footer {
+    margin-top: 1rem;
+    padding-top: 0.75rem;
+  }
+  
+  .response-time {
+    font-size: 0.85rem;
+  }
+  
+  .option-arrow {
+    font-size: 1.2rem;
+  }
+}
