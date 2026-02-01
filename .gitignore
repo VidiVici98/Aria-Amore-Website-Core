@@ -55,3 +55,5 @@ tmp/
 # OS temporary files
 *~
 *.bak
+node_modules/
+package-lock.json
