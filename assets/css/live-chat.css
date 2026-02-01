@@ -424,12 +424,7 @@ Free chat solution with professional polish
   }
 }
 
-/* Enhanced Button Styling */
-.fallback-chat-button {
-  position: relative;
-  overflow: visible;
-}
-
+/* Enhanced Button Styling - Removed position: relative to maintain fixed positioning */
 .fallback-chat-button::before {
   content: '';
   position: absolute;

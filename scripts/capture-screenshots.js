@@ -136,6 +136,15 @@ async function captureScreenshots() {
         // Extra wait for visual stability after curtain is fully offscreen
         console.log('   ⏳ Ensuring visual stability...');
         await page.waitForTimeout(1000);
+        
+        // CRITICAL: Wait for chat widget to be visible (should be on all pages)
+        console.log('   ⏳ Waiting for chat widget to load...');
+        await page.waitForSelector('.fallback-chat-button', {
+          timeout: 5000,
+          state: 'visible'
+        }).catch(() => {
+          console.log('   ⚠️  Chat widget not found (may not be on this page)');
+        });
 
         // Scroll if needed
         if (scrollY > 0) {
