@@ -606,7 +606,7 @@ Need help with dependencies?
 
 ## ✅ Implementation Checklist
 
-- [x] npm dependencies installed
+- [ ] npm dependencies installed
 - [ ] Composer dependencies verified
 - [ ] Lock files committed to git
 - [ ] Security audit run and passed
