@@ -188,6 +188,21 @@ async function captureScreenshots() {
         console.log(`   ⏳ Waiting for curtain animation and chat widget...`);
         await page.waitForTimeout(CURTAIN_ANIMATION_WAIT_MS);
 
+        // Wait for curtain to be fully gone (not just class added, but actually invisible)
+        await page.waitForFunction(() => {
+          const curtain = document.querySelector('.curtain-wrapper');
+          if (!curtain) return true; // No curtain element
+          const style = window.getComputedStyle(curtain);
+          // Check if curtain is invisible or off-screen
+          return style.display === 'none' || 
+                 style.visibility === 'hidden' || 
+                 style.opacity === '0' ||
+                 curtain.classList.contains('open');
+        }, { timeout: 10000 });
+        
+        // Extra wait for curtain slide animation to complete (2s transition + buffer)
+        await page.waitForTimeout(2500);
+
         // Wait for chat button to be visible
         await page.waitForSelector('.fallback-chat-button', {
           timeout: 5000,
@@ -195,10 +210,8 @@ async function captureScreenshots() {
         });
 
         if (action === 'collapsed') {
-          // For collapsed state, scroll to bottom to ensure button is in view
-          await page.evaluate(() => {
-            window.scrollTo(0, document.body.scrollHeight);
-          });
+          // For collapsed state, DON'T scroll - widget is fixed to viewport
+          // Just ensure it's visible
           await page.waitForTimeout(500);
         } else if (action === 'expanded') {
           // Click the chat button to open the modal
