@@ -197,9 +197,9 @@
   border-radius: 2px;
 }
 
-/* Contact Information Section */
-.privacy-content p:has(a[href^="mailto"]),
-.terms-content p:has(a[href^="mailto"]) {
+/* Contact Information Section - using class for better browser compatibility */
+.privacy-content .contact-info,
+.terms-content .contact-info {
   background: rgba(176, 139, 79, 0.1);
   padding: var(--space-md);
   border-radius: 8px;
