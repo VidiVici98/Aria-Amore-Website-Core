@@ -181,7 +181,13 @@ async function captureScreenshots() {
           state: 'visible'
         });
 
-        if (action === 'expanded') {
+        if (action === 'collapsed') {
+          // For collapsed state, scroll to bottom to ensure button is in view
+          await page.evaluate(() => {
+            window.scrollTo(0, document.body.scrollHeight);
+          });
+          await page.waitForTimeout(500);
+        } else if (action === 'expanded') {
           // Click the chat button to open the modal
           console.log('   🖱️  Opening chat modal...');
           
