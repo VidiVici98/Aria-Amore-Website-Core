@@ -35,10 +35,19 @@
   <link rel="icon" type="image/png" href="/assets/media/icons/favicon.png">
   <link rel="apple-touch-icon" href="/assets/media/icons/apple-touch-icon.png">
   <meta name="theme-color" content="#b08b4f">
+  
+  <!--Performance: Preconnect to external resources-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
   <!--External APIs-->
   <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Quintessential&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!--Performance: Preload critical assets-->
+  <link rel="preload" href="/assets/css/styles.css" as="style">
+  <link rel="preload" href="/assets/media/images/parchment-background.webp" as="image">
   <!--Stylesheets-->
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/index-alt.css">
