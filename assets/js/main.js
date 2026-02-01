@@ -219,25 +219,29 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     });
-});
-const curtain = document.querySelector(".curtain-wrapper");
-if (curtain) {
-  // Open curtains on page load
-  setTimeout(() => {
-    curtain.classList.add("open");
-    // Hide the curtain wrapper after animation completes (2s transition + buffer)
+
+  // =======================
+  // CURTAIN ANIMATION
+  // =======================
+  const curtain = document.querySelector(".curtain-wrapper");
+  if (curtain) {
+    // Open curtains on page load
     setTimeout(() => {
-      curtain.style.display = "none";
-    }, 2500);
-  }, 100);
-  // Navigation with curtain animation
-  document.querySelectorAll("a[href]").forEach(link => {
-    link.addEventListener("click", e => {
-      e.preventDefault();
-      // Show curtain wrapper again for closing animation
-      curtain.style.display = "flex";
-      curtain.classList.remove("open");
-      setTimeout(() => window.location.href = link.href, 1400);
+      curtain.classList.add("open");
+      // Hide the curtain wrapper after animation completes (2s transition + buffer)
+      setTimeout(() => {
+        curtain.style.display = "none";
+      }, 2500);
+    }, 100);
+    // Navigation with curtain animation
+    document.querySelectorAll("a[href]").forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        // Show curtain wrapper again for closing animation
+        curtain.style.display = "flex";
+        curtain.classList.remove("open");
+        setTimeout(() => window.location.href = link.href, 1400);
+      });
     });
-  });
-}
+  }
+});
