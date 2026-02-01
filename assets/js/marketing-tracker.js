@@ -209,11 +209,6 @@
       // Add social proof elements
       this.addSocialProof();
       
-      // Log referrer for debugging (remove in production)
-      if (this.detectSocialReferrer()) {
-        console.log('Social referrer detected:', this.detectSocialReferrer());
-      }
-      
       // Track page view with campaign data
       const campaignData = this.getCampaignData();
       if (campaignData && typeof gtag !== 'undefined') {
