@@ -120,7 +120,7 @@ body {
   font-family:Georgia, 'Times New Roman', Times, serif;
   color: var(--color-primary);
   background-size: cover;
-  backdrop-filter: blur(2px);
+  /* backdrop-filter: blur(2px); REMOVED - breaks position:fixed for contact widget */
 }
 h1, h2 {
   font-family: "Italianno", cursive;
