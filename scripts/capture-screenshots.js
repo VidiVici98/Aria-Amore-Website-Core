@@ -19,7 +19,8 @@ const fs = require('fs');
 // Configuration
 const SERVER_URL = process.argv[2] || 'http://localhost:8000';
 const SCREENSHOT_DIR = path.join(__dirname, '../docs/screenshots');
-const VIEWPORT = { width: 1280, height: 720 };
+const VIEWPORT_DESKTOP = { width: 1280, height: 720 };
+const VIEWPORT_MOBILE = { width: 375, height: 667 };
 
 // Timing configuration
 const CURTAIN_ANIMATION_WAIT_MS = 3000; // Wait for curtain animation (100ms delay + 2s animation + buffer)
@@ -45,11 +46,21 @@ const HOMEPAGE_SECTIONS = [
   { filename: 'sections/homepage-section-2-packages.png', description: 'Homepage Section 2 - Packages', scrollY: 800 }
 ];
 
+// Mobile screenshots
+const MOBILE_PAGES = [
+  { url: '/index.html', filename: 'mobile/01-homepage-mobile.png', description: 'Homepage (Mobile)', scrollY: 0 },
+  { url: '/contact.html', filename: 'mobile/02-contact-mobile.png', description: 'Contact Page (Mobile)' },
+  { url: '/artists.html', filename: 'mobile/03-artists-mobile.png', description: 'Artists Page (Mobile)' },
+  { url: '/services.html', filename: 'mobile/04-services-mobile.png', description: 'Services Page (Mobile)' },
+  { url: '/index.html', filename: 'mobile/05-chat-widget-button.png', description: 'Chat Widget Button (Mobile)', scrollY: 0 }
+];
+
 async function captureScreenshots() {
   console.log('📸 Aria Amore Screenshot Capture');
   console.log('================================\n');
   console.log(`Server URL: ${SERVER_URL}`);
-  console.log(`Viewport: ${VIEWPORT.width}x${VIEWPORT.height}`);
+  console.log(`Desktop Viewport: ${VIEWPORT_DESKTOP.width}x${VIEWPORT_DESKTOP.height}`);
+  console.log(`Mobile Viewport: ${VIEWPORT_MOBILE.width}x${VIEWPORT_MOBILE.height}`);
   console.log(`Output Directory: ${SCREENSHOT_DIR}\n`);
 
   // Track success/failure
@@ -69,6 +80,12 @@ async function captureScreenshots() {
     fs.mkdirSync(sectionsDir, { recursive: true });
   }
 
+  const mobileDir = path.join(SCREENSHOT_DIR, 'mobile');
+  if (!fs.existsSync(mobileDir)) {
+    console.log(`Creating mobile directory: ${mobileDir}`);
+    fs.mkdirSync(mobileDir, { recursive: true });
+  }
+
   // Launch browser
   console.log('→ Launching browser...');
   const browser = await chromium.launch({
@@ -76,21 +93,16 @@ async function captureScreenshots() {
   });
 
   try {
-    const context = await browser.newContext({
-      viewport: VIEWPORT,
-      deviceScaleFactor: 1
-    });
-
-    const page = await context.newPage();
-
     // Helper function to capture a screenshot with optional scroll
-    async function capturePageScreenshot(url, outputPath, description, scrollY = 0) {
+    async function capturePageScreenshot(context, url, outputPath, description, scrollY = 0) {
       console.log(`   URL: ${url}`);
       if (scrollY > 0) {
         console.log(`   📜 Scroll position: ${scrollY}px`);
       }
 
       try {
+        const page = await context.newPage();
+        
         // Navigate to page
         await page.goto(url, { 
           waitUntil: 'networkidle',
@@ -124,6 +136,7 @@ async function captureScreenshots() {
         });
 
         console.log(`   ✓ Saved: ${path.basename(outputPath)}`);
+        await page.close();
         return true;
 
       } catch (error) {
@@ -131,6 +144,15 @@ async function captureScreenshots() {
         return false;
       }
     }
+
+    // ========================================
+    // DESKTOP SCREENSHOTS
+    // ========================================
+    console.log('\n\n=== DESKTOP SCREENSHOTS ===\n');
+    const desktopContext = await browser.newContext({
+      viewport: VIEWPORT_DESKTOP,
+      deviceScaleFactor: 1
+    });
 
     // Capture main pages
     for (let i = 0; i < PAGES.length; i++) {
@@ -140,7 +162,7 @@ async function captureScreenshots() {
 
       console.log(`\n[${i + 1}/${PAGES.length}] ${pageInfo.description}`);
       totalScreenshots++;
-      const success = await capturePageScreenshot(url, outputPath, pageInfo.description, pageInfo.scrollY || 0);
+      const success = await capturePageScreenshot(desktopContext, url, outputPath, pageInfo.description, pageInfo.scrollY || 0);
       if (success) {
         successfulScreenshots++;
       } else {
@@ -149,7 +171,7 @@ async function captureScreenshots() {
     }
 
     // Capture homepage sections
-    console.log('\n\n=== Homepage Sections ===\n');
+    console.log('\n\n=== Homepage Sections (Desktop) ===\n');
     for (let i = 0; i < HOMEPAGE_SECTIONS.length; i++) {
       const sectionInfo = HOMEPAGE_SECTIONS[i];
       const url = `${SERVER_URL}/index.html`;
@@ -157,7 +179,7 @@ async function captureScreenshots() {
 
       console.log(`\n[Section ${i + 1}/${HOMEPAGE_SECTIONS.length}] ${sectionInfo.description}`);
       totalScreenshots++;
-      const success = await capturePageScreenshot(url, outputPath, sectionInfo.description, sectionInfo.scrollY);
+      const success = await capturePageScreenshot(desktopContext, url, outputPath, sectionInfo.description, sectionInfo.scrollY);
       if (success) {
         successfulScreenshots++;
       } else {
@@ -165,7 +187,36 @@ async function captureScreenshots() {
       }
     }
 
-    await context.close();
+    await desktopContext.close();
+
+    // ========================================
+    // MOBILE SCREENSHOTS
+    // ========================================
+    console.log('\n\n=== MOBILE SCREENSHOTS ===\n');
+    const mobileContext = await browser.newContext({
+      viewport: VIEWPORT_MOBILE,
+      deviceScaleFactor: 2,
+      isMobile: true,
+      hasTouch: true
+    });
+
+    // Capture mobile pages
+    for (let i = 0; i < MOBILE_PAGES.length; i++) {
+      const pageInfo = MOBILE_PAGES[i];
+      const url = `${SERVER_URL}${pageInfo.url}`;
+      const outputPath = path.join(SCREENSHOT_DIR, pageInfo.filename);
+
+      console.log(`\n[${i + 1}/${MOBILE_PAGES.length}] ${pageInfo.description}`);
+      totalScreenshots++;
+      const success = await capturePageScreenshot(mobileContext, url, outputPath, pageInfo.description, pageInfo.scrollY || 0);
+      if (success) {
+        successfulScreenshots++;
+      } else {
+        failedScreenshots++;
+      }
+    }
+
+    await mobileContext.close();
 
   } catch (error) {
     console.error('\n❌ Fatal error:', error);
@@ -177,8 +228,9 @@ async function captureScreenshots() {
   console.log('\n================================');
   console.log('✅ Screenshot capture complete!');
   console.log(`\nScreenshots saved to: ${SCREENSHOT_DIR}`);
-  console.log(`Main pages: ${PAGES.length}`);
-  console.log(`Homepage sections: ${HOMEPAGE_SECTIONS.length}`);
+  console.log(`Desktop pages: ${PAGES.length}`);
+  console.log(`Desktop sections: ${HOMEPAGE_SECTIONS.length}`);
+  console.log(`Mobile pages: ${MOBILE_PAGES.length}`);
   console.log(`\n📊 Results:`);
   console.log(`   Total: ${totalScreenshots}`);
   console.log(`   Successful: ${successfulScreenshots}`);

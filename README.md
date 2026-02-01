@@ -16,14 +16,14 @@ Transform your special day into an unforgettable performance with live opera mus
 
 ## 📸 Documentation & Screenshots
 
-**NEW!** Comprehensive documentation with screenshots of all page features:
+**UPDATED!** All screenshots refreshed to show current site state (February 2026):
 - **[FEATURES.md](docs/FEATURES.md)** - Detailed visual guide to all website features with screenshots
-- **[MISSING-FEATURES-SUMMARY.md](docs/MISSING-FEATURES-SUMMARY.md)** - **NEW!** Top 10+ features to add to the website
-- **[FEATURE-RECOMMENDATIONS.md](docs/FEATURE-RECOMMENDATIONS.md)** - **NEW!** Detailed feature analysis with 18 recommendations
-- **[CURRENT-VS-MISSING.md](docs/CURRENT-VS-MISSING.md)** - **NEW!** Side-by-side comparison of what exists vs. what's missing
-- **[FEATURE-IMPLEMENTATION-CHECKLIST.md](docs/FEATURE-IMPLEMENTATION-CHECKLIST.md)** - **NEW!** Actionable checklist for implementation
+- **[docs/screenshots/](docs/screenshots/)** - Full-page screenshots of all pages (desktop + mobile)
+  - 11 desktop page screenshots
+  - 5 mobile screenshots (including chat widget)
+  - 2 homepage section detail shots
+- **[CHAT-WIDGET-ENHANCEMENTS.md](docs/CHAT-WIDGET-ENHANCEMENTS.md)** - Enhanced chat/support widget documentation
 - **[AUTOMATION.md](docs/AUTOMATION.md)** - Complete automation and build scripts documentation
-- **[docs/screenshots/](docs/screenshots/)** - Full-page screenshots of all primary pages
 
 ## 📋 Quick Links
 
@@ -33,11 +33,9 @@ Transform your special day into an unforgettable performance with live opera mus
 - [Testing](#-testing)
 - [Security](#-security)
 - [📸 Page Features Documentation](docs/FEATURES.md) - Screenshots and detailed feature descriptions
-- [🎯 Missing Features Summary](docs/MISSING-FEATURES-SUMMARY.md) - **NEW!** Top 10+ features to add
-- [📊 Feature Recommendations](docs/FEATURE-RECOMMENDATIONS.md) - **NEW!** Detailed 18-feature analysis
-- [✅ Current vs. Missing Features](docs/CURRENT-VS-MISSING.md) - **NEW!** What you have vs. what's missing
-- [☑️ Implementation Checklist](docs/FEATURE-IMPLEMENTATION-CHECKLIST.md) - **NEW!** Actionable task list
+- [💬 Chat Widget Enhancements](docs/CHAT-WIDGET-ENHANCEMENTS.md) - Enhanced support widget with roadmap
 - [🤖 Automation & Build Scripts](docs/AUTOMATION.md) - Complete automation guide
+- [📸 Screenshots](docs/screenshots/) - Desktop and mobile screenshots of all pages
 
 ## 🚀 Getting Started
 

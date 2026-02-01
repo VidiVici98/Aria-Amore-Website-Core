@@ -128,11 +128,34 @@ The following pages were intentionally **not** screenshotted per requirements:
 ## Screenshot Details
 
 - **Format**: PNG
-- **Capture Method**: Viewport screenshots (1280x720) taken **after curtain animation completes**
+- **Capture Method**: Viewport screenshots taken **after curtain animation completes**
 - **Browser**: Chromium (via Playwright)
-- **Viewport Size**: 1280x720 (standard desktop viewport)
+- **Desktop Viewport**: 1280x720 (standard desktop)
+- **Mobile Viewport**: 375x667 (iPhone SE/8 size)
 - **Animation Wait**: 3 seconds after page load to ensure curtain has fully opened
-- **Date Captured**: January 30, 2026
+- **Date Captured**: February 1, 2026
+
+## Mobile Screenshots
+
+New mobile screenshots have been added to showcase the responsive design and mobile-specific features:
+
+### Mobile Directory (`mobile/`)
+
+1. **01-homepage-mobile.png** - Homepage on mobile device
+   - Shows: Responsive hero section, mobile navigation, chat widget button
+   - Viewport: 375x667 (iPhone SE/8)
+   
+2. **02-contact-mobile.png** - Contact page on mobile
+   - Shows: Mobile-optimized contact form, touch-friendly buttons
+   
+3. **03-artists-mobile.png** - Artists page on mobile
+   - Shows: Stacked artist cards, mobile-friendly performer carousel
+   
+4. **04-services-mobile.png** - Services page on mobile
+   - Shows: Vertical package layout, mobile booking interface
+   
+5. **05-chat-widget-button.png** - Chat widget on mobile
+   - Shows: Fixed position chat button, compact design for mobile screens
 
 ## Technical Notes
 
@@ -186,10 +209,11 @@ The automated script (`scripts/capture-screenshots.js`):
 - ✅ Waits 3 seconds for curtain animation to complete
 - ✅ Captures screenshots with curtain fully opened
 - ✅ Handles scrolling for homepage sections
-- ✅ Creates sections/ subfolder automatically
-- ✅ Uses consistent viewport (1280x720)
+- ✅ Creates sections/ and mobile/ subfolders automatically
+- ✅ Uses consistent viewports (Desktop: 1280x720, Mobile: 375x667)
+- ✅ Captures both desktop and mobile views
 - ✅ Provides progress feedback
-- ✅ Captures all 13 screenshots automatically
+- ✅ Captures all 18 screenshots automatically (13 desktop + 5 mobile)
 
 ### Manual Process (Alternative)
 
@@ -248,7 +272,14 @@ HTML files use absolute paths (`/assets/css/styles.css`) which:
 
 ---
 
-**Last Updated**: January 30, 2026  
-**Total Screenshots**: 11 main pages + 2 homepage sections = 13 total  
+**Last Updated**: February 1, 2026  
+**Total Screenshots**: 
+- **Desktop**: 11 main pages + 2 homepage sections = 13 total
+- **Mobile**: 5 key pages = 5 total
+- **Grand Total**: 18 screenshots
+
 **Capture Method**: Automated with Playwright (waits for curtain animation)  
-**Animation Handling**: 3-second wait ensures curtain is fully opened
+**Animation Handling**: 3-second wait ensures curtain is fully opened  
+**Viewports**: 
+- Desktop: 1280x720
+- Mobile: 375x667 (iPhone SE/8 size)

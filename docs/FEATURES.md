@@ -347,6 +347,38 @@ Comprehensive guide to all features available on the Aria Amore website with vis
   - Terms of Service
 - **Copyright Notice**: © 2026 Aria Amore LLC
 
+### Enhanced Chat/Support Widget
+**Available on all pages** - [Full Documentation](CHAT-WIDGET-ENHANCEMENTS.md)
+
+- **Professional Design**:
+  - Gold gradient button with pulse animation
+  - Professional SVG icons (no emoji)
+  - Matches site's luxury aesthetic
+- **Contact Modal**:
+  - 4 contact options with smooth hover effects
+  - Contact Form
+  - Phone Call: (843) 555-2742
+  - Email: info@ariaamore.com
+  - Instagram DM: @ariaamore.art
+- **Features**:
+  - Fixed bottom-right position
+  - Responsive design (icon-only on mobile)
+  - Modal footer with response time indicator
+  - Keyboard navigation (ESC to close)
+  - ARIA labels for accessibility
+- **Mobile Optimized**:
+  - Compact button (56px) on small screens
+  - Touch-friendly tap targets
+  - Full-width modal with proper spacing
+- **Ready for Live Chat**:
+  - Tawk.to integration placeholder
+  - Easy setup instructions in documentation
+  - Free forever plan available
+
+**Screenshots**:
+- Desktop: Chat button and modal visible on all pages
+- Mobile: [docs/screenshots/mobile/05-chat-widget-button.png](screenshots/mobile/05-chat-widget-button.png)
+
 ### SEO & Metadata
 **On every page**
 
