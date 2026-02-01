@@ -1,0 +1,275 @@
+/*=============================================
+Marketing & Campaign Elements
+Styles for UTM tracking, social proof, and welcome banners
+=============================================*/
+
+/* Social Welcome Banner */
+.social-welcome-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: linear-gradient(135deg, #4caf50 0%, #45a049 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  animation: slideInFromTop 0.5s ease-out;
+  transition: opacity 0.3s ease;
+}
+
+.welcome-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.welcome-icon {
+  font-size: 1.5rem;
+}
+
+.welcome-content p {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.welcome-content strong {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.welcome-close {
+  position: absolute;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.welcome-close:hover {
+  transform: scale(1.2);
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Social Proof Badge */
+.social-proof-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border: 2px solid var(--gold, #b08b4f);
+  border-radius: 50px;
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  animation: pulseGlow 2s infinite;
+  margin: 1rem 0;
+}
+
+.proof-icon {
+  font-size: 1.2rem;
+}
+
+.proof-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  50% {
+    box-shadow: 0 4px 20px rgba(176, 139, 79, 0.4);
+  }
+}
+
+/* Campaign CTA Highlight */
+.campaign-cta {
+  position: relative;
+  overflow: hidden;
+}
+
+.campaign-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+  }
+}
+
+/* Special Offer Badge */
+.special-offer-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+  animation: bounce 2s infinite;
+  z-index: 10;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Urgency Timer */
+.urgency-timer {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 1rem 0;
+  animation: pulseAlert 1.5s infinite;
+}
+
+.timer-icon {
+  font-size: 1.2rem;
+}
+
+@keyframes pulseAlert {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Social Follow Incentive */
+.follow-incentive {
+  background: linear-gradient(135deg, rgba(176, 139, 79, 0.1) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border: 2px solid var(--gold, #b08b4f);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.follow-incentive h3 {
+  color: var(--gold, #b08b4f);
+  margin-bottom: 0.5rem;
+}
+
+.follow-incentive p {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+.follow-incentive-code {
+  display: inline-block;
+  background: var(--gold, #b08b4f);
+  color: #fff;
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+}
+
+/* Referral Badge */
+.referral-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .social-welcome-banner {
+    font-size: 0.9rem;
+  }
+  
+  .welcome-content {
+    padding: 0.75rem 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .welcome-close {
+    position: static;
+    margin-left: auto;
+  }
+  
+  .social-proof-badge {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .special-offer-badge {
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+/* Print styles */
+@media print {
+  .social-welcome-banner,
+  .social-proof-badge,
+  .special-offer-badge,
+  .urgency-timer,
+  .follow-incentive,
+  .referral-badge {
+    display: none !important;
+  }
+}
