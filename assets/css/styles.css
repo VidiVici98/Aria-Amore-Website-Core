@@ -1324,20 +1324,20 @@ blockquote:hover {
   position: fixed;
   bottom: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 9000; /* Lower than chat widget (10000) to prevent overlap */
 }
 .event-banner {
   background: linear-gradient(to top, #151515 15%, #252525f5 70%, #222222 100%);
   color: #ddd;
   text-align: center;
   min-height: 30px;
-  padding: 2px;
+  padding: 6px 2px; /* Increased vertical padding for better spacing */
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: 600;
   font-size: .9rem;
   width: 100%;
   position: relative;
-  z-index: 9999;
+  z-index: 9000; /* Matches container */
   backdrop-filter: blur(4px);
   text-shadow: 1px 1px 1px #000000,
                2px 2px 3px #151515bb;
