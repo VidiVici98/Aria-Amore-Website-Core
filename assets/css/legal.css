@@ -1,0 +1,255 @@
+/*=====================================
+  LEGAL PAGES STYLES
+  (Privacy Policy & Terms of Service)
+=====================================*/
+
+/* Container for legal content */
+.privacy-content,
+.terms-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--space-xxl) var(--space-lg);
+  line-height: 1.8;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  position: relative;
+}
+
+@media (max-width: 768px) {
+  .privacy-content,
+  .terms-content {
+    padding: var(--space-lg) var(--space-md);
+    margin: var(--space-md);
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-content,
+  .terms-content {
+    padding: var(--space-md) var(--space-sm);
+    margin: var(--space-sm);
+  }
+}
+
+/* Main Title */
+.privacy-content h1,
+.terms-content h1 {
+  font-family: 'Italianno', cursive;
+  font-size: 3.5rem;
+  color: var(--gold);
+  text-align: center;
+  margin-bottom: var(--space-md);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .privacy-content h1,
+  .terms-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .privacy-content h1,
+  .terms-content h1 {
+    font-size: 2rem;
+  }
+}
+
+/* Last Updated Date */
+.privacy-content .last-updated,
+.terms-content .last-updated {
+  font-size: 0.9em;
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  display: block;
+  margin-bottom: var(--space-xl);
+  padding-bottom: var(--space-md);
+  border-bottom: 1px solid rgba(176, 139, 79, 0.3);
+}
+
+/* Section Headings */
+.privacy-content h2,
+.terms-content h2 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--gold);
+  margin-top: var(--space-xl);
+  margin-bottom: var(--space-md);
+  padding-bottom: var(--space-xs);
+  border-bottom: 2px solid rgba(176, 139, 79, 0.2);
+}
+
+@media (max-width: 768px) {
+  .privacy-content h2,
+  .terms-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* Sub-headings */
+.privacy-content h3,
+.terms-content h3 {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #555;
+  margin-top: var(--space-lg);
+  margin-bottom: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+  .privacy-content h3,
+  .terms-content h3 {
+    font-size: 1.15rem;
+  }
+}
+
+/* Paragraphs */
+.privacy-content p,
+.terms-content p {
+  margin: var(--space-md) 0;
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+@media (max-width: 768px) {
+  .privacy-content p,
+  .terms-content p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Lists */
+.privacy-content ul,
+.terms-content ul {
+  margin: var(--space-md) 0 var(--space-md) var(--space-xl);
+  padding-left: 0;
+  list-style-type: none;
+}
+
+@media (max-width: 768px) {
+  .privacy-content ul,
+  .terms-content ul {
+    margin-left: var(--space-md);
+  }
+}
+
+.privacy-content ul li,
+.terms-content ul li {
+  margin: var(--space-sm) 0;
+  padding-left: var(--space-md);
+  position: relative;
+}
+
+.privacy-content ul li::before,
+.terms-content ul li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.8em;
+}
+
+/* Nested lists */
+.privacy-content ul ul,
+.terms-content ul ul {
+  margin: var(--space-sm) 0 var(--space-sm) var(--space-md);
+}
+
+.privacy-content ul ul li::before,
+.terms-content ul ul li::before {
+  content: '▸';
+  font-size: 1em;
+}
+
+/* Strong/Bold text */
+.privacy-content strong,
+.terms-content strong {
+  font-weight: 600;
+  color: #222;
+}
+
+/* Links */
+.privacy-content a,
+.terms-content a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.privacy-content a:hover,
+.terms-content a:hover {
+  color: var(--accent-deep);
+  border-bottom: 1px solid var(--accent-deep);
+}
+
+.privacy-content a:focus,
+.terms-content a:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Contact Information Section */
+.privacy-content p:has(a[href^="mailto"]),
+.terms-content p:has(a[href^="mailto"]) {
+  background: rgba(176, 139, 79, 0.1);
+  padding: var(--space-md);
+  border-radius: 8px;
+  border-left: 4px solid var(--gold);
+  margin: var(--space-lg) 0;
+}
+
+/* Decorative separator after title */
+.privacy-content h1::after,
+.terms-content h1::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  margin: var(--space-md) auto;
+}
+
+/* Section spacing improvements */
+.privacy-content > *:first-child,
+.terms-content > *:first-child {
+  margin-top: 0;
+}
+
+.privacy-content > *:last-child,
+.terms-content > *:last-child {
+  margin-bottom: 0;
+}
+
+/* Improve readability for long sections */
+@media (min-width: 769px) {
+  .privacy-content,
+  .terms-content {
+    padding: calc(var(--space-xxl) * 1.5) var(--space-xl);
+  }
+}
+
+/* Print styles */
+@media print {
+  .privacy-content,
+  .terms-content {
+    max-width: 100%;
+    padding: 20px;
+    box-shadow: none;
+    background: white;
+  }
+  
+  .privacy-content a,
+  .terms-content a {
+    color: #000;
+    text-decoration: underline;
+  }
+}

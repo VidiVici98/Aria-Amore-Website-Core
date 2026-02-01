@@ -119,25 +119,36 @@ document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  // Initialize multi-step form
+  if (window.MultiStepForm) {
+    MultiStepForm.init('contact-form', {
+      showProgressBar: true,
+      showStepNumbers: true,
+      validateOnNext: true,
+      onComplete: async (formElement) => {
+        await handleFormSubmission(formElement);
+      }
+    });
+  }
 
+  // Handle form submission
+  async function handleFormSubmission(formElement) {
     // Check honeypot field
-    const honeypot = form.querySelector('input[name="website"]');
+    const honeypot = formElement.querySelector('input[name="website"]');
     if (honeypot && honeypot.value !== '') {
       console.warn('Spam detected');
       return;
     }
 
-    const submitBtn = form.querySelector('button[type="submit"]');
+    const submitBtn = formElement.querySelector('.form-submit-btn');
     const originalText = submitBtn.textContent;
     submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
 
-    const formData = new FormData(form);
+    const formData = new FormData(formElement);
     
     try {
-      const response = await fetch(form.action, {
+      const response = await fetch(formElement.action, {
         method: 'POST',
         body: formData
       });
@@ -149,12 +160,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (result.success !== false) {
           // Success message
           const successMsg = document.createElement('div');
-          successMsg.className = 'form-success';
+          successMsg.className = 'form-success form-step-complete';
           successMsg.innerHTML = `
-            <h3>Thank you for your inquiry!</h3>
+            <h3>✓ Thank you for your inquiry!</h3>
             <p>We've received your message and will get back to you within 24-48 hours.</p>
           `;
-          form.replaceWith(successMsg);
+          formElement.replaceWith(successMsg);
         } else {
           throw new Error(result.error || 'Form submission failed');
         }
@@ -167,16 +178,26 @@ document.addEventListener('DOMContentLoaded', () => {
       // Error message
       const errorMsg = document.createElement('div');
       errorMsg.className = 'form-error';
+      errorMsg.style.cssText = 'background: rgba(220, 53, 69, 0.1); border: 2px solid #dc3545; padding: 1rem; border-radius: 8px; margin-top: 1rem; color: #dc3545;';
       errorMsg.innerHTML = `
-        <p>Sorry, there was an error sending your message. Please try again or contact us directly at <a href="mailto:info@ariaamore.com">info@ariaamore.com</a></p>
+        <p>Sorry, there was an error sending your message. Please try again or contact us directly at <a href="mailto:info@ariaamore.com" style="color: #dc3545; text-decoration: underline;">info@ariaamore.com</a></p>
       `;
-      form.insertBefore(errorMsg, submitBtn);
+      formElement.appendChild(errorMsg);
       
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
 
       // Remove error message after 5 seconds
       setTimeout(() => errorMsg.remove(), 5000);
+    }
+  }
+
+  // Also handle regular form submission if multi-step fails to initialize
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    // Only handle if multi-step is not active
+    if (!window.MultiStepForm || !form.querySelector('.form-step')) {
+      await handleFormSubmission(form);
     }
   });
 });
