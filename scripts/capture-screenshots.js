@@ -203,11 +203,49 @@ async function captureScreenshots() {
         // Extra wait for curtain slide animation to complete (2s transition + buffer)
         await page.waitForTimeout(2500);
 
-        // Wait for chat button to be visible
-        await page.waitForSelector('.fallback-chat-button', {
-          timeout: 5000,
-          state: 'visible'
-        });
+        // Wait for chat button to be visible and verify it's actually rendered
+        console.log('   🔍 Waiting for chat widget button...');
+        try {
+          await page.waitForSelector('.fallback-chat-button', {
+            timeout: 10000,
+            state: 'visible'
+          });
+          
+          // Verify button is actually visible with proper positioning
+          const widgetInfo = await page.evaluate(() => {
+            const button = document.querySelector('.fallback-chat-button');
+            if (!button) return { exists: false };
+            
+            const rect = button.getBoundingClientRect();
+            const styles = window.getComputedStyle(button);
+            
+            return {
+              exists: true,
+              visible: styles.display !== 'none' && styles.visibility !== 'hidden' && styles.opacity !== '0',
+              position: styles.position,
+              bottom: styles.bottom,
+              right: styles.right,
+              zIndex: styles.zIndex,
+              inViewport: rect.top >= 0 && rect.left >= 0 && rect.bottom <= window.innerHeight && rect.right <= window.innerWidth,
+              rect: { top: rect.top, left: rect.left, bottom: rect.bottom, right: rect.right }
+            };
+          });
+          
+          console.log('   ✓ Widget status:', JSON.stringify(widgetInfo, null, 2));
+          
+          if (!widgetInfo.exists || !widgetInfo.visible) {
+            throw new Error('Widget exists but not visible: ' + JSON.stringify(widgetInfo));
+          }
+        } catch (error) {
+          console.log('   ⚠️  Widget not found or not visible:', error.message);
+          // Add visual marker to show widget should be here
+          await page.evaluate(() => {
+            const marker = document.createElement('div');
+            marker.style.cssText = 'position:fixed;bottom:2rem;right:2rem;width:150px;height:60px;background:red;color:white;display:flex;align-items:center;justify-content:center;z-index:99999;font-weight:bold;';
+            marker.textContent = 'WIDGET MISSING';
+            document.body.appendChild(marker);
+          });
+        }
 
         if (action === 'collapsed') {
           // For collapsed state, DON'T scroll - widget is fixed to viewport
