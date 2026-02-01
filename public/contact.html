@@ -57,6 +57,7 @@
   <!--Stylesheets-->
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link rel="stylesheet" href="/assets/css/contact.css">
+  <link rel="stylesheet" href="/assets/css/multi-step-form.css">
 </head>
 <body>
   <!-- Header Embed Container -->
@@ -150,45 +151,61 @@
           <img src="/assets/media/images/divider.svg" class="flourish-divider" alt="" aria-hidden="true">
           
           <form id="contact-form" class="contact-form" method="POST" action="/sendmail.php" aria-labelledby="form-heading">
-            <div class="form-group">
-              <label for="name" id="name-label">Your Name</label>
-              <input type="text" id="name" name="name" required aria-required="true" aria-labelledby="name-label">
+            
+            <!-- Step 1: Contact Information -->
+            <div class="form-step" data-step-title="Your Info">
+              <h3>Your Contact Information</h3>
+              <p class="step-description">Let us know who you are and how to reach you.</p>
+              
+              <div class="form-group">
+                <label for="name" id="name-label">Your Name</label>
+                <input type="text" id="name" name="name" required aria-required="true" aria-labelledby="name-label">
+              </div>
+
+              <div class="form-group">
+                <label for="email" id="email-label">Email Address</label>
+                <input type="email" id="email" name="email" required aria-required="true" aria-labelledby="email-label">
+              </div>
+
+              <div class="form-group">
+                <label for="phone" id="phone-label">Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone" aria-labelledby="phone-label">
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="email" id="email-label">Email Address</label>
-              <input type="email" id="email" name="email" required aria-required="true" aria-labelledby="email-label">
+            <!-- Step 2: Event Details -->
+            <div class="form-step" data-step-title="Event Details">
+              <h3>About Your Event</h3>
+              <p class="step-description">Tell us about the type and timing of your event.</p>
+              
+              <div class="form-group">
+                <label for="event-type" id="event-type-label">Event Type</label>
+                <select id="event-type" name="eventType" required aria-required="true" aria-labelledby="event-type-label">
+                  <option value="">Select event type...</option>
+                  <!-- Options populated by JavaScript -->
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="event-date" id="event-date-label">Preferred Event Date</label>
+                <input type="date" id="event-date" name="eventDate" aria-labelledby="event-date-label">
+              </div>
             </div>
 
-            <div class="form-group">
-              <label for="phone" id="phone-label">Phone Number (Optional)</label>
-              <input type="tel" id="phone" name="phone" aria-labelledby="phone-label">
-            </div>
-
-            <div class="form-group">
-              <label for="event-type" id="event-type-label">Event Type</label>
-              <select id="event-type" name="eventType" required aria-required="true" aria-labelledby="event-type-label">
-                <option value="">Select event type...</option>
-                <!-- Options populated by JavaScript -->
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="event-date" id="event-date-label">Preferred Event Date</label>
-              <input type="date" id="event-date" name="eventDate" aria-labelledby="event-date-label">
-            </div>
-
-            <div class="form-group">
-              <label for="message" id="message-label">Tell Us About Your Event</label>
-              <textarea id="message" name="message" rows="6" required aria-required="true" aria-labelledby="message-label"></textarea>
+            <!-- Step 3: Message -->
+            <div class="form-step" data-step-title="Your Message">
+              <h3>Tell Us More</h3>
+              <p class="step-description">Share any additional details or special requests.</p>
+              
+              <div class="form-group">
+                <label for="message" id="message-label">Tell Us About Your Event</label>
+                <textarea id="message" name="message" rows="8" required aria-required="true" aria-labelledby="message-label"></textarea>
+              </div>
             </div>
 
             <!-- Honeypot field for spam protection -->
             <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off">
 
-            <button type="submit" class="submit-btn" id="submit-btn">
-              Send Inquiry
-            </button>
           </form>
 
           <img src="/assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" aria-hidden="true">
@@ -215,5 +232,6 @@
   <script src="/assets/js/main.js" defer></script>
   <script src="/assets/js/contact.js" defer></script>
   <script src="/assets/js/form-validation.js" defer></script>
+  <script src="/assets/js/multi-step-form.js" defer></script>
 </body>
 </html>
