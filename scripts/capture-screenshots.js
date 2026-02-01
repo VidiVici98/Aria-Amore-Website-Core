@@ -23,7 +23,7 @@ const VIEWPORT_DESKTOP = { width: 1280, height: 720 };
 const VIEWPORT_MOBILE = { width: 375, height: 667 };
 
 // Timing configuration
-const CURTAIN_ANIMATION_WAIT_MS = 3000; // Wait for curtain animation (100ms delay + 2s animation + buffer)
+const CURTAIN_ANIMATION_WAIT_MS = 4500; // Wait for curtain animation (100ms delay + 2s animation + 2.4s buffer for full visibility)
 
 // Pages to screenshot
 const PAGES = [
@@ -132,6 +132,10 @@ async function captureScreenshots() {
         }).catch(() => {
           console.log('   ⚠️  Curtain wrapper not found or not opened (may not have curtain animation)');
         });
+        
+        // Extra wait for visual stability after curtain is fully offscreen
+        console.log('   ⏳ Ensuring visual stability...');
+        await page.waitForTimeout(1000);
 
         // Scroll if needed
         if (scrollY > 0) {
