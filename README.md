@@ -24,14 +24,17 @@ Transform your special day into an unforgettable performance with live opera mus
 
 ## 📸 Documentation & Screenshots
 
-**UPDATED!** All screenshots refreshed to show current site state (February 2026):
-- **[FEATURES.md](docs/FEATURES.md)** - Detailed visual guide to all website features with screenshots
-- **[docs/screenshots/](docs/screenshots/)** - Full-page screenshots of all pages (desktop + mobile)
+**UPDATED February 2026!** Comprehensive documentation consolidated and all screenshots refreshed:
+- **[GETTING-STARTED.md](docs/GETTING-STARTED.md)** - Complete setup guide from installation to deployment
+- **[SCREENSHOTS.md](docs/SCREENSHOTS.md)** - Screenshot documentation and capture guide
+- **[docs/screenshots/](docs/screenshots/)** - All website screenshots
   - 11 desktop page screenshots
-  - 5 mobile screenshots (including chat widget)
-  - 2 homepage section detail shots
-- **[CHAT-WIDGET-ENHANCEMENTS.md](docs/CHAT-WIDGET-ENHANCEMENTS.md)** - Enhanced chat/support widget documentation
-- **[AUTOMATION.md](docs/AUTOMATION.md)** - Complete automation and build scripts documentation
+  - 5 mobile page screenshots
+  - 2 homepage section details
+  - 4 chat widget screenshots (collapsed & expanded, desktop & mobile)
+  - Total: 22 professional screenshots
+- **[FEATURES.md](docs/FEATURES.md)** - Detailed visual guide to all website features
+- **[DEVELOPMENT-HISTORY.md](docs/DEVELOPMENT-HISTORY.md)** - Complete development changelog
 
 ## 📋 Quick Links
 
@@ -41,18 +44,23 @@ Transform your special day into an unforgettable performance with live opera mus
 - [Testing](#-testing)
 - [Security](#-security)
 
-### 📖 Documentation
-- [📸 Page Features Documentation](docs/FEATURES.md) - Screenshots and detailed feature descriptions
-- [💬 Chat Widget Enhancements](docs/CHAT-WIDGET-ENHANCEMENTS.md) - Enhanced support widget with roadmap
-- [🤖 Automation & Build Scripts](docs/AUTOMATION.md) - Complete automation guide
-- [📸 Screenshots](docs/screenshots/) - Desktop and mobile screenshots of all pages
+### 📖 Core Documentation
+- [🚀 Getting Started Guide](docs/GETTING-STARTED.md) - Setup, analytics, deployment (all-in-one)
+- [📸 Screenshots Guide](docs/SCREENSHOTS.md) - Screenshot documentation and automation
+- [📋 Features Documentation](docs/FEATURES.md) - Complete feature list with examples
+- [📚 Development History](docs/DEVELOPMENT-HISTORY.md) - Project evolution and changes
+- [🏗️ Project Structure](docs/STRUCTURE.md) - Codebase organization
+- [🔒 Security](docs/SECURITY.md) - Security policies and reporting
 
-### 🚀 NEW: Analytics & Marketing
-- [⚡ Quick Start: Analytics Setup](docs/QUICK-START-ANALYTICS.md) - 30-minute setup guide
-- [📊 Analytics Setup Guide](docs/ANALYTICS-SETUP.md) - Complete analytics integration
-- [🎯 CTA Strategy](docs/CTA-STRATEGY.md) - Conversion optimization guide
-- [📱 Social Media Integration](docs/SOCIAL-MEDIA-INTEGRATION.md) - Content creation & posting
-- [📦 Dependencies Management](docs/DEPENDENCIES-MANAGEMENT.md) - Package management guide
+### 🎯 Advanced Guides
+- [📊 Analytics Setup](docs/ANALYTICS-SETUP.md) - Complete analytics integration
+- [🎯 CTA Strategy](docs/CTA-STRATEGY.md) - Conversion optimization
+- [📱 Social Media Guide](docs/SOCIAL-MEDIA-GUIDE.md) - Complete social media marketing guide
+- [💬 Chat Widget Enhancements](docs/CHAT-WIDGET-ENHANCEMENTS.md) - Support widget details
+- [🤖 Automation](docs/AUTOMATION.md) - Build scripts and automation
+- [📦 Dependencies Management](docs/DEPENDENCIES-MANAGEMENT.md) - Package management
+- [🧪 Testing](docs/TESTING.md) - Testing procedures
+- [📚 Resources](docs/RESOURCES.md) - External resources and references
 
 ## 🚀 Getting Started
 

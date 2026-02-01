@@ -23,17 +23,22 @@
     // Add to page
     document.body.insertBefore(curtainContainer, document.body.firstChild);
     
-    // Trigger reveal after content loads
-    window.addEventListener('load', function() {
+    // Trigger reveal immediately after a short delay
+    setTimeout(function() {
+      curtainContainer.classList.add('reveal');
+      
+      // Remove curtain after animation completes (1.2s transition + 300ms buffer)
       setTimeout(function() {
-        curtainContainer.classList.add('reveal');
-        
-        // Remove curtain after animation
-        setTimeout(function() {
-          curtainContainer.remove();
-        }, 1500);
-      }, 800);
-    });
+        curtainContainer.remove();
+      }, 1500);
+    }, 100);
+    
+    // Safety timeout: force remove if stuck after 3 seconds
+    setTimeout(function() {
+      if (curtainContainer && curtainContainer.parentNode) {
+        curtainContainer.remove();
+      }
+    }, 3000);
   }
 
   // Spotlight Effect on Hover for Important Elements
@@ -225,7 +230,8 @@
     
     if (!prefersReducedMotion) {
       // Only init decorative animations if user hasn't requested reduced motion
-      initCurtainReveal();
+      // NOTE: Curtain animation is now handled by main.js using the HTML curtain-wrapper
+      // initCurtainReveal(); // DISABLED - conflicts with HTML curtain
       createFloatingNotes();
       initStageLights();
     }
