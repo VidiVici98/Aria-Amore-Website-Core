@@ -20,14 +20,19 @@ Free chat solution with professional polish
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(176, 139, 79, 0.4);
-  transition: all 0.3s ease;
+  box-shadow: 0 6px 24px rgba(176, 139, 79, 0.35), 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   animation: pulseChat 2s infinite;
 }
 
 .fallback-chat-button:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 30px rgba(176, 139, 79, 0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 40px rgba(176, 139, 79, 0.5), 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.fallback-chat-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(176, 139, 79, 0.4), 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
 .fallback-chat-button svg {
@@ -38,10 +43,10 @@ Free chat solution with professional polish
 
 @keyframes pulseChat {
   0%, 100% {
-    box-shadow: 0 4px 20px rgba(176, 139, 79, 0.4);
+    box-shadow: 0 6px 24px rgba(176, 139, 79, 0.35), 0 2px 8px rgba(0, 0, 0, 0.15);
   }
   50% {
-    box-shadow: 0 4px 30px rgba(176, 139, 79, 0.7);
+    box-shadow: 0 8px 36px rgba(176, 139, 79, 0.6), 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 }
 
@@ -75,11 +80,11 @@ Free chat solution with professional polish
   background: #fff;
   border-radius: 20px;
   padding: 2.5rem;
-  max-width: 500px;
+  max-width: 520px;
   width: 100%;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25), 0 10px 30px rgba(0, 0, 0, 0.15);
   position: relative;
-  animation: slideUp 0.3s ease;
+  animation: slideUp 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes slideUp {
@@ -115,13 +120,16 @@ Free chat solution with professional polish
   font-family: 'Playfair Display', serif;
   font-size: 2rem;
   color: var(--gold, #b08b4f);
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .contact-modal-content > p {
-  color: #666;
+  color: #555;
   margin-bottom: 2rem;
-  font-size: 1.1rem;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 /* Contact Options */
@@ -135,25 +143,59 @@ Free chat solution with professional polish
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1.25rem;
-  background: linear-gradient(135deg, #fff 0%, #fafafa 100%);
-  border: 2px solid #e0e0e0;
-  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  border: 2px solid #e8e8e8;
+  border-radius: 14px;
   text-decoration: none;
   color: inherit;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-option::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--gold, #b08b4f);
+  transform: scaleY(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contact-option:hover {
   border-color: var(--gold, #b08b4f);
-  background: linear-gradient(135deg, #fff 0%, #f5f5f5 100%);
-  transform: translateX(5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  transform: translateX(8px);
+  box-shadow: 0 6px 20px rgba(176, 139, 79, 0.15), 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.contact-option:hover::before {
+  transform: scaleY(1);
 }
 
 .option-icon {
-  font-size: 2rem;
+  width: 48px;
+  height: 48px;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold, #b08b4f);
+  transition: all 0.3s ease;
+}
+
+.option-icon svg {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+}
+
+.contact-option:hover .option-icon svg {
+  transform: scale(1.1);
 }
 
 .option-text {
@@ -314,25 +356,26 @@ Free chat solution with professional polish
 
 .option-arrow {
   position: absolute;
-  right: 1rem;
+  right: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
   font-size: 1.5rem;
   color: var(--gold, #b08b4f);
   opacity: 0;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-weight: 600;
 }
 
 .contact-option:hover .option-arrow {
   opacity: 1;
-  right: 0.75rem;
+  right: 1rem;
 }
 
 /* Modal Footer */
 .modal-footer {
   margin-top: 1.5rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e0e0e0;
+  padding-top: 1.5rem;
+  border-top: 2px solid #e8e8e8;
   text-align: center;
 }
 
@@ -344,6 +387,7 @@ Free chat solution with professional polish
   color: #666;
   font-size: 0.9rem;
   margin: 0;
+  font-weight: 500;
 }
 
 .online-indicator {
@@ -411,12 +455,18 @@ Free chat solution with professional polish
   align-items: center;
   justify-content: center;
   border-radius: 50%;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: rgba(0, 0, 0, 0.03);
 }
 
 .modal-close:hover {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(176, 139, 79, 0.1);
+  color: var(--gold, #b08b4f);
   transform: rotate(90deg);
+}
+
+.modal-close:active {
+  transform: rotate(90deg) scale(0.95);
 }
 
 /* Responsive Enhancements */
