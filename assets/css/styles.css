@@ -1487,8 +1487,21 @@ blockquote:hover {
 /* ================================
    Curtain opening
    ================================ */
+.curtain.left {
+  transform: translateX(0);
+}
+
+.curtain.right {
+  transform: translateX(0);
+}
+
 .curtain-wrapper.open .curtain.left { transform: translateX(-105%); }
 .curtain-wrapper.open .curtain.right { transform: translateX(105%); }
+
+/* Stop shimmer animation when curtains are opening */
+.curtain-wrapper.open .fold {
+  animation: none;
+}
 /* Footer link styling */
 .footer-link {
   color: inherit;

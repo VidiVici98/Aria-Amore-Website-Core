@@ -432,7 +432,7 @@
   </div>
   
   <!-- Header Component -->
-  <div id="header-placeholder"></div>
+  <header id="site-header-container" role="banner" aria-label="Site header"></header>
   
   <!-- Hero Section -->
   <section class="repertoire-hero">
@@ -487,21 +487,13 @@
   </section>
   
   <!-- Footer Component -->
-  <div id="footer-placeholder"></div>
+  <!--Event Banner-->
+  <footer id="event-banner-container" role="contentinfo" aria-label="Upcoming event banner"></footer>
+  <footer id="site-footer-container" role="contentinfo" aria-label="Site footer"></footer>
   
   <!-- Scripts -->
   <script src="/assets/js/main.js"></script>
   <script src="/assets/js/opera-effects.js"></script>
   <script src="/assets/js/repertoire.js"></script>
-  
-  <script>
-    // Load components
-    document.addEventListener('DOMContentLoaded', function() {
-      if (typeof loadComponent === 'function') {
-        loadComponent('header', 'header-placeholder');
-        loadComponent('footer', 'footer-placeholder');
-      }
-    });
-  </script>
 </body>
 </html>

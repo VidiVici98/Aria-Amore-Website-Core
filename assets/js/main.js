@@ -199,48 +199,80 @@ document.addEventListener("DOMContentLoaded", () => {
     total = cards.length;
     updateCarousel();
   }, 200);
-});
-document.addEventListener("DOMContentLoaded", () => {
-  loadComponent("event-banner-container", "/components/event-banner.html")
-    .then(container => {
-      if (!container) return;
-      const banner = container.querySelector('#event-banner');
-      const closeBtn = container.querySelector('#event-banner-close');
-      if (banner && closeBtn) {
-        // Hide banner if previously dismissed
-        if (localStorage.getItem('eventBannerDismissed') === 'true') {
-          banner.style.display = 'none';
-          return;
-        }
-        // Close button functionality
-        closeBtn.addEventListener('click', () => {
-          banner.style.display = 'none';
-          localStorage.setItem('eventBannerDismissed', 'true');
-        });
+
+  // =======================
+  // EVENT BANNER
+  // =======================
+  // Setup event banner dismiss functionality after it loads
+  setTimeout(() => {
+    const banner = document.querySelector('#event-banner');
+    const closeBtn = document.querySelector('#event-banner-close');
+    if (banner && closeBtn) {
+      // Hide banner if previously dismissed
+      if (localStorage.getItem('eventBannerDismissed') === 'true') {
+        banner.style.display = 'none';
+        return;
       }
-    });
+      // Close button functionality
+      closeBtn.addEventListener('click', () => {
+        banner.style.display = 'none';
+        localStorage.setItem('eventBannerDismissed', 'true');
+      });
+    }
+  }, 500);
 
   // =======================
   // CURTAIN ANIMATION
   // =======================
   const curtain = document.querySelector(".curtain-wrapper");
   if (curtain) {
-    // Open curtains on page load
-    setTimeout(() => {
-      curtain.classList.add("open");
-      // Hide the curtain wrapper after animation completes (2s transition + buffer)
+    // Open curtains on page load - use requestAnimationFrame to ensure DOM is ready
+    requestAnimationFrame(() => {
       setTimeout(() => {
-        curtain.style.display = "none";
-      }, 2500);
-    }, 100);
+        curtain.classList.add("open");
+        // Hide the curtain wrapper after animation completes (2s transition + buffer)
+        setTimeout(() => {
+          curtain.style.display = "none";
+        }, 2500);
+      }, 50);
+    });
     // Navigation with curtain animation
     document.querySelectorAll("a[href]").forEach(link => {
       link.addEventListener("click", e => {
+        const href = link.getAttribute("href");
+        
+        // Skip external links, anchors, and special protocols
+        if (!href || 
+            href.startsWith("http") ||
+            href.startsWith("//") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("tel:") ||
+            href.startsWith("javascript:") ||
+            href.startsWith("#") ||
+            link.target === "_blank" ||
+            link.hasAttribute("data-no-transition")) {
+          return;
+        }
+        
         e.preventDefault();
         // Show curtain wrapper again for closing animation
         curtain.style.display = "flex";
         curtain.classList.remove("open");
-        setTimeout(() => window.location.href = link.href, 1400);
+        
+        // Navigate after curtain animation
+        setTimeout(() => {
+          // Ensure .html extension is present for navigation
+          let newHref = href;
+          if (!newHref.endsWith('.html') && !newHref.includes('?') && !newHref.includes('#')) {
+            // Only add .html if it's a simple page link without query/hash
+            if (newHref.endsWith('/')) {
+              newHref = newHref + 'index.html';
+            } else if (!newHref.includes('.')) {
+              newHref = newHref + '.html';
+            }
+          }
+          window.location.href = newHref;
+        }, 1400);
       });
     });
   }
