@@ -272,7 +272,7 @@ background-image: url('https://www.transparenttextures.com/patterns/paper-fibers
 </html>
 HTML;
 // === SEND ADMIN EMAIL ===
-$adminEmail = getenv('ADMIN_EMAIL') ?: bxwilliams18@gmail.com';
+$adminEmail = getenv('ADMIN_EMAIL') ?: 'bxwilliams18@gmail.com';
 $adminSent = sendMail($adminEmail, 'Site Admin', "New Reservation — {$name}", $ownerHtml, []);
 // === SEND CLIENT EMAIL (with ICS attached) ===
 $clientSent = sendMail($email, $name, "Your Aria Amore Reservation — {$date}", $clientHtml, [$icsPath]);
