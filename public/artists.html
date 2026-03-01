@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Aria Amore | Our Artists</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--Security Headers-->
+  <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self';
+               script-src 'self';
+               style-src 'self' https://fonts.googleapis.com;
+               font-src 'self' https://fonts.gstatic.com;
+               img-src 'self' data:;
+               connect-src 'self';
+               frame-ancestors 'none';
+               base-uri 'self';
+               form-action 'self';
+               upgrade-insecure-requests;">
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+  <meta http-equiv="X-Content-Type-Options" content="nosniff">
+  <meta http-equiv="X-Frame-Options" content="DENY">
+  <meta name="robots" content="index, follow">
+  <!-- SEO & Branding -->
+  <meta name="description" content="Meet the artists behind the music at Aria Amore.">
+  <meta name="keywords" content="wedding opera, live performers, ceremony music, classical singers, opera wedding entertainment, live event music, wedding performance, Aria Amore">
+  <meta name="author" content="Modern Warrior School LLC">
+  <link rel="canonical" href="https://ariaamore.com/artists">
+  <!-- Open Graph (Facebook, Instagram, iMessage, etc.) -->
+  <meta property="og:title" content="Aria Amore — Live Opera for Weddings & Celebrations">
+  <meta property="og:description" content="Transform your special day into an unforgettable performance with live opera. Explore packages for ceremonies, receptions, and grand events.">
+  <meta property="og:image" content="https://ariaamore.com/assets/media/images/preview-image.jpg">
+  <meta property="og:url" content="https://ariaamore.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Aria Amore">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aria Amore — Live Opera for Weddings & Celebrations">
+  <meta name="twitter:description" content="Transform your special day into an unforgettable performance with live opera.">
+  <meta name="twitter:image" content="https://ariaamore.com/assets/media/images/preview-image.jpg">
+  <!-- Favicon & App Icons -->
+  <link rel="icon" type="image/png" href="/assets/media/icons/favicon.png">
+  <link rel="apple-touch-icon" href="/assets/media/icons/apple-touch-icon.png">
+  <!-- Theme Colors for Mobile Browsers -->
+  <meta name="theme-color" content="#b08b4f">
+  <meta name="msapplication-TileColor" content="#b08b4f">
+  <link rel="icon" type="image/png" href="/assets/media/icons/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/assets/media/icons/favicon.svg" />
+  <link rel="shortcut icon" href="/assets/media/icons/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/media/icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Aria Amore" />
+  <link rel="manifest" href="/assets/media/icons/site.webmanifest" />
+  <!--External APIs-->
+  <link rel="preload" href="https://fonts.gstatic.com/s/italianno.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+  <!--Stylesheets-->
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link rel="stylesheet" href="/assets/css/focus-enhancements.css">
+  <link rel="stylesheet" href="/assets/css/touch-targets.css">
+  <link rel="stylesheet" href="/assets/css/artists.css">
+</head>
+<body>
+  <!-- Header Embed Container -->
+  <header id="site-header-container" role="banner" aria-label="Site header"></header>
+  <div class="curtain-wrapper">
+  <div class="curtain left">
+    <div class="fold fold1"></div>
+    <div class="fold fold2"></div>
+    <div class="fold fold3"></div>
+    <div class="fold fold4"></div>
+    <div class="fold fold5"></div>
+    <div class="fold fold6"></div>
+    <div class="fold fold7"></div>
+    <div class="fold fold8"></div>
+    <div class="fold fold9"></div>
+  </div>
+  <div class="curtain right">
+    <div class="fold fold1"></div>
+    <div class="fold fold2"></div>
+    <div class="fold fold3"></div>
+    <div class="fold fold4"></div>
+    <div class="fold fold5"></div>
+    <div class="fold fold6"></div>
+    <div class="fold fold7"></div>
+    <div class="fold fold8"></div>
+    <div class="fold fold9"></div>
+  </div>
+</div>
+  <main class="artists-page" id="main-content" role="main">
+    <!--Page Heading -->
+    <div class="fancy-heading" role="region" aria-labelledby="artists-heading">
+      <img src="/assets/media/images/divider.svg" class="flourish-side-ornament" alt="" role="presentation">
+      <h2 id="artists-heading">Meet the Artists Behind the Music</h2>
+      <img src="/assets/media/images/divider.svg" class="flourish-side-ornament-right" alt="" role="presentation">
+    </div>
+    <!-- Artists Grid -->
+    <section class="artists-grid" aria-label="Artists directory">
+      <!-- Template for each artist -->
+      <template id="artist-template">
+        <article class="artist" role="article" aria-labelledby="artist-name">
+          <div class="content-wrapper">
+            <div
+              class="artist-portrait"
+              tabindex="0"
+              role="button"
+              aria-label="Open artist photo in lightbox">
+              <img src="" alt="Performer portrait" />
+            </div>
+            <div class="artist-body">
+              <div class="headline-row">
+                <div class="name-block">
+                  <h2 class="artist-name" id="artist-name"></h2>
+                </div>
+              </div>
+              <p class="artist-bio"></p>
+              <button
+                class="read-more"
+                aria-expanded="false"
+                aria-controls="artist-bio">
+                Read more
+              </button>
+              <div class="audio-list" aria-label="Audio previews" role="list"></div>
+              <div class="cta-row">
+                <a
+                  class="book-btn"
+                  href="/services.html#rsvp"
+                  role="button"
+                  aria-label="Request this artist">
+                  Request Artist
+                </a>
+              </div>
+            </div>
+            <!-- Corner Decorations -->
+            <img src="/assets/media/images/floral-top-right.svg" class="corner corner-top-right" alt="" role="presentation">
+            <img src="/assets/media/images/floral-top-right.svg" class="corner corner-top-left" alt="" role="presentation">
+            <img src="/assets/media/images/floral-top-right.svg" class="corner corner-bottom-right" alt="" role="presentation">
+            <img src="/assets/media/images/floral-top-right.svg" class="corner corner-bottom-left" alt="" role="presentation">
+          </div>
+        </article>
+      </template>
+    </section>
+    <!-- Event Banner -->
+  <div id="event-banner-container"></div>
+    <!-- Footer Embed Container -->
+    <footer id="site-footer-container" role="contentinfo" aria-label="Site footer"></footer>
+    <!-- Lightbox Overlay -->
+    <div
+      class="lightbox"
+      id="lightbox"
+      aria-hidden="true"
+      role="dialog"
+      aria-label="Artist photo viewer"
+      aria-modal="true">
+      <div class="lightbox-backdrop" id="lightbox-backdrop" role="presentation"></div>
+      <div class="lightbox-panel" role="document">
+        <button
+          class="lightbox-close"
+          id="lightbox-close"
+          aria-label="Close lightbox"
+          type="button">✕</button>
+        <img src="#" alt="Artist portrait enlarged" class="lightbox-img" id="lightbox-img" />
+      </div>
+    </div>
+    <!-- Artist Modal -->
+    <div
+      id="artist-modal"
+      class="modal"
+      aria-hidden="true"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-name"
+      aria-describedby="modal-bio">
+      <div class="modal-backdrop" id="modal-backdrop" role="presentation"></div>
+      <div class="modal-content" role="document">
+        <button
+          class="modal-close"
+          id="modal-close"
+          aria-label="Close artist details"
+          type="button">✕</button>
+        <div class="modal-body">
+          <div class="modal-image">
+            <img id="modal-portrait" src="" alt="Performer portrait">
+          </div>
+          <div class="modal-details">
+            <h2 id="modal-name">Artist Name</h2>
+            <p id="modal-bio">Artist bio information appears here.</p>
+            <div class="modal-audio" aria-labelledby="audio-heading">
+              <h3 id="audio-heading">Audio Samples</h3>
+              <div id="modal-audio-list" role="list"></div>
+            </div>
+            <div class="modal-social" aria-labelledby="social-heading">
+              <h3 id="social-heading">Connect</h3>
+              <div class="social-icons" role="group" aria-label="Social media links">
+                <a
+                  href="#"
+                  id="modal-instagram"
+                  aria-label="Instagram profile"
+                  class="icon">
+                  <img src="/assets/media/images/instagram-icon.svg" alt="Instagram icon">
+                </a>
+                <a
+                  href="#"
+                  id="modal-tiktok"
+                  aria-label="TikTok profile"
+                  class="icon">
+                  <img src="/assets/media/images/tiktok-icon.svg" alt="TikTok icon">
+                </a>
+              </div>
+            </div>
+            <div class="modal-actions">
+              <button
+                id="modal-book"
+                class="book-btn"
+                aria-label="Request this artist for your event"
+                type="button">
+                Request Artist
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/artists.js" defer></script>
+</body>
+</html>

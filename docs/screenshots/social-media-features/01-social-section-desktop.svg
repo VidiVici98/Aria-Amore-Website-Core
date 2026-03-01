@@ -1,0 +1,110 @@
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="800" fill="#faf9f7"/>
+  
+  <!-- Section Title -->
+  <text x="600" y="80" font-family="Georgia, serif" font-size="48" fill="#b08b4f" text-anchor="middle" font-weight="bold">Connect With Us</text>
+  <text x="600" y="120" font-family="Georgia, serif" font-size="18" fill="#666" text-anchor="middle">Follow us on social media for behind-the-scenes content, performance videos, and special offers!</text>
+  
+  <!-- Instagram Card -->
+  <g id="instagram-card">
+    <rect x="150" y="180" width="400" height="320" rx="16" fill="#fff" stroke="#e0e0e0" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- Instagram Icon -->
+    <circle cx="350" cy="260" r="40" fill="#E4405F"/>
+    <circle cx="350" cy="260" r="30" fill="#fff"/>
+    <circle cx="350" cy="260" r="20" fill="#E4405F"/>
+    
+    <text x="350" y="340" font-family="Georgia, serif" font-size="28" fill="#b08b4f" text-anchor="middle" font-weight="bold">Instagram</text>
+    <text x="350" y="370" font-family="Arial, sans-serif" font-size="16" fill="#666" text-anchor="middle">@ariaamore.art</text>
+    
+    <!-- Follow Button -->
+    <rect x="250" y="410" width="200" height="50" rx="25" fill="url(#goldGradient)"/>
+    <text x="350" y="442" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="600">Follow Us →</text>
+  </g>
+  
+  <!-- TikTok Card -->
+  <g id="tiktok-card">
+    <rect x="650" y="180" width="400" height="320" rx="16" fill="#fff" stroke="#e0e0e0" stroke-width="2" filter="url(#shadow)"/>
+    
+    <!-- TikTok Icon -->
+    <circle cx="850" cy="260" r="40" fill="#000"/>
+    <path d="M 830 250 L 870 250 L 870 270 L 850 290 L 830 270 Z" fill="#00f2ea"/>
+    <path d="M 835 250 L 865 250 L 865 270 L 850 285 L 835 270 Z" fill="#ff0050"/>
+    
+    <text x="850" y="340" font-family="Georgia, serif" font-size="28" fill="#b08b4f" text-anchor="middle" font-weight="bold">TikTok</text>
+    <text x="850" y="370" font-family="Arial, sans-serif" font-size="16" fill="#666" text-anchor="middle">@ariaamore.art</text>
+    
+    <!-- Follow Button -->
+    <rect x="750" y="410" width="200" height="50" rx="25" fill="url(#goldGradient)"/>
+    <text x="850" y="442" font-family="Arial, sans-serif" font-size="16" fill="#fff" text-anchor="middle" font-weight="600">Follow Us →</text>
+  </g>
+  
+  <!-- Share Buttons Section -->
+  <text x="600" y="580" font-family="Georgia, serif" font-size="32" fill="#b08b4f" text-anchor="middle" font-weight="bold">Share This</text>
+  <line x1="400" y1="600" x2="800" y2="600" stroke="#b08b4f" stroke-width="2"/>
+  
+  <!-- Share Button Grid -->
+  <g id="share-buttons" transform="translate(200, 620)">
+    <!-- Facebook -->
+    <g>
+      <rect x="0" y="0" width="100" height="100" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="50" y="45" font-size="32" text-anchor="middle">📘</text>
+      <text x="50" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" font-weight="600">Facebook</text>
+    </g>
+    
+    <!-- Twitter -->
+    <g>
+      <rect x="120" y="0" width="100" height="100" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="170" y="45" font-size="32" text-anchor="middle">🐦</text>
+      <text x="170" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" font-weight="600">Twitter</text>
+    </g>
+    
+    <!-- LinkedIn -->
+    <g>
+      <rect x="240" y="0" width="100" height="100" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="290" y="45" font-size="32" text-anchor="middle">💼</text>
+      <text x="290" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" font-weight="600">LinkedIn</text>
+    </g>
+    
+    <!-- Pinterest -->
+    <g>
+      <rect x="360" y="0" width="100" height="100" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="410" y="45" font-size="32" text-anchor="middle">📌</text>
+      <text x="410" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" font-weight="600">Pinterest</text>
+    </g>
+    
+    <!-- WhatsApp -->
+    <g>
+      <rect x="480" y="0" width="100" height="100" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="530" y="45" font-size="32" text-anchor="middle">💬</text>
+      <text x="530" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" font-weight="600">WhatsApp</text>
+    </g>
+    
+    <!-- Email -->
+    <g>
+      <rect x="600" y="0" width="100" height="100" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="650" y="45" font-size="32" text-anchor="middle">✉️</text>
+      <text x="650" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" font-weight="600">Email</text>
+    </g>
+    
+    <!-- Copy Link -->
+    <g>
+      <rect x="720" y="0" width="100" height="100" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="770" y="45" font-size="32" text-anchor="middle">🔗</text>
+      <text x="770" y="75" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" font-weight="600">Copy Link</text>
+    </g>
+  </g>
+  
+  <!-- Gradients and Filters -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b08b4f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b6f3f;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+</svg>

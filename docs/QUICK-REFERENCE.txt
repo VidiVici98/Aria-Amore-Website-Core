@@ -1,0 +1,79 @@
+================================================================================
+                    ARIA AMORE - QUICK REFERENCE CARD
+================================================================================
+
+DEVELOPMENT - START HERE
+├─ npm start              → Server runs on http://localhost:8000
+├─ Ctrl+C                 → Stop the server
+└─ Hard Refresh           → Ctrl+Shift+R (clear cache & reload)
+
+LIVE SERVER (VS Code)
+├─ Right-click HTML file in public/
+├─ Select "Open with Live Server"
+└─ Configuration: .vscode/settings.json (already configured)
+
+DEPLOYMENT TO SITEGROUND
+├─ ./scripts/build.sh     → Creates build/ directory
+├─ Upload build/ to host  → All files ready for production
+└─ No symlinks in build   → Everything resolved
+
+TEST THE SITE
+├─ Visit: http://localhost:8000
+├─ Check: Curtain animation on page load
+├─ Check: Can navigate to all pages
+└─ Check: All CSS/images load correctly
+
+VERIFY SETUP
+├─ bash verify-setup.sh   → Automated verification
+├─ npm list http-server   → Check dependencies
+├─ netstat -tulpn | grep 8000 → Check if server running
+└─ Browser F12 console    → Check for errors
+
+ALL PAGES
+✅ index.html      ✅ artists.html
+✅ about.html      ✅ gallery.html  
+✅ contact.html    ✅ events.html
+✅ services.html   ✅ repertoire.html
+
+DOCUMENTATION
+├─ DEVELOPMENT-GUIDE.md   → Full guide (READ THIS)
+├─ QUICK-START.md         → Quick reference
+├─ STATUS-REPORT.md       → Current status
+├─ FIX-SUMMARY.md         → What was fixed
+└─ LIVE-SERVER-SETUP.md   → Live Server details
+
+TROUBLESHOOTING
+Problem: Animation doesn't play
+  → Hard refresh browser (Ctrl+Shift+R)
+  → Check browser console for errors (F12)
+
+Problem: Pages show 404 errors  
+  → Make sure npm start is running
+  → Check serving from public/ folder
+
+Problem: npm start fails
+  → Run: npm install
+  → Run: npm list http-server
+
+Problem: Assets not loading
+  → Check symlinks: ls -la public/assets
+  → Verify CSS file exists: public/assets/css/styles.css
+
+IMPORTANT FILES
+├─ public/index.html              ← Main page
+├─ public/assets/js/main.js       ← Curtain animation code
+├─ public/assets/css/styles.css   ← Curtain CSS
+├─ .vscode/settings.json          ← Live Server config
+└─ scripts/build.sh               ← Production build
+
+KEY FACTS
+• Website uses symlinks for development (public/assets → ../assets)
+• Build process resolves symlinks for production
+• All pages need assets to load properly
+• Live Server must serve from public/ root
+• npm start does this automatically
+
+STATUS: ✅ ALL SYSTEMS OPERATIONAL
+Last verified: March 1, 2026
+
+================================================================================

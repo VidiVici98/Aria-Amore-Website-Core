@@ -1,0 +1,87 @@
+<svg width="375" height="667" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mobile Background -->
+  <rect width="375" height="667" fill="#faf9f7"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="375" height="60" fill="#2a2a2a"/>
+  <text x="187.5" y="38" font-family="Arial, sans-serif" font-size="18" fill="#fff" text-anchor="middle" font-weight="bold">Aria Amore</text>
+  
+  <!-- Social Media Section -->
+  <text x="187.5" y="100" font-family="Georgia, serif" font-size="28" fill="#b08b4f" text-anchor="middle" font-weight="bold">Connect With Us</text>
+  <text x="187.5" y="130" font-family="Arial, sans-serif" font-size="12" fill="#666" text-anchor="middle">Follow us for content!</text>
+  
+  <!-- Instagram Card (Full Width, Stacked) -->
+  <g id="instagram-card-mobile">
+    <rect x="20" y="150" width="335" height="180" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2" filter="url(#shadowMobile)"/>
+    
+    <!-- Instagram Icon -->
+    <circle cx="187.5" cy="200" r="30" fill="#E4405F"/>
+    <circle cx="187.5" cy="200" r="22" fill="#fff"/>
+    <circle cx="187.5" cy="200" r="14" fill="#E4405F"/>
+    
+    <text x="187.5" y="255" font-family="Georgia, serif" font-size="20" fill="#b08b4f" text-anchor="middle" font-weight="bold">Instagram</text>
+    <text x="187.5" y="275" font-family="Arial, sans-serif" font-size="13" fill="#666" text-anchor="middle">@ariaamore.art</text>
+    
+    <!-- Follow Button -->
+    <rect x="107.5" y="290" width="160" height="30" rx="15" fill="url(#goldGradient)"/>
+    <text x="187.5" y="311" font-family="Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">Follow Us →</text>
+  </g>
+  
+  <!-- TikTok Card -->
+  <g id="tiktok-card-mobile">
+    <rect x="20" y="345" width="335" height="180" rx="12" fill="#fff" stroke="#e0e0e0" stroke-width="2" filter="url(#shadowMobile)"/>
+    
+    <!-- TikTok Icon -->
+    <circle cx="187.5" cy="395" r="30" fill="#000"/>
+    <path d="M 172.5 385 L 202.5 385 L 202.5 405 L 187.5 420 L 172.5 405 Z" fill="#00f2ea"/>
+    <path d="M 176.5 385 L 198.5 385 L 198.5 405 L 187.5 416 L 176.5 405 Z" fill="#ff0050"/>
+    
+    <text x="187.5" y="450" font-family="Georgia, serif" font-size="20" fill="#b08b4f" text-anchor="middle" font-weight="bold">TikTok</text>
+    <text x="187.5" y="470" font-family="Arial, sans-serif" font-size="13" fill="#666" text-anchor="middle">@ariaamore.art</text>
+    
+    <!-- Follow Button -->
+    <rect x="107.5" y="485" width="160" height="30" rx="15" fill="url(#goldGradient)"/>
+    <text x="187.5" y="506" font-family="Arial, sans-serif" font-size="13" fill="#fff" text-anchor="middle" font-weight="600">Follow Us →</text>
+  </g>
+  
+  <!-- Share Buttons Title -->
+  <text x="187.5" y="555" font-family="Georgia, serif" font-size="18" fill="#b08b4f" text-anchor="middle" font-weight="bold">Share This</text>
+  
+  <!-- Share Buttons (3-column grid) -->
+  <g id="share-buttons-mobile" transform="translate(30, 570)">
+    <!-- Row 1 -->
+    <g>
+      <rect x="0" y="0" width="95" height="70" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="47.5" y="35" font-size="20" text-anchor="middle">📘</text>
+      <text x="47.5" y="55" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">FB</text>
+    </g>
+    <g>
+      <rect x="105" y="0" width="95" height="70" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="152.5" y="35" font-size="20" text-anchor="middle">🐦</text>
+      <text x="152.5" y="55" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">TW</text>
+    </g>
+    <g>
+      <rect x="210" y="0" width="95" height="70" rx="8" fill="#fff" stroke="#e0e0e0" stroke-width="2"/>
+      <text x="257.5" y="35" font-size="20" text-anchor="middle">💼</text>
+      <text x="257.5" y="55" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">LI</text>
+    </g>
+  </g>
+  
+  <!-- Chat Button (Icon Only - Bottom Right) -->
+  <g id="chat-button-mobile">
+    <circle cx="331" cy="615" r="28" fill="url(#goldGradient)" filter="url(#shadowMobile)"/>
+    <text x="331" y="625" font-size="28" text-anchor="middle">💬</text>
+  </g>
+  
+  <!-- Gradients and Filters -->
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#b08b4f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b6f3f;stop-opacity:1" />
+    </linearGradient>
+    
+    <filter id="shadowMobile">
+      <feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#000" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+</svg>

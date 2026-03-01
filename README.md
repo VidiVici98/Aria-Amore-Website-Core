@@ -1,18 +1,212 @@
-# Aria Amore Website – Content Management Guide
+# 🎭 Aria Amore - Live Opera for Weddings & Celebrations
 
-Welcome!  
-This guide will show you how to **update the text, images, and media** on your website — without touching any HTML code.
+Transform your special day into an unforgettable performance with live opera music and entertainment.
 
-Your site is designed to load most of its content from **JSON files**, which makes updates fast, safe, and easy.
+## 🌟 Features
 
----
+- **Live Opera Performances** - Professional singers and musicians for your special event
+- **Customizable Packages** - Choose from various performance options
+- **Professional Artists** - Meet our talented performers
+- **Wedding & Event Services** - Perfect for ceremonies, receptions, and celebrations
+- **Responsive Design** - Beautiful experience on all devices
+- **Optimized Performance** - Fast loading and smooth interactions
+- **SEO Ready** - Discoverable through search engines
+- **Accessible** - WCAG 2.1 compliant
+- **Production Ready** - Security, backups, monitoring, and testing
 
-## 📁 Where to Find the Editable Files
+### 📊 Analytics & Marketing (NEW!)
+- **One-Touch Analytics** - Universal analytics integration (GA4, Facebook Pixel, TikTok, LinkedIn)
+- **Campaign Tracking** - UTM parameters and social media attribution
+- **Conversion Funnel** - Track visitor journey from awareness to booking
+- **Automatic Event Tracking** - CTAs, forms, videos, scroll depth
+- **Social Media Integration** - Content generator and posting templates
+- **CTA Optimization** - Strategic placement and conversion-focused design
 
-Below is an overview of how the website’s files and folders are organized within the main repository.
-This structure helps keep everything modular, easy to maintain, and clearly separated by purpose.
+## 📸 Documentation & Screenshots
+
+**UPDATED February 2026!** Comprehensive documentation consolidated and all screenshots refreshed:
+- **[GETTING-STARTED.md](docs/GETTING-STARTED.md)** - Complete setup guide from installation to deployment
+- **[SCREENSHOTS.md](docs/SCREENSHOTS.md)** - Screenshot documentation and capture guide
+- **[docs/screenshots/](docs/screenshots/)** - All website screenshots
+  - 11 desktop page screenshots
+  - 5 mobile page screenshots
+  - 2 homepage section details
+  - 4 chat widget screenshots (collapsed & expanded, desktop & mobile)
+  - Total: 22 professional screenshots
+- **[FEATURES.md](docs/FEATURES.md)** - Detailed visual guide to all website features
+- **[DEVELOPMENT-HISTORY.md](docs/DEVELOPMENT-HISTORY.md)** - Complete development changelog
+
+## 📋 Quick Links
+
+- [Getting Started](#-getting-started)
+- [Development](#-development)
+- [Deployment](#-deployment)
+- [Testing](#-testing)
+- [Security](#-security)
+
+### 📖 Core Documentation
+- [🚀 Getting Started Guide](docs/GETTING-STARTED.md) - Setup, analytics, deployment (all-in-one)
+- [📸 Screenshots Guide](docs/SCREENSHOTS.md) - Screenshot documentation and automation
+- [📋 Features Documentation](docs/FEATURES.md) - Complete feature list with examples
+- [📚 Development History](docs/DEVELOPMENT-HISTORY.md) - Project evolution and changes
+- [🏗️ Project Structure](docs/STRUCTURE.md) - Codebase organization
+- [🔒 Security](docs/SECURITY.md) - Security policies and reporting
+
+### 🎯 Advanced Guides
+- [📊 Analytics Setup](docs/ANALYTICS-SETUP.md) - Complete analytics integration
+- [🎯 CTA Strategy](docs/CTA-STRATEGY.md) - Conversion optimization
+- [📱 Social Media Guide](docs/SOCIAL-MEDIA-GUIDE.md) - Complete social media marketing guide
+- [💬 Chat Widget Enhancements](docs/CHAT-WIDGET-ENHANCEMENTS.md) - Support widget details
+- [🤖 Automation](docs/AUTOMATION.md) - Build scripts and automation
+- [📦 Dependencies Management](docs/DEPENDENCIES-MANAGEMENT.md) - Package management
+- [🧪 Testing](docs/TESTING.md) - Testing procedures
+- [📚 Resources](docs/RESOURCES.md) - External resources and references
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Web server (Apache/LiteSpeed with mod_rewrite, mod_headers, mod_deflate, mod_expires)
+- PHP 7.4+ (for email functionality)
+- Node.js 14+ (for local development)
+- SiteGround hosting (or similar cPanel-based hosting)
+
+### Quick Setup
+
+```bash
+# Clone repository
+git clone https://github.com/VidiVici98/Aria-Amore-Website-Core.git
+cd Aria-Amore-Website-Core
+
+# Automated setup (creates .env, sets permissions, etc.)
+npm run setup
+# or
+./scripts/setup-env.sh development
+
+# Start development server
+npm start
+# or
+php -S localhost:8000 -t public/
+
+# Open http://localhost:8000 in your browser
+```
+
+### Available NPM Scripts
+
+```bash
+npm start              # Start development server
+npm run build          # Build production files
+npm test               # Run full test suite
+npm run test:quick     # Run quick tests
+npm run deploy         # Deploy to production
+npm run deploy:siteground  # Create SiteGround deployment package
+npm run security       # Run security checks
+npm run security:fix   # Fix security issues automatically
+npm run backup         # Create backup
+npm run health         # Run health check
+npm run content:validate  # Validate JSON content files
+npm run screenshots       # Capture screenshots (requires server running)
+```
+
+## 📊 Analytics & Marketing Setup
+
+### Quick Setup (30 minutes)
+
+Get analytics and marketing tracking up and running fast!
+
+```bash
+# 1. Get your Google Analytics ID from analytics.google.com
+# 2. Add to your .env file
+echo "GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX" >> .env
+
+# 3. Add meta tags to your HTML pages (see docs/QUICK-START-ANALYTICS.md)
+```
+
+**What You Get:**
+- ✅ Google Analytics 4 tracking
+- ✅ Facebook Pixel integration (optional)
+- ✅ TikTok Pixel integration (optional) 
+- ✅ Automatic event tracking (CTAs, forms, videos)
+- ✅ UTM campaign tracking
+- ✅ Social media attribution
+- ✅ Conversion funnel tracking
+
+**Complete Guide:** [docs/QUICK-START-ANALYTICS.md](docs/QUICK-START-ANALYTICS.md)
+
+### Social Media Content Generation
+
+Generate platform-optimized social media posts instantly:
+
+```javascript
+// Generate Instagram post
+const post = SocialContentGenerator.generatePost({
+  platform: 'instagram',
+  type: 'package',
+  data: {
+    name: 'Serenade Package',
+    price: '$500',
+    features: ['Professional singer', '2 songs', 'Travel included']
+  }
+});
+
+console.log(post.caption);  // Ready-to-post caption with hashtags
+console.log(post.link);     // UTM-tracked link
+```
+
+**Supported Platforms:** Instagram, TikTok, Facebook, Twitter/X  
+**Content Types:** Packages, Artists, Testimonials, Events, General  
+**Complete Guide:** [docs/SOCIAL-MEDIA-INTEGRATION.md](docs/SOCIAL-MEDIA-INTEGRATION.md)
+
+### CTA Optimization
+
+Strategic call-to-action placement and design for maximum conversions:
+
+- Primary, secondary, and tertiary CTA hierarchy
+- Page-by-page CTA strategy
+- Mobile-optimized sticky CTAs
+- A/B testing recommendations
+- Conversion rate optimization tips
+
+**Complete Guide:** [docs/CTA-STRATEGY.md](docs/CTA-STRATEGY.md)
+
+## 💻 Development
+
+### Making Changes
+
+1. Create a feature branch
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+2. Make changes and test locally
+   ```bash
+   ./test-site.sh http://localhost:8000
+   ```
+
+3. Commit and push
+   ```bash
+   git commit -m "feat: Add your feature description"
+   git push origin feature/your-feature-name
+   ```
+
+### Project Structure
 
 ```
+aria-amore/
+├── index.html              # Home page
+├── about.html              # About us
+├── services.html           # Services & packages
+├── artists.html            # Our performers
+├── privacy-policy.html     # Privacy policy
+├── terms-of-service.html   # Terms of service
+├── 404.html          # 404 error page
+├── robots.txt             # Search engine rules
+├── sitemap.xml            # XML sitemap
+├── security.txt           # Vulnerability reporting
+├── .htaccess              # Apache configuration
+├── .env.example           # Environment template
+├── .gitignore             # Git ignore rules
+├── package.json           # Node.js config
 ├── assets/
 │   ├── css/
 │   │   └── [All site CSS files]
@@ -298,3 +492,230 @@ If something still doesn’t look right:
 3. Restore your backup file if needed — just replace the broken JSON with your saved copy.
 
 If all else fails, send the broken JSON file to your developer for a quick fix.
+
+## 🛠️ Production Scripts & Maintenance
+
+The project includes comprehensive scripts for server maintenance and deployment:
+
+### Backup Script
+Create timestamped backups with compression and checksums:
+```bash
+./scripts/backup.sh [backup_directory]
+# Creates: aria-amore-backup-YYYYMMDD_HHMMSS.tar.gz
+# With: SHA256 checksum
+# Auto-cleanup: Removes backups older than 30 days
+```
+
+### Health Check Script
+Monitor website health and send alerts:
+```bash
+./scripts/health-check.sh --once     # Run once
+./scripts/health-check.sh             # Continuous monitoring
+```
+Checks:
+- HTTP status (200 OK)
+- SSL certificate expiry
+- Disk space usage
+- Critical files existence
+
+### Security Check Script
+Validate security configuration:
+```bash
+./scripts/security-check.sh           # Scan for issues
+./scripts/security-check.sh --fix     # Auto-fix issues
+```
+Validates:
+- File permissions
+- Environment security
+- Security headers
+- Hardcoded secrets
+- Form protection
+- HTTPS enforcement
+
+### Deployment Scripts
+Deploy to production or create SiteGround packages:
+```bash
+./scripts/deploy.sh production        # Standard deployment
+./scripts/siteground-deploy.sh        # SiteGround-specific package
+```
+
+### Content Management
+Validate and manage JSON content files:
+```bash
+./scripts/update-content.sh           # Validate all files
+./scripts/update-content.sh artists.json  # Validate specific file
+```
+
+### Environment Setup
+Automated environment configuration:
+```bash
+./scripts/setup-env.sh development    # Dev environment
+./scripts/setup-env.sh production     # Production environment
+```
+
+### Test Suite
+Comprehensive testing:
+```bash
+./scripts/test.sh                     # Full test suite (50+ tests)
+./scripts/test.sh --quick             # Quick tests only
+```
+
+## 🌐 SiteGround Deployment
+
+This site is optimized for SiteGround hosting. See the complete deployment guide:
+
+### Quick SiteGround Deployment
+
+1. **Create Deployment Package**
+   ```bash
+   npm run deploy:siteground
+   ```
+   Creates: `aria-amore-siteground-YYYYMMDD_HHMMSS.zip`
+
+2. **Upload to SiteGround**
+   - Login to cPanel
+   - Open File Manager
+   - Go to `public_html`
+   - Upload files from the package
+
+3. **Configure Email**
+   - Create `.env` file with SiteGround SMTP settings
+   - Set up email accounts in cPanel
+
+4. **Enable SSL**
+   - Install Let's Encrypt certificate via cPanel
+   - HTTPS redirect is automatic
+
+### SiteGround Features Supported
+✅ cPanel integration
+✅ LiteSpeed optimization
+✅ Local SMTP support
+✅ SuperCacher compatibility
+✅ Cloudflare CDN ready
+✅ Automated backups
+✅ SSH/Git deployment (GrowBig/GoGeek)
+
+**Full Guide:** See [docs/SITEGROUND-DEPLOYMENT.md](docs/SITEGROUND-DEPLOYMENT.md)
+
+## 📧 Email & Form Configuration
+
+### Email Setup Options
+
+**Option 1: SiteGround SMTP (Recommended)**
+```env
+SMTP_HOST=localhost
+SMTP_USER=no-reply@yourdomain.com
+SMTP_PASS=your-password
+SMTP_PORT=465
+SMTP_SECURE=ssl
+```
+
+**Option 2: Gmail SMTP**
+```env
+SMTP_HOST=smtp.gmail.com
+SMTP_USER=your-gmail@gmail.com
+SMTP_PASS=your-app-password
+SMTP_PORT=587
+SMTP_SECURE=tls
+```
+
+**Option 3: SendGrid**
+```env
+SMTP_HOST=smtp.sendgrid.net
+SMTP_USER=apikey
+SMTP_PASS=your-api-key
+SMTP_PORT=587
+SMTP_SECURE=tls
+```
+
+### Form Validation
+
+Client-side validation with security features:
+- Real-time field validation
+- Honeypot spam protection
+- Bot detection (time-based)
+- Input sanitization
+- XSS prevention
+
+Include in your HTML:
+```html
+<script src="/assets/js/form-validation.js"></script>
+<script>
+  FormValidator.init('your-form-id', {
+    realTimeValidation: true,
+    honeypot: true,
+    preventDoubleSubmit: true,
+    submitHandler: function(form, data) {
+      // Custom submit logic
+    }
+  });
+</script>
+```
+
+## 🔒 Security Features
+
+### Built-in Security
+- **HTTPS enforcement** - Automatic HTTP to HTTPS redirect
+- **Security headers** - CSP, HSTS, X-Frame-Options, etc.
+- **Input sanitization** - XSS and injection prevention
+- **Form protection** - Honeypot and bot detection
+- **File permissions** - Secure defaults (644/755)
+- **Secrets management** - Environment variables only
+
+### Security Validation
+Run regular security checks:
+```bash
+npm run security
+```
+
+### Monitoring
+Set up automated health checks:
+```bash
+# Add to crontab (every 5 minutes)
+*/5 * * * * /path/to/scripts/health-check.sh --once
+```
+
+## 📊 Testing
+
+### Test Coverage
+- ✅ File structure validation
+- ✅ Data file integrity (JSON validation)
+- ✅ Asset existence checks
+- ✅ Security configuration
+- ✅ Email configuration
+- ✅ Build system validation
+- ✅ Documentation completeness
+
+### Running Tests
+```bash
+npm test              # Full suite (50+ tests)
+npm run test:quick    # Quick tests only
+```
+
+## 🔧 Maintenance
+
+### Daily Tasks (Automated)
+- Automated backups (via cron)
+- Health monitoring
+- Error log monitoring
+
+### Weekly Tasks
+- Review error logs: `tail -f logs/errors.log`
+- Check backup status
+- Verify SSL certificate validity
+- Monitor site performance
+
+### Monthly Tasks
+- Security audit: `npm run security`
+- Content validation: `npm run content:validate`
+- Performance testing (GTmetrix, PageSpeed)
+- Backup restoration test
+
+### Cron Job Setup
+```bash
+# Daily backup at 2 AM
+0 2 * * * cd /path/to/site && ./scripts/backup.sh
+
+# Health check every 5 minutes
+*/5 * * * * cd /path/to/site && ./scripts/health-check.sh --once
+```

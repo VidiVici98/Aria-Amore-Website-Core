@@ -1,0 +1,12 @@
+/* humanstxt.org */
+
+/* TEAM */
+  Team: Aria Amore
+  Contact: info@ariaamore.com
+  Website: https://ariaamore.com
+
+/* SITE */
+  Last update: 2025-12-25
+  Standards: HTML5, CSS3
+  Components: JavaScript, JSON data
+  Software: VS Code, Git

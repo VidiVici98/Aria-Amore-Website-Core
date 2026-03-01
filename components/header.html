@@ -1,16 +1,25 @@
-<!-- AA: Clean site header (replace old header/nav) -->
+<!-- Skip Navigation Links for Accessibility -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
+<a href="#main-navigation" class="skip-link">Skip to navigation</a>
+
+<!-- Site Header -->
 <header class="aa-site-header" role="banner">
   <div class="aa-header-inner">
-    <a class="aa-logo" href="index.html" aria-label="Aria Amore Home">Aria Amore</a>
-
+    <img class="logo-img" src="/assets/media/images/floral-background.png">
+  </div>
+      <a class="aa-logo" href="/index.html" aria-label="Aria Amore Home">Aria Amore</a>
     <!-- Desktop navigation -->
-    <nav class="aa-desktop-nav" role="navigation" aria-label="Primary">
-      <a href="index.html" class="aa-nav-link">Home</a>
-      <a href="services.html" class="aa-nav-link">What We Offer</a>
-      <a href="artists.html" class="aa-nav-link">Meet The Artists</a>
-      <a href="about.html" class="aa-nav-link">About Us</a>
+    <nav id="main-navigation" class="aa-desktop-nav" role="navigation" aria-label="Primary">
+      <a href="/index.html" class="aa-nav-link">Home</a>
+      <a href="/services.html" class="aa-nav-link">Services</a>
+      <a href="/repertoire.html" class="aa-nav-link">Repertoire</a>
+      <a href="/artists.html" class="aa-nav-link">Artists</a>
+      <a href="/events.html" class="aa-nav-link">Events</a>
+      <a href="/gallery.html" class="aa-nav-link">Gallery</a>
+      <a href="/about.html" class="aa-nav-link">About</a>
+      <a href="/contact.html" class="aa-nav-link">Contact</a>
     </nav>
-
+<div id="mobile-nav-toggle">
     <!-- Mobile toggle -->
     <button
       class="aa-mobile-toggle"
@@ -19,19 +28,22 @@
       aria-expanded="false"
       aria-label="Open menu"
     >☰</button>
-  </div>
-
+</div>
+</header>
   <!-- Mobile menu (keeps separate markup from desktop) -->
   <nav id="aaMobileMenu" class="aa-mobile-menu" role="navigation" aria-label="Mobile Primary">
     <div class="aa-mobile-menu-inner">
-      <a href="index.html" class="aa-mobile-link">Home</a>
-      <a href="services.html" class="aa-mobile-link">What We Offer</a>
-      <a href="artists.html" class="aa-mobile-link">Meet The Artists</a>
-      <a href="about.html" class="aa-mobile-link">About Us</a>
+      <a href="/index.html" class="aa-mobile-link">Home</a>
+      <a href="/services.html" class="aa-mobile-link">What We Offer</a>
+      <a href="/repertoire.html" class="aa-mobile-link">Our Repertoire</a>
+      <a href="/artists.html" class="aa-mobile-link">Meet The Artists</a>
+      <a href="/events.html" class="aa-mobile-link">Past & Upcoming Events</a>
+      <a href="/gallery.html" class="aa-mobile-link">Performance Gallery</a>
+      <a href="/about.html" class="aa-mobile-link">About Us</a>
+      <a href="/contact.html" class="aa-mobile-link">Contact Us</a>
       <div class="mobile-menu-socials">
-        <a href="#"><img src="assets/media/images/instagram-icon.svg" class="mobile-menu-social-icons"/></a>
-        <a href="#"><img src="assets/media/images/tiktok-icon.svg" class="mobile-menu-social-icons" /></a>
+        <a href="https://www.instagram.com/ariaamore.art" target="_blank" rel="noopener" aria-label="Visit our Instagram"><img src="/assets/media/images/instagram-icon.svg" class="mobile-menu-social-icons" alt="Instagram"/></a>
+        <a href="https://www.tiktok.com/@ariaamore.art" target="_blank" rel="noopener" aria-label="Visit our TikTok"><img src="/assets/media/images/tiktok-icon.svg" class="mobile-menu-social-icons" alt="TikTok"/></a>
       </div>
     </div>
   </nav>
-</header>

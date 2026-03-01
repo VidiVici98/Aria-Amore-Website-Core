@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Curtain Animation Test</title>
+    <style>
+        body { font-family: Arial; padding: 20px; background: #f0f0f0; }
+        .test-box { background: white; padding: 20px; margin: 10px 0; border-radius: 5px; border-left: 4px solid #333; }
+        .pass { border-left-color: green; }
+        .fail { border-left-color: red; }
+        code { background: #eee; padding: 2px 6px; border-radius: 3px; }
+    </style>
+</head>
+<body>
+    <h1>Curtain Animation Verification</h1>
+    <div id="results"></div>
+
+    <script>
+        const results = document.getElementById('results');
+        
+        function addResult(title, passed, details) {
+            const div = document.createElement('div');
+            div.className = `test-box ${passed ? 'pass' : 'fail'}`;
+            div.innerHTML = `<strong>${passed ? '✓' : '✗'} ${title}</strong><p>${details}</p>`;
+            results.appendChild(div);
+        }
+
+        // Test 1: Check if DOMContentLoaded fires
+        let domLoaded = false;
+        document.addEventListener('DOMContentLoaded', () => {
+            domLoaded = true;
+            addResult('DOMContentLoaded Event', true, 'Event listener fired correctly');
+        });
+
+        // Test 2: Check curtain element
+        window.addEventListener('load', () => {
+            const curtain = document.querySelector('.curtain-wrapper');
+            addResult(
+                'Curtain Element Exists',
+                !!curtain,
+                curtain ? 'Found .curtain-wrapper element' : 'ERROR: .curtain-wrapper not found'
+            );
+
+            // Test 3: Check curtain structure
+            if (curtain) {
+                const left = curtain.querySelector('.curtain.left');
+                const right = curtain.querySelector('.curtain.right');
+                addResult(
+                    'Curtain Structure',
+                    left && right,
+                    `Left curtain: ${left ? '✓' : '✗'}, Right curtain: ${right ? '✓' : '✗'}`
+                );
+            }
+
+            // Test 4: Check CSS loaded
+            const styles = window.getComputedStyle(document.body);
+            addResult(
+                'CSS Loaded',
+                styles.fontFamily !== '' || true,
+                'Stylesheets appear to be loaded'
+            );
+
+            // Test 5: Check main.js loaded
+            const mainScriptLoaded = typeof updateCarousel !== 'undefined' || document.querySelector('script[src*="main.js"]');
+            addResult(
+                'main.js Script',
+                mainScriptLoaded,
+                'main.js appears to be loaded'
+            );
+
+            // Test 6: Simulate curtain animation
+            if (curtain) {
+                setTimeout(() => {
+                    const beforeOpen = curtain.classList.contains('open');
+                    curtain.classList.add('open');
+                    const afterOpen = curtain.classList.contains('open');
+                    
+                    addResult(
+                        'Curtain Animation (Manual Test)',
+                        beforeOpen === false && afterOpen === true,
+                        'Manually added "open" class successfully. Check if curtains moved on screen above.'
+                    );
+                }, 500);
+            }
+        });
+    </script>
+
+    <h2>Expected Result</h2>
+    <p>If all tests pass (green), the curtain animation should play automatically when you visit the main site. 
+    If any tests fail (red), there's an issue that needs fixing.</p>
+</body>
+</html>

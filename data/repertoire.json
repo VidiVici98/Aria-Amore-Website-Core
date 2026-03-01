@@ -1,0 +1,310 @@
+{
+  "categories": [
+    {
+      "id": "classical-arias",
+      "name": "Classical Opera Arias",
+      "description": "Timeless masterpieces from the golden age of opera",
+      "pieces": [
+        {
+          "title": "O Mio Babbino Caro",
+          "composer": "Giacomo Puccini",
+          "opera": "Gianni Schicchi",
+          "voiceType": "Soprano",
+          "duration": "2:30",
+          "language": "Italian",
+          "difficulty": "Intermediate",
+          "mood": ["Romantic", "Tender", "Pleading"],
+          "occasions": ["Wedding Ceremony", "Romantic Dinner", "Proposal"],
+          "description": "One of Puccini's most beloved arias, expressing a daughter's plea to her father. Perfect for intimate, emotional moments.",
+          "audioSample": "/assets/media/audio/samples/o-mio-babbino-caro.mp3",
+          "popularity": 95
+        },
+        {
+          "title": "Nessun Dorma",
+          "composer": "Giacomo Puccini",
+          "opera": "Turandot",
+          "voiceType": "Tenor",
+          "duration": "3:00",
+          "language": "Italian",
+          "difficulty": "Advanced",
+          "mood": ["Triumphant", "Passionate", "Powerful"],
+          "occasions": ["Corporate Gala", "Grand Celebration", "Victory Toast"],
+          "description": "Perhaps the most famous tenor aria of all time. A declaration of hope and determination that builds to a stirring climax.",
+          "audioSample": "/assets/media/audio/samples/nessun-dorma.mp3",
+          "popularity": 100
+        },
+        {
+          "title": "Habanera",
+          "composer": "Georges Bizet",
+          "opera": "Carmen",
+          "voiceType": "Mezzo-Soprano",
+          "duration": "2:15",
+          "language": "French",
+          "difficulty": "Intermediate",
+          "mood": ["Seductive", "Playful", "Dramatic"],
+          "occasions": ["Cocktail Hour", "Dinner Party", "Themed Event"],
+          "description": "Carmen's sultry entrance aria. A flirtatious and provocative piece that captivates audiences.",
+          "audioSample": "/assets/media/audio/samples/habanera.mp3",
+          "popularity": 88
+        },
+        {
+          "title": "La Donna è Mobile",
+          "composer": "Giuseppe Verdi",
+          "opera": "Rigoletto",
+          "voiceType": "Tenor",
+          "duration": "2:20",
+          "language": "Italian",
+          "difficulty": "Intermediate",
+          "mood": ["Lighthearted", "Charming", "Playful"],
+          "occasions": ["Cocktail Reception", "Pre-Dinner", "Social Gathering"],
+          "description": "The Duke's famous aria about the fickle nature of women. Light and catchy, perfect for setting a jovial mood.",
+          "audioSample": "/assets/media/audio/samples/la-donna-e-mobile.mp3",
+          "popularity": 85
+        },
+        {
+          "title": "Un Bel Di Vedremo",
+          "composer": "Giacomo Puccini",
+          "opera": "Madama Butterfly",
+          "voiceType": "Soprano",
+          "duration": "4:30",
+          "language": "Italian",
+          "difficulty": "Advanced",
+          "mood": ["Hopeful", "Melancholic", "Yearning"],
+          "occasions": ["Wedding Ceremony", "Memorial", "Reflective Moment"],
+          "description": "Butterfly's aria of hope and longing. A deeply emotional piece that showcases vocal beauty and dramatic intensity.",
+          "audioSample": "/assets/media/audio/samples/un-bel-di.mp3",
+          "popularity": 90
+        }
+      ]
+    },
+    {
+      "id": "sacred-classical",
+      "name": "Sacred & Religious Music",
+      "description": "Spiritual works perfect for ceremonies and solemn occasions",
+      "pieces": [
+        {
+          "title": "Ave Maria",
+          "composer": "Franz Schubert",
+          "opera": "N/A",
+          "voiceType": "Soprano/Tenor",
+          "duration": "5:00",
+          "language": "Latin",
+          "difficulty": "Intermediate",
+          "mood": ["Serene", "Spiritual", "Reverent"],
+          "occasions": ["Wedding Ceremony", "Religious Service", "Memorial"],
+          "description": "Schubert's timeless setting of the Hail Mary prayer. A hauntingly beautiful piece perfect for sacred moments.",
+          "audioSample": "/assets/media/audio/samples/ave-maria.mp3",
+          "popularity": 98
+        },
+        {
+          "title": "Panis Angelicus",
+          "composer": "César Franck",
+          "opera": "N/A",
+          "voiceType": "Tenor/Soprano",
+          "duration": "4:00",
+          "language": "Latin",
+          "difficulty": "Intermediate",
+          "mood": ["Devotional", "Peaceful", "Sublime"],
+          "occasions": ["Wedding Ceremony", "Communion", "Religious Event"],
+          "description": "A sacred motet that creates an atmosphere of divine beauty and contemplation.",
+          "audioSample": "/assets/media/audio/samples/panis-angelicus.mp3",
+          "popularity": 85
+        },
+        {
+          "title": "Ave Verum Corpus",
+          "composer": "Wolfgang Amadeus Mozart",
+          "opera": "N/A",
+          "voiceType": "Chorus/Soprano",
+          "duration": "3:30",
+          "language": "Latin",
+          "difficulty": "Intermediate",
+          "mood": ["Reverent", "Gentle", "Harmonious"],
+          "occasions": ["Wedding Ceremony", "Religious Service", "Meditation"],
+          "description": "Mozart's exquisite sacred motet, radiating purity and grace.",
+          "audioSample": "/assets/media/audio/samples/ave-verum.mp3",
+          "popularity": 82
+        }
+      ]
+    },
+    {
+      "id": "broadway-crossover",
+      "name": "Broadway & Musical Theater",
+      "description": "Show-stopping numbers from beloved musicals",
+      "pieces": [
+        {
+          "title": "Music of the Night",
+          "composer": "Andrew Lloyd Webber",
+          "opera": "The Phantom of the Opera",
+          "voiceType": "Baritone/Tenor",
+          "duration": "5:15",
+          "language": "English",
+          "difficulty": "Advanced",
+          "mood": ["Romantic", "Mysterious", "Seductive"],
+          "occasions": ["Romantic Dinner", "Themed Event", "Evening Reception"],
+          "description": "The Phantom's haunting invitation to Christine. Dramatic and romantic, perfect for creating atmosphere.",
+          "audioSample": "/assets/media/audio/samples/music-of-the-night.mp3",
+          "popularity": 92
+        },
+        {
+          "title": "All I Ask of You",
+          "composer": "Andrew Lloyd Webber",
+          "opera": "The Phantom of the Opera",
+          "voiceType": "Duet (Soprano/Tenor)",
+          "duration": "4:00",
+          "language": "English",
+          "difficulty": "Intermediate",
+          "mood": ["Romantic", "Hopeful", "Tender"],
+          "occasions": ["Wedding Ceremony", "First Dance", "Anniversary"],
+          "description": "The love duet between Christine and Raoul. A beautiful declaration of devotion.",
+          "audioSample": "/assets/media/audio/samples/all-i-ask.mp3",
+          "popularity": 94
+        }
+      ]
+    },
+    {
+      "id": "holiday-seasonal",
+      "name": "Holiday & Seasonal",
+      "description": "Festive selections for special seasons",
+      "pieces": [
+        {
+          "title": "O Holy Night",
+          "composer": "Adolphe Adam",
+          "opera": "N/A",
+          "voiceType": "Soprano/Tenor",
+          "duration": "4:30",
+          "language": "English/French",
+          "difficulty": "Advanced",
+          "mood": ["Majestic", "Spiritual", "Triumphant"],
+          "occasions": ["Christmas Event", "Holiday Gala", "Winter Wedding"],
+          "description": "One of the most beloved Christmas carols, showcasing powerful vocals and emotional depth.",
+          "audioSample": "/assets/media/audio/samples/o-holy-night.mp3",
+          "popularity": 96
+        },
+        {
+          "title": "Silent Night",
+          "composer": "Franz Xaver Gruber",
+          "opera": "N/A",
+          "voiceType": "Any",
+          "duration": "3:00",
+          "language": "English/German",
+          "difficulty": "Beginner",
+          "mood": ["Peaceful", "Gentle", "Comforting"],
+          "occasions": ["Christmas Event", "Holiday Party", "Candlelight Service"],
+          "description": "The quintessential Christmas carol. Simple, pure, and deeply moving.",
+          "audioSample": "/assets/media/audio/samples/silent-night.mp3",
+          "popularity": 90
+        }
+      ]
+    },
+    {
+      "id": "contemporary-classical",
+      "name": "Contemporary Classical",
+      "description": "Modern compositions with classical sensibility",
+      "pieces": [
+        {
+          "title": "Time to Say Goodbye (Con te partirò)",
+          "composer": "Francesco Sartori",
+          "opera": "N/A",
+          "voiceType": "Tenor/Soprano",
+          "duration": "4:15",
+          "language": "Italian/English",
+          "difficulty": "Advanced",
+          "mood": ["Emotional", "Uplifting", "Powerful"],
+          "occasions": ["Grand Finale", "Farewell Event", "Memorial"],
+          "description": "A modern classic popularized by Andrea Bocelli. Soaring melodies and emotional impact.",
+          "audioSample": "/assets/media/audio/samples/time-to-say-goodbye.mp3",
+          "popularity": 93
+        },
+        {
+          "title": "You Raise Me Up",
+          "composer": "Rolf Løvland",
+          "opera": "N/A",
+          "voiceType": "Any",
+          "duration": "4:45",
+          "language": "English",
+          "difficulty": "Intermediate",
+          "mood": ["Inspirational", "Uplifting", "Emotional"],
+          "occasions": ["Celebration", "Award Ceremony", "Motivational Event"],
+          "description": "An inspirational anthem that builds to a powerful climax. Perfect for meaningful moments.",
+          "audioSample": "/assets/media/audio/samples/you-raise-me-up.mp3",
+          "popularity": 88
+        }
+      ]
+    }
+  ],
+  "voiceTypes": [
+    {
+      "id": "soprano",
+      "name": "Soprano",
+      "range": "C4 - C6",
+      "description": "The highest female voice, known for bright, soaring tones",
+      "characteristics": ["Clear", "Brilliant", "Flexible", "Light or Dramatic"]
+    },
+    {
+      "id": "mezzo-soprano",
+      "name": "Mezzo-Soprano",
+      "range": "A3 - A5",
+      "description": "Middle-range female voice with rich, warm tones",
+      "characteristics": ["Warm", "Rich", "Versatile", "Expressive"]
+    },
+    {
+      "id": "alto",
+      "name": "Alto/Contralto",
+      "range": "F3 - F5",
+      "description": "Lowest female voice, rare and distinctive",
+      "characteristics": ["Deep", "Rich", "Powerful", "Resonant"]
+    },
+    {
+      "id": "tenor",
+      "name": "Tenor",
+      "range": "C3 - C5",
+      "description": "Highest male voice, often playing heroic roles",
+      "characteristics": ["Bright", "Heroic", "Powerful", "Expressive"]
+    },
+    {
+      "id": "baritone",
+      "name": "Baritone",
+      "range": "A2 - A4",
+      "description": "Middle-range male voice, versatile and common",
+      "characteristics": ["Warm", "Versatile", "Noble", "Rich"]
+    },
+    {
+      "id": "bass",
+      "name": "Bass",
+      "range": "E2 - E4",
+      "description": "Lowest male voice, authoritative and resonant",
+      "characteristics": ["Deep", "Resonant", "Authoritative", "Powerful"]
+    }
+  ],
+  "occasions": [
+    "Wedding Ceremony",
+    "Wedding Reception",
+    "Corporate Gala",
+    "Cocktail Hour",
+    "Romantic Dinner",
+    "Proposal",
+    "Anniversary",
+    "Birthday Celebration",
+    "Holiday Party",
+    "Religious Service",
+    "Memorial",
+    "Grand Opening",
+    "Fundraiser",
+    "Award Ceremony",
+    "Themed Event"
+  ],
+  "moods": [
+    "Romantic",
+    "Triumphant",
+    "Peaceful",
+    "Dramatic",
+    "Joyful",
+    "Melancholic",
+    "Spiritual",
+    "Playful",
+    "Powerful",
+    "Tender",
+    "Majestic",
+    "Intimate"
+  ]
+}

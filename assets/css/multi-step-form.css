@@ -1,0 +1,314 @@
+/*=====================================
+  MULTI-STEP FORM STYLES
+=====================================*/
+
+/* Progress Container */
+.form-progress-container {
+  margin-bottom: var(--space-xl);
+  padding: var(--space-lg);
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  border: 1px solid rgba(176, 139, 79, 0.2);
+}
+
+/* Progress Bar */
+.form-progress-bar {
+  height: 8px;
+  background: rgba(176, 139, 79, 0.2);
+  border-radius: 4px;
+  margin-bottom: var(--space-lg);
+  overflow: hidden;
+  position: relative;
+}
+
+.form-progress-fill {
+  height: 100%;
+  background: linear-gradient(to right, var(--gold), var(--accent-deep));
+  border-radius: 4px;
+  transition: width 0.4s ease;
+  width: 0%;
+}
+
+/* Steps Indicator */
+.form-steps-indicator {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-sm);
+}
+
+@media (max-width: 768px) {
+  .form-steps-indicator {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.form-step-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-xs);
+  position: relative;
+  flex: 1;
+  min-width: 80px;
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .form-step-dot {
+    min-width: auto;
+    flex: 0 0 auto;
+  }
+}
+
+.form-step-dot .step-number {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.8);
+  border: 2px solid rgba(176, 139, 79, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  color: #999;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.form-step-dot.active .step-number {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: white;
+  transform: scale(1.15);
+  box-shadow: 0 2px 8px rgba(176, 139, 79, 0.4);
+}
+
+.form-step-dot.completed .step-number {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+  color: white;
+}
+
+.form-step-dot.completed .step-number::after {
+  content: '✓';
+  position: absolute;
+  font-size: 1.2em;
+}
+
+.form-step-dot .step-title {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.form-step-dot.active .step-title {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.form-step-dot.completed .step-title {
+  color: var(--accent-deep);
+}
+
+@media (max-width: 768px) {
+  .form-step-dot .step-title {
+    display: none;
+  }
+}
+
+/* Form Steps */
+.form-step {
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form Navigation */
+.form-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
+  padding-top: var(--space-lg);
+  border-top: 1px solid rgba(176, 139, 79, 0.2);
+}
+
+@media (max-width: 480px) {
+  .form-navigation {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+}
+
+.form-nav-btn {
+  padding: var(--space-sm) var(--space-xl);
+  border: 2px solid var(--gold);
+  background: white;
+  color: var(--gold);
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: inherit;
+  min-width: 140px;
+}
+
+@media (max-width: 480px) {
+  .form-nav-btn {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+.form-nav-btn:hover {
+  background: var(--gold);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(176, 139, 79, 0.3);
+}
+
+.form-nav-btn:active {
+  transform: translateY(0);
+}
+
+.form-nav-btn:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.form-nav-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.form-prev-btn {
+  background: transparent;
+}
+
+.form-next-btn,
+.form-submit-btn {
+  margin-left: auto;
+  background: var(--gold);
+  color: white;
+}
+
+@media (max-width: 480px) {
+  .form-next-btn,
+  .form-submit-btn {
+    margin-left: 0;
+  }
+}
+
+.form-next-btn:hover,
+.form-submit-btn:hover {
+  background: var(--accent-deep);
+  border-color: var(--accent-deep);
+}
+
+/* Form step headings */
+.form-step h3 {
+  font-family: 'Italianno', cursive;
+  font-size: 2rem;
+  color: var(--gold);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .form-step h3 {
+    font-size: 1.75rem;
+  }
+}
+
+.form-step p.step-description {
+  text-align: center;
+  color: #666;
+  margin-bottom: var(--space-lg);
+  font-size: 0.95rem;
+}
+
+/* Enhanced form groups in multi-step */
+.form-step .form-group {
+  margin-bottom: var(--space-lg);
+}
+
+/* Validation feedback in multi-step forms */
+.form-step .form-group input.invalid,
+.form-step .form-group select.invalid,
+.form-step .form-group textarea.invalid {
+  border-color: #dc3545;
+  animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Success state */
+.form-step .form-group input.valid,
+.form-step .form-group select.valid,
+.form-step .form-group textarea.valid {
+  border-color: #28a745;
+}
+
+/* Step completion message */
+.form-step-complete {
+  text-align: center;
+  padding: var(--space-xl);
+  background: rgba(40, 167, 69, 0.1);
+  border: 2px solid #28a745;
+  border-radius: 12px;
+  margin: var(--space-lg) 0;
+}
+
+.form-step-complete h3 {
+  color: #28a745;
+  margin-bottom: var(--space-md);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .form-progress-container {
+    padding: var(--space-md);
+  }
+  
+  .form-step-dot .step-number {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+  
+  .form-navigation {
+    padding-top: var(--space-md);
+  }
+}
+
+/* Print styles */
+@media print {
+  .form-progress-container,
+  .form-navigation {
+    display: none;
+  }
+  
+  .form-step {
+    display: block !important;
+  }
+}
