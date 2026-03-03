@@ -20,7 +20,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [ 'javascript', 'php', 'python' ]
+        language: [ 'javascript', 'python' ]
 
     steps:
       - name: Checkout repository
@@ -30,7 +30,7 @@ jobs:
         uses: github/codeql-action/init@v4
         with:
           languages: ${{ matrix.language }}
-          queries: security
+          queries: security-and-quality
 
       # No explicit build step needed.
       # Your "server folder rearrangement" script is irrelevant to static analysis.
