@@ -23,6 +23,15 @@ This guide showcases all website features with accompanying screenshots. See wha
 
 Your homepage is the first impression visitors get. It includes:
 
+**Desktop View:**
+![Homepage Hero Section](screenshots/01-homepage-hero.png)
+
+**Service Packages on Homepage:**
+![Homepage Service Packages](screenshots/01-homepage-packages.png)
+
+**Mobile View:**
+![Homepage Mobile](screenshots/mobile/01-homepage-mobile.png)
+
 ### Hero Section
 - **Main heading** with elegant styling
 - **Tagline** explaining your value proposition
@@ -66,6 +75,8 @@ Dynamic announcements about upcoming performances or special offers.
 
 Tells your company story and builds trust.
 
+![About Page](screenshots/02-about-page.png)
+
 ### What's Included
 - **Company mission statement** - Why you exist
 - **Company story** - Your background and journey
@@ -83,6 +94,12 @@ Visitors want to know who you are before booking. This page builds confidence in
 ## Services Page
 
 Your main booking/sales page that converts visitors to customers.
+
+**Desktop View:**
+![Services Page](screenshots/03-services-page.png)
+
+**Mobile View:**
+![Services Mobile](screenshots/mobile/04-services-mobile.png)
 
 ### What's Included
 - **Service package comparison** - Show all three tiers side-by-side
@@ -106,6 +123,12 @@ Your main booking/sales page that converts visitors to customers.
 
 Showcases your performers and builds confidence in your team.
 
+**Desktop View:**
+![Artists Page](screenshots/04-artists-page.png)
+
+**Mobile View:**
+![Artists Mobile](screenshots/mobile/03-artists-mobile.png)
+
 ### What's Included
 - **Performer cards** - Photo, name, bio
 - **Audio samples** - Hear them sing before booking
@@ -125,6 +148,8 @@ Visitors can click "Play" on any song sample to hear your performers live. This 
 ## Repertoire Page
 
 Complete catalog of songs your performers can sing.
+
+![Repertoire Page](screenshots/05-repertoire-page.png)
 
 ### What's Included
 - **Searchable song list** - Visitor can search for favorites
@@ -146,6 +171,8 @@ If your visitor wants a specific song, they need to know you offer it. This page
 
 Showcases past performances and upcoming shows.
 
+![Events Page](screenshots/06-events-page.png)
+
 ### What's Included
 - **Event date and location** - When and where you performed
 - **Event description** - Type of event and highlights
@@ -162,6 +189,8 @@ Showcases past performances and upcoming shows.
 ## Gallery Page
 
 Photo and video showcase of your performances.
+
+![Gallery Page](screenshots/07-gallery-page.png)
 
 ### What's Included
 - **High-quality photos** - Professional event photography
@@ -181,6 +210,14 @@ Photo and video showcase of your performances.
 ## Contact Page
 
 How visitors reach you.
+
+**Desktop View:**
+![Contact Page](screenshots/08-contact-page.png)
+![Contact Form Step 1](screenshots/contact-form-step1-desktop.png)
+
+**Mobile View:**
+![Contact Mobile](screenshots/mobile/02-contact-mobile.png)
+![Contact Form Mobile](screenshots/contact-form-step1-mobile.png)
 
 ### What's Included
 - **Contact form** - Visitors submit booking inquiries
@@ -206,6 +243,14 @@ How visitors reach you.
 ## Legal Pages
 
 Required pages for your business.
+
+**Privacy Policy:**
+![Privacy Policy Desktop](screenshots/privacy-policy-desktop.png)
+![Privacy Policy Mobile](screenshots/privacy-policy-mobile.png)
+
+**Terms of Service:**
+![Terms of Service Desktop](screenshots/terms-of-service-desktop.png)
+![Terms of Service Mobile](screenshots/terms-of-service-mobile.png)
 
 ### Privacy Policy
 - How you collect visitor data
@@ -239,6 +284,15 @@ Required pages for your business.
 - **Visitors click to message** you instantly
 - **Professional appearance** with your branding
 - **Mobile optimized** - Easy to use on phones
+
+**Collapsed State:**
+![Chat Widget Collapsed](screenshots/chat-widget-collapsed.png)
+
+**Expanded State:**
+![Chat Widget Expanded](screenshots/chat-widget-expanded.png)
+
+**Mobile Chat Button:**
+![Chat Button Mobile](screenshots/mobile/05-chat-widget-button.png)
 
 **Features:**
 - Collapsed/expanded states

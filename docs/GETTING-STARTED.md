@@ -12,6 +12,10 @@ Quick setup guide for developing locally and deploying the website.
 
 ## 🚀 Local Development Setup
 
+**You'll be developing the site you see here:**
+![Development Site Homepage](../docs/screenshots/01-homepage-hero.png)
+![Homepage Packages](../docs/screenshots/01-homepage-packages.png)
+
 ### 1. Clone the Repository
 
 ```bash
@@ -171,6 +175,11 @@ Edit `components/header.html` and `components/footer.html`:
 1. Find your computer's local IP: `ipconfig` (Windows) or `ifconfig` (Mac/Linux)
 2. On mobile device, visit: `http://YOUR_IP:8000`
 3. Verify responsive design works
+
+**Mobile responsive examples:**
+![Mobile Homepage](../docs/screenshots/mobile/01-homepage-mobile.png)
+![Mobile Contact](../docs/screenshots/mobile/02-contact-mobile.png)
+![Mobile Artists](../docs/screenshots/mobile/03-artists-mobile.png)
 
 ### Check for Errors
 1. Open Developer Tools (F12)

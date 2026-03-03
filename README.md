@@ -11,12 +11,16 @@ Transform your special day into an unforgettable performance with live opera mus
 ### 👤 **I'm a Site Owner**
 You want to manage content, update performers, change prices, and add photos?
 
+**What your website looks like:**
+![Site Owner View](docs/screenshots/01-homepage-hero.png)
+
 **→ [📘 Site Owner Manual](docs/SITE-OWNER-MANUAL.md)** (Start here!)
 - Edit website content easily (no coding required!)
 - Manage performers, packages, and pricing
 - Add photos and events to your gallery
 - Troubleshoot common issues
 - Simple, non-technical language with examples
+
 **Also helpful:** [💻 VS Code & Copilot Quick Start](docs/VS-CODE-COPILOT-QUICKSTART.md)
 - Learn to use VS Code (text editor) and Copilot (AI assistant)
 - Makes editing your content much easier
@@ -73,10 +77,27 @@ You need to maintain the server, manage backups, and monitor performance?
 
 ## 📸 Website Pages
 
-Your website includes 8 main pages. Here's what each does:
+Your website includes 8 main pages. Here's what each looks like:
+
+### Homepage
+![Homepage Hero](docs/screenshots/01-homepage-hero.png)
+![Homepage Packages](docs/screenshots/01-homepage-packages.png)
+
+### Services & Pricing
+![Services Page](docs/screenshots/03-services-page.png)
+
+### Artists & Performers
+![Artists Page](docs/screenshots/04-artists-page.png)
+
+### Events & Gallery
+![Events Page](docs/screenshots/06-events-page.png)
+![Gallery Page](docs/screenshots/07-gallery-page.png)
+
+### Contact & More
+![Contact Page](docs/screenshots/08-contact-page.png)
 
 | Page | Purpose | Edit File |
-|------|---------|-----------|
+|------|---------|----------|
 | **Homepage** | Hero section, featured performers, service packages | `data/homepage.json` |
 | **About** | Company mission, story, and FAQ | `data/about.json` |
 | **Services** | Service packages and pricing | `data/services.json` |
@@ -86,7 +107,7 @@ Your website includes 8 main pages. Here's what each does:
 | **Gallery** | Photos and videos from past events | `data/gallery.json` |
 | **Contact** | Contact form and information | `data/contact.json` |
 
-Professional screenshots are available in [docs/screenshots/](docs/screenshots/) showing all pages on desktop and mobile.
+**[View all pages on desktop and mobile →](docs/screenshots/)**
 
 ---
 

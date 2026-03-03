@@ -1,6 +1,11 @@
 # 📚 Complete Documentation Index
 
-**Welcome to the Aria Amore Website Documentation!** This page is a map of all available documentation. Find what you need based on your role and task.
+**Welcome to the Aria Amore Website Documentation!** Here's what your website looks like:
+
+![Homepage](screenshots/01-homepage-hero.png)
+![Services & Artists](screenshots/03-services-page.png)
+
+This page is a map of all available documentation. Find what you need based on your role and task.
 
 ---
 
@@ -95,6 +100,12 @@ You manage security, ensure compliance, and handle vulnerability reports.
 ---
 
 ## 🔍 By Task
+
+**All Pages at a Glance:**
+
+![Repertoire](screenshots/05-repertoire-page.png)
+![Events](screenshots/06-events-page.png)
+![Gallery](screenshots/07-gallery-page.png)
 
 Find documentation for the task you want to do:
 

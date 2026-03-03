@@ -43,6 +43,14 @@ This guide covers:
 
 ## Getting Oriented
 
+Here's what your website looks like:
+
+**Homepage (Desktop):**
+![Homepage Hero Section](screenshots/01-homepage-hero.png)
+
+**Homepage (Mobile):**
+![Homepage Mobile](screenshots/mobile/01-homepage-mobile.png)
+
 ### How Your Website Works (The Simple Version)
 
 Your website has two main components:
@@ -145,6 +153,14 @@ After:
 
 Your artists/performers are managed in `data/artists.json`. This file controls the Artists page and who appears on the homepage.
 
+Here's what it looks like on your website:
+
+**Artists Page (Desktop):**
+![Artists Page](screenshots/04-artists-page.png)
+
+**Artists Page (Mobile):**
+![Artists Mobile](screenshots/mobile/03-artists-mobile.png)
+
 ### File Structure Example
 
 ```json
@@ -220,6 +236,14 @@ Copy the entire performer object and paste it in the array (remember to add a co
 
 Service packages control your pricing and offerings. They're in `data/services.json`.
 
+Here's what it looks like on your website:
+
+**Services Page (Desktop):**
+![Services Page](screenshots/03-services-page.png)
+
+**Services Page (Mobile):**
+![Services Mobile](screenshots/mobile/04-services-mobile.png)
+
 ### File Structure Example
 
 ```json
@@ -285,6 +309,9 @@ Create a new object in the array:
 
 ### Gallery (Photos & Videos)
 
+**Gallery Page:**
+![Gallery Page](screenshots/07-gallery-page.png)
+
 Gallery images are managed in `data/gallery.json`:
 
 ```json
@@ -311,6 +338,9 @@ Gallery images are managed in `data/gallery.json`:
 ```
 
 ### Events (Upcoming/Past)
+
+**Events Page:**
+![Events Page](screenshots/06-events-page.png)
 
 Events are in `data/events.json`:
 
@@ -346,6 +376,12 @@ Events are in `data/events.json`:
 ## Managing Contact Information
 
 Contact details are in `data/contact.json`. This controls your Contact page.
+
+**Contact Page (Desktop):**
+![Contact Page](screenshots/08-contact-page.png)
+
+**Contact Page (Mobile):**
+![Contact Mobile](screenshots/mobile/02-contact-mobile.png)
 
 ### Example File
 

@@ -14,12 +14,21 @@ Essential documentation for site owners, managers, and operators.
 
 ## Features Overview
 
+**Homepage:**
+![Homepage Hero](screenshots/01-homepage-hero.png)
+![Homepage Packages](screenshots/01-homepage-packages.png)
+
 ### Homepage
 - **Hero Section**: Main branding and call-to-action
 - **Statistics Dashboard**: Performance metrics (500+ events, 98% satisfaction, etc.)
 - **Package Comparison**: Three-tier pricing options (Serenade, Aria, Grand Opera)
 - **Availability Calendar**: Interactive date picker for bookings
 - **Social Media Links**: TikTok and Instagram integration
+
+**Key Pages:**
+![Services Page](screenshots/03-services-page.png)
+![Artists Page](screenshots/04-artists-page.png)
+![About Page](screenshots/02-about-page.png)
 
 ### Key Pages
 - **About**: Company history, mission, and team information
@@ -103,6 +112,12 @@ The site uses JSON data files for dynamic content:
 4. Content updates immediately (no page rebuild needed)
 
 ### Contact Form Handling
+
+**Desktop Contact Form:**
+![Contact Page](screenshots/08-contact-page.png)
+
+**Mobile Contact Form:**
+![Mobile Contact](screenshots/mobile/02-contact-mobile.png)
 
 - Contact forms submit to `/sendmail.php`
 - Configured to send to `info@ariaamore.com`

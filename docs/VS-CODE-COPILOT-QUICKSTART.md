@@ -2,6 +2,9 @@
 
 **No programming experience needed!** This guide shows you how to use VS Code and GitHub Copilot to easily edit your website content.
 
+**This is the website you'll be editing:**
+![Homepage](screenshots/01-homepage-hero.png)
+
 ---
 
 ## Table of Contents
@@ -114,6 +117,10 @@ On the left sidebar, you'll see:
 ---
 
 ## Editing Content with Copilot
+
+**Visual Example - What you'll be editing:**
+![Services Page](screenshots/03-services-page.png)
+![Contact Form](screenshots/08-contact-page.png)
 
 ### The Easy Way: Ask Copilot
 
