@@ -1,0 +1,9 @@
+name: CodeQL Configuration
+paths-ignore:
+  - docs
+  - scripts
+  - .github
+  - .vscode
+  - .well-known
+  - '**/*.txt'
+  - README*
