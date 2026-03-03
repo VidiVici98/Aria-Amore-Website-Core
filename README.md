@@ -1,721 +1,460 @@
 # 🎭 Aria Amore - Live Opera for Weddings & Celebrations
 
-Transform your special day into an unforgettable performance with live opera music and entertainment.
+Transform your special day into an unforgettable performance with live opera music and entertainment. A complete, production-ready website with built-in analytics, social media integration, and comprehensive documentation.
 
-## 🌟 Features
+---
 
-- **Live Opera Performances** - Professional singers and musicians for your special event
-- **Customizable Packages** - Choose from various performance options
-- **Professional Artists** - Meet our talented performers
-- **Wedding & Event Services** - Perfect for ceremonies, receptions, and celebrations
-- **Responsive Design** - Beautiful experience on all devices
-- **Optimized Performance** - Fast loading and smooth interactions
-- **SEO Ready** - Discoverable through search engines
-- **Accessible** - WCAG 2.1 compliant
-- **Production Ready** - Security, backups, monitoring, and testing
+## 📖 Documentation Overview
 
-### 📊 Analytics & Marketing (NEW!)
-- **One-Touch Analytics** - Universal analytics integration (GA4, Facebook Pixel, TikTok, LinkedIn)
-- **Campaign Tracking** - UTM parameters and social media attribution
-- **Conversion Funnel** - Track visitor journey from awareness to booking
-- **Automatic Event Tracking** - CTAs, forms, videos, scroll depth
-- **Social Media Integration** - Content generator and posting templates
-- **CTA Optimization** - Strategic placement and conversion-focused design
+**Pick your role to find the right documentation:**
 
-## 📸 Documentation & Screenshots
+### 👤 **I'm a Site Owner**
+You want to manage content, update performers, change prices, and add photos?
 
-**UPDATED February 2026!** Comprehensive documentation consolidated and all screenshots refreshed:
-- **[GETTING-STARTED.md](docs/GETTING-STARTED.md)** - Complete setup guide from installation to deployment
-- **[SCREENSHOTS.md](docs/SCREENSHOTS.md)** - Screenshot documentation and capture guide
-- **[docs/screenshots/](docs/screenshots/)** - All website screenshots
-  - 11 desktop page screenshots
-  - 5 mobile page screenshots
-  - 2 homepage section details
-  - 4 chat widget screenshots (collapsed & expanded, desktop & mobile)
-  - Total: 22 professional screenshots
-- **[FEATURES.md](docs/FEATURES.md)** - Detailed visual guide to all website features
-- **[DEVELOPMENT-HISTORY.md](docs/DEVELOPMENT-HISTORY.md)** - Complete development changelog
+**→ [📘 Site Owner Manual](docs/SITE-OWNER-MANUAL.md)** (Start here!)
+- Edit website content easily (no coding required!)
+- Manage performers, packages, and pricing
+- Add photos and events to your gallery
+- Troubleshoot common issues
+- Simple, non-technical language with examples
+**Also helpful:** [💻 VS Code & Copilot Quick Start](docs/VS-CODE-COPILOT-QUICKSTART.md)
+- Learn to use VS Code (text editor) and Copilot (AI assistant)
+- Makes editing your content much easier
+- Complete beginner guide with examples
+- No programming experience needed
+### 👨‍💻 **I'm a Developer**
+You want to set up, deploy, or extend the codebase?
 
-## 📋 Quick Links
+**→ [🚀 Getting Started Guide](docs/GETTING-STARTED.md)** (Start here!)
+- Local development setup
+- Deployment instructions
+- Architecture and file structure
+- Scripts and automation tools
+- Testing and security validation
 
-- [Getting Started](#-getting-started)
-- [Development](#-development)
-- [Deployment](#-deployment)
-- [Testing](#-testing)
-- [Security](#-security)
+### ⚙️ **I'm Running Operations**
+You need to maintain the server, manage backups, and monitor performance?
 
-### 📖 Core Documentation
-- [🚀 Getting Started Guide](docs/GETTING-STARTED.md) - Setup, analytics, deployment (all-in-one)
-- [📸 Screenshots Guide](docs/SCREENSHOTS.md) - Screenshot documentation and automation
-- [📋 Features Documentation](docs/FEATURES.md) - Complete feature list with examples
-- [📚 Development History](docs/DEVELOPMENT-HISTORY.md) - Project evolution and changes
-- [🏗️ Project Structure](docs/STRUCTURE.md) - Codebase organization
-- [🔒 Security](docs/SECURITY.md) - Security policies and reporting
+**→ [⚙️ Operations Guide](docs/OPERATIONS-GUIDE.md)** (Start here!)
+- Deployment & maintenance checklists
+- Security configuration
+- Analytics setup
+- Backup and health monitoring
+- Social media integration
 
-### 🎯 Advanced Guides
-- [📊 Analytics Setup](docs/ANALYTICS-SETUP.md) - Complete analytics integration
-- [🎯 CTA Strategy](docs/CTA-STRATEGY.md) - Conversion optimization
-- [📱 Social Media Guide](docs/SOCIAL-MEDIA-GUIDE.md) - Complete social media marketing guide
-- [💬 Chat Widget Enhancements](docs/CHAT-WIDGET-ENHANCEMENTS.md) - Support widget details
-- [🤖 Automation](docs/AUTOMATION.md) - Build scripts and automation
-- [📦 Dependencies Management](docs/DEPENDENCIES-MANAGEMENT.md) - Package management
-- [🧪 Testing](docs/TESTING.md) - Testing procedures
-- [📚 Resources](docs/RESOURCES.md) - External resources and references
+---
 
-## 🚀 Getting Started
+## 🌟 Website Features
 
-### Prerequisites
+**For Your Visitors:**
+- ✅ Beautiful, responsive design (mobile and desktop)
+- ✅ Live chat widget for instant inquiries
+- ✅ Interactive availability calendar
+- ✅ Photo and video gallery showcase
+- ✅ Complete repertoire/song catalog
+- ✅ Artist profiles with audio clips
+- ✅ Event history and upcoming shows
+- ✅ Newsletter subscription
+- ✅ Social media integration (Instagram, TikTok)
+- ✅ Fully accessible (WCAG 2.1 compliant)
 
-- Web server (Apache/LiteSpeed with mod_rewrite, mod_headers, mod_deflate, mod_expires)
-- PHP 7.4+ (for email functionality)
-- Node.js 14+ (for local development)
-- SiteGround hosting (or similar cPanel-based hosting)
+**For Your Business:**
+- ✅ Customizable service packages and pricing
+- ✅ Contact form with email notifications
+- ✅ Built-in analytics (Google Analytics 4)
+- ✅ Social media campaign tracking
+- ✅ SEO optimized for search engines
+- ✅ Security headers and HTTPS enforcement
+- ✅ Performance optimized (fast loading)
+- ✅ Automated backups available
+- ✅ Production-ready infrastructure
 
-### Quick Setup
+---
+
+## 📸 Website Pages
+
+Your website includes 8 main pages. Here's what each does:
+
+| Page | Purpose | Edit File |
+|------|---------|-----------|
+| **Homepage** | Hero section, featured performers, service packages | `data/homepage.json` |
+| **About** | Company mission, story, and FAQ | `data/about.json` |
+| **Services** | Service packages and pricing | `data/services.json` |
+| **Artists** | Performer profiles with audio samples | `data/artists.json` |
+| **Repertoire** | Searchable catalog of available songs | `data/repertoire.json` |
+| **Events** | Upcoming and past performances | `data/events.json` |
+| **Gallery** | Photos and videos from past events | `data/gallery.json` |
+| **Contact** | Contact form and information | `data/contact.json` |
+
+Professional screenshots are available in [docs/screenshots/](docs/screenshots/) showing all pages on desktop and mobile.
+
+---
+
+## 🎯 Quick Start
+
+### For Site Owners
+
+**To edit your website content:**
+
+1. Open the `data/` folder and find the JSON file you want to edit
+2. Open it with a text editor (Notepad++, VS Code, or even Notepad)
+3. Edit the text between the quotes
+4. Save and upload the file to your server
+5. Refresh your browser—changes appear instantly!
+
+**For detailed instructions:** See the [📘 Site Owner Manual](docs/SITE-OWNER-MANUAL.md)
+
+### For Developers
+
+**To set up locally:**
 
 ```bash
-# Clone repository
+# Clone the repository
 git clone https://github.com/VidiVici98/Aria-Amore-Website-Core.git
 cd Aria-Amore-Website-Core
 
-# Automated setup (creates .env, sets permissions, etc.)
+# Run automated setup
 npm run setup
-# or
-./scripts/setup-env.sh development
+# or manually: ./scripts/setup-env.sh development
 
 # Start development server
 npm start
-# or
-php -S localhost:8000 -t public/
 
-# Open http://localhost:8000 in your browser
+# Open http://localhost:8000
 ```
 
-### Available NPM Scripts
+**For detailed setup:** See the [🚀 Getting Started Guide](docs/GETTING-STARTED.md)
+
+---
+
+## 🗂️ Data File Reference
+
+All your editable website content lives in the `data/` folder:
+
+```
+data/
+├── homepage.json       → Hero title, featured performers, events
+├── artists.json        → Performer profiles, bios, audio
+├── services.json       → Service packages and pricing
+├── about.json          → About page, mission, FAQs
+├── contact.json        → Contact info and social links
+├── events.json         → Upcoming and past events
+├── gallery.json        → Photo gallery
+└── repertoire.json     → Song catalog
+```
+
+**Quick example:**
+```json
+// In data/services.json
+"price": "$500"  →  "price": "$550"  // Save and done!
+```
+
+---
+
+## 💻 Project Structure
+
+```
+aria-amore-website-core/
+├── public/                 # Website HTML pages
+│   ├── index.html
+│   ├── about.html
+│   ├── services.html
+│   ├── artists.html
+│   ├── events.html
+│   ├── gallery.html
+│   ├── contact.html
+│   └── repertoire.html
+│
+├── assets/                 # Styles, scripts, media
+│   ├── css/               # Stylesheets
+│   ├── js/                # JavaScript files
+│   └── media/
+│       ├── images/        # Upload photos here
+│       └── audio/         # Upload audio here
+│
+├── data/                   # Editable content (JSON)
+│   ├── homepage.json
+│   ├── artists.json
+│   ├── services.json
+│   └── ... (other content files)
+│
+├── components/             # Shared header/footer
+│   ├── header.html
+│   └── footer.html
+│
+├── scripts/               # Automation scripts
+│   ├── backup.sh
+│   ├── health-check.sh
+│   ├── deploy.sh
+│   └── ... (more scripts)
+│
+└── docs/                  # Documentation
+    ├── SITE-OWNER-MANUAL.md       # ⭐ For content managers
+    ├── GETTING-STARTED.md         # For developers
+    ├── OPERATIONS-GUIDE.md        # For operations
+    ├── SECURITY.md
+    ├── SOCIAL-MEDIA-GUIDE.md
+    └── screenshots/               # Website screenshots
+```
+
+---
+
+## 📋 Full Documentation Index
+
+### Essential Reading
+
+| Role | Document | Time |
+|------|----------|------|
+| **Site Owner** | [📘 Site Owner Manual](docs/SITE-OWNER-MANUAL.md) | 30 min |
+| **Developer** | [🚀 Getting Started](docs/GETTING-STARTED.md) | 20 min |
+| **Operations** | [⚙️ Operations Guide](docs/OPERATIONS-GUIDE.md) | 30 min |
+| **Security** | [🔒 Security Policy](docs/SECURITY.md) | 15 min |
+
+### Available Scripts
 
 ```bash
 npm start              # Start development server
-npm run build          # Build production files
+npm run setup          # Setup environment and permissions
 npm test               # Run full test suite
-npm run test:quick     # Run quick tests
-npm run deploy         # Deploy to production
-npm run deploy:siteground  # Create SiteGround deployment package
-npm run security       # Run security checks
-npm run security:fix   # Fix security issues automatically
 npm run backup         # Create backup
-npm run health         # Run health check
-npm run content:validate  # Validate JSON content files
-npm run screenshots       # Capture screenshots (requires server running)
+npm run deploy         # Deploy to production
+npm run health         # Health check
+npm run security       # Security validation
+npm run screenshots    # Capture website screenshots
 ```
-
-## 📊 Analytics & Marketing Setup
-
-### Quick Setup (30 minutes)
-
-Get analytics and marketing tracking up and running fast!
-
-```bash
-# 1. Get your Google Analytics ID from analytics.google.com
-# 2. Add to your .env file
-echo "GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX" >> .env
-
-# 3. Add meta tags to your HTML pages (see docs/QUICK-START-ANALYTICS.md)
-```
-
-**What You Get:**
-- ✅ Google Analytics 4 tracking
-- ✅ Facebook Pixel integration (optional)
-- ✅ TikTok Pixel integration (optional) 
-- ✅ Automatic event tracking (CTAs, forms, videos)
-- ✅ UTM campaign tracking
-- ✅ Social media attribution
-- ✅ Conversion funnel tracking
-
-**Complete Guide:** [docs/QUICK-START-ANALYTICS.md](docs/QUICK-START-ANALYTICS.md)
-
-### Social Media Content Generation
-
-Generate platform-optimized social media posts instantly:
-
-```javascript
-// Generate Instagram post
-const post = SocialContentGenerator.generatePost({
-  platform: 'instagram',
-  type: 'package',
-  data: {
-    name: 'Serenade Package',
-    price: '$500',
-    features: ['Professional singer', '2 songs', 'Travel included']
-  }
-});
-
-console.log(post.caption);  // Ready-to-post caption with hashtags
-console.log(post.link);     // UTM-tracked link
-```
-
-**Supported Platforms:** Instagram, TikTok, Facebook, Twitter/X  
-**Content Types:** Packages, Artists, Testimonials, Events, General  
-**Complete Guide:** [docs/SOCIAL-MEDIA-INTEGRATION.md](docs/SOCIAL-MEDIA-INTEGRATION.md)
-
-### CTA Optimization
-
-Strategic call-to-action placement and design for maximum conversions:
-
-- Primary, secondary, and tertiary CTA hierarchy
-- Page-by-page CTA strategy
-- Mobile-optimized sticky CTAs
-- A/B testing recommendations
-- Conversion rate optimization tips
-
-**Complete Guide:** [docs/CTA-STRATEGY.md](docs/CTA-STRATEGY.md)
-
-## 💻 Development
-
-### Making Changes
-
-1. Create a feature branch
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make changes and test locally
-   ```bash
-   ./test-site.sh http://localhost:8000
-   ```
-
-3. Commit and push
-   ```bash
-   git commit -m "feat: Add your feature description"
-   git push origin feature/your-feature-name
-   ```
-
-### Project Structure
-
-```
-aria-amore/
-├── index.html              # Home page
-├── about.html              # About us
-├── services.html           # Services & packages
-├── artists.html            # Our performers
-├── privacy-policy.html     # Privacy policy
-├── terms-of-service.html   # Terms of service
-├── 404.html          # 404 error page
-├── robots.txt             # Search engine rules
-├── sitemap.xml            # XML sitemap
-├── security.txt           # Vulnerability reporting
-├── .htaccess              # Apache configuration
-├── .env.example           # Environment template
-├── .gitignore             # Git ignore rules
-├── package.json           # Node.js config
-├── assets/
-│   ├── css/
-│   │   └── [All site CSS files]
-│   ├── js/
-│   │   └── [All JavaScript files]
-│   └── media/
-│       ├── audio/
-│       │   └── [All audio files]
-│       └── images/
-│           └── [All images and video files]
-│
-├── data/
-│   └── [All page content JSON files]
-│
-├── public/
-│   ├── components/
-│   │   ├── header.html
-│   │   └── footer.html
-│   ├── index.html [Homepage]
-│   ├── about.html
-│   ├── services.html
-│   └── [Other HTML pages]
-│
-├── .env.example
-├── LICENSE.txt
-└── README.md
-```
-
-`/assets/`
-
-Holds all design and functional assets for the website, divided into three subfolders:
-
-- `css/` – Contains all stylesheet files (.css).
-These define how your website looks and adapts across devices.
-
-- `js/` – Contains all JavaScript files (.js).
-These add interactivity and dynamic features to your pages.
-
-- `media/` – Stores all visual and audio media used on the site.
-
-  - `audio/` – Sound or music files used on the site.
-
-  - `images/` – All image and video content.
-
-<hr>
-
-`/data/`
-
-Contains all JSON files that hold editable content for your pages.
-These are the files you’ll modify when you want to update text, titles, bios, or other page content — without directly editing HTML.
-
-<hr>
-
-`/`
-
-This is where all your HTML files live — the actual pages of your site.
-
- - `components/` – Contains header.html and footer.html, which are dynamically loaded into each page.
-If you need to update the header or footer (e.g., navigation links, copyright text), make those edits here — not on every page individually.
-
- - Other HTML files – These represent each page on your site (e.g., index.html, about.html, etc.).
-Each one automatically loads the shared header and footer components.
-
-<hr>
-
-`.env.example`
-
-A sample environment configuration file.
-This is typically used to store project-specific settings or variables securely (for example, API keys or deployment paths).
-Developers can duplicate this as .env and fill in their own values.
-
-<hr>
-
-`LICENSE.txt`
-
-Contains licensing information and legal terms regarding the use, distribution, and modification of this project.
-
-<hr>
-
-`README.md`
-
-The document you’re currently reading.
-It explains how the project is structured, how to edit content, and how to maintain the site moving forward.
-
-<hr>
-
-All editable site content lives inside the `/data/` folder:
-
-| File | Purpose |
-|------|----------|
-| `artists.json` | Controls all performer bios, portraits, audio clips, and social links. |
-| `services.json` | Controls the “Packages” or “Plans” section (the carousel of services). |
-| `about.json` | Holds text for the About page. |
-
-Each of these files can be opened and edited in a **plain text editor** like:  
-🟢 VS Code, Notepad++, or even basic Notepad (on Windows).
 
 ---
 
-## ✍️ How to Edit Safely
+## 🛠️ Common Tasks
 
-### 1. Always Make a Backup First
-Before making changes, copy the JSON file somewhere safe.  
-If something looks wrong after saving, you can restore it.
+### Editing Website Content
 
-### 2. Follow JSON Format Rules
-JSON files are very strict about punctuation.
+See [📘 Site Owner Manual](docs/SITE-OWNER-MANUAL.md) for detailed instructions with examples.
 
-✅ **Good example:**
-```json
-{
-  "name": "Aria Amore",
-  "bio": "A celebrated soprano who performs worldwide."
-}
+**Quick steps:**
+1. Edit a JSON file in the `data/` folder
+2. Save with UTF-8 encoding
+3. Upload to your server
+4. Refresh browser
+
+### Deploying to Production
+
+```bash
+# Create deployment package
+npm run deploy:siteground
+
+# Or standard deployment
+npm run deploy
 ```
-❌ Bad example (notice the missing comma):
+
+**Full guide:** [⚙️ Operations Guide](docs/OPERATIONS-GUIDE.md#deployment--maintenance)
+
+### Setting Up Analytics
+
+1. Get Google Analytics ID from analytics.google.com
+2. Add to `.env`: `GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX`
+3. Deploy changes
+
+**Full guide:** [⚙️ Operations Guide](docs/OPERATIONS-GUIDE.md#analytics-setup)
+
+### Monitoring Your Site
+
+```bash
+# One-time health check
+./scripts/health-check.sh --once
+
+# Continuous monitoring
+./scripts/health-check.sh
+
+# Security validation
+./scripts/security-check.sh
 ```
-{
-  "name": "Aria Amore"
-  "bio": "A celebrated soprano who performs worldwide."
-}
-```
-Tips:
-
-- Strings (text) must always use double quotes "
-
-- Separate each key/value pair with a comma
-
-- Don’t leave a trailing comma at the end of a list
-
-If unsure, you can validate your JSON using https://jsonlint.com
-
-## Editing Artists (artists.json)
-
-Each artist has their own object inside the list, like this:
-```
-[
-  {
-    "id": "aria-amore",
-    "name": "Aria Amore",
-    "portrait": "/images/artists/aria.jpg",
-    "bio": "A luminous soprano known for her emotional performances.",
-    "tracks": [
-      {
-        "id": "aria-track1",
-        "title": "O Mio Babbino Caro",
-        "sub": "Puccini – Gianni Schicchi",
-        "src": "/audio/aria1.mp3"
-      },
-      {
-        "id": "aria-track2",
-        "title": "Ave Maria",
-        "sub": "Schubert",
-        "src": "/audio/aria2.mp3"
-      }
-    ],
-    "social": {
-      "instagram": "https://instagram.com/ariaamore",
-      "youtube": "https://youtube.com/@ariaamore",
-      "facebook": "https://facebook.com/ariaamore"
-    }
-  }
-]
-```
-You can:
-
-- Change the name, bio, or portrait path
-
-- Add or remove audio tracks
-
-- Update social media links
-
-When you save and refresh the page, the website will automatically load the updated info.
-
-## Editing Services / Packages (services.json)
-
-Each package or plan has its own entry:
-
-```
-[
-  {
-    "id": "serenade",
-    "name": "The Serenade Package",
-    "price": "$500",
-    "features": [
-      "One professional opera singer",
-      "Performance of two carefully selected songs",
-      "Perfect for romantic dinners or proposals"
-    ],
-    "image": "/images/packages/serenade.jpg"
-  },
-  {
-    "id": "grand-opera",
-    "name": "The Grand Opera Experience",
-    "price": "$2500",
-    "features": [
-      "Full cast of four performers",
-      "Tailored program for your event",
-      "Professional audio and staging"
-    ],
-    "image": "/images/packages/grand-opera.jpg"
-  }
-]
-```
-You can:
-
-- Rename a package
-
-- Adjust pricing or features
-
-- Change the featured image
-
-The site automatically rebuilds the carousel with your new data.
-
-## How the Site Uses These Files
-When someone visits the page:
-
-1. The HTML provides the structure only.
-
-2. JavaScript (artists.js, services.js, etc.) uses fetch() to load the matching JSON file.
-
-3. The script inserts the JSON data into the page — images, text, and audio — in the right places.
-
-So when you update a JSON file, you’re updating the website content directly — no need to touch the layout or code.
 
 ---
 
-## ⚙️ Common Pitfalls
+## 📧 Email & Contact Forms
 
-Below are some common issues you might run into when editing your JSON files, along with quick fixes.
+Contact form submissions are handled by `/sendmail.php` and sent to the email configured in your `.env` file.
 
-| 🧩 Issue | ⚠️ Likely Cause | 💡 How to Fix |
-|----------|----------------|---------------|
-| The page looks empty | JSON syntax error (missing comma, quote, etc.) | Validate your file at [jsonlint.com](https://jsonlint.com) and correct any syntax errors. |
-| Audio buttons don’t work | The `src` link for a track is missing or incorrect | Make sure each audio file path is correct and the file exists in `/audio/`. |
-| Images not showing | Wrong file path or missing image | Double-check that your image is inside `/images/` and that the filename matches exactly (case-sensitive). |
-| Layout looks broken | Edited or deleted HTML tags | Don’t edit HTML. Only change JSON content. The HTML structure is handled automatically. |
-| New item not showing up | Missing comma or invalid array syntax | Check that every item (artist, package, etc.) in the JSON list is separated by a comma. |
+**To configure email:**
+1. Set `SITE_EMAIL` in your `.env` file
+2. Configure SMTP settings (your hosting provider can help)
+3. Test the contact form
+
+**Email options:**
+- SiteGround SMTP (recommended)
+- Gmail SMTP
+- SendGrid API
+- Standard PHP mail()
 
 ---
-
-## Pro Tip
-
-If you want to temporarily **hide** an item (like an artist or a package),  
-just add `"hidden": true` inside that object.  
-
-The site’s JavaScript will skip any item with that flag.
-
-Example:
-```json
-{
-  "id": "aria-amore",
-  "name": "Aria Amore",
-  "hidden": true
-}
-```
-When you’re ready to show it again, just remove the "hidden": true line.
-
-## Saving Your Changes
-
-After editing a JSON file:
-
-1. Save your changes using UTF-8 encoding (this is the default in most text editors).
-
-2. Upload the updated file to your site’s /data/ folder, replacing the old version.
-
-3. Refresh your browser — your new content should appear immediately.
-
-If you don’t see updates:
-
-- Try clearing your browser cache (press `Ctrl + F5` or `Cmd + Shift + R` on Mac).
-
-- Make sure the filename and folder match exactly.
-
-## Troubleshooting Tips
-
-If something still doesn’t look right:
-
-1. Validate the JSON syntax at jsonlint.com
-
-2. Open your browser console (press `F12` → Console) and check for any red error messages.
-
-3. Restore your backup file if needed — just replace the broken JSON with your saved copy.
-
-If all else fails, send the broken JSON file to your developer for a quick fix.
-
-## 🛠️ Production Scripts & Maintenance
-
-The project includes comprehensive scripts for server maintenance and deployment:
-
-### Backup Script
-Create timestamped backups with compression and checksums:
-```bash
-./scripts/backup.sh [backup_directory]
-# Creates: aria-amore-backup-YYYYMMDD_HHMMSS.tar.gz
-# With: SHA256 checksum
-# Auto-cleanup: Removes backups older than 30 days
-```
-
-### Health Check Script
-Monitor website health and send alerts:
-```bash
-./scripts/health-check.sh --once     # Run once
-./scripts/health-check.sh             # Continuous monitoring
-```
-Checks:
-- HTTP status (200 OK)
-- SSL certificate expiry
-- Disk space usage
-- Critical files existence
-
-### Security Check Script
-Validate security configuration:
-```bash
-./scripts/security-check.sh           # Scan for issues
-./scripts/security-check.sh --fix     # Auto-fix issues
-```
-Validates:
-- File permissions
-- Environment security
-- Security headers
-- Hardcoded secrets
-- Form protection
-- HTTPS enforcement
-
-### Deployment Scripts
-Deploy to production or create SiteGround packages:
-```bash
-./scripts/deploy.sh production        # Standard deployment
-./scripts/siteground-deploy.sh        # SiteGround-specific package
-```
-
-### Content Management
-Validate and manage JSON content files:
-```bash
-./scripts/update-content.sh           # Validate all files
-./scripts/update-content.sh artists.json  # Validate specific file
-```
-
-### Environment Setup
-Automated environment configuration:
-```bash
-./scripts/setup-env.sh development    # Dev environment
-./scripts/setup-env.sh production     # Production environment
-```
-
-### Test Suite
-Comprehensive testing:
-```bash
-./scripts/test.sh                     # Full test suite (50+ tests)
-./scripts/test.sh --quick             # Quick tests only
-```
-
-## 🌐 SiteGround Deployment
-
-This site is optimized for SiteGround hosting. See the complete deployment guide:
-
-### Quick SiteGround Deployment
-
-1. **Create Deployment Package**
-   ```bash
-   npm run deploy:siteground
-   ```
-   Creates: `aria-amore-siteground-YYYYMMDD_HHMMSS.zip`
-
-2. **Upload to SiteGround**
-   - Login to cPanel
-   - Open File Manager
-   - Go to `public_html`
-   - Upload files from the package
-
-3. **Configure Email**
-   - Create `.env` file with SiteGround SMTP settings
-   - Set up email accounts in cPanel
-
-4. **Enable SSL**
-   - Install Let's Encrypt certificate via cPanel
-   - HTTPS redirect is automatic
-
-### SiteGround Features Supported
-✅ cPanel integration
-✅ LiteSpeed optimization
-✅ Local SMTP support
-✅ SuperCacher compatibility
-✅ Cloudflare CDN ready
-✅ Automated backups
-✅ SSH/Git deployment (GrowBig/GoGeek)
-
-**Full Guide:** See [docs/SITEGROUND-DEPLOYMENT.md](docs/SITEGROUND-DEPLOYMENT.md)
-
-## 📧 Email & Form Configuration
-
-### Email Setup Options
-
-**Option 1: SiteGround SMTP (Recommended)**
-```env
-SMTP_HOST=localhost
-SMTP_USER=no-reply@yourdomain.com
-SMTP_PASS=your-password
-SMTP_PORT=465
-SMTP_SECURE=ssl
-```
-
-**Option 2: Gmail SMTP**
-```env
-SMTP_HOST=smtp.gmail.com
-SMTP_USER=your-gmail@gmail.com
-SMTP_PASS=your-app-password
-SMTP_PORT=587
-SMTP_SECURE=tls
-```
-
-**Option 3: SendGrid**
-```env
-SMTP_HOST=smtp.sendgrid.net
-SMTP_USER=apikey
-SMTP_PASS=your-api-key
-SMTP_PORT=587
-SMTP_SECURE=tls
-```
-
-### Form Validation
-
-Client-side validation with security features:
-- Real-time field validation
-- Honeypot spam protection
-- Bot detection (time-based)
-- Input sanitization
-- XSS prevention
-
-Include in your HTML:
-```html
-<script src="/assets/js/form-validation.js"></script>
-<script>
-  FormValidator.init('your-form-id', {
-    realTimeValidation: true,
-    honeypot: true,
-    preventDoubleSubmit: true,
-    submitHandler: function(form, data) {
-      // Custom submit logic
-    }
-  });
-</script>
-```
 
 ## 🔒 Security Features
 
-### Built-in Security
-- **HTTPS enforcement** - Automatic HTTP to HTTPS redirect
-- **Security headers** - CSP, HSTS, X-Frame-Options, etc.
-- **Input sanitization** - XSS and injection prevention
-- **Form protection** - Honeypot and bot detection
-- **File permissions** - Secure defaults (644/755)
-- **Secrets management** - Environment variables only
+✅ **Built-in:** HTTPS enforcement, security headers, input validation  
+✅ **Form Protection:** Honeypot, bot detection, spam prevention  
+✅ **File Security:** Secure permissions (644/755), .env protection  
+✅ **Monitoring:** Automated health checks and security scans  
 
-### Security Validation
-Run regular security checks:
+Run security validation:
 ```bash
-npm run security
+npm run security        # Check for issues
+npm run security:fix    # Auto-fix issues
 ```
 
-### Monitoring
-Set up automated health checks:
+**Full details:** [🔒 Security Policy](docs/SECURITY.md)
+
+---
+
+## 📊 Performance & Analytics
+
+### Page Speed
+- Optimized images (WebP format)
+- Minified CSS and JavaScript
+- Browser caching enabled
+- GZIP compression
+- CDN ready
+
+### Analytics
+- Google Analytics 4 tracking
+- Conversion tracking
+- UTM campaign tracking
+- Social media attribution
+- Event tracking (CTAs, forms, videos)
+
+**Setup guide:** [⚙️ Operations Guide - Analytics](docs/OPERATIONS-GUIDE.md#analytics-setup)
+
+---
+
+## 🧪 Testing & Quality Assurance
+
+Run the test suite:
 ```bash
-# Add to crontab (every 5 minutes)
-*/5 * * * * /path/to/scripts/health-check.sh --once
-```
-
-## 📊 Testing
-
-### Test Coverage
-- ✅ File structure validation
-- ✅ Data file integrity (JSON validation)
-- ✅ Asset existence checks
-- ✅ Security configuration
-- ✅ Email configuration
-- ✅ Build system validation
-- ✅ Documentation completeness
-
-### Running Tests
-```bash
-npm test              # Full suite (50+ tests)
+npm test              # Full test suite (50+ tests)
 npm run test:quick    # Quick tests only
 ```
 
-## 🔧 Maintenance
+Tests validate:
+- File structure integrity
+- Data file syntax (JSON validation)
+- Asset availability
+- Security configuration
+- Build system health
 
-### Daily Tasks (Automated)
-- Automated backups (via cron)
-- Health monitoring
-- Error log monitoring
+---
 
-### Weekly Tasks
-- Review error logs: `tail -f logs/errors.log`
-- Check backup status
-- Verify SSL certificate validity
-- Monitor site performance
+## 🔄 Backups & Recovery
 
-### Monthly Tasks
-- Security audit: `npm run security`
-- Content validation: `npm run content:validate`
-- Performance testing (GTmetrix, PageSpeed)
-- Backup restoration test
+### Automatic Backups
 
-### Cron Job Setup
 ```bash
-# Daily backup at 2 AM
-0 2 * * * cd /path/to/site && ./scripts/backup.sh
-
-# Health check every 5 minutes
-*/5 * * * * cd /path/to/site && ./scripts/health-check.sh --once
+./scripts/backup.sh
 ```
+
+Creates timestamped, compressed backups with checksums:
+- `aria-amore-backup-20260303_143022.tar.gz`
+- Auto-cleanup (removes backups older than 30 days)
+
+### Manual Backups
+
+1. Connect via FTP or file manager
+2. Download the entire `data/` folder
+3. Save locally or to cloud storage
+
+---
+
+## 🐛 Troubleshooting
+
+### Quick Fixes
+
+| Problem | Solution |
+|---------|----------|
+| Changes don't appear | Clear browser cache (Ctrl+F5 or Cmd+Shift+R) |
+| JSON validation error | Check for missing commas or quotes → use jsonlint.com |
+| Images not showing | Verify file path is correct (case-sensitive) |
+| Forms not sending | Check .env email config; contact hosting provider |
+| Site is slow | Optimize images, clear old files, check server load |
+
+**Complete guide:** [📘 Site Owner Manual - Troubleshooting](docs/SITE-OWNER-MANUAL.md#troubleshooting)
+
+---
+
+## 💬 Support & Resources
+
+### Getting Help
+
+1. **For content editing:** See [📘 Site Owner Manual](docs/SITE-OWNER-MANUAL.md)
+2. **For technical issues:** Check [⚙️ Operations Guide](docs/OPERATIONS-GUIDE.md)
+3. **For security concerns:** Email security@ariaamore.com
+4. **For general questions:** info@ariaamore.com
+
+### Useful Links
+
+- **GitHub Repository:** https://github.com/VidiVici98/Aria-Amore-Website-Core
+- **JSON Validator:** https://jsonlint.com
+- **Google Analytics:** https://analytics.google.com
+- **Hosting Support:** Contact your provider
+
+### Reporting Issues
+
+- **Bugs/Features:** GitHub Issues
+- **Security Issues:** security@ariaamore.com
+- **Website Down:** Contact hosting provider immediately
+
+---
+
+## 📜 License & Legal
+
+- **License:** See [LICENSE.txt](LICENSE.txt)
+- **Security Policy:** [docs/SECURITY.md](docs/SECURITY.md)
+- **Terms of Service:** Included in website (terms-of-service.html)
+
+---
+
+## 🎓 Learning Resources
+
+### For Site Owners
+- [📘 Site Owner Manual](docs/SITE-OWNER-MANUAL.md) — Everything you need
+- [JSON Validator](https://jsonlint.com) — Check your JSON syntax
+
+### For Developers
+- [🚀 Getting Started Guide](docs/GETTING-STARTED.md)
+- [⚙️ Operations Guide](docs/OPERATIONS-GUIDE.md)
+- [📸 Screenshots](docs/screenshots/)
+- [🔒 Security Policy](docs/SECURITY.md)
+
+---
+
+## 🎯 Next Steps
+
+**Depending on your role, choose your next step:**
+
+- **👤 I manage the website content**  
+  → Read [📘 Site Owner Manual](docs/SITE-OWNER-MANUAL.md)  
+  → Start editing content in the `data/` folder
+
+- **👨‍💻 I'm setting up development**  
+  → Read [🚀 Getting Started Guide](docs/GETTING-STARTED.md)  
+  → Run `npm install && npm start`
+
+- **⚙️ I'm deploying to production**  
+  → Read [⚙️ Operations Guide](docs/OPERATIONS-GUIDE.md)  
+  → Run `npm run deploy`
+
+- **🔒 I'm reviewing security**  
+  → Read [🔒 Security Policy](docs/SECURITY.md)  
+  → Run `npm run security`
+
+---
+
+## 📞 Contact & Support
+
+- **General inquiries:** info@ariaamore.com
+- **Security issues:** security@ariaamore.com
+- **GitHub repository:** https://github.com/VidiVici98/Aria-Amore-Website-Core
+- **Issues & bug reports:** GitHub Issues
+
+---
+
+**Last Updated:** March 3, 2026  
+**Version:** 1.0.0
