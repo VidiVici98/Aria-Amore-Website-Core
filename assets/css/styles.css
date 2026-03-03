@@ -51,8 +51,8 @@ html {
 
 /* Skip Navigation Links for Accessibility */
 .skip-link {
-  position: absolute;
-  top: -40px;
+  position: fixed;
+  top: -60px;
   left: 0;
   background: var(--gold);
   color: #000;
@@ -60,12 +60,12 @@ html {
   text-decoration: none;
   font-weight: 600;
   border-radius: 0 0 4px 0;
-  z-index: 10000;
+  z-index: 1199;
   transition: none;
 }
 
 .skip-link:focus {
-  top: 8px;
+  top: 50px;
   outline: 3px solid #000;
   outline-offset: 2px;
 }
@@ -218,7 +218,7 @@ footer {
   border-top: var(--border-thin);
   color: var(--color-secondary);
   width: 100vw;
-  padding: 2rem 2rem 0;
+  padding: 0;
 }
 
 /* Footer Content Grid */
@@ -228,7 +228,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-  padding-bottom: 1.5rem;
+  padding: 1rem 2rem 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1092,7 +1092,7 @@ blockquote:hover {
   transition: all .25s ease-in-out;
   position: absolute;
   left: 20px;
-  top: -4px;
+  top: -24px;
 }
 .aa-logo:hover {
   color: #ccc;
