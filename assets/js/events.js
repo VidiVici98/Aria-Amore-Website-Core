@@ -184,16 +184,34 @@ ${ev.address}
 // =========================
 // CALENDAR WITH NAVIGATION
 // =========================
-if (calendarWrapper && upcomingEvents.length) {
-  const monthMap = [...new Set(
-    upcomingEvents.map(ev => {
-      const d = new Date(ev.date);
-      return `${d.getFullYear()}-${d.getMonth()}`;
-    })
-  )];
-  let currentIndex = 0;
+if (calendarWrapper) {
   const prevBtn = document.getElementById('calendar-prev');
   const nextBtn = document.getElementById('calendar-next');
+  
+  // Build list of months to show
+  let monthMap = [];
+  let currentMonthIndex = 0;
+  
+  if (upcomingEvents.length) {
+    // If there are upcoming events, show those months
+    monthMap = [...new Set(
+      upcomingEvents.map(ev => {
+        const d = new Date(ev.date);
+        return `${d.getFullYear()}-${d.getMonth()}`;
+      })
+    )];
+  } else {
+    // If no upcoming events, generate a range of browseable months
+    // 12 months in the past and 12 months in the future
+    for (let i = -12; i <= 12; i++) {
+      const d = new Date(today.getFullYear(), today.getMonth() + i, 1);
+      monthMap.push(`${d.getFullYear()}-${d.getMonth()}`);
+    }
+    currentMonthIndex = 12; // Current month is at index 12
+  }
+  
+  let currentIndex = upcomingEvents.length ? 0 : currentMonthIndex;
+  
   function updateCalendar() {
     const [year, month] = monthMap[currentIndex].split('-').map(Number);
     const eventsForMonth = upcomingEvents.filter(ev => {
@@ -204,18 +222,21 @@ if (calendarWrapper && upcomingEvents.length) {
     prevBtn.disabled = currentIndex === 0;
     nextBtn.disabled = currentIndex === monthMap.length - 1;
   }
+  
   prevBtn.addEventListener('click', () => {
     if (currentIndex > 0) {
       currentIndex--;
       updateCalendar();
     }
   });
+  
   nextBtn.addEventListener('click', () => {
     if (currentIndex < monthMap.length - 1) {
       currentIndex++;
       updateCalendar();
     }
   });
+  
   updateCalendar();
 }
   // =========================

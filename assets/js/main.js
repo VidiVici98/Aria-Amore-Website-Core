@@ -203,22 +203,70 @@ document.addEventListener("DOMContentLoaded", () => {
   // =======================
   // EVENT BANNER
   // =======================
-  // Setup event banner dismiss functionality after it loads
-  setTimeout(() => {
+  // Setup event banner with next upcoming event after it loads
+  setTimeout(async () => {
     const banner = document.querySelector('#event-banner');
     const closeBtn = document.querySelector('#event-banner-close');
-    if (banner && closeBtn) {
-      // Hide banner if previously dismissed
-      if (localStorage.getItem('eventBannerDismissed') === 'true') {
+    if (!banner || !closeBtn) return;
+
+    // Hide banner if previously dismissed
+    if (localStorage.getItem('eventBannerDismissed') === 'true') {
+      banner.style.display = 'none';
+      return;
+    }
+
+    // Fetch events and find next upcoming event
+    try {
+      const res = await fetch('/data/events.json');
+      if (!res.ok) throw new Error('Failed to load events.json');
+      const data = await res.json();
+      const events = data.events || [];
+
+      // Get today's date at start of day
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      // Find next upcoming event
+      const upcomingEvents = events
+        .filter(ev => {
+          const evDate = new Date(ev.date);
+          evDate.setHours(0, 0, 0, 0);
+          return evDate >= today;
+        })
+        .sort((a, b) => new Date(a.date) - new Date(b.date));
+
+      if (upcomingEvents.length === 0) {
+        // No upcoming events, hide banner
         banner.style.display = 'none';
         return;
       }
-      // Close button functionality
-      closeBtn.addEventListener('click', () => {
-        banner.style.display = 'none';
-        localStorage.setItem('eventBannerDismissed', 'true');
+
+      // Update banner with next upcoming event
+      const nextEvent = upcomingEvents[0];
+      const eventDate = new Date(nextEvent.date);
+      const dateStr = eventDate.toLocaleDateString(undefined, {
+        month: 'long',
+        day: 'numeric'
       });
+
+      const bannerText = banner.querySelector('p');
+      const bannerLink = banner.querySelector('a');
+
+      if (bannerText) {
+        bannerText.innerHTML = `Don't Miss: <span>${nextEvent.title}</span> - ${nextEvent.performers?.[0] || 'Live Performance'} ${dateStr}!`;
+      }
+      if (bannerLink) {
+        bannerLink.href = `/events.html#${nextEvent.id}`;
+      }
+    } catch (err) {
+      console.error('Error updating event banner:', err);
     }
+
+    // Close button functionality
+    closeBtn.addEventListener('click', () => {
+      banner.style.display = 'none';
+      localStorage.setItem('eventBannerDismissed', 'true');
+    });
   }, 500);
 
   // =======================
