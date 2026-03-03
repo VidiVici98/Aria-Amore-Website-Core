@@ -61,11 +61,11 @@ html {
   font-weight: 600;
   border-radius: 0 0 4px 0;
   z-index: 10000;
-  transition: top 0.3s ease;
+  transition: none;
 }
 
 .skip-link:focus {
-  top: 0;
+  top: 8px;
   outline: 3px solid #000;
   outline-offset: 2px;
 }
@@ -305,7 +305,7 @@ footer {
   position: relative;
   text-align: center;
   font-size: .75rem;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .hero {
   width: 98%;
@@ -1108,24 +1108,27 @@ blockquote:hover {
 }
 .aa-desktop-nav {
   display: flex;
-  gap: 24px;
+  gap: 12px;
   align-items: center;
   position: absolute;
   right:40px;
   top:10px;
+  flex-wrap: wrap;
+  max-width: 65%;
 }
 .aa-nav-link {
   color: var(--color-secondary);
   font-family: "Quintessential", serif;
   text-decoration: none;
   font-style: italic;
-  font-size: 1.25rem;
+  font-size: 1.05rem;
   font-weight: 400;
   text-shadow: 1px 2px 1px #000,
                1px 2px 2px #151515dd;
-  padding: 8px 6px;
+  padding: 6px 5px;
   transition: color .25s ease, transform .25s ease;
   z-index: 5000;
+  white-space: nowrap;
 }
 .aa-nav-link:hover,
 .aa-nav-link:focus {
